@@ -1,0 +1,87 @@
+ManifestFileVersion: 0
+CRC: 991320226
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6a3c789f454ae950229d7abe302692d3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 84f4e4dd8578da33abfe1961e2c5bea9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fc41cd48bee14034db80323ab44fbd3e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 751bd37d2e55f5f448dbb0d97812d9ba, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/GanonAsset/Animator/Animations/DashAttack.anim
+- Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
+- Assets/GanonAsset/Texture/ganonprm.png
+- Assets/GanonAsset/Animator/Animations/Taunt1.anim
+- Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
+- Assets/GanonAsset/Animator/GanonAnimator.controller
+- Assets/GanonAsset/Animator/Animations/Running.anim
+- Assets/GanonAsset/Animator/Animations/Dash.anim
+- Assets/GanonAsset/Animator/Animations/Taunt3.anim
+- Assets/GanonAsset/Animator/Animations/AerialKick.anim
+- Assets/GanonAsset/Texture/ganonTex04.png
+- Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
+- Assets/GanonAsset/Animator/Animations/SpecialKickEnd.anim
+- Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
+- Assets/GanonAsset/Animator/Animations/SlowWalk.anim
+- Assets/GanonAsset/Texture/ganontex.png
+- Assets/GanonAsset/Prefab/mdlGanondorf.prefab
+- Assets/GanonAsset/Material/ganonTex04.mat
+- Assets/GanonAsset/Animator/Animations/JumpSquat.anim
+- Assets/GanonAsset/Animator/Animations/FastWalk.anim
+- Assets/GanonAsset/Animator/Animations/RunBrake.anim
+- Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
+- Assets/GanonAsset/Animator/Animations/GrabStart.anim
+- Assets/GanonAsset/Animator/Animations/Wait2.anim
+- Assets/GanonAsset/Prefab/Ganondorf.prefab
+- Assets/GanonAsset/Animator/Animations/Landing.anim
+- Assets/GanonAsset/Animator/Animations/SpawnIn.anim
+- Assets/GanonAsset/Animator/Animations/Wait3.anim
+- Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
+- Assets/GanonAsset/Material/ganontex.mat
+- Assets/GanonAsset/Animator/Animations/Punch.anim
+- Assets/GanonAsset/Animator/Animations/Taunt2.anim
+- Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
+- Assets/GanonAsset/Animator/Animations/Falling.anim
+- Assets/GanonAsset/Animator/Animations/Wait1.anim
+- Assets/GanonAsset/Animator/Animations/SecondJump.anim
+- Assets/GanonAsset/Animator/GanonLobby.controller
+- Assets/GanonAsset/Animator/Animations/GroundedGrabFinish.anim
+- Assets/GanonAsset/Texture/ganonNorm.png
+- Assets/GanonAsset/Animator/Animations/Jump.anim
+Dependencies: []
