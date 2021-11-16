@@ -31,7 +31,7 @@ namespace GanondorfMod
         public const string MODVERSION = "0.0.1";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
-        public const string developerPrefix = "GAN";
+        public const string developerPrefix = "ETHA10";
 
         internal List<SurvivorBase> Survivors = new List<SurvivorBase>();
 
@@ -51,7 +51,7 @@ namespace GanondorfMod
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             // survivor initialization
-            new MyCharacter().Initialize();
+            new Ganondorf().Initialize();
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
@@ -64,7 +64,7 @@ namespace GanondorfMod
         private void LateSetup(HG.ReadOnlyArray<RoR2.ContentManagement.ReadOnlyContentPack> obj)
         {
             // have to set item displays later now because they require direct object references..
-            Modules.Survivors.MyCharacter.instance.SetItemDisplays();
+            Modules.Survivors.Ganondorf.instance.SetItemDisplays();
         }
 
         private void Hook()

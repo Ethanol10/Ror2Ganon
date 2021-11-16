@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Survivors
 {
-    internal class MyCharacter : SurvivorBase
+    internal class Ganondorf : SurvivorBase
     {
         internal override string bodyName { get; set; } = "Ganondorf";
 
@@ -21,39 +21,29 @@ namespace GanondorfMod.Modules.Survivors
         internal override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
             armor = 20f,
-            armorGrowth = 0f,
-            bodyName = "GanondorfBody",
-            bodyNameToken = GanondorfPlugin.developerPrefix + "_HENRY_BODY_NAME",
+            armorGrowth = 0.01f,
+            bodyName = "Ganondorf",
+            bodyNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_NAME",
             bodyColor = Color.grey,
-            characterPortrait = Modules.Assets.LoadCharacterIcon("Henry"),
+            characterPortrait = Modules.Assets.LoadCharacterIcon("ganonIcon"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
-            damage = 12f,
+            damage = 24f,
             healthGrowth = 33f,
             healthRegen = 1.5f,
             jumpCount = 1,
-            maxHealth = 110f,
-            subtitleNameToken = GanondorfPlugin.developerPrefix + "_HENRY_BODY_SUBTITLE",
+            maxHealth = 300.0f,
+            subtitleNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SUBTITLE",
             podPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod")
         };
 
-        internal static Material henryMat = Modules.Assets.CreateMaterial("matHenry");
-        internal override int mainRendererIndex { get; set; } = 2;
+        internal static Material ganondorfMat = Modules.Assets.CreateMaterial("ganontex", 0.0f, Color.white, 1.0f);
+        internal override int mainRendererIndex { get; set; } = 0;
 
         internal override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[] {
                 new CustomRendererInfo
                 {
-                    childName = "SwordModel",
-                    material = henryMat,
-                },
-                new CustomRendererInfo
-                {
-                    childName = "GunModel",
-                    material = henryMat,
-                },
-                new CustomRendererInfo
-                {
                     childName = "Model",
-                    material = henryMat
+                    material = ganondorfMat
                 }};
 
         internal override Type characterMainState { get; set; } = typeof(EntityStates.GenericCharacterMain);
@@ -85,8 +75,17 @@ namespace GanondorfMod.Modules.Survivors
             ChildLocator childLocator = bodyPrefab.GetComponentInChildren<ChildLocator>();
             GameObject model = childLocator.gameObject;
 
-            Transform hitboxTransform = childLocator.FindChild("SwordHitbox");
-            Modules.Prefabs.SetupHitbox(model, hitboxTransform, "Sword");
+            Transform hitboxTransform = childLocator.FindChild("MeleeHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform, "melee");
+
+            Transform hitboxTransform2 = childLocator.FindChild("KickHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform2, "kick");
+
+            Transform hitboxTransform3 = childLocator.FindChild("WarlockPunchHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform3, "warlock");
+
+            Transform hitboxTransform4 = childLocator.FindChild("InfernoKickHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform4, "inferno");
         }
 
         internal override void InitializeSkills()
@@ -96,18 +95,27 @@ namespace GanondorfMod.Modules.Survivors
             string prefix = GanondorfPlugin.developerPrefix;
 
             #region Primary
-            Modules.Skills.AddPrimarySkill(bodyPrefab, Modules.Skills.CreatePrimarySkillDef(new EntityStates.SerializableEntityStateType(typeof(SkillStates.SlashCombo)), "Weapon", prefix + "_HENRY_BODY_PRIMARY_SLASH_NAME", prefix + "_HENRY_BODY_PRIMARY_SLASH_DESCRIPTION", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"), true));
+            Modules.Skills.AddPrimarySkill(
+                bodyPrefab, 
+                Modules.Skills.CreatePrimarySkillDef(
+                    new EntityStates.SerializableEntityStateType(typeof(SkillStates.Punch)), 
+                    "Weapon", 
+                    prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME", 
+                    prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_DESCRIPTION", 
+                    Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ganonIconTex"),
+                    true
+                ));
             #endregion
 
             #region Secondary
             SkillDef shootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_HENRY_BODY_SECONDARY_GUN_NAME",
-                skillNameToken = prefix + "_HENRY_BODY_SECONDARY_GUN_NAME",
-                skillDescriptionToken = prefix + "_HENRY_BODY_SECONDARY_GUN_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
+                skillName = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ganonIconTex"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Shoot)),
-                activationStateMachineName = "Slide",
+                activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
                 baseRechargeInterval = 1f,
                 beginSkillCooldownOnSkillEnd = false,
@@ -129,23 +137,23 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region Utility
-            SkillDef rollSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef wizardFootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_HENRY_BODY_UTILITY_ROLL_NAME",
-                skillNameToken = prefix + "_HENRY_BODY_UTILITY_ROLL_NAME",
-                skillDescriptionToken = prefix + "_HENRY_BODY_UTILITY_ROLL_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texUtilityIcon"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Roll)),
-                activationStateMachineName = "Body",
+                skillName = prefix + "_GANONDORF_BODY_UTILITY_KICK_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_KICK_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_KICK_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ganonIconTex"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WizardFoot)),
+                activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 4f,
+                baseRechargeInterval = 0.5f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = true,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
-                isCombatSkill = false,
+                isCombatSkill = true,
                 mustKeyPress = false,
                 cancelSprintingOnActivation = false,
                 rechargeStock = 1,
@@ -153,18 +161,18 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddUtilitySkills(bodyPrefab, rollSkillDef);
+            Modules.Skills.AddUtilitySkills(bodyPrefab, wizardFootSkillDef);
             #endregion
 
             #region Special
             SkillDef bombSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_HENRY_BODY_SPECIAL_BOMB_NAME",
-                skillNameToken = prefix + "_HENRY_BODY_SPECIAL_BOMB_NAME",
-                skillDescriptionToken = prefix + "_HENRY_BODY_SPECIAL_BOMB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialIcon"),
+                skillName = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("ganonIconTex"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ThrowBomb)),
-                activationStateMachineName = "Slide",
+                activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
                 baseRechargeInterval = 10f,
                 beginSkillCooldownOnSkillEnd = false,
@@ -200,8 +208,8 @@ namespace GanondorfMod.Modules.Survivors
             List<SkinDef> skins = new List<SkinDef>();
 
             #region DefaultSkin
-            SkinDef defaultSkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_DEFAULT_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texMainSkin"),
+            SkinDef defaultSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_DEFAULT_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("ganonIconTex"),
                 defaultRenderers,
                 mainRenderer,
                 model);
@@ -210,17 +218,7 @@ namespace GanondorfMod.Modules.Survivors
             {
                 new SkinDef.MeshReplacement
                 {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySword"),
-                    renderer = defaultRenderers[0].renderer
-                },
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryGun"),
-                    renderer = defaultRenderers[1].renderer
-                },
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenry"),
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
                     renderer = defaultRenderers[instance.mainRendererIndex].renderer
                 }
             };
@@ -228,39 +226,34 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(defaultSkin);
             #endregion
 
-            #region MasterySkin
-            Material masteryMat = Modules.Assets.CreateMaterial("matHenryAlt");
-            CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
-            {
-                masteryMat,
-                masteryMat,
-                masteryMat,
-                masteryMat
-            });
+            //#region MasterySkin
+            //Material masteryMat = Modules.Assets.CreateMaterial("ganontex04");
+            //CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            //{
+            //    masteryMat,
+            //    masteryMat,
+            //    masteryMat,
+            //    masteryMat
+            //});
 
-            SkinDef masterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.developerPrefix + "_HENRY_BODY_MASTERY_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
-                masteryRendererInfos,
-                mainRenderer,
-                model,
-                masterySkinUnlockableDef);
+            //SkinDef masterySkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASTERY_SKIN_NAME",
+            //    Assets.mainAssetBundle.LoadAsset<Sprite>("ganonIconTex"),
+            //    masteryRendererInfos,
+            //    mainRenderer,
+            //    model,
+            //    masterySkinUnlockableDef);
 
-            masterySkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySwordAlt"),
-                    renderer = defaultRenderers[0].renderer
-                },
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryAlt"),
-                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
-                }
-            };
+            //masterySkin.meshReplacements = new SkinDef.MeshReplacement[]
+            //{
+            //    new SkinDef.MeshReplacement
+            //    {
+            //        mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
+            //        renderer = defaultRenderers[instance.mainRendererIndex].renderer
+            //    }
+            //};
 
-            skins.Add(masterySkin);
-            #endregion
+            //skins.Add(masterySkin);
+            //#endregion
 
             skinController.skins = skins.ToArray();
         }
@@ -304,10 +297,10 @@ namespace GanondorfMod.Modules.Survivors
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGoldGat"),
-childName = "Chest",
-localPos = new Vector3(0.1009F, 0.4728F, -0.1278F),
-localAngles = new Vector3(22.6043F, 114.6042F, 299.1935F),
-localScale = new Vector3(0.15F, 0.15F, 0.15F),
+                            childName = "Chest",
+                            localPos = new Vector3(0.1009F, 0.4728F, -0.1278F),
+                            localAngles = new Vector3(22.6043F, 114.6042F, 299.1935F),
+                            localScale = new Vector3(0.15F, 0.15F, 0.15F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -325,10 +318,10 @@ localScale = new Vector3(0.15F, 0.15F, 0.15F),
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBFG"),
-childName = "Chest",
-localPos = new Vector3(0.0782F, 0.4078F, 0F),
-localAngles = new Vector3(0F, 0F, 313.6211F),
-localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            childName = "Chest",
+                            localPos = new Vector3(0.0782F, 0.4078F, 0F),
+                            localAngles = new Vector3(0F, 0F, 313.6211F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }

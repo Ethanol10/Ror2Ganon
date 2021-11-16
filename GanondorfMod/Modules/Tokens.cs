@@ -7,8 +7,8 @@ namespace GanondorfMod.Modules
     {
         internal static void AddTokens()
         {
-            #region Henry
-            string prefix = GanondorfPlugin.developerPrefix + "_HENRY_BODY_";
+            #region Ganondorf
+            string prefix = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_";
 
             string desc = "Ganondorf, the Great King of Evil has arrived! <color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Lay down a simple punch and send foes flying, or dash through enemies!" + Environment.NewLine + Environment.NewLine;
@@ -28,38 +28,42 @@ namespace GanondorfMod.Modules
 
             #region Skins
             LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
-            LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Alternate");
+            LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Purple");
             #endregion
 
             #region Passive
-            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Henry passive");
-            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Sample text.");
+            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Triforce of Power");
+            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Every successful hit with Punch will build up stacks that are consumed to power up Warlock Punch up to X%");
             #endregion
 
             #region Primary
-            LanguageAPI.Add(prefix + "PRIMARY_SLASH_NAME", "Sword");
-            LanguageAPI.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Helpers.agilePrefix + $"Swing forward for <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "PRIMARY_PUNCH_NAME", "Punch");
+            LanguageAPI.Add(prefix + "PRIMARY_PUNCH_DESCRIPTION", "punchDesc");
+                //Helpers.agilePrefix + $"Swing forward for <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary
-            LanguageAPI.Add(prefix + "SECONDARY_GUN_NAME", "Handgun");
-            LanguageAPI.Add(prefix + "SECONDARY_GUN_DESCRIPTION", Helpers.agilePrefix + $"Fire a handgun for <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_GRAB_NAME", "Flame Choke");
+            LanguageAPI.Add(prefix + "SECONDARY_GRAB_DESCRIPTION", "flamechokeDesc");
+                //Helpers.agilePrefix + $"Fire a handgun for <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Utility
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_NAME", "Roll");
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Roll a short distance, gaining <style=cIsUtility>300 armor</style>. <style=cIsUtility>You cannot be hit during the roll.</style>");
+            LanguageAPI.Add(prefix + "UTILITY_KICK_NAME", "Wizard's Foot");
+            LanguageAPI.Add(prefix + "UTILITY_KICK_DESCRIPTION", "wizardsFootDesc");
+                //"Roll a short distance, gaining <style=cIsUtility>300 armor</style>. <style=cIsUtility>You cannot be hit during the roll.</style>");
             #endregion
 
             #region Special
-            LanguageAPI.Add(prefix + "SPECIAL_BOMB_NAME", "Bomb");
-            LanguageAPI.Add(prefix + "SPECIAL_BOMB_DESCRIPTION", $"Throw a bomb for <style=cIsDamage>{100f * StaticValues.bombDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SPECIAL_PUNCH_NAME", "Warlock Punch");
+            LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", "warlockPunchDesc");
+                //$"Throw a bomb for <style=cIsDamage>{100f * StaticValues.bombDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Achievements
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_NAME", "Henry: Mastery");
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_DESC", "As Henry, beat the game or obliterate on Monsoon.");
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Henry: Mastery");
+            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_NAME", "Ganondorf: Mastery");
+            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_DESC", "As Ganondorf, beat the game or obliterate on Monsoon.");
+            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Ganondorf: Mastery");
             #endregion
             #endregion
         }

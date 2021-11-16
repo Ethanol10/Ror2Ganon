@@ -10,9 +10,13 @@ namespace GanondorfMod.Modules
              + "< ! > Roll has a lingering armor buff that helps to use it aggressively." + Environment.NewLine + Environment.NewLine
              + "< ! > Bomb can be used to wipe crowds with ease." + Environment.NewLine + Environment.NewLine;
 
+
+        //Damage coefficients govern how much the base damage should be multiplied
         internal const float swordDamageCoefficient = 2.8f;
 
         internal const float gunDamageCoefficient = 4.2f;
+
+        internal const float wizardFootDamageCoefficient = 6.0f;
 
         internal const float bombDamageCoefficient = 16f;
     }

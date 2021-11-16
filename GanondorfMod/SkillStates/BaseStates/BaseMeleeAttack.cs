@@ -142,7 +142,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             {
                 if (this.attack.Fire())
                 {
-                    this.OnHitEnemyAuthority();
+                    //this.OnHitEnemyAuthority();
                 }
             }
         }

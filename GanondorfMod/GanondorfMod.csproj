@@ -13,13 +13,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ganonasset" />
+    <None Remove="ganonSoundbank.bnk" />
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Survivors\Henry.cs~RF6221a098.TMP" />
     <None Remove="myassetbundle" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="HenryBank.bnk" />
+    <EmbeddedResource Include="ganonasset" />
+    <EmbeddedResource Include="ganonSoundbank.bnk" />
   </ItemGroup>
 
   <ItemGroup>
