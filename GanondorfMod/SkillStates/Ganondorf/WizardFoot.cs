@@ -4,18 +4,17 @@ using RoR2;
 using RoR2.Audio;
 using UnityEngine;
 using UnityEngine.Networking;
-using GanondorfMod.SkillStates.BaseStates;
 
 namespace GanondorfMod.SkillStates
 {
     public class WizardFoot : BaseSkillState
     { 
         protected float duration = 0.75f;
-        public static float initialSpeedCoefficient = 5f;
-        public static float finalSpeedCoefficient = 2f;
+        public static float initialSpeedCoefficient = 4f;
+        public static float finalSpeedCoefficient = 4f;
 
-        public static string wizardFootSoundString = "wizardsFoot1";
-        protected string hitSoundString = "";
+        public static string wizardFootSoundString = "";
+        protected string hitSoundString = "attack1sfx";
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
 
         private float rollSpeed;
@@ -38,21 +37,24 @@ namespace GanondorfMod.SkillStates
         protected float attackStartTime = 0.13f;
         protected float attackEndTime = 0.7f;
         protected float procCoefficient = 1f;
-        protected float pushForce = 300f;
+        protected float pushForce = 4000f;
         protected Vector3 bonusForce = Vector3.zero;
-        protected float baseEarlyExitTime = 0.4f;
-        protected float hitStopDuration = 0.012f;
+        protected float baseEarlyExitTime = 0.75f;
+        protected float hitStopDuration = 0.03f;
         protected float attackRecoil = 0.75f;
         protected float hitHopVelocity = 4f;
         protected bool cancelled = false;
         private float earlyExitTime;
         protected bool inHitPause;
+        private Transform modelTrans;
+        private Quaternion _lookRot;
 
 
         public override void OnEnter()
         {
             base.OnEnter();
-            this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
+            chooseVoiceLine();
+            this.earlyExitTime = this.baseEarlyExitTime;
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
@@ -64,8 +66,11 @@ namespace GanondorfMod.SkillStates
             //Get ray to point ganon in the right direction
             Ray aimRay = base.GetAimRay();
             this.aimRayDir = aimRay.direction;
-            this.kickRot = new Vector3(aimRay.direction.x * Mathf.Rad2Deg, aimRay.direction.y * Mathf.Rad2Deg, aimRay.direction.z * Mathf.Rad2Deg);
-            this.initialRot = new Vector3(0, 0, 0);
+
+            //Get Point to rotate towards.
+            this.playerRot = aimRay.direction;
+            modelTrans = base.GetModelTransform();
+            _lookRot = Quaternion.LookRotation(this.aimRayDir);
 
             //Getting hitboxes
             HitBoxGroup hitBoxGroup = null;
@@ -89,9 +94,9 @@ namespace GanondorfMod.SkillStates
             attack.isCrit = base.RollCrit();
             attack.impactSound = this.impactSound;
 
-            //Calculate speed of kick and aim
+            //Calculate speed of kick, as well as rotation.
             this.RecalculateRollSpeed();
-            //this.RecalculateAimingDir();
+            this.RecalculateModelRot();
 
             if (base.characterMotor && base.characterDirection)
             {
@@ -113,6 +118,29 @@ namespace GanondorfMod.SkillStates
                 //Add buffs here
                 //base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 3f * this.duration);
                 //base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * this.duration);
+
+                //Disable Fall damage
+                base.characterBody.bodyFlags = CharacterBody.BodyFlags.IgnoreFallDamage;
+            }
+        }
+
+        private void chooseVoiceLine() {
+            switch (UnityEngine.Random.Range(0, 5)) {
+                case 0:
+                    wizardFootSoundString = "attack5";
+                    break;
+                case 1:
+                    wizardFootSoundString = "attack6";
+                    break;
+                case 2:
+                    wizardFootSoundString = "wizardsFoot1";
+                    break;
+                case 3:
+                    wizardFootSoundString = "attack7";
+                    break;
+                case 4:
+                    wizardFootSoundString = "attack4";
+                    break;
             }
         }
 
@@ -121,24 +149,15 @@ namespace GanondorfMod.SkillStates
             this.rollSpeed = this.moveSpeedStat * Mathf.Lerp(WizardFoot.initialSpeedCoefficient, WizardFoot.finalSpeedCoefficient, base.fixedAge / this.duration);
         }
 
-        private void RecalculateAimingDir()
-        {
-            float t;
-            //if (base.fixedAge / WizardFoot.duration < 0.9)
-            //{
-            //    t = 0.0f;
-            //}
-            //else {
-            t = base.fixedAge / this.duration;
-            //}
-            this.playerRot = Vector3.Lerp(kickRot, initialRot, t);
+        private void RecalculateModelRot() {
+            modelTrans.rotation = Quaternion.Slerp(Quaternion.identity, _lookRot, base.fixedAge / (this.duration / 2));
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
             this.RecalculateRollSpeed();
-            //this.RecalculateAimingDir();
+            this.hitPauseTimer -= Time.fixedDeltaTime;
 
             if (base.characterDirection) base.characterDirection.forward = this.aimRayDir;
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = Mathf.Lerp(WizardFoot.dodgeFOV, 60f, base.fixedAge / this.duration);
@@ -153,7 +172,6 @@ namespace GanondorfMod.SkillStates
                 base.characterMotor.velocity = vector;
             }
             this.previousPosition = base.transform.position;
-            //base.transform.Rotate(playerRot, Space.Self);
 
             //Handle Hitpause and momentarily stop ganon from flying for a few milliseconds
             if (this.hitPauseTimer <= 0f && this.inHitPause)
@@ -228,6 +246,8 @@ namespace GanondorfMod.SkillStates
         public override void OnExit()
         {
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
+            base.characterBody.bodyFlags = CharacterBody.BodyFlags.None;
+            modelTrans.rotation = Quaternion.identity;
             base.OnExit();
             this.animator.SetBool("attacking", false);
             base.characterMotor.disableAirControlUntilCollision = false;

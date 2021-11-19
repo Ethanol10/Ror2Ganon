@@ -11,21 +11,21 @@ namespace GanondorfMod.SkillStates.BaseStates
     {
         public int swingIndex;
 
-        protected string hitboxName = "Sword";
+        protected string hitboxName = "melee";
 
         protected DamageType damageType = DamageType.Generic;
-        protected float damageCoefficient = 3.5f;
-        protected float procCoefficient = 1f;
-        protected float pushForce = 300f;
+        protected float damageCoefficient;
+        protected float procCoefficient;
+        protected float pushForce;
         protected Vector3 bonusForce = Vector3.zero;
-        protected float baseDuration = 1f;
-        protected float attackStartTime = 0.2f;
-        protected float attackEndTime = 0.4f;
-        protected float baseEarlyExitTime = 0.4f;
-        protected float hitStopDuration = 0.012f;
-        protected float attackRecoil = 0.75f;
-        protected float hitHopVelocity = 4f;
-        protected bool cancelled = false;
+        protected float baseDuration;
+        protected float attackStartTime;
+        protected float attackEndTime;
+        protected float baseEarlyExitTime;
+        protected float hitStopDuration;
+        protected float attackRecoil;
+        protected float hitHopVelocity;
+        //protected bool cancelled = false;
 
         protected string swingSoundString = "";
         protected string hitSoundString = "";
@@ -34,66 +34,63 @@ namespace GanondorfMod.SkillStates.BaseStates
         protected GameObject hitEffectPrefab;
         protected NetworkSoundEventIndex impactSound;
 
-        private float earlyExitTime;
+        protected float earlyExitTime;
         public float duration;
-        private bool hasFired;
-        private float hitPauseTimer;
-        private OverlapAttack attack;
+        protected bool hasFired;
+        protected float hitPauseTimer;
+        protected OverlapAttack attack;
         protected bool inHitPause;
-        private bool hasHopped;
+        protected bool hasHopped;
         protected float stopwatch;
         protected Animator animator;
-        private BaseState.HitStopCachedState hitStopCachedState;
-        private Vector3 storedVelocity;
+        protected BaseState.HitStopCachedState hitStopCachedState;
+        protected Vector3 storedVelocity;
+        protected bool isRunning;
 
-        public override void OnEnter()
+        //public override void OnEnter()
+        //{
+        //    base.OnEnter();
+        //    //this.duration = this.baseDuration / this.attackSpeedStat;
+        //    //this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
+        //    this.hasFired = false;
+        //    this.animator = base.GetModelAnimator();
+        //    base.StartAimMode(0.5f + this.duration, false);
+        //    //base.characterBody.outOfCombatStopwatch = 0f;
+        //    this.animator.SetBool("attacking", true);
+
+        //    //HitBoxGroup hitBoxGroup = null;
+        //    //Transform modelTransform = base.GetModelTransform();
+
+        //    //if (modelTransform)
+        //    //{
+        //    //    hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == this.hitboxName);
+        //    //}
+
+        //    //this.attack = new OverlapAttack();
+        //    //this.attack.damageType = this.damageType;
+        //    //this.attack.attacker = base.gameObject;
+        //    //this.attack.inflictor = base.gameObject;
+        //    //this.attack.teamIndex = base.GetTeam();
+        //    //this.attack.damage = this.damageCoefficient * this.damageStat;
+        //    //this.attack.procCoefficient = this.procCoefficient;
+        //    //this.attack.hitEffectPrefab = this.hitEffectPrefab;
+        //    //this.attack.forceVector = this.bonusForce;
+        //    //this.attack.pushAwayForce = this.pushForce;
+        //    //this.attack.hitBoxGroup = hitBoxGroup;
+        //    //this.attack.isCrit = base.RollCrit();
+        //    //this.attack.impactSound = this.impactSound;
+        //}
+
+        public override void OnExit()
         {
-            base.OnEnter();
-            this.duration = this.baseDuration / this.attackSpeedStat;
-            this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
-            this.hasFired = false;
-            this.animator = base.GetModelAnimator();
-            base.StartAimMode(0.5f + this.duration, false);
-            base.characterBody.outOfCombatStopwatch = 0f;
-            this.animator.SetBool("attacking", true);
-
-            HitBoxGroup hitBoxGroup = null;
-            Transform modelTransform = base.GetModelTransform();
-
-            if (modelTransform)
-            {
-                hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == this.hitboxName);
-            }
-
-            this.PlayAttackAnimation();
-
-            this.attack = new OverlapAttack();
-            this.attack.damageType = this.damageType;
-            this.attack.attacker = base.gameObject;
-            this.attack.inflictor = base.gameObject;
-            this.attack.teamIndex = base.GetTeam();
-            this.attack.damage = this.damageCoefficient * this.damageStat;
-            this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
-            this.attack.forceVector = this.bonusForce;
-            this.attack.pushAwayForce = this.pushForce;
-            this.attack.hitBoxGroup = hitBoxGroup;
-            this.attack.isCrit = base.RollCrit();
-            this.attack.impactSound = this.impactSound;
+            if (!this.hasFired /*&& !this.cancelled*/) this.FireAttack();
+            this.animator.SetBool("attacking", false);
+            base.OnExit();
         }
 
         protected virtual void PlayAttackAnimation()
         {
-            base.PlayCrossfade("Gesture, Override", "Slash" + (1 + swingIndex), "Slash.playbackRate", this.duration, 0.05f);
-        }
-
-        public override void OnExit()
-        {
-            if (!this.hasFired && !this.cancelled) this.FireAttack();
-
-            base.OnExit();
-
-            this.animator.SetBool("attacking", false);
+            //base.PlayCrossfade("Gesture, Override", "Punch", "punch.playbackRate", this.duration, 0.05f);
         }
 
         protected virtual void PlaySwingEffect()
@@ -118,16 +115,17 @@ namespace GanondorfMod.SkillStates.BaseStates
             if (!this.inHitPause && this.hitStopDuration > 0f)
             {
                 this.storedVelocity = base.characterMotor.velocity;
-                this.hitStopCachedState = base.CreateHitStopCachedState(base.characterMotor, this.animator, "Slash.playbackRate");
+                this.hitStopCachedState = base.CreateHitStopCachedState(base.characterMotor, this.animator, "punch.playbackRate");
                 this.hitPauseTimer = this.hitStopDuration / this.attackSpeedStat;
                 this.inHitPause = true;
             }
         }
 
-        private void FireAttack()
+        public virtual void FireAttack()
         {
             if (!this.hasFired)
             {
+                this.PlayAttackAnimation();
                 this.hasFired = true;
                 Util.PlayAttackSpeedSound(this.swingSoundString, base.gameObject, this.attackSpeedStat);
 
@@ -142,7 +140,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             {
                 if (this.attack.Fire())
                 {
-                    //this.OnHitEnemyAuthority();
+                    this.OnHitEnemyAuthority();
                 }
             }
         }
@@ -164,6 +162,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             base.FixedUpdate();
 
             this.hitPauseTimer -= Time.fixedDeltaTime;
+            this.stopwatch += Time.fixedDeltaTime;
 
             if (this.hitPauseTimer <= 0f && this.inHitPause)
             {
@@ -179,7 +178,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             else
             {
                 if (base.characterMotor) base.characterMotor.velocity = Vector3.zero;
-                if (this.animator) this.animator.SetFloat("Swing.playbackRate", 0f);
+                if (this.animator) this.animator.SetFloat("punch.playbackRate", 0f);
             }
 
             if (this.stopwatch >= (this.duration * this.attackStartTime) && this.stopwatch <= (this.duration * this.attackEndTime))
@@ -187,15 +186,15 @@ namespace GanondorfMod.SkillStates.BaseStates
                 this.FireAttack();
             }
 
-            if (this.stopwatch >= (this.duration - this.earlyExitTime) && base.isAuthority)
-            {
-                if (base.inputBank.skill1.down)
-                {
-                    if (!this.hasFired) this.FireAttack();
-                    this.SetNextState();
-                    return;
-                }
-            }
+            //if (this.stopwatch >= (this.duration - this.earlyExitTime) && base.isAuthority)
+            //{
+            //    if (base.inputBank.skill1.down)
+            //    {
+            //        if (!this.hasFired) this.FireAttack();
+            //        this.SetNextState();
+            //        return;
+            //    }
+            //}
 
             if (this.stopwatch >= this.duration && base.isAuthority)
             {

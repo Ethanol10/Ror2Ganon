@@ -9,7 +9,7 @@ namespace GanondorfMod.SkillStates
         public static float damageCoefficient = Modules.StaticValues.gunDamageCoefficient;
         public static float procCoefficient = 1f;
         public static float baseDuration = 0.6f;
-        public static float force = 800f;
+        public static float force = 10000f;
         public static float recoil = 3f;
         public static float range = 256f;
         public static GameObject tracerEffectPrefab = Resources.Load<GameObject>("Prefabs/Effects/Tracers/TracerGoldGat");

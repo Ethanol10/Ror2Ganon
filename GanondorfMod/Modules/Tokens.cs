@@ -11,10 +11,11 @@ namespace GanondorfMod.Modules
             string prefix = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_";
 
             string desc = "Ganondorf, the Great King of Evil has arrived! <color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Lay down a simple punch and send foes flying, or dash through enemies!" + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Use Flame Choke to grab multiple enemies in a row!" + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Wizard's Foot sends you hurling through enemies!" + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Soak up damage and retaliate with Warlock Punch!" + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Lay down a simple punch and send foes flying, or dash through enemies." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Use kicks to swiftly deal with aerial foes." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Use Flame Choke to grab multiple enemies in a row, disabling them in the process." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Wizard's Foot is a great mobility tool, and a way to send enemies flying." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Soak up damage and retaliate with Warlock Punch." + Environment.NewLine + Environment.NewLine;
 
             string outro = "..and so he left, spreading malice in his wake.";
             string outroFailure = "..and so he vanished, looking for stronger foes.";
@@ -28,7 +29,7 @@ namespace GanondorfMod.Modules
 
             #region Skins
             LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
-            LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Purple");
+            LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Regal");
             #endregion
 
             #region Passive

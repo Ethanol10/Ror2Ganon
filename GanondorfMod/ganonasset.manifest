@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4058048358
+CRC: 1458519417
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 35417c3f40427c8ce4c2733876e7586b
+    Hash: 5879d739436a67ea0f318ee0f03149d3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 57b04cf951af638d274137be6636c262
@@ -70,11 +70,12 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
 - Assets/GanonAsset/Material/ganonTex04.mat
+- Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
 - Assets/GanonAsset/Mesh/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
 - Assets/GanonAsset/Animator/Animations/RunBrake.anim
-- Assets/GanonAsset/icons/ganonIconTex.png
+- Assets/GanonAsset/icons/texGanondorfIcon.png
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
@@ -89,11 +90,11 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Punch.anim
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
-- Assets/GanonAsset/icons/ganonIcon.png
 - Assets/GanonAsset/Animator/Animations/Falling.anim
 - Assets/GanonAsset/Animator/Animations/Wait1.anim
 - Assets/GanonAsset/Animator/Animations/SecondJump.anim
 - Assets/GanonAsset/Animator/GanonLobby.controller
 - Assets/GanonAsset/Animator/Animations/GroundedGrabFinish.anim
+- Assets/GanonAsset/Animator/Animations/Grabbing.anim
 - Assets/GanonAsset/Animator/Animations/Jump.anim
 Dependencies: []
