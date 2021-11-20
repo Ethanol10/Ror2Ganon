@@ -116,7 +116,7 @@ namespace GanondorfMod.SkillStates
             if (NetworkServer.active)
             {
                 //Add buffs here
-                //base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 3f * this.duration);
+                base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 2f * this.duration);
                 //base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * this.duration);
 
                 //Disable Fall damage

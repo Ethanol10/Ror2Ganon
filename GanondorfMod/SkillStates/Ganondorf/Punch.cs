@@ -13,8 +13,10 @@ namespace GanondorfMod.SkillStates
         protected bool isAttacking;
         // LIGHT ATTACK IN THE AIR WHEN DOUBLE KICKING.
         // Second part of kicking will use the default melee hit
-        protected string lightKickSoundString = "";
-        protected string lightKickHitSoundString = "";
+        protected string lightKickSoundString = "attack2";
+        protected string heavyKickSoundString = "attack6";
+        protected string lightKickHitSoundString = "attack1sfx";
+        protected string heavyKickHitSoundString = "attack2sfx";
         //protected GameObject swingEffectPrefab;
         //protected GameObject hitEffectPrefab;
         private OverlapAttack lightKickAttack;
@@ -30,13 +32,13 @@ namespace GanondorfMod.SkillStates
         // DASH ATTACK
         // should stop the player from dashing right after move finishes.
         // Though I think all primary's are not set to agile so maybe we don't need to worry about it.
-        protected string dashSoundString = "";
-        protected string dashHitSoundString = "";
+        protected string dashSoundString = "tauntSpin";
+        protected string dashHitSoundString = "attack2sfx";
         //protected GameObject swingEffectPrefab;
         //protected GameObject hitEffectPrefab;
         private bool wasSprinting;
         protected float dashDuration = 0.25f;
-        protected float initialSpeedCoefficient = 5f;
+        protected float initialSpeedCoefficient = 6f;
         protected float finalSpeedCoefficient = 1f;
         private float dashSpeed;
         private Vector3 forwardDirection;
@@ -47,6 +49,7 @@ namespace GanondorfMod.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            this.swingSoundString = "tauntSpin";
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
@@ -127,8 +130,17 @@ namespace GanondorfMod.SkillStates
 
         protected override void OnHitEnemyAuthority()
         {
-            Util.PlaySound(this.hitSoundString, base.gameObject);
-
+            if (punchActive) {
+                Util.PlaySound(this.hitSoundString, base.gameObject);
+            }
+            if (dashActive)
+            {
+                Util.PlaySound(this.hitSoundString, base.gameObject);
+            }
+            if (kickActive)
+            {
+                Util.PlaySound(this.heavyKickHitSoundString, base.gameObject);
+            }
             if (!this.hasHopped)
             {
                 if (base.characterMotor && !base.characterMotor.isGrounded && this.hitHopVelocity > 0f)
@@ -238,6 +250,7 @@ namespace GanondorfMod.SkillStates
             {
                 if (lightKickAttack.Fire())
                 {
+                    Util.PlaySound(this.lightKickHitSoundString, base.gameObject);
                     this.OnHitEnemyAuthority();
                 }
             }
@@ -277,7 +290,7 @@ namespace GanondorfMod.SkillStates
             DamageType dmgType = DamageType.Stun1s;
             float dmgCoeff = Modules.StaticValues.dashDamageCoefficient;
             float procCoeff = 1f;
-            float pushFrce = 1000f;
+            float pushFrce = 500f;
             Vector3 bonusFrce = Vector3.zero;
             float baseDur = 1.25f;
             float atkStartTime = 0.291f;
@@ -370,7 +383,7 @@ namespace GanondorfMod.SkillStates
             }
             this.damageType = DamageType.Generic;
             this.procCoefficient = 1f;
-            this.pushForce = 800f;
+            this.pushForce = 600f;
             this.bonusForce = Vector3.zero;
             this.baseDuration = 1.5f;
             this.attackStartTime = 0.75f;
@@ -410,7 +423,7 @@ namespace GanondorfMod.SkillStates
             this.damageType = DamageType.Generic;
             this.damageCoefficient = Modules.StaticValues.punchDamageCoefficient;
             this.procCoefficient = 1f;
-            this.pushForce = 600f;
+            this.pushForce = 1500f;
             this.bonusForce = Vector3.zero;
             this.baseDuration = 1.13f;
             this.attackStartTime = 0.3f;

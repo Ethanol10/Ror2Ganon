@@ -13,13 +13,13 @@ namespace GanondorfMod.Modules
 
 
         //Damage coefficients govern how much the base damage should be multiplied
-        internal const float punchDamageCoefficient = 10.0f;
+        internal const float punchDamageCoefficient = 3.0f;
 
         internal const float lightKickDamageCoefficient = 2.0f;
 
-        internal const float heavyKickDamageCoefficient = 9.0f;
+        internal const float heavyKickDamageCoefficient = 3.5f;
 
-        internal const float dashDamageCoefficient = 8.5f;
+        internal const float dashDamageCoefficient = 3.25f;
 
         internal const float gunDamageCoefficient = 4.2f;
 
