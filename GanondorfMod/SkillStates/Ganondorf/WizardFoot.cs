@@ -11,7 +11,7 @@ namespace GanondorfMod.SkillStates
     { 
         protected float duration = 0.75f;
         public static float initialSpeedCoefficient = 4f;
-        public static float finalSpeedCoefficient = 4f;
+        public static float finalSpeedCoefficient = 3.5f;
 
         public static string wizardFootSoundString = "";
         protected string hitSoundString = "attack1sfx";
@@ -116,7 +116,7 @@ namespace GanondorfMod.SkillStates
             if (NetworkServer.active)
             {
                 //Add buffs here
-                base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 2f * this.duration);
+                base.characterBody.AddTimedBuffAuthority(Modules.Buffs.armorBuff.buffIndex, this.duration);
                 //base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * this.duration);
 
                 //Disable Fall damage
@@ -202,6 +202,7 @@ namespace GanondorfMod.SkillStates
             }
             if (base.isAuthority && base.fixedAge >= this.duration)
             {
+                this.animator.SetBool("isKicking", false);
                 this.outer.SetNextStateToMain();
                 return;
             }
@@ -244,10 +245,11 @@ namespace GanondorfMod.SkillStates
         }
 
         public override void OnExit()
-        {
+        { 
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.characterBody.bodyFlags = CharacterBody.BodyFlags.None;
             modelTrans.rotation = Quaternion.identity;
+            this.animator.SetBool("isKicking", false);
             base.OnExit();
             this.animator.SetBool("attacking", false);
             base.characterMotor.disableAirControlUntilCollision = false;
@@ -263,6 +265,11 @@ namespace GanondorfMod.SkillStates
         {
             base.OnDeserialize(reader);
             this.aimRayDir = reader.ReadVector3();
+        }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Skill;
         }
     }
 }

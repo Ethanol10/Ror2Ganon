@@ -1,7 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 35644029	ganonDying			\Default Work Unit\ganonDying	
 146629585	tauntPunchThunder			\Default Work Unit\tauntPunchThunder	
+524054676	hardAttack2			\Default Work Unit\hardAttack2	
 524054677	hardAttack3			\Default Work Unit\hardAttack3	
+524054679	hardAttack1			\Default Work Unit\hardAttack1	
+803904150	memeExplosion			\Default Work Unit\memeExplosion	
 1000519620	darkDiveSFX			\Default Work Unit\darkDiveSFX	
 1071740825	jump2			\Default Work Unit\jump2	
 1071740826	jump1			\Default Work Unit\jump1	

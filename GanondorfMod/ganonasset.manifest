@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1458519417
+CRC: 1154931014
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5879d739436a67ea0f318ee0f03149d3
+    Hash: ef5a8d1b11566d86152302f2533bacc6
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 57b04cf951af638d274137be6636c262
+    Hash: 6df0a8599ff25f96bdf88010d0b9233e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -45,18 +45,22 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 751bd37d2e55f5f448dbb0d97812d9ba, type: 3}
 - Class: 115
   Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
 - Class: 136
   Script: {instanceID: 0}
 - Class: 137
+  Script: {instanceID: 0}
+- Class: 144
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 319
   Script: {instanceID: 0}
 Assets:
-- Assets/GanonAsset/Animator/fullBodyMask.mask
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
 - Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
+- Assets/GanonAsset/Prefab/mdlGanondorf.prefab
 - Assets/GanonAsset/Animator/Animations/Taunt1.anim
 - Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
 - Assets/GanonAsset/Animator/GanonAnimator.controller
@@ -68,7 +72,8 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickEnd.anim
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
-- Assets/GanonAsset/Prefab/mdlGanondorf.prefab
+- Assets/GanonAsset/Prefab/mdlNoRagdoll.prefab
+- Assets/GanonAsset/Animator/upperbodymask.mask
 - Assets/GanonAsset/Material/ganonTex04.mat
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
@@ -89,6 +94,7 @@ Assets:
 - Assets/GanonAsset/Material/ganontex.mat
 - Assets/GanonAsset/Animator/Animations/Punch.anim
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
+- Assets/GanonAsset/Animator/Animations/warlockNofoot.anim
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
 - Assets/GanonAsset/Animator/Animations/Falling.anim
 - Assets/GanonAsset/Animator/Animations/Wait1.anim

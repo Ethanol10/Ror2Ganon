@@ -1,4 +1,5 @@
-﻿using GanondorfMod.SkillStates.BaseStates;
+﻿using EntityStates;
+using GanondorfMod.SkillStates.BaseStates;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -14,7 +15,7 @@ namespace GanondorfMod.SkillStates
         // LIGHT ATTACK IN THE AIR WHEN DOUBLE KICKING.
         // Second part of kicking will use the default melee hit
         protected string lightKickSoundString = "attack2";
-        protected string heavyKickSoundString = "attack6";
+        protected string heavyKickSoundString = "attack1";
         protected string lightKickHitSoundString = "attack1sfx";
         protected string heavyKickHitSoundString = "attack2sfx";
         //protected GameObject swingEffectPrefab;
@@ -32,7 +33,7 @@ namespace GanondorfMod.SkillStates
         // DASH ATTACK
         // should stop the player from dashing right after move finishes.
         // Though I think all primary's are not set to agile so maybe we don't need to worry about it.
-        protected string dashSoundString = "tauntSpin";
+        protected string dashSoundString = "attack3";
         protected string dashHitSoundString = "attack2sfx";
         //protected GameObject swingEffectPrefab;
         //protected GameObject hitEffectPrefab;
@@ -83,7 +84,8 @@ namespace GanondorfMod.SkillStates
                 this.previousPosition = base.transform.position - b;
                 if (NetworkServer.active)
                 {
-                    base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, 3f * dashDuration);
+                    base.characterBody.AddTimedBuffAuthority(Modules.Buffs.armorBuff.buffIndex, dashDuration * 4.0f); 
+                    //duration is so short in multiplayer that I had to crank this up, it basically never gets applied at .25f
                 }
             }
             else if (!isGrounded)
@@ -238,7 +240,7 @@ namespace GanondorfMod.SkillStates
             {
                 lightKickFired = true;
                 Util.PlayAttackSpeedSound(this.swingSoundString, base.gameObject, this.attackSpeedStat);
-
+                Util.PlaySound(this.lightKickSoundString, base.gameObject);
                 if (base.isAuthority)
                 {
                     this.PlaySwingEffect();
@@ -250,7 +252,6 @@ namespace GanondorfMod.SkillStates
             {
                 if (lightKickAttack.Fire())
                 {
-                    Util.PlaySound(this.lightKickHitSoundString, base.gameObject);
                     this.OnHitEnemyAuthority();
                 }
             }
@@ -263,6 +264,13 @@ namespace GanondorfMod.SkillStates
                 
                 this.hasFired = true;
                 Util.PlayAttackSpeedSound(this.swingSoundString, base.gameObject, this.attackSpeedStat);
+                if (kickActive)
+                {
+                    Util.PlaySound(this.heavyKickSoundString, base.gameObject);
+                }
+                else {
+                    Util.PlaySound(this.dashSoundString, base.gameObject);
+                }
 
                 if (base.isAuthority)
                 {
@@ -295,7 +303,7 @@ namespace GanondorfMod.SkillStates
             float baseDur = 1.25f;
             float atkStartTime = 0.291f;
             float atkEndTime = 0.8f;
-            float bseEarlyExitTime = 1.1f;
+            float bseEarlyExitTime = 1.3f;
             float hitStopDur = 0.1f;
             float atkRecoil = 0.75f;
             float hitHopVelo = 4f;
@@ -339,7 +347,7 @@ namespace GanondorfMod.SkillStates
             float baseDur = 1.5f;
             float atkStartTime = 0.1f;
             float atkEndTime = 0.33f;
-            float bseEarlyExitTime = 1.3f;
+            float bseEarlyExitTime = 1.4f;
             float hitStopDur = 0.012f;
             float atkRecoil = 0.75f;
             float hitHopVelo = 10f;
@@ -423,12 +431,12 @@ namespace GanondorfMod.SkillStates
             this.damageType = DamageType.Generic;
             this.damageCoefficient = Modules.StaticValues.punchDamageCoefficient;
             this.procCoefficient = 1f;
-            this.pushForce = 1500f;
-            this.bonusForce = Vector3.zero;
+            this.pushForce = 4000f;
+            this.bonusForce = forwardDirection;
             this.baseDuration = 1.13f;
             this.attackStartTime = 0.3f;
             this.attackEndTime = 0.55f;
-            this.baseEarlyExitTime = 0.96f;
+            this.baseEarlyExitTime = 1.1f;
             this.hitStopDuration = 0.02f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 6f;
@@ -464,6 +472,11 @@ namespace GanondorfMod.SkillStates
 
             this.duration = this.baseDuration / this.attackSpeedStat;
             this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
+        }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Skill;
         }
     }
 }

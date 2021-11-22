@@ -18,7 +18,7 @@ namespace GanondorfMod.Modules
 
             entityStates.Add(typeof(WizardFoot));
 
-            entityStates.Add(typeof(ThrowBomb));
+            entityStates.Add(typeof(WarlockPunch));
         }
     }
 }

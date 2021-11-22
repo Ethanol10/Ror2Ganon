@@ -71,6 +71,7 @@ namespace GanondorfMod
         {
             // run hooks here, disabling one is as simple as commenting out the line
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
+            On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
         }
 
         private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
@@ -86,5 +87,13 @@ namespace GanondorfMod
                 }
             }
         }
+
+        private void CharacterBody_OnDeathStart(On.RoR2.CharacterBody.orig_OnDeathStart orig, CharacterBody self) {
+            orig(self);
+            if (self.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME") {
+                Util.PlaySound("ganonDying", self.gameObject);
+            }
+        }
+        
     }
 }

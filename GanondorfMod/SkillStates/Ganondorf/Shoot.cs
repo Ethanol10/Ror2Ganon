@@ -6,7 +6,7 @@ namespace GanondorfMod.SkillStates
 {
     public class Shoot : BaseSkillState
     {
-        public static float damageCoefficient = Modules.StaticValues.gunDamageCoefficient;
+        public static float damageCoefficient = Modules.StaticValues.flameChokeDamageCoefficient;
         public static float procCoefficient = 1f;
         public static float baseDuration = 0.6f;
         public static float force = 10000f;
