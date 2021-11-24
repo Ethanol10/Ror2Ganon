@@ -3,6 +3,7 @@ using RoR2;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using EntityStates;
 
 namespace GanondorfMod.Modules.Survivors
 {

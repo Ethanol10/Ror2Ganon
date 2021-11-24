@@ -85,7 +85,7 @@ namespace GanondorfMod.SkillStates
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();
-            attack.damage = Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat;
+            attack.damage = Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat * (this.moveSpeedStat / 2.0f);
             attack.procCoefficient = this.procCoefficient;
             attack.forceVector = this.bonusForce;
             attack.pushAwayForce = this.pushForce;
@@ -119,7 +119,7 @@ namespace GanondorfMod.SkillStates
                 //base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * this.duration);
 
                 //Disable Fall damage
-                base.characterBody.bodyFlags = CharacterBody.BodyFlags.IgnoreFallDamage;
+                base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             }
         }
 
@@ -136,11 +136,14 @@ namespace GanondorfMod.SkillStates
         {
             base.FixedUpdate();
             this.RecalculateRollSpeed();
+            //Update hitpause timer
             this.hitPauseTimer -= Time.fixedDeltaTime;
 
+            //Change forward to aimDirection and update FOV
             if (base.characterDirection) base.characterDirection.forward = this.aimRayDir;
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = Mathf.Lerp(WizardFoot.dodgeFOV, 60f, base.fixedAge / this.duration);
 
+            //Update velocity vector
             Vector3 normalized = (base.transform.position - this.previousPosition).normalized;
             if (base.characterMotor && base.characterDirection && normalized != Vector3.zero)
             {
@@ -175,6 +178,7 @@ namespace GanondorfMod.SkillStates
                 FireAttack();
             }
 
+            //Check if the kick should end , and set next state to main
             if (this.duration - base.fixedAge < this.duration-this.attackEndTime)
             { 
                 this.animator.SetBool("isKicking", false);
@@ -191,7 +195,7 @@ namespace GanondorfMod.SkillStates
             if (!this.hasFired)
             {
                 this.hasFired = true;
-                Util.PlayAttackSpeedSound("wizardFootSE1", base.gameObject, 1.0f);
+                Util.PlayAttackSpeedSound("wizardsFoot", base.gameObject, 1.0f);
 
                 if (base.isAuthority)
                 {
@@ -225,8 +229,9 @@ namespace GanondorfMod.SkillStates
 
         public override void OnExit()
         { 
+            //Clean up by turning off bodyFlags for falldamage and rotate to correct position.
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
-            base.characterBody.bodyFlags = CharacterBody.BodyFlags.None;
+            base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
             modelTrans.rotation = Quaternion.identity;
             this.animator.SetBool("isKicking", false);
             base.OnExit();

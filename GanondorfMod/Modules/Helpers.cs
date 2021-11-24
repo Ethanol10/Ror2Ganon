@@ -6,6 +6,8 @@ namespace GanondorfMod.Modules
     internal static class Helpers
     {
         internal const string agilePrefix = "<style=cIsUtility>Agile.</style> ";
+        internal const string stunningPrefix = "<style=cIsUtility>Stunning.</style>";
+        internal const string heavyPrefix = "<style=cIsUtility>Heavy.</style>";
 
         internal static string ScepterDescription(string desc)
         {

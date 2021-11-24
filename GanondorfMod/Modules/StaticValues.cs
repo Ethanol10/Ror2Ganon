@@ -26,5 +26,7 @@ namespace GanondorfMod.Modules
         internal const float wizardFootDamageCoefficient = 3.0f;
 
         internal const float warlockPunchDamageCoefficient = 15.0f;
+
+        internal const float warlockMemeDamage = 3.0f;
     }
 }

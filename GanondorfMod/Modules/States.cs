@@ -12,9 +12,10 @@ namespace GanondorfMod.Modules
         internal static void RegisterStates()
         {
             entityStates.Add(typeof(BaseMeleeAttack));
-            entityStates.Add(typeof(Punch));
 
-            entityStates.Add(typeof(Shoot));
+            entityStates.Add(typeof(FlameChoke));
+
+            entityStates.Add(typeof(Punch));
 
             entityStates.Add(typeof(WizardFoot));
 

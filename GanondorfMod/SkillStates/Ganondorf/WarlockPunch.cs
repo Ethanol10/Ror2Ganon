@@ -107,6 +107,7 @@ namespace GanondorfMod.SkillStates
             }
         }
 
+        //Fire attack, Pretty standard stuff basically inheriting from base melee attack
         public override void FireAttack()
         {
             if (!this.hasFired)
@@ -131,17 +132,19 @@ namespace GanondorfMod.SkillStates
             }
         }
 
+        //Use base exit.
         public override void OnExit()
         {
             base.OnExit();
         }
 
+        //Setup the hitbox for warlock punch.
         public void setupWarlockPunchHitbox() {
             
             int randomNum = UnityEngine.Random.Range(1, 101);
             if (randomNum < 5)
             {
-                this.damageCoefficient = Modules.StaticValues.warlockPunchDamageCoefficient * 3.0f;
+                this.damageCoefficient = Modules.StaticValues.warlockPunchDamageCoefficient * Modules.StaticValues.warlockMemeDamage;
                 this.voiceLine = "ganonScreamingWarlockPunch";
                 this.pushForce = 100000f;
                 this.swingSoundString = "memeExplosion";

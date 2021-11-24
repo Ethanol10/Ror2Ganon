@@ -34,7 +34,7 @@ namespace GanondorfMod.SkillStates
         private float groundedAttackEnd = 0.5f;
         private float groundedLetGo = 0.6f;
         private BlastAttack attack;
-        private float grabRadius = 5f;
+        private float grabRadius = 8f;
         private bool playedGrabSound = false;
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
@@ -71,15 +71,11 @@ namespace GanondorfMod.SkillStates
             //Play Sound
             Util.PlaySound("grabStartSFX", base.gameObject);
 
-            //base.characterMotor.Motor.ForceUnground();
             //Hopefully this makes him yeet across the map at max speed while grabbing.
-            //base.characterMotor.velocity = Vector3.zero;
 
             base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
-            //base.gameObject.layer = LayerIndex.fakeActor.intVal;
-            //base.characterMotor.Motor.RebuildCollidableLayers();
 
             HitBoxGroup hitBoxGroup = null;
             Transform modelTransform = base.GetModelTransform();
@@ -168,6 +164,7 @@ namespace GanondorfMod.SkillStates
             }
         }
 
+        //Roll code
         private void SpeedBoostOnGrabDuration() {
             this.grabSpeed = this.moveSpeedStat * LerpSpeedCoefficient();
             if (base.characterDirection)
@@ -192,6 +189,7 @@ namespace GanondorfMod.SkillStates
             this.previousPosition = base.transform.position;
         }
 
+        //Lerp code, modified to keep max speed until the last 1/10th of the move.
         private float LerpSpeedCoefficient()
         {
             float lerpVal;

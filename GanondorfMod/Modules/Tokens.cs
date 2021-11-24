@@ -39,26 +39,32 @@ namespace GanondorfMod.Modules
 
             #region Primary
             LanguageAPI.Add(prefix + "PRIMARY_PUNCH_NAME", "Punch");
-            LanguageAPI.Add(prefix + "PRIMARY_PUNCH_DESCRIPTION", "punchDesc");
-                //Helpers.agilePrefix + $"Swing forward for <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "PRIMARY_PUNCH_DESCRIPTION", $"On the ground, punch forward for <style=cIsDamage>{100f * StaticValues.punchDamageCoefficient}% damage</style>."
+                + Environment.NewLine 
+                + Helpers.stunningPrefix + $"When sprinting, dash forward, plowing through enemies for <style=cIsDamage>{100f * StaticValues.dashDamageCoefficient}% damage</style>"
+                + Environment.NewLine
+                + $"When airborne, kick twice for <style=cIsDamage>{100f * StaticValues.lightKickDamageCoefficient}% damage</style>" 
+                + $" and <style=cIsDamage>{100f * StaticValues.heavyKickDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary
             LanguageAPI.Add(prefix + "SECONDARY_KICK_NAME", "Wizard's Foot");
-            LanguageAPI.Add(prefix + "SECONDARY_KICK_DESCRIPTION", "wizardsFootDesc");
-                //Helpers.agilePrefix + $"Fire a handgun for <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_KICK_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
+                $"{100f * StaticValues.wizardFootDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Utility
             LanguageAPI.Add(prefix + "UTILITY_GRAB_NAME", "Flame Choke");
-            LanguageAPI.Add(prefix + "UTILITY_GRAB_DESCRIPTION", "flamechokeDesc");
-                //"Roll a short distance, gaining <style=cIsUtility>300 armor</style>. <style=cIsUtility>You cannot be hit during the roll.</style>");
+            LanguageAPI.Add(prefix + "UTILITY_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing " 
+                + $"<style=cIsDamage>{100f * StaticValues.flameChokeDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Special
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_NAME", "Warlock Punch");
-            LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", "warlockPunchDesc");
-                //$"Throw a bomb for <style=cIsDamage>{100f * StaticValues.bombDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch unleashing" 
+                + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes." 
+                + $" Damage is increased to <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient * StaticValues.warlockMemeDamage}% damage</style> " +
+                $"for a 5% chance.");
             #endregion
 
             #region Achievements

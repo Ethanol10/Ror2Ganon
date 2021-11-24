@@ -35,6 +35,7 @@ namespace GanondorfMod.SkillStates
         // Though I think all primary's are not set to agile so maybe we don't need to worry about it.
         protected string dashSoundString = "lightHitSFX";
         protected string dashHitSoundString = "hardHitsSFX";
+        protected string voiceString = "lightHitsVoice";
         //protected GameObject swingEffectPrefab;
         //protected GameObject hitEffectPrefab;
         private bool wasSprinting;
@@ -49,12 +50,12 @@ namespace GanondorfMod.SkillStates
         //If character is grounded, just use default and call basemeleeattack.
         public override void OnEnter()
         {
+            //Set up animators and intialise bools
             base.OnEnter();
             this.swingSoundString = "swingSFX";
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
-            //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             punchActive = false;
             kickActive = false;
@@ -269,6 +270,7 @@ namespace GanondorfMod.SkillStates
                     Util.PlaySound(this.heavyKickSoundString, base.gameObject);
                 }
                 else {
+                    Util.PlaySound(this.voiceString, base.gameObject);
                     Util.PlaySound(this.dashSoundString, base.gameObject);
                 }
 
@@ -441,7 +443,7 @@ namespace GanondorfMod.SkillStates
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 6f;
 
-            this.swingSoundString = "jump2";
+            this.swingSoundString = "swingSFX";
             this.hitSoundString = "tauntPunchThunder2";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
