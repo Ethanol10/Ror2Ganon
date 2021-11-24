@@ -1,44 +1,24 @@
 Event	ID	Name			Wwise Object Path	Notes
-35644029	ganonDying			\Default Work Unit\ganonDying	
-146629585	tauntPunchThunder			\Default Work Unit\tauntPunchThunder	
-524054676	hardAttack2			\Default Work Unit\hardAttack2	
-524054677	hardAttack3			\Default Work Unit\hardAttack3	
-524054679	hardAttack1			\Default Work Unit\hardAttack1	
-803904150	memeExplosion			\Default Work Unit\memeExplosion	
-1000519620	darkDiveSFX			\Default Work Unit\darkDiveSFX	
-1071740825	jump2			\Default Work Unit\jump2	
-1071740826	jump1			\Default Work Unit\jump1	
-1226067887	stepRight			\Default Work Unit\stepRight	
-1239576695	attack1sfx			\Default Work Unit\attack1sfx	
-1397160316	wizardsFoot1			\Default Work Unit\wizardsFoot1	
-1397160319	wizardsFoot2			\Default Work Unit\wizardsFoot2	
-1636956486	ganonScreamingWarlockPunch			\Default Work Unit\ganonScreamingWarlockPunch	
-1730132946	flameChokeSFXGrabbed			\Default Work Unit\flameChokeSFXGrabbed	
-1762014375	darkDiveSFXGrabbed			\Default Work Unit\darkDiveSFXGrabbed	
-1800641154	spawning			\Default Work Unit\spawning	
-1802380659	tauntSpin			\Default Work Unit\tauntSpin	
-1856041472	darkDiveSFXstart			\Default Work Unit\darkDiveSFXstart	
-1960194505	extraVoiceOttoOtto			\Default Work Unit\extraVoiceOttoOtto	
-2046698775	taunt			\Default Work Unit\taunt	
-2114005892	flameChokeV			\Default Work Unit\flameChokeV	
-2319074293	flameChokeSFXstart			\Default Work Unit\flameChokeSFXstart	
-2468618801	tauntPunchThunder2			\Default Work Unit\tauntPunchThunder2	
-2837319454	flameChokeSFXend			\Default Work Unit\flameChokeSFXend	
-2977624641	warlockAttack1			\Default Work Unit\warlockAttack1	
-2977624642	warlockAttack2			\Default Work Unit\warlockAttack2	
-3147179294	attack2sfx			\Default Work Unit\attack2sfx	
-3149435746	tauntSword			\Default Work Unit\tauntSword	
-3169574177	attack8doriya			\Default Work Unit\attack8doriya	
-3432776928	hmph			\Default Work Unit\hmph	
-3486362616	stepLeft			\Default Work Unit\stepLeft	
-3575969905	wizardFootSE1			\Default Work Unit\wizardFootSE1	
-3768540960	attack7			\Default Work Unit\attack7	
-3768540961	attack6			\Default Work Unit\attack6	
-3768540962	attack5			\Default Work Unit\attack5	
-3768540963	attack4			\Default Work Unit\attack4	
-3768540964	attack3			\Default Work Unit\attack3	
-3768540965	attack2			\Default Work Unit\attack2	
-3768540966	attack1			\Default Work Unit\attack1	
-3798764932	darkDive1			\Default Work Unit\darkDive1	
-3798764935	darkDive2			\Default Work Unit\darkDive2	
-3821647585	tauntPunch			\Default Work Unit\tauntPunch	
+	35644029	ganonDying			\Default Work Unit\ganonDying	
+	206026834	jumpSFX			\Default Work Unit\jumpSFX	
+	572351903	wizardsFoot			\Default Work Unit\wizardsFoot	
+	803904150	memeExplosion			\Default Work Unit\memeExplosion	
+	1082971067	lightHitSFX			\Default Work Unit\lightHitSFX	
+	1260616606	heavyHitsVoice			\Default Work Unit\heavyHitsVoice	
+	1506146985	lightHitsVoice			\Default Work Unit\lightHitsVoice	
+	1636956486	ganonScreamingWarlockPunch			\Default Work Unit\ganonScreamingWarlockPunch	
+	1752481894	grabStartSFX			\Default Work Unit\grabStartSFX	
+	1800641154	Spawning			\Default Work Unit\Spawning	
+	2320755133	hardHitsSFX			\Default Work Unit\hardHitsSFX	
+	2501655105	warlockPunchSFX			\Default Work Unit\warlockPunchSFX	
+	2566988422	swingSFX			\Default Work Unit\swingSFX	
+	2785723162	warlockPunchVoice			\Default Work Unit\warlockPunchVoice	
+	2837319454	flameChokeSFXEnd			\Default Work Unit\flameChokeSFXEnd	
+	3654510015	grabSounds			\Default Work Unit\grabSounds	
+	3798764932	darkDive1			\Default Work Unit\darkDive1	
+	3798764935	darkDive2			\Default Work Unit\darkDive2	
+	4164963883	wizardsFootVoice			\Default Work Unit\wizardsFootVoice	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
+	3695994288	Volume_Master			\Default Work Unit\Volume_Master	

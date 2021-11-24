@@ -50,10 +50,10 @@ namespace GanondorfMod.SkillStates.Ganondorf
             {
                 this.transform.position = this.pivotTransform.position;
             }
-            else
-            {
-                this.Release();
-            }
+            //else
+            //{
+            //    this.Release();
+            //}
 
             if (this.modelTransform)
             {

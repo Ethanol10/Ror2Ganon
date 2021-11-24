@@ -44,14 +44,14 @@ namespace GanondorfMod.Modules
             #endregion
 
             #region Secondary
-            LanguageAPI.Add(prefix + "SECONDARY_GRAB_NAME", "Flame Choke");
-            LanguageAPI.Add(prefix + "SECONDARY_GRAB_DESCRIPTION", "flamechokeDesc");
+            LanguageAPI.Add(prefix + "SECONDARY_KICK_NAME", "Wizard's Foot");
+            LanguageAPI.Add(prefix + "SECONDARY_KICK_DESCRIPTION", "wizardsFootDesc");
                 //Helpers.agilePrefix + $"Fire a handgun for <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Utility
-            LanguageAPI.Add(prefix + "UTILITY_KICK_NAME", "Wizard's Foot");
-            LanguageAPI.Add(prefix + "UTILITY_KICK_DESCRIPTION", "wizardsFootDesc");
+            LanguageAPI.Add(prefix + "UTILITY_GRAB_NAME", "Flame Choke");
+            LanguageAPI.Add(prefix + "UTILITY_GRAB_DESCRIPTION", "flamechokeDesc");
                 //"Roll a short distance, gaining <style=cIsUtility>300 armor</style>. <style=cIsUtility>You cannot be hit during the roll.</style>");
             #endregion
 

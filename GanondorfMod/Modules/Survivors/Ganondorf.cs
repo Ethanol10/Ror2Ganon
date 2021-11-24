@@ -125,48 +125,20 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 0,
             });
             Modules.Skills.AddPrimarySkill(bodyPrefab, punchSkillDef);
-            
+
             #endregion
 
             #region Secondary
-            SkillDef shootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
-            {
-                skillName = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_NAME",
-                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_NAME",
-                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
-                activationStateMachineName = "Weapon",
-                baseMaxStock = 1,
-                baseRechargeInterval = 5.0f,
-                beginSkillCooldownOnSkillEnd = false,
-                canceledFromSprinting = false,
-                forceSprintDuringState = false,
-                fullRestockOnAssign = true,
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
-                resetCooldownTimerOnUse = false,
-                isCombatSkill = true,
-                mustKeyPress = false,
-                cancelSprintingOnActivation = false,
-                rechargeStock = 1,
-                requiredStock = 1,
-                stockToConsume = 1,
-            });
-
-            Modules.Skills.AddSecondarySkills(bodyPrefab, shootSkillDef);
-            #endregion
-
-            #region Utility
             SkillDef wizardFootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_GANONDORF_BODY_UTILITY_KICK_NAME",
-                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_KICK_NAME",
-                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_KICK_DESCRIPTION",
+                skillName = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_KICK_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WizardFoot)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 2,
-                baseRechargeInterval = 4f,
+                baseRechargeInterval = 6.0f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = true,
@@ -181,7 +153,36 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddUtilitySkills(bodyPrefab, wizardFootSkillDef);
+            Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFootSkillDef);
+            #endregion
+
+            #region Utility
+
+            SkillDef flameChoke = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_GRAB_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 5.0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
+
+            Modules.Skills.AddUtilitySkills(bodyPrefab, flameChoke);
             #endregion
 
             #region Special
@@ -202,7 +203,7 @@ namespace GanondorfMod.Modules.Survivors
                 interruptPriority = EntityStates.InterruptPriority.Frozen,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
-                mustKeyPress = false,
+                mustKeyPress = true,
                 cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,

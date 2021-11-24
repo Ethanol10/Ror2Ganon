@@ -139,7 +139,6 @@ namespace GanondorfMod.SkillStates
         public void setupWarlockPunchHitbox() {
             
             int randomNum = UnityEngine.Random.Range(1, 101);
-            Chat.AddMessage("" + randomNum);
             if (randomNum < 5)
             {
                 this.damageCoefficient = Modules.StaticValues.warlockPunchDamageCoefficient * 3.0f;
@@ -148,9 +147,9 @@ namespace GanondorfMod.SkillStates
                 this.swingSoundString = "memeExplosion";
             }
             else {
-                this.swingSoundString = "hardAttack2";
-                this.hitSoundString = "warlockAttack1";
-                this.voiceLine = "warlockAttack1";
+                this.swingSoundString = "warlockPunchSFX";
+                this.hitSoundString = "hardHitsSFX";
+                this.voiceLine = "warlockPunchVoice";
                 this.damageCoefficient = Modules.StaticValues.warlockPunchDamageCoefficient;
                 this.pushForce = 10000f;
             }

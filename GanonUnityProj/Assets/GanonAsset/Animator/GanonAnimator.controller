@@ -123,6 +123,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: performAerialSlam
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: grab.playbackRate
     m_Type: 1
     m_DefaultFloat: 1
@@ -329,16 +335,19 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: enemyCaught
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: performAerialSlam
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102826190204380706}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.07506112
   m_TransitionOffset: 0
-  m_ExitTime: 0.25
-  m_HasExitTime: 1
+  m_ExitTime: 0.547066
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 1
   m_OrderedInterruption: 1
@@ -802,10 +811,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.08185097
   m_TransitionOffset: 0
-  m_ExitTime: 0.97382075
-  m_HasExitTime: 1
+  m_ExitTime: 0.50070095
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 1
   m_OrderedInterruption: 1
@@ -2165,16 +2174,19 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: enemyCaught
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: performAerialSlam
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102310890112356618}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.09660947
   m_TransitionOffset: 0
-  m_ExitTime: 0.25
-  m_HasExitTime: 1
+  m_ExitTime: 0.35827556
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 1
   m_OrderedInterruption: 1
@@ -2350,7 +2362,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrabStart
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101774749439080204}
@@ -2625,7 +2637,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grabbing
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101928947660793542}
@@ -2789,7 +2801,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrabbedGrounded
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101825848558264836}
@@ -3169,7 +3181,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrabbedAerialFalling
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101532126200943698}
@@ -3355,7 +3367,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrabEnd
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101383545173496082}
@@ -3574,7 +3586,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrabbedAerialLanding
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101800012354718856}
@@ -3681,7 +3693,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrabbedAerial
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101096853110477710}
@@ -4156,7 +4168,7 @@ AnimatorStateMachine:
     m_Position: {x: 408, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102006330704838602}
-    m_Position: {x: -648, y: 36, z: 0}
+    m_Position: {x: -624, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102310890112356618}
     m_Position: {x: -120, y: -36, z: 0}

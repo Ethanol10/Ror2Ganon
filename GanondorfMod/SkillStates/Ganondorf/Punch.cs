@@ -14,10 +14,10 @@ namespace GanondorfMod.SkillStates
         protected bool isAttacking;
         // LIGHT ATTACK IN THE AIR WHEN DOUBLE KICKING.
         // Second part of kicking will use the default melee hit
-        protected string lightKickSoundString = "attack2";
-        protected string heavyKickSoundString = "attack1";
-        protected string lightKickHitSoundString = "attack1sfx";
-        protected string heavyKickHitSoundString = "attack2sfx";
+        protected string lightKickSoundString = "lightHitsVoice";
+        protected string heavyKickSoundString = "heavyHitsVoice";
+        protected string lightKickHitSoundString = "lightHitSFX";
+        protected string heavyKickHitSoundString = "hardHitsSFX";
         //protected GameObject swingEffectPrefab;
         //protected GameObject hitEffectPrefab;
         private OverlapAttack lightKickAttack;
@@ -33,8 +33,8 @@ namespace GanondorfMod.SkillStates
         // DASH ATTACK
         // should stop the player from dashing right after move finishes.
         // Though I think all primary's are not set to agile so maybe we don't need to worry about it.
-        protected string dashSoundString = "attack3";
-        protected string dashHitSoundString = "attack2sfx";
+        protected string dashSoundString = "lightHitSFX";
+        protected string dashHitSoundString = "hardHitsSFX";
         //protected GameObject swingEffectPrefab;
         //protected GameObject hitEffectPrefab;
         private bool wasSprinting;
@@ -50,7 +50,7 @@ namespace GanondorfMod.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
-            this.swingSoundString = "tauntSpin";
+            this.swingSoundString = "swingSFX";
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
@@ -350,7 +350,7 @@ namespace GanondorfMod.SkillStates
             float bseEarlyExitTime = 1.4f;
             float hitStopDur = 0.012f;
             float atkRecoil = 0.75f;
-            float hitHopVelo = 10f;
+            float hitHopVelo = 5f;
             HitBoxGroup hitBoxGroup = null;
             Transform modelTransform = base.GetModelTransform();
 
@@ -401,8 +401,8 @@ namespace GanondorfMod.SkillStates
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 10f;
 
-            this.swingSoundString = "jump2";
-            this.hitSoundString = "tauntPunchThunder2";
+            this.swingSoundString = "jumpSFX";
+            this.hitSoundString = "lightHitSFX";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
             //this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;

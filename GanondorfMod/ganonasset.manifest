@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1154931014
+CRC: 3950351833
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ef5a8d1b11566d86152302f2533bacc6
+    Hash: 03e32dca37ef7d18b3901a05007d3b91
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6df0a8599ff25f96bdf88010d0b9233e
@@ -85,13 +85,13 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
-- Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
 - Assets/GanonAsset/Animator/Animations/Landing.anim
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
 - Assets/GanonAsset/Material/ganontex.mat
+- Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
 - Assets/GanonAsset/Animator/Animations/Punch.anim
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
 - Assets/GanonAsset/Animator/Animations/warlockNofoot.anim

@@ -10,11 +10,11 @@ namespace GanondorfMod.SkillStates
     public class WizardFoot : BaseSkillState
     { 
         protected float duration = 0.75f;
-        public static float initialSpeedCoefficient = 4f;
-        public static float finalSpeedCoefficient = 3.5f;
+        public static float initialSpeedCoefficient = 2.5f;
+        public static float finalSpeedCoefficient = 1.5f;
 
-        public static string wizardFootSoundString = "";
-        protected string hitSoundString = "attack1sfx";
+        public static string wizardFootSoundString = "wizardsFootVoice";
+        protected string hitSoundString = "lightHitSFX";
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
 
         private float rollSpeed;
@@ -53,7 +53,6 @@ namespace GanondorfMod.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
-            chooseVoiceLine();
             this.earlyExitTime = this.baseEarlyExitTime;
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
@@ -96,7 +95,7 @@ namespace GanondorfMod.SkillStates
 
             //Calculate speed of kick, as well as rotation.
             this.RecalculateRollSpeed();
-            this.RecalculateModelRot();
+            //this.RecalculateModelRot();
 
             if (base.characterMotor && base.characterDirection)
             {
@@ -121,26 +120,6 @@ namespace GanondorfMod.SkillStates
 
                 //Disable Fall damage
                 base.characterBody.bodyFlags = CharacterBody.BodyFlags.IgnoreFallDamage;
-            }
-        }
-
-        private void chooseVoiceLine() {
-            switch (UnityEngine.Random.Range(0, 5)) {
-                case 0:
-                    wizardFootSoundString = "attack5";
-                    break;
-                case 1:
-                    wizardFootSoundString = "attack6";
-                    break;
-                case 2:
-                    wizardFootSoundString = "wizardsFoot1";
-                    break;
-                case 3:
-                    wizardFootSoundString = "attack7";
-                    break;
-                case 4:
-                    wizardFootSoundString = "attack4";
-                    break;
             }
         }
 
