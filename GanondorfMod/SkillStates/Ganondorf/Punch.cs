@@ -110,8 +110,6 @@ namespace GanondorfMod.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-
-            // this.animator.SetFloat("punch.playbackRate", 1.0f);
             if (base.isGrounded && wasSprinting)
             {
                 base.PlayAnimation("FullBody, Override", "DashAttack", "punch.playbackRate", this.duration);

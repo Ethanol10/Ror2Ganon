@@ -35,6 +35,7 @@ namespace GanondorfMod.SkillStates
         private float groundedLetGo = 0.6f;
         private BlastAttack attack;
         private float grabRadius = 8f;
+        private float invincibilityWindow = 1.5f;
         private bool playedGrabSound = false;
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
@@ -262,6 +263,10 @@ namespace GanondorfMod.SkillStates
                             {
                                 Util.PlaySound("GrabSounds", base.gameObject);
                                 playedGrabSound = true;
+                                if (NetworkServer.active)
+                                {
+                                    base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, this.invincibilityWindow);
+                                }
                             }
                             GrabController grabbedEnemy = singularTarget.healthComponent.body.gameObject.AddComponent<GrabController>();
                             grabbedEnemy.pivotTransform = this.FindModelChild("HandL");
@@ -275,9 +280,6 @@ namespace GanondorfMod.SkillStates
         private bool BodyMeetsGrabConditions(CharacterBody targetBody)
         {
             bool meetsConditions = true;
-
-            //if (targetBody.hullClassification == HullClassification.BeetleQueen) meetsConditions = false;
-
             return meetsConditions;
         }
 

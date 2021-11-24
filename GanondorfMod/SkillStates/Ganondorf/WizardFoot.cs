@@ -85,7 +85,7 @@ namespace GanondorfMod.SkillStates
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();
-            attack.damage = Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat * (this.moveSpeedStat / 2.0f);
+            attack.damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + ( this.damageStat * (this.moveSpeedStat / 2.0f));
             attack.procCoefficient = this.procCoefficient;
             attack.forceVector = this.bonusForce;
             attack.pushAwayForce = this.pushForce;
