@@ -1,7 +1,7 @@
 ﻿using RoR2;
 using UnityEngine;
 
-namespace GanondorfMod.SkillStates.Ganondorf
+namespace GanondorfMod.SkillStates
 {
     public class GrabController : MonoBehaviour
     {

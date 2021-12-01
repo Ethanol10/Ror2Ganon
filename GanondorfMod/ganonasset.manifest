@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3950351833
+CRC: 212380203
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 03e32dca37ef7d18b3901a05007d3b91
+    Hash: 8683c91331fbbd303f0b1c1ad14aeea1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6df0a8599ff25f96bdf88010d0b9233e
@@ -59,6 +59,7 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
+- Assets/GanonAsset/icons/TriforceCouragePlus.png
 - Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
 - Assets/GanonAsset/Animator/Animations/Taunt1.anim
@@ -68,13 +69,16 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Dash.anim
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
+- Assets/GanonAsset/icons/TriforceWisdomPlus.png
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickEnd.anim
+- Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
 - Assets/GanonAsset/Prefab/mdlNoRagdoll.prefab
 - Assets/GanonAsset/Animator/upperbodymask.mask
 - Assets/GanonAsset/Material/ganonTex04.mat
+- Assets/GanonAsset/icons/TriforceIcon.png
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
 - Assets/GanonAsset/Mesh/ganonAvatar.asset

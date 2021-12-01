@@ -77,7 +77,6 @@ namespace GanondorfMod.Modules
             // it should work fine even if left as is- even if the assets aren't in the bundle
 
             punchSFX = CreateNetworkSoundEventDef("attack1sfx");
-
             //bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
 
             //if (bombExplosionEffect)

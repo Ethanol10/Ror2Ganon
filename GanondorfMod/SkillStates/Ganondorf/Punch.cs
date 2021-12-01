@@ -83,9 +83,10 @@ namespace GanondorfMod.SkillStates
                 }
                 Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
                 this.previousPosition = base.transform.position - b;
-                if (NetworkServer.active)
+                if (NetworkClient.active)
                 {
-                    base.characterBody.AddTimedBuffAuthority(Modules.Buffs.armorBuff.buffIndex, dashDuration * 4.0f); 
+                    base.characterBody.AddTimedBuffAuthority(Modules.Buffs.armorBuff.buffIndex, dashDuration * 4.0f);
+                    base.characterBody.OnClientBuffsChanged();
                     //duration is so short in multiplayer that I had to crank this up, it basically never gets applied at .25f
                 }
             }
@@ -159,6 +160,16 @@ namespace GanondorfMod.SkillStates
                 this.hitPauseTimer = this.hitStopDuration / this.attackSpeedStat;
                 this.inHitPause = true;
             }
+
+            GanondorfPlugin.triforceBuff.IncrementBuffCount();
+            //if (NetworkServer.active)
+            //{
+            //if (base.characterBody.GetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex) < 100)
+            //{
+            //    base.characterBody.SetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex, base.characterBody.GetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex) + 1);
+            //    base.characterBody.OnClientBuffsChanged();
+            //}
+            //}
         }
 
         //check based on what attack has been selected at the beginning!
@@ -290,6 +301,7 @@ namespace GanondorfMod.SkillStates
 
         public override void OnExit()
         {
+            if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.OnExit();
         }
 

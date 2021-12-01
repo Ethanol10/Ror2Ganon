@@ -1,5 +1,6 @@
 ﻿using EntityStates;
 using GanondorfMod.SkillStates.BaseStates;
+using GanondorfMod.Modules.Survivors;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -10,6 +11,8 @@ namespace GanondorfMod.SkillStates
     {
         private bool isAttacking;
         private string voiceLine = "";
+        private float dmgMultiplier = 1f;
+        private bool hitEnemy = false;
         
         //If character is grounded, just use default and call basemeleeattack.
         public override void OnEnter()
@@ -22,6 +25,10 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             isAttacking = true;
+            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff) / 2.0f;
+            if (dmgMultiplier < 1.0f) {
+                dmgMultiplier = 1.0f;
+            }
             setupWarlockPunchHitbox();
 
             if (NetworkServer.active)
@@ -42,6 +49,7 @@ namespace GanondorfMod.SkillStates
 
         protected override void OnHitEnemyAuthority()
         {
+            //Apply Hithop velocity.
             if (!this.hasHopped)
             {
                 if (base.characterMotor && !base.characterMotor.isGrounded && this.hitHopVelocity > 0f)
@@ -52,6 +60,7 @@ namespace GanondorfMod.SkillStates
                 this.hasHopped = true;
             }
 
+            //Create hitstop cache.
             if (!this.inHitPause && this.hitStopDuration > 0f)
             {
                 this.storedVelocity = base.characterMotor.velocity;
@@ -59,6 +68,12 @@ namespace GanondorfMod.SkillStates
                 this.hitPauseTimer = this.hitStopDuration / this.attackSpeedStat;
                 this.inHitPause = true;
             }
+
+            GanondorfPlugin.triforceBuff.WipeBuffCount();
+            //base.characterBody.SetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex, 0);
+            //base.characterBody.OnClientBuffsChanged();
+            //}
+
         }
 
         //check based on what attack has been selected at the beginning!
@@ -188,7 +203,7 @@ namespace GanondorfMod.SkillStates
             this.attack.attacker = base.gameObject;
             this.attack.inflictor = base.gameObject;
             this.attack.teamIndex = base.GetTeam();
-            this.attack.damage = this.damageCoefficient * this.damageStat;
+            this.attack.damage = this.damageCoefficient * this.damageStat * this.dmgMultiplier;
             this.attack.procCoefficient = this.procCoefficient;
             this.attack.hitEffectPrefab = this.hitEffectPrefab;
             this.attack.forceVector = this.bonusForce;

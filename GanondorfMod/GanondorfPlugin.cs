@@ -1,4 +1,6 @@
 ﻿using BepInEx;
+using BepInEx.Bootstrap;
+using GanondorfMod.Modules;
 using GanondorfMod.Modules.Survivors;
 using R2API.Utils;
 using RoR2;
@@ -13,6 +15,7 @@ using UnityEngine;
 namespace GanondorfMod
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     [R2APISubmoduleDependency(new string[]
@@ -30,6 +33,13 @@ namespace GanondorfMod
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
         public const string MODVERSION = "0.0.1";
+        
+        //Triforce Buff
+        public static TriforceBuffComponent triforceBuff;
+        private CharacterBody ganondorfCharacterBody;
+        //Scepter Vars
+        public static bool scepterInstalled = false;
+        private static float triforceMaxArmour = 50f;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string developerPrefix = "ETHA10";
@@ -41,6 +51,21 @@ namespace GanondorfMod
         private void Awake()
         {
             instance = this;
+            GanondorfPlugin.instance = this;
+
+            //make triforcebuff and ganondorfcharacterbody null for now.
+            triforceBuff = null;
+            ganondorfCharacterBody = null;
+
+            //Check for ancient scepter plugin
+            
+            bool flag = Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
+            if (flag)
+            {
+                scepterInstalled = true;
+            }
+
+            Debug.Log("ScepterState " + scepterInstalled);
 
             // load assets and read config
             Modules.Assets.Initialize();
@@ -74,18 +99,33 @@ namespace GanondorfMod
             // run hooks here, disabling one is as simple as commenting out the line
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
+            On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
+        }
+
+        private void CharacterBody_FixedUpdate(On.RoR2.CharacterBody.orig_FixedUpdate orig, CharacterBody self) {
+            orig(self);
+
+            //Update buffCount every frame render.
+            if (self.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME")
+            {
+                self.SetBuffCount(Modules.Buffs.triforceBuff.buffIndex, triforceBuff.GetBuffCount());
+            }
         }
 
         private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
         {
             orig(self);
-
             // a simple stat hook, adds armor after stats are recalculated
             if (self)
             {
                 if (self.HasBuff(Modules.Buffs.armorBuff))
                 {
                     self.armor += 300f;
+                }
+                if (self.HasBuff(Modules.Buffs.triforceBuff)) {
+                    if (triforceBuff.GetScepterState()) {
+                        self.armor += triforceBuff.GetBuffCount()/(triforceMaxArmour/100);
+                    }
                 }
             }
         }

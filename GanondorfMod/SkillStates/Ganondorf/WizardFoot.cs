@@ -10,7 +10,7 @@ namespace GanondorfMod.SkillStates
     public class WizardFoot : BaseSkillState
     { 
         protected float duration = 0.75f;
-        public static float initialSpeedCoefficient = 2.5f;
+        public static float initialSpeedCoefficient = 3.0f;
         public static float finalSpeedCoefficient = 1.5f;
 
         public static string wizardFootSoundString = "wizardsFootVoice";
@@ -22,9 +22,6 @@ namespace GanondorfMod.SkillStates
         private Vector3 aimRayDir;
         private Animator animator;
         private Vector3 previousPosition;
-        private Camera playerCam;
-        private Vector3 initialRot;
-        private Vector3 kickRot;
         protected float stopwatch;
         private Vector3 playerRot;
 

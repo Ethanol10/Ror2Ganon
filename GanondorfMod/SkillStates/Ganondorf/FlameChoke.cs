@@ -6,7 +6,7 @@ using RoR2;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Networking;
-using GanondorfMod.SkillStates.Ganondorf;
+using GanondorfMod.SkillStates;
 
 namespace GanondorfMod.SkillStates
 {
@@ -37,6 +37,7 @@ namespace GanondorfMod.SkillStates
         private float grabRadius = 8f;
         private float invincibilityWindow = 1.5f;
         private bool playedGrabSound = false;
+        private bool hasFired = false;
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
         public static float grabEndExplosionRadius = 10f;
@@ -294,11 +295,18 @@ namespace GanondorfMod.SkillStates
                 stopwatch += Time.fixedDeltaTime;
                 if (stopwatch > aerialAttackStart && stopwatch < aerialAttackEnd) {
                     attack.position = this.FindModelChild("HandL").position;
-                    attack.Fire();
+                    if (!hasFired && base.isAuthority)
+                    {
+                        hasFired = true;
+                        attack.Fire();
+                    }
                     //play sounds after firing
                     Util.PlaySound("flameChokeSFXEnd", base.gameObject);
                 }
                 if (stopwatch > aerialLetGo) {
+                    if (!hasFired && base.isAuthority) {
+                        attack.Fire();
+                    }
                     finishMove = true;
                 }
             }
@@ -308,12 +316,19 @@ namespace GanondorfMod.SkillStates
             if (stopwatch > groundedAttackStart && stopwatch < groundedAttackEnd) {
                 base.characterMotor.velocity = Vector3.zero;
                 attack.position = this.FindModelChild("HandL").position;
-                attack.Fire();
+                if (!hasFired && base.isAuthority)
+                {
+                    hasFired = true;
+                    attack.Fire();
+                }
 
                 //Play sounds after firing
                 Util.PlaySound("flameChokeSFXEnd", base.gameObject);
             }
             if (stopwatch >= groundedLetGo) {
+                if (!hasFired && base.isAuthority) {
+                    attack.Fire();
+                }
                 finishMove = true;
             }
         }

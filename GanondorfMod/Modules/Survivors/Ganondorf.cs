@@ -3,7 +3,10 @@ using RoR2;
 using RoR2.Skills;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using AncientScepter;
+using EntityStates;
 
 namespace GanondorfMod.Modules.Survivors
 {
@@ -24,7 +27,7 @@ namespace GanondorfMod.Modules.Survivors
             armorGrowth = 0.01f,
             bodyName = "Ganondorf",
             bodyNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_NAME",
-            bodyColor = Color.grey,
+            bodyColor = Color.red,
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             damage = 24f,
@@ -59,6 +62,17 @@ namespace GanondorfMod.Modules.Survivors
         internal override void InitializeCharacter()
         {
             base.InitializeCharacter();
+
+            //Attach the TriforceBuffComponent
+            GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
+
+            
+            //Initialise Scepter if available
+            if (GanondorfPlugin.scepterInstalled)
+            {
+                Debug.Log("ScepterInstalled2: " + GanondorfPlugin.scepterInstalled);
+                CreateScepterSkills();
+            }
         }
 
         internal override void InitializeUnlockables()
@@ -123,6 +137,7 @@ namespace GanondorfMod.Modules.Survivors
                 rechargeStock = 1,
                 requiredStock = 0,
                 stockToConsume = 0,
+                keywordTokens = new string[] { "KEYWORD_STUNNING" }
             });
             Modules.Skills.AddPrimarySkill(bodyPrefab, punchSkillDef);
 
@@ -150,7 +165,8 @@ namespace GanondorfMod.Modules.Survivors
                 cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,
-                stockToConsume = 1
+                stockToConsume = 1,
+                keywordTokens = new string[] { "KEYWORD_HEAVY" }
             });
 
             Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFootSkillDef);
@@ -186,7 +202,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region Special
-            SkillDef bombSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef WarlockPunch = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
@@ -200,7 +216,7 @@ namespace GanondorfMod.Modules.Survivors
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
-                interruptPriority = EntityStates.InterruptPriority.Frozen,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = true,
@@ -210,9 +226,43 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkills(bodyPrefab, bombSkillDef);
+            Modules.Skills.AddSpecialSkills(bodyPrefab, WarlockPunch);
             #endregion
         }
+
+        #region ScepterSkills
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void CreateScepterSkills()
+        {
+            string prefix = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_";
+            SkillDef replacingDef = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "SCEPTERSPECIAL_NAME",
+                skillNameToken = prefix + "SCEPTERSPECIAL_NAME",
+                skillDescriptionToken = prefix + "SCEPTERSPECIAL_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforcePower"),
+                activationState = new SerializableEntityStateType(typeof(SkillStates.WarlockPunchScepter)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
+            ItemBase<AncientScepterItem>.instance.RegisterScepterSkill(replacingDef, instance.fullBodyName, SkillSlot.Special, 0);
+            Debug.Log("scepterSkill updated?");
+        }
+
+        #endregion
 
         internal override void InitializeSkins()
         {
