@@ -70,7 +70,6 @@ namespace GanondorfMod.Modules.Survivors
             //Initialise Scepter if available
             if (GanondorfPlugin.scepterInstalled)
             {
-                Debug.Log("ScepterInstalled2: " + GanondorfPlugin.scepterInstalled);
                 CreateScepterSkills();
             }
         }
@@ -259,7 +258,6 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1,
             });
             AncientScepterItem.instance.RegisterScepterSkill(replacingDef, instance.fullBodyName, SkillSlot.Special, 0);
-            Debug.Log("scepterSkill updated?");
         }
 
         #endregion

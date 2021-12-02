@@ -63,8 +63,6 @@ namespace GanondorfMod
                 scepterInstalled = true;
             }
 
-            Debug.Log("ScepterState " + scepterInstalled);
-
             // load assets and read config
             Modules.Assets.Initialize();
             Modules.Config.ReadConfig();
