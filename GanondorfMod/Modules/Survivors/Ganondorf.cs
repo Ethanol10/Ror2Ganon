@@ -25,7 +25,7 @@ namespace GanondorfMod.Modules.Survivors
         {
             armor = 20f,
             armorGrowth = 0.01f,
-            bodyName = "Ganondorf",
+            bodyName = "GanondorfBody",
             bodyNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_NAME",
             bodyColor = Color.red,
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
@@ -232,7 +232,7 @@ namespace GanondorfMod.Modules.Survivors
 
         #region ScepterSkills
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private static void CreateScepterSkills()
+        private void CreateScepterSkills()
         {
             string prefix = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_";
             SkillDef replacingDef = Skills.CreateSkillDef(new SkillDefInfo
@@ -249,7 +249,7 @@ namespace GanondorfMod.Modules.Survivors
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
-                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                interruptPriority = InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = true,
@@ -258,7 +258,7 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
-            ItemBase<AncientScepterItem>.instance.RegisterScepterSkill(replacingDef, instance.fullBodyName, SkillSlot.Special, 0);
+            AncientScepterItem.instance.RegisterScepterSkill(replacingDef, instance.fullBodyName, SkillSlot.Special, 0);
             Debug.Log("scepterSkill updated?");
         }
 

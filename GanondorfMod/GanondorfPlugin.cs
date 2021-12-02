@@ -39,7 +39,7 @@ namespace GanondorfMod
         private CharacterBody ganondorfCharacterBody;
         //Scepter Vars
         public static bool scepterInstalled = false;
-        private static float triforceMaxArmour = 50f;
+        private static float triforceMaxArmour = 25f;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string developerPrefix = "ETHA10";
@@ -58,9 +58,7 @@ namespace GanondorfMod
             ganondorfCharacterBody = null;
 
             //Check for ancient scepter plugin
-            
-            bool flag = Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
-            if (flag)
+            if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
             {
                 scepterInstalled = true;
             }

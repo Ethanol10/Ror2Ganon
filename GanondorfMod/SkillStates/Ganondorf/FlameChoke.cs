@@ -227,8 +227,9 @@ namespace GanondorfMod.SkillStates
                     }
                 }
             }
-
-            base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
+            if (NetworkServer.active) {
+                base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
+            }
         }
 
         //Attempt grab, don't stop for any enemy.

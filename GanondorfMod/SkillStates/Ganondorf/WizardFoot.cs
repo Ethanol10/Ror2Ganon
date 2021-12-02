@@ -228,7 +228,9 @@ namespace GanondorfMod.SkillStates
         { 
             //Clean up by turning off bodyFlags for falldamage and rotate to correct position.
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
-            base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
+            if (NetworkServer.active) {
+                base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
+            }
             modelTrans.rotation = Quaternion.identity;
             this.animator.SetBool("isKicking", false);
             base.OnExit();

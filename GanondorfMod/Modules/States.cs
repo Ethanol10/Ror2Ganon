@@ -2,6 +2,7 @@
 using GanondorfMod.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
+using AncientScepter;
 
 namespace GanondorfMod.Modules
 {
