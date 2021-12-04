@@ -271,6 +271,7 @@ namespace GanondorfMod.Modules
             mat.SetColor("_EmColor", emissionColor);
             mat.SetFloat("_EmPower", emission);
             mat.SetTexture("_EmTex", tempMat.GetTexture("_EmissionMap"));
+            mat.SetTexture("_BumpMap", tempMat.GetTexture("_BumpMap"));
             mat.SetFloat("_NormalStrength", normalStrength);
 
             return mat;

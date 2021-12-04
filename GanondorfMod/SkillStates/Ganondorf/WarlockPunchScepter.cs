@@ -17,12 +17,6 @@ namespace GanondorfMod.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
-            //Turn on scepter.
-            if (!GanondorfPlugin.triforceBuff.GetScepterState()) {
-                GanondorfPlugin.triforceBuff.SetScepterActive(true);
-            }
-
-            Chat.AddMessage("ayylmao this skill works for some reason bUT IT DOESN'T WORK WITH THE DAMN SCEPTER CODE.");
             this.swingSoundString = "tauntSpin";
             this.hasFired = false;
             this.animator = base.GetModelAnimator();

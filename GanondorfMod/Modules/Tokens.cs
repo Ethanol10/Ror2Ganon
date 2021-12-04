@@ -31,6 +31,7 @@ namespace GanondorfMod.Modules
             #region Skins
             LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
             LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Regal");
+            LanguageAPI.Add(prefix + "SKIN2_NAME", "Ancient");
             #endregion
 
             #region Passive

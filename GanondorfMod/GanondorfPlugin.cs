@@ -39,7 +39,7 @@ namespace GanondorfMod
         private CharacterBody ganondorfCharacterBody;
         //Scepter Vars
         public static bool scepterInstalled = false;
-        private static float triforceMaxArmour = 25f;
+        private static float triforceMaxArmour = 30f;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string developerPrefix = "ETHA10";
@@ -96,6 +96,17 @@ namespace GanondorfMod
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
+            On.RoR2.GenericPickupController.GrantItem += GenericPickupController_GrantItem;
+        }
+
+        private void GenericPickupController_GrantItem(On.RoR2.GenericPickupController.orig_GrantItem orig, GenericPickupController self, CharacterBody body, Inventory inventory) {
+            orig(self, body, inventory);
+            if (body.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME") {
+                if (self.pickupIndex.ToString() == "ItemIndex.ITEM_ANCIENT_SCEPTER") {
+                    body.gameObject.GetComponent<TriforceBuffComponent>().SetScepterActive(true);
+                }
+            }
+
         }
 
         private void CharacterBody_FixedUpdate(On.RoR2.CharacterBody.orig_FixedUpdate orig, CharacterBody self) {
@@ -120,7 +131,7 @@ namespace GanondorfMod
                 }
                 if (self.HasBuff(Modules.Buffs.triforceBuff)) {
                     if (triforceBuff.GetScepterState()) {
-                        self.armor += triforceBuff.GetBuffCount()/(triforceMaxArmour/100);
+                        self.armor += triforceBuff.GetBuffCount()*(triforceMaxArmour/100);
                     }
                 }
             }

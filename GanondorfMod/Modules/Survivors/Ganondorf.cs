@@ -278,7 +278,7 @@ namespace GanondorfMod.Modules.Survivors
 
             #region DefaultSkin
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_DEFAULT_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin0"),
                 defaultRenderers,
                 mainRenderer,
                 model);
@@ -295,9 +295,37 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(defaultSkin);
             #endregion
 
+            #region skin2
+            Material skin2mat = Modules.Assets.CreateMaterial("ganonTex06", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] skin2RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                skin2mat,
+                skin2mat,
+                skin2mat,
+                skin2mat
+            });
+
+            SkinDef skin2 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN2_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin1"),
+                skin2RendererInfos,
+                mainRenderer,
+                model);
+            //masterySkinUnlockableDef);
+
+            skin2.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(skin2);
+            #endregion
+
             #region MasterySkin
-            Material masteryMat = Modules.Assets.CreateMaterial("ganontex04");
-            System.Console.WriteLine("" + defaultRenderers.Length);
+            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 100f, Color.white, 1.0f);
             CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
                 masteryMat,
@@ -307,7 +335,7 @@ namespace GanondorfMod.Modules.Survivors
             });
 
             SkinDef masterySkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASTERY_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skinMastery"),
                 masteryRendererInfos,
                 mainRenderer,
                 model,
