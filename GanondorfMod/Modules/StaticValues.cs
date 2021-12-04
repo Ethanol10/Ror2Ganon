@@ -28,5 +28,8 @@ namespace GanondorfMod.Modules
         internal const float warlockPunchDamageCoefficient = 15.0f;
 
         internal const float warlockMemeDamage = 3.0f;
+
+        //Maxmimum stack of triforce buffs.
+        internal const int maxStack = 100;
     }
 }

@@ -65,6 +65,7 @@ namespace GanondorfMod.Modules.Survivors
 
             //Attach the TriforceBuffComponent
             GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
+            bodyPrefab.AddComponent<GanondorfController>();
 
             
             //Initialise Scepter if available

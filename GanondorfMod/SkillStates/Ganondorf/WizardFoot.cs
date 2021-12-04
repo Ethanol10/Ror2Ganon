@@ -4,6 +4,7 @@ using RoR2;
 using RoR2.Audio;
 using UnityEngine;
 using UnityEngine.Networking;
+using GanondorfMod.Modules.Survivors;
 
 namespace GanondorfMod.SkillStates
 {
@@ -45,7 +46,7 @@ namespace GanondorfMod.SkillStates
         protected bool inHitPause;
         private Transform modelTrans;
         private Quaternion _lookRot;
-
+        private GanondorfController ganonController;
 
         public override void OnEnter()
         {
@@ -55,6 +56,7 @@ namespace GanondorfMod.SkillStates
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             base.characterBody.outOfCombatStopwatch = 0f;
+            ganonController = base.GetComponent<GanondorfController>();
 
             //Get Animator to play animation.
             this.animator = base.GetModelAnimator();
@@ -118,6 +120,9 @@ namespace GanondorfMod.SkillStates
                 //Disable Fall damage
                 base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             }
+
+            //Enable particle effects
+            ganonController.FootRFire.Play();
         }
 
         private void RecalculateRollSpeed()
@@ -225,7 +230,10 @@ namespace GanondorfMod.SkillStates
         }
 
         public override void OnExit()
-        { 
+        {
+            //Disable particle effects
+            ganonController.FootRFire.Stop();
+
             //Clean up by turning off bodyFlags for falldamage and rotate to correct position.
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             if (NetworkServer.active) {

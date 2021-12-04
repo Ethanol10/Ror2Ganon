@@ -13,6 +13,7 @@ namespace GanondorfMod.SkillStates
         private string voiceLine = "";
         private float dmgMultiplier = 1f;
         private bool hitEnemy = false;
+        private GanondorfController ganonController;
         
         //If character is grounded, just use default and call basemeleeattack.
         public override void OnEnter()
@@ -22,6 +23,7 @@ namespace GanondorfMod.SkillStates
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
+            ganonController = base.GetComponent<GanondorfController>();
             //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             isAttacking = true;
@@ -35,6 +37,9 @@ namespace GanondorfMod.SkillStates
             {
                 base.characterBody.AddTimedBuff(Modules.Buffs.armorBuff, this.duration);
             }
+
+            //Enable Particle Effects
+            ganonController.HandLFire.Play();
         }
 
         protected override void PlayAttackAnimation()
@@ -150,6 +155,9 @@ namespace GanondorfMod.SkillStates
         //Use base exit.
         public override void OnExit()
         {
+            //stop playing particles
+            ganonController.HandLFire.Stop();
+
             base.OnExit();
         }
 

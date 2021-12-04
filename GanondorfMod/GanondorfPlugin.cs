@@ -37,6 +37,8 @@ namespace GanondorfMod
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
         private CharacterBody ganondorfCharacterBody;
+        public static GanondorfController ganondorfController;
+
         //Scepter Vars
         public static bool scepterInstalled = false;
         private static float triforceMaxArmour = 30f;

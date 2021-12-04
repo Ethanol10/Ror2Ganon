@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.Networking;
 using GanondorfMod.SkillStates;
+using GanondorfMod.Modules.Survivors;
 
 namespace GanondorfMod.SkillStates
 {
@@ -38,6 +39,7 @@ namespace GanondorfMod.SkillStates
         private float invincibilityWindow = 1.5f;
         private bool playedGrabSound = false;
         private bool hasFired = false;
+        private GanondorfController ganonController;
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
         public static float grabEndExplosionRadius = 10f;
@@ -56,6 +58,7 @@ namespace GanondorfMod.SkillStates
             this.doGroundedFinisher = false;
             this.doAerialFinisher = false;
             this.stateFixed = false;
+            ganonController = base.GetComponent<GanondorfController>();
             anim.SetFloat("flameChoke.playbackrate", 2.5f);
             anim.SetBool("enemyCaught", false);
             anim.SetBool("continueGrabbing", true);
@@ -98,6 +101,8 @@ namespace GanondorfMod.SkillStates
             attack.baseForce = 1500f;
             attack.radius = grabEndExplosionRadius;
             attack.crit = base.RollCrit();
+
+            ganonController.HandLFire.Play();
         }
 
         public override void FixedUpdate()
@@ -212,6 +217,9 @@ namespace GanondorfMod.SkillStates
 
         public override void OnExit()
         {
+            //Stop all particle effects
+            ganonController.HandLFire.Stop();
+
             base.OnExit();
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;

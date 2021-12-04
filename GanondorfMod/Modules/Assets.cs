@@ -18,7 +18,7 @@ namespace GanondorfMod.Modules
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
 
-        internal static GameObject bombExplosionEffect;
+        internal static GameObject FlameEffect;
 
         // networked hit sounds
         internal static NetworkSoundEventDef punchSFX;
@@ -77,11 +77,11 @@ namespace GanondorfMod.Modules
             // it should work fine even if left as is- even if the assets aren't in the bundle
 
             punchSFX = CreateNetworkSoundEventDef("attack1sfx");
-            //bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
+            FlameEffect = LoadEffect("GanondorfFlameEffect");
 
-            //if (bombExplosionEffect)
+            //if (FlameEffect)
             //{
-            //    ShakeEmitter shakeEmitter = bombExplosionEffect.AddComponent<ShakeEmitter>();
+            //    ShakeEmitter shakeEmitter = FlameEffect.AddComponent<ShakeEmitter>();
             //    shakeEmitter.amplitudeTimeDecay = true;
             //    shakeEmitter.duration = 0.5f;
             //    shakeEmitter.radius = 200f;
@@ -95,8 +95,8 @@ namespace GanondorfMod.Modules
             //    };
             //}
 
-            //swordSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
-            //swordHitImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
+            //swordSwingEffect = LoadEffect("HenrySwordSwingEffect", true);
+            //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

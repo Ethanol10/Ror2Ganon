@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 291184810
+CRC: 3296930002
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2a13e1abd4b9cb6a39030ed4bb829d99
+    Hash: 74c2c2503f70279591123261686beaee
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6df0a8599ff25f96bdf88010d0b9233e
+    Hash: 6de4e0a73c2605a57ae0fd9f559969c2
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -35,6 +35,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
 - Class: 114
@@ -53,6 +55,10 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 144
   Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 319
@@ -67,6 +73,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
 - Assets/GanonAsset/Animator/GanonAnimator.controller
 - Assets/GanonAsset/Animator/Animations/Running.anim
+- Assets/GanonAsset/particle/GanondorfFlameEffect.prefab
 - Assets/GanonAsset/Animator/Animations/Dash.anim
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
@@ -78,15 +85,16 @@ Assets:
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
-- Assets/GanonAsset/Prefab/mdlNoRagdoll.prefab
 - Assets/GanonAsset/Animator/upperbodymask.mask
 - Assets/GanonAsset/Material/ganonTex04.mat
 - Assets/GanonAsset/icons/TriforceIcon.png
+- Assets/GanonAsset/particle/firestuff.png
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
 - Assets/GanonAsset/Mesh/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
+- Assets/GanonAsset/particle/Shaders/ParticleDissolveAlpha.shader
 - Assets/GanonAsset/Animator/Animations/RunBrake.anim
 - Assets/GanonAsset/icons/texGanondorfIcon.png
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
@@ -94,6 +102,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
 - Assets/GanonAsset/Animator/Animations/Landing.anim
+- Assets/GanonAsset/particle/Shaders/Panner.shader
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
@@ -110,5 +119,7 @@ Assets:
 - Assets/GanonAsset/Animator/GanonLobby.controller
 - Assets/GanonAsset/Animator/Animations/GroundedGrabFinish.anim
 - Assets/GanonAsset/Animator/Animations/Grabbing.anim
+- Assets/GanonAsset/particle/Light.prefab
 - Assets/GanonAsset/Animator/Animations/Jump.anim
+- Assets/GanonAsset/particle/GanondorfLightningEffect.prefab
 Dependencies: []

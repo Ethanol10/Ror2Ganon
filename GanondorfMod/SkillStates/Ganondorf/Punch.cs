@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using GanondorfMod.Modules.Survivors;
 using GanondorfMod.SkillStates.BaseStates;
 using RoR2;
 using UnityEngine;
@@ -29,6 +30,7 @@ namespace GanondorfMod.SkillStates
         private float lightKickAttackRecoil;
         private float lightKickHitHopVelocity;
         private float lightKickAttackEndTime;
+        private GanondorfController ganonController;
 
         // DASH ATTACK
         // should stop the player from dashing right after move finishes.
@@ -62,6 +64,7 @@ namespace GanondorfMod.SkillStates
             dashActive = false;
             isAttacking = true;
             lightKickFired = false;
+            ganonController = base.GetComponent<GanondorfController>();
 
             wasSprinting = base.characterBody.isSprinting;
             base.characterBody.isSprinting = false;
@@ -86,9 +89,11 @@ namespace GanondorfMod.SkillStates
                 if (NetworkClient.active)
                 {
                     base.characterBody.AddTimedBuffAuthority(Modules.Buffs.armorBuff.buffIndex, dashDuration * 4.0f);
-                    base.characterBody.OnClientBuffsChanged();
                     //duration is so short in multiplayer that I had to crank this up, it basically never gets applied at .25f
                 }
+
+                //Play Particle effect
+                ganonController.ShoulderRLightning.Play();
             }
             else if (!isGrounded)
             {
@@ -100,6 +105,9 @@ namespace GanondorfMod.SkillStates
                 //Prepare punch.
                 setupPunchHitbox();
                 punchActive = true;
+
+                //Play particle effect
+                ganonController.HandRLightning.Play();
             }
             
         }
@@ -162,13 +170,8 @@ namespace GanondorfMod.SkillStates
             }
 
             GanondorfPlugin.triforceBuff.IncrementBuffCount();
-            //if (NetworkServer.active)
-            //{
-            //if (base.characterBody.GetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex) < 100)
-            //{
-            //    base.characterBody.SetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex, base.characterBody.GetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex) + 1);
-            //    base.characterBody.OnClientBuffsChanged();
-            //}
+            //if (GanondorfPlugin.triforceBuff.GetMaxStackState()) {
+            //    Modules.Survivors.Ganondorf.ganondorfController
             //}
         }
 
@@ -225,8 +228,8 @@ namespace GanondorfMod.SkillStates
             }
 
             //check if lightKick should fire.
-            if (this.stopwatch >= (this.duration * this.lightKickAttackStartTime)
-                && this.stopwatch <= (this.duration * this.lightKickAttackEndTime) && kickActive)
+            if (kickActive && this.stopwatch >= (this.duration * this.lightKickAttackStartTime)
+                && this.stopwatch <= (this.duration * this.lightKickAttackEndTime) )
             {
                 this.FireLightKickAttack();
             }
@@ -234,6 +237,10 @@ namespace GanondorfMod.SkillStates
             //Check if Dash or punch should trigger
             if (this.stopwatch >= (this.duration * this.attackStartTime) && this.stopwatch <= (this.duration * this.attackEndTime))
             {
+                if (kickActive) {
+                    //Play Particle effect
+                    ganonController.FootLFire.Play();
+                }
                 this.FireAttack();    
             }
 
@@ -301,6 +308,11 @@ namespace GanondorfMod.SkillStates
 
         public override void OnExit()
         {
+            //disable all particle effects
+            ganonController.FootLFire.Stop();
+            ganonController.ShoulderRLightning.Stop();
+            ganonController.HandRLightning.Stop();
+
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.OnExit();
         }
