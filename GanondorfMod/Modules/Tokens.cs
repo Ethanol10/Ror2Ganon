@@ -73,10 +73,11 @@ namespace GanondorfMod.Modules
             #endregion
 
             #region Scepter Upgrade
-            LanguageAPI.Add(prefix + "SCEPTERSPECIAL_NAME", "Triforce of Power");
+            LanguageAPI.Add(prefix + "SCEPTERSPECIAL_NAME", "True Warlock Punch");
             LanguageAPI.Add(prefix + "SCEPTERSPECIAL_DESCRIPTION", $"Charge up a powerful punch unleashing" 
                 + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes." 
-                + $" 5% of the time, Damage is increased to <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient * StaticValues.warlockMemeDamage}% damage</style>");
+                + $" 5% of the time, Damage is increased to <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient * StaticValues.warlockMemeDamage}% damage</style>."
+                + $" The Power increase from the Triforce of Power buff is increased to 100% per stack of buff.");
             #endregion
 
             #region Achievements
