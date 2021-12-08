@@ -57,6 +57,7 @@ Charge up a powerful punch unleashing 1500% damage onto close range foes. 5% of 
 
 - Animation issues when performing a move before the move finishes, specifically the transition from Aerial Kick to any other move.
 - When using Flame Choke from a high spot above the ground, the attack sometimes doesn't register when landing on the ground.
+- The model is broken, from the conversion from multiple materials to a single material.
 
  
 ## Credits
