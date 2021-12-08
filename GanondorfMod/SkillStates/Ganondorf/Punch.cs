@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using GanondorfMod.Modules;
 using GanondorfMod.Modules.Survivors;
 using GanondorfMod.SkillStates.BaseStates;
 using RoR2;
@@ -169,7 +170,8 @@ namespace GanondorfMod.SkillStates
                 this.inHitPause = true;
             }
 
-            GanondorfPlugin.triforceBuff.IncrementBuffCount();
+            //Increment Buff count
+            GetComponent<TriforceBuffComponent>().AddToBuffCount(1);
             //if (GanondorfPlugin.triforceBuff.GetMaxStackState()) {
             //    Modules.Survivors.Ganondorf.ganondorfController
             //}

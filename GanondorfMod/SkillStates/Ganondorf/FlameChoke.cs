@@ -8,6 +8,7 @@ using System.Linq;
 using UnityEngine.Networking;
 using GanondorfMod.SkillStates;
 using GanondorfMod.Modules.Survivors;
+using GanondorfMod.Modules;
 
 namespace GanondorfMod.SkillStates
 {
@@ -15,7 +16,7 @@ namespace GanondorfMod.SkillStates
     {
         private float grabDuration = 0.4f;
         private float windupDuration = 0.3f;
-        public static float initialSpeedCoefficient = 3.0f;
+        public static float initialSpeedCoefficient = 3.2f;
         public static float finalSpeedCoefficient = 0f;
         private Vector3 aimRayDir;
         private float grabSpeed;
@@ -165,6 +166,8 @@ namespace GanondorfMod.SkillStates
 
             //Finish the move after either function is finished.
             if (finishMove) {
+                //Stop all particle effects
+                ganonController.HandLFire.Stop();
                 SpeedBoostOnGrabDuration();
                 anim.SetBool("continueGrabbing", false);
                 this.outer.SetNextStateToMain();
@@ -210,16 +213,14 @@ namespace GanondorfMod.SkillStates
             return Mathf.Lerp(FlameChoke.initialSpeedCoefficient, FlameChoke.finalSpeedCoefficient, lerpVal);
         }
 
-        protected virtual void OnHitEnemyAuthority()
+        protected virtual void OnHitEnemyAuthority(int hitCount)
         {
             Util.PlaySound("flameChokeSFXend", base.gameObject);
+            GetComponent<TriforceBuffComponent>().AddToBuffCount(hitCount);
         }
 
         public override void OnExit()
         {
-            //Stop all particle effects
-            ganonController.HandLFire.Stop();
-
             base.OnExit();
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;
@@ -307,14 +308,21 @@ namespace GanondorfMod.SkillStates
                     if (!hasFired && base.isAuthority)
                     {
                         hasFired = true;
-                        attack.Fire();
+                        int hitCount = attack.Fire().hitCount;
+                        if (hitCount > 0) {
+                            OnHitEnemyAuthority(hitCount);
+                        }
                     }
                     //play sounds after firing
                     Util.PlaySound("flameChokeSFXEnd", base.gameObject);
                 }
                 if (stopwatch > aerialLetGo) {
                     if (!hasFired && base.isAuthority) {
-                        attack.Fire();
+                        int hitCount = attack.Fire().hitCount;
+                        if (hitCount > 0)
+                        {
+                            OnHitEnemyAuthority(hitCount);
+                        }
                     }
                     finishMove = true;
                 }
@@ -328,7 +336,11 @@ namespace GanondorfMod.SkillStates
                 if (!hasFired && base.isAuthority)
                 {
                     hasFired = true;
-                    attack.Fire();
+                    int hitCount = attack.Fire().hitCount;
+                    if (hitCount > 0)
+                    {
+                        OnHitEnemyAuthority(hitCount);
+                    }
                 }
 
                 //Play sounds after firing
@@ -336,7 +348,11 @@ namespace GanondorfMod.SkillStates
             }
             if (stopwatch >= groundedLetGo) {
                 if (!hasFired && base.isAuthority) {
-                    attack.Fire();
+                    int hitCount = attack.Fire().hitCount;
+                    if (hitCount > 0)
+                    {
+                        OnHitEnemyAuthority(hitCount);
+                    }
                 }
                 finishMove = true;
             }

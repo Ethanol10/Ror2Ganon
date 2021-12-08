@@ -58,16 +58,16 @@ namespace GanondorfMod.Modules.Survivors
 
         internal override UnlockableDef characterUnlockableDef { get; set; }
         private static UnlockableDef masterySkinUnlockableDef;
+        private static UnlockableDef secondarySkinUnlockableDef;
 
         internal override void InitializeCharacter()
         {
             base.InitializeCharacter();
 
             //Attach the TriforceBuffComponent
-            GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
             bodyPrefab.AddComponent<GanondorfController>();
+            GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
 
-            
             //Initialise Scepter if available
             if (GanondorfPlugin.scepterInstalled)
             {
@@ -78,6 +78,7 @@ namespace GanondorfMod.Modules.Survivors
         internal override void InitializeUnlockables()
         {
             masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.MasteryAchievement>(true);
+            secondarySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.EightLunarItemsAchievement>(true);
         }
 
         internal override void InitializeDoppelganger()
@@ -115,12 +116,20 @@ namespace GanondorfMod.Modules.Survivors
 
             string prefix = GanondorfPlugin.developerPrefix;
 
+            #region Passive
+            SkillLocator skillLoc = bodyPrefab.GetComponent<SkillLocator>();
+            skillLoc.passiveSkill.enabled = true;
+            skillLoc.passiveSkill.skillNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_PASSIVE_NAME";
+            skillLoc.passiveSkill.skillDescriptionToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_PASSIVE_DESCRIPTION";
+            skillLoc.passiveSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforceIcon");
+            #endregion 
+
             #region Primary
             SkillDef punchSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo {
                 skillName = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("punchIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Punch)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -149,7 +158,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_KICK_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("wizardFootIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WizardFoot)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 2,
@@ -179,7 +188,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_GRAB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("flameChokeIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -207,7 +216,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("warlockPunchIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WarlockPunch)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -240,7 +249,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "SCEPTERSPECIAL_NAME",
                 skillNameToken = prefix + "SCEPTERSPECIAL_NAME",
                 skillDescriptionToken = prefix + "SCEPTERSPECIAL_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforcePower"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("warlockPunchBoosted"),
                 activationState = new SerializableEntityStateType(typeof(SkillStates.WarlockPunchScepter)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -310,8 +319,8 @@ namespace GanondorfMod.Modules.Survivors
                 Assets.mainAssetBundle.LoadAsset<Sprite>("skin1"),
                 skin2RendererInfos,
                 mainRenderer,
-                model);
-            //masterySkinUnlockableDef);
+                model,
+                secondarySkinUnlockableDef);
 
             skin2.meshReplacements = new SkinDef.MeshReplacement[]
             {

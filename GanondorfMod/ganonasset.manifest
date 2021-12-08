@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3296930002
+CRC: 2928428810
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 74c2c2503f70279591123261686beaee
+    Hash: 810c045067539108366ee1fc230599ec
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -85,6 +85,7 @@ Assets:
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
+- Assets/GanonAsset/icons/flameChokeIcon.png
 - Assets/GanonAsset/Animator/upperbodymask.mask
 - Assets/GanonAsset/Material/ganonTex04.mat
 - Assets/GanonAsset/icons/TriforceIcon.png
@@ -100,14 +101,17 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
+- Assets/GanonAsset/icons/warlockPunchBoosted.png
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
 - Assets/GanonAsset/Animator/Animations/Landing.anim
 - Assets/GanonAsset/particle/Shaders/Panner.shader
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
+- Assets/GanonAsset/icons/warlockPunchIcon.png
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
 - Assets/GanonAsset/Material/ganontex.mat
+- Assets/GanonAsset/icons/wizardFootIcon.png
 - Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
 - Assets/GanonAsset/Animator/Animations/Punch.anim
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
@@ -121,5 +125,6 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Grabbing.anim
 - Assets/GanonAsset/particle/Light.prefab
 - Assets/GanonAsset/Animator/Animations/Jump.anim
+- Assets/GanonAsset/icons/punchIcon.png
 - Assets/GanonAsset/particle/GanondorfLightningEffect.prefab
 Dependencies: []

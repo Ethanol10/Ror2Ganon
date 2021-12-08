@@ -15,11 +15,12 @@ namespace GanondorfMod.Modules
             desc = desc + "< ! > Use kicks to swiftly deal with aerial foes." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Use Flame Choke to grab multiple enemies in a row, disabling them in the process." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Wizard's Foot is a great mobility tool, and a way to send enemies flying." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Release your Trif Warlock Punch." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Build up your";
+            desc = desc + "< ! > Warlock Punch to release a devastating explosive punch." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor and the power of your Warlock Punch." + Environment.NewLine + Environment.NewLine;
+            //desc = desc + "";
 
             string outro = "..and so he left, spreading malice in his wake.";
-            string outroFailure = "..and so he vanished, looking for stronger foes.";
+            string outroFailure = "..and so he vanished, in .";
 
             LanguageAPI.Add(prefix + "NAME", "Ganondorf");
             LanguageAPI.Add(prefix + "DESCRIPTION", desc);
@@ -31,12 +32,15 @@ namespace GanondorfMod.Modules
             #region Skins
             LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
             LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Regal");
-            LanguageAPI.Add(prefix + "SKIN2_NAME", "Ancient");
+            LanguageAPI.Add(prefix + "SKIN2_NAME", "Wise");
             #endregion
 
             #region Passive
             LanguageAPI.Add(prefix + "PASSIVE_NAME", "Triforce of Power");
-            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Every successful hit with Punch will build up stacks that are consumed to power up Warlock Punch up to X%");
+            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", 
+                $"Every successful hit and kill will build up stacks that increase Ganondorf's armor. Stacks decay after 2 seconds of no build up." +
+                $" All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to" +
+                $" <style=cIsDamage>{Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer * 100f}%</style> at the maximum amount of stacks.");
             #endregion
 
             #region Primary
@@ -79,6 +83,10 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_NAME", "Ganondorf: Mastery");
             LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_DESC", "As Ganondorf, beat the game or obliterate on Monsoon.");
             LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Ganondorf: Mastery");
+
+            LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_NAME", "Ganondorf: Forbidden Methods");
+            LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_DESC", "As Ganondorf, collect 8 Lunar Items in a single run.");
+            LanguageAPI.Add(prefix + "EIGHTLUNAR_UNLOCKABLE_NAME", "Ganondorf: Forbidden Methods");
             #endregion
             #endregion
         }

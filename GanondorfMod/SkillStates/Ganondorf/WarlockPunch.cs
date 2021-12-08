@@ -4,6 +4,7 @@ using GanondorfMod.Modules.Survivors;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
+using GanondorfMod.Modules;
 
 namespace GanondorfMod.SkillStates
 {
@@ -27,7 +28,7 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             isAttacking = true;
-            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff) / 2.0f;
+            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff) / Modules.StaticValues.warlockPunchDamageReducer;
             if (dmgMultiplier < 1.0f) {
                 dmgMultiplier = 1.0f;
             }
@@ -74,7 +75,8 @@ namespace GanondorfMod.SkillStates
                 this.inHitPause = true;
             }
 
-            GanondorfPlugin.triforceBuff.WipeBuffCount();
+            //Wipe buff if hit.
+            GetComponent<TriforceBuffComponent>().WipeBuffCount();
             //base.characterBody.SetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex, 0);
             //base.characterBody.OnClientBuffsChanged();
             //}

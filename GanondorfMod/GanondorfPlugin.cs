@@ -32,7 +32,7 @@ namespace GanondorfMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "0.0.1";
+        public const string MODVERSION = "1.0.0";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
@@ -41,7 +41,6 @@ namespace GanondorfMod
 
         //Scepter Vars
         public static bool scepterInstalled = false;
-        private static float triforceMaxArmour = 30f;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string developerPrefix = "ETHA10";
@@ -99,6 +98,29 @@ namespace GanondorfMod
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
             On.RoR2.GenericPickupController.GrantItem += GenericPickupController_GrantItem;
+            On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
+        }
+
+        private void GlobalEventManager_OnCharacterDeath(On.RoR2.GlobalEventManager.orig_OnCharacterDeath orig, GlobalEventManager self, DamageReport damageReport) {
+            orig(self, damageReport);
+            if (damageReport.attackerBody.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME") {
+                int amountToAdd = 0;
+                if (damageReport.victimIsBoss) {
+                    amountToAdd += Modules.StaticValues.bossKillStackAmount;
+                }
+                if (damageReport.victimIsChampion) {
+                    amountToAdd += Modules.StaticValues.championKillStackAmount;
+                }
+                if (damageReport.victimIsElite) {
+                    amountToAdd += Modules.StaticValues.eliteKillStackAmount;
+                }
+
+                if (!damageReport.victimIsBoss && !damageReport.victimIsElite && !damageReport.victimIsChampion) {
+                    amountToAdd += Modules.StaticValues.normalKillStackAmount;
+                }
+
+                damageReport.attacker.GetComponent<TriforceBuffComponent>().AddToBuffCount(amountToAdd);
+            }
         }
 
         private void GenericPickupController_GrantItem(On.RoR2.GenericPickupController.orig_GrantItem orig, GenericPickupController self, CharacterBody body, Inventory inventory) {
@@ -117,7 +139,7 @@ namespace GanondorfMod
             //Update buffCount every frame render.
             if (self.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME")
             {
-                self.SetBuffCount(Modules.Buffs.triforceBuff.buffIndex, triforceBuff.GetBuffCount());
+                self.SetBuffCount(Modules.Buffs.triforceBuff.buffIndex, self.GetComponent<TriforceBuffComponent>().GetTrueBuffCount());
             }
         }
 
@@ -131,10 +153,10 @@ namespace GanondorfMod
                 {
                     self.armor += 300f;
                 }
+
+                //Add armour if buff is available.
                 if (self.HasBuff(Modules.Buffs.triforceBuff)) {
-                    if (triforceBuff.GetScepterState()) {
-                        self.armor += triforceBuff.GetBuffCount()*(triforceMaxArmour/100);
-                    }
+                    self.armor += self.GetComponent<TriforceBuffComponent>().GetBuffCount()*(Modules.StaticValues.triforceMaxArmour/100.0f);
                 }
             }
         }

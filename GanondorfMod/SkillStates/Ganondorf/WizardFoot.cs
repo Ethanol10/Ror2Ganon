@@ -5,6 +5,7 @@ using RoR2.Audio;
 using UnityEngine;
 using UnityEngine.Networking;
 using GanondorfMod.Modules.Survivors;
+using GanondorfMod.Modules;
 
 namespace GanondorfMod.SkillStates
 {
@@ -219,7 +220,7 @@ namespace GanondorfMod.SkillStates
 
         protected virtual void OnHitEnemyAuthority() {
             Util.PlaySound(this.hitSoundString, base.gameObject);
-
+            GetComponent<TriforceBuffComponent>().AddToBuffCount(2);
             if (!this.inHitPause && this.hitStopDuration > 0f)
             {
                 storedVelocity = base.characterMotor.velocity;

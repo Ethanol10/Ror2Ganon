@@ -10,6 +10,8 @@ namespace GanondorfMod.Modules.Survivors
     {
         public CharacterBody characterBody;
         public ChildLocator childLocator;
+        public ParticleSystem HandMaxStackL;
+        public ParticleSystem HandMaxStackR;
         public ParticleSystem FootLFire;
         public ParticleSystem HandLFire;
         public ParticleSystem FootRFire;
@@ -28,6 +30,8 @@ namespace GanondorfMod.Modules.Survivors
                 HandRFire = childLocator.FindChild("HandRFlameParticle").GetComponent<ParticleSystem>();
                 HandRLightning = childLocator.FindChild("HandRLightningParticle").GetComponent<ParticleSystem>();
                 ShoulderRLightning = childLocator.FindChild("ShoulderRLightningParticle").GetComponent<ParticleSystem>();
+                HandMaxStackL = childLocator.FindChild("MaxStackL").GetComponent<ParticleSystem>();
+                HandMaxStackR = childLocator.FindChild("MaxStackR").GetComponent<ParticleSystem>();
             }
 
             Debug.Log(FootLFire);

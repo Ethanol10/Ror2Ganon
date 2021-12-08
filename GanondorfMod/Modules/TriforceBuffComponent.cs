@@ -1,4 +1,5 @@
-﻿using RoR2;
+﻿using GanondorfMod.Modules.Survivors;
+using RoR2;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +10,70 @@ namespace GanondorfMod.Modules
         private int buffCountToApply;
         private static bool scepterActive;
         private bool isMaxStack;
+        private GanondorfController ganondorfController;
+        private float timer;
+        private float lastTimeDecayed;
+        private bool startDecaying;
 
         public void Awake() {
+            startDecaying = false;
+            timer = 0f;
+            lastTimeDecayed = 0f;
             buffCountToApply = 0;
             scepterActive = false;
             isMaxStack = false;
+            ganondorfController = GetComponent<GanondorfController>();
+        }
+
+        public void FixedUpdate() {
+            //Update whether if we are at max power stacks.
+            CheckIfMaxPowerStacks();
+            //Increment Timer and tell the amount to decay over time if necessary.
+            DecayTimer();
+
+            //Decay stacks if Decaying is required.
+            if (startDecaying) {
+                lastTimeDecayed += Time.fixedDeltaTime;
+                if (lastTimeDecayed >= Modules.StaticValues.timeBetweenDecay) {
+                    lastTimeDecayed = 0f;
+                    buffCountToApply -= Modules.StaticValues.stackAmountToDecay;
+                    if (buffCountToApply < 0) {
+                        buffCountToApply = 0;
+                    }
+                }
+            }
+
+            //turn on flame effects if stacks are above the max power stack.
+            if (isMaxStack) {
+                ganondorfController.HandMaxStackL.Play();
+                ganondorfController.HandMaxStackR.Play();
+            }
+            else {
+                ganondorfController.HandMaxStackL.Stop();
+                ganondorfController.HandMaxStackR.Stop();
+            }
+        }
+
+        public void DecayTimer() {
+            timer += Time.fixedDeltaTime;
+            if (timer >= Modules.StaticValues.maxTimeToDecay)
+            {
+                startDecaying = true;
+            }
+            else {
+                startDecaying = false;
+            }
+        }
+
+        public bool CheckIfMaxPowerStacks() {
+            if (buffCountToApply >= Modules.StaticValues.maxPowerStack)
+            {
+                isMaxStack = true;
+            }
+            else {
+                isMaxStack = false;
+            }
+            return isMaxStack;
         }
 
         public void IncrementBuffCount() {
@@ -22,7 +82,21 @@ namespace GanondorfMod.Modules
             }
 
             buffCountToApply++;
-            if (buffCountToApply == Modules.StaticValues.maxStack) {
+            if (buffCountToApply >= Modules.StaticValues.maxPowerStack) {
+                isMaxStack = true;
+            }
+        }
+
+        public void AddToBuffCount(int inc) {
+            buffCountToApply += inc;
+            timer = 0f;
+            lastTimeDecayed = 0f;
+            if (buffCountToApply >= Modules.StaticValues.maxStack) {
+                buffCountToApply = Modules.StaticValues.maxStack;
+                isMaxStack = true;
+            }
+
+            if (buffCountToApply >= Modules.StaticValues.maxPowerStack) {
                 isMaxStack = true;
             }
         }
@@ -46,6 +120,13 @@ namespace GanondorfMod.Modules
         }
 
         public int GetBuffCount() {
+            if (buffCountToApply > Modules.StaticValues.maxPowerStack) {
+                return Modules.StaticValues.maxPowerStack;
+            }
+            return buffCountToApply;
+        }
+
+        public int GetTrueBuffCount() {
             return buffCountToApply;
         }
 

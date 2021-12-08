@@ -27,7 +27,7 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             isAttacking = true;
-            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff);
+            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff) / 2.0f;
             if (dmgMultiplier < 1.0f) {
                 dmgMultiplier = 1.0f;
             }
