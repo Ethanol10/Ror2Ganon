@@ -13,7 +13,7 @@ namespace GanondorfMod.SkillStates
         private ModelLocator modelLocator;
         private Transform modelTransform;
         private Quaternion originalRotation;
-        private CapsuleCollider collider;
+        private Collider collider;
 
         private void Awake()
         {
@@ -21,10 +21,9 @@ namespace GanondorfMod.SkillStates
             this.motor = this.GetComponent<CharacterMotor>();
             this.direction = this.GetComponent<CharacterDirection>();
             this.modelLocator = this.GetComponent<ModelLocator>();
-            collider = this.gameObject.GetComponent<CapsuleCollider>();
-
+            this.collider = this.gameObject.GetComponent<Collider>();
             collider.enabled = false;
-
+            
             if (this.direction) this.direction.enabled = false;
 
             if (this.modelLocator)
@@ -54,10 +53,10 @@ namespace GanondorfMod.SkillStates
             {
                 this.transform.position = this.pivotTransform.position;
             }
-            //else
-            //{
-            //    this.Release();
-            //}
+            else
+            {
+                this.Release();
+            }
 
             if (this.modelTransform)
             {

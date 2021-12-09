@@ -7,7 +7,7 @@ Avatar:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ganonAvatar
-  m_AvatarSize: 16844
+  m_AvatarSize: 10804
   m_Avatar:
     serializedVersion: 3
     m_AvatarSkeleton:
@@ -199,115 +199,7 @@ Avatar:
           m_AxesId: -1
         - m_ParentId: 0
           m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        - m_ParentId: 0
-          m_AxesId: -1
-        m_ID: 0000000054559590d8739b20816cac1fd40034d805af912f5c86cb86f86426e1414a93140471f3b2b6f24ef1f286b5a186a62be7f665cc2c518a57d9b822c9e0cc4cac7f42f18438c1668f45262969f7d6b032c8c6646ea7081f5bc16e09996977ab7a5197c2289f3aee05a26f9da64601b12ea6c3311145dd22ac46778f2fcf334070c5c2a52e6a734a43ab48be1aa2b9c8e5514fb3b14d9558c3d6ff58d8df05b4bfe51f9e2e353ff8499fde1d852ccf356cca8463ddde0c5f437fb06b45ee6cb48b1fbd013a4b5df90547829a1b8d6d20b4305362c1b0090a3c9d6556b2699a5646961a6df5b473f3c8899e932af261939fd3089e03b24fb06f7cb8bbc1a303d5911459b6737e370c3d1517fe9d6267fbf196a89818f04c89d92e0cf075bae1195f5166d06bc8ab7775fb77a75924f91c79b46a748e3dba02cc9f38e4cf04237f72b29f8a4d59c0fd6b87f7966d2dd0f9ade7bcfb6d4efcb742a33027854a6de662ae2bd7d9f63c5f60d0af90a196e794dd3e59318cdbe0e632caba705142469d78a84d3a3711318cbbd74738c164fe5408d20413ccfff9291510c603ccc1afb1161168d4e3df22f977dc4c9e2e13c9915e3b04a7dd3abbc79879d63daa486cc30b66625efb0d107587a03be8b3e967f156c3ffe3c1e9251476c52d997cca803dfb93a1ecd8690715fae37388e616397006a15d76192f9483909248ae6ed83fc86a359fa99f8d1d2a009d752a21aac518fd183ab882b6558f36b43695041a5035cc7cdee93986625abda106fa89c20cfd49c94a2388dc1418c779d76d9b170ddbb02100c44facdd567df5
+        m_ID: 0000000054559590d8739b20816cac1fd40034d805af912f5c86cb86f86426e1414a93140471f3b2b6f24ef1f286b5a186a62be7f665cc2c518a57d9b822c9e0cc4cac7f42f18438c1668f45262969f7d6b032c8c6646ea7081f5bc16e09996977ab7a5197c2289f3aee05a26f9da64601b12ea6c3311145dd22ac46778f2fcf334070c5c2a52e6a734a43ab48be1aa2b9c8e5514fb3b14d9558c3d6ff58d8df05b4bfe51f9e2e353ff8499fde1d852ccf356cca8463ddde0c5f437fb06b45ee6cb48b1fbd013a4b5df90547829a1b8d6d20b4305362c1b0090a3c9d6556b2699a5646961a6df5b473f3c8899e932af261939fd3089e03b24fb06f7cb8bbc1a303d5911459b6737e370c3d1517fe9d6267fbf196a89818f04c89d92e0cf075bae1195f5166d06bc8ab7775fb77a75924f91c79b46a748e3dba02cc9f38e4cf04237f72b29f8a4d59c0fd6b87f7966d2dd0f9ade7bcfb6d4efcb742a33027854a6de662ae2bd7d9f63c5f60d0af90a196e794dd3e
         m_AxesArray: []
     m_AvatarSkeletonPose:
       data:
@@ -429,7 +321,7 @@ Avatar:
           q: {x: 0.3829729, y: -0.0000000070573116, z: 0.000000011090062, w: 0.92375964}
           s: {x: 0.99999994, y: 0.99999994, z: 1}
         - t: {x: -0.014621567, y: 0.0023610287, z: -0.015807701}
-          q: {x: -0.016509509, y: -0.70263505, z: 0.043073986, w: 0.71005356}
+          q: {x: -0.016509555, y: -0.70263505, z: 0.043074034, w: 0.71005356}
           s: {x: 1.0000002, y: 1.0000001, z: 1}
         - t: {x: -0.021173405, y: -0.0021393131, z: 0.005140045}
           q: {x: 0.13108757, y: -0.38920844, z: 0.10076095, w: 0.90618986}
@@ -543,7 +435,7 @@ Avatar:
           q: {x: -0.000000074971474, y: -0.000000013969837, z: -0.0000011883676, w: 1}
           s: {x: 1.0000001, y: 1, z: 1}
         - t: {x: -0.035000015, y: -0.026999978, z: 0.024849989}
-          q: {x: -0.11912792, y: -0.015579327, z: 0.9554216, w: 0.26969495}
+          q: {x: -0.11912794, y: -0.015579312, z: 0.9554216, w: 0.2696951}
           s: {x: 0.99999994, y: 1, z: 1.0000002}
         - t: {x: -0.044999998, y: -0.00000003695488, z: -0.000000008940696}
           q: {x: -0.0037689866, y: -0.0067532207, z: 0.15199436, w: 0.9883511}
@@ -593,168 +485,6 @@ Avatar:
         - t: {x: -0, y: -0.14, z: 0}
           q: {x: 0, y: -0, z: -0, w: 1}
           s: {x: 1, y: 1, z: 1}
-        - t: {x: -0, y: 0, z: 0}
-          q: {x: 0.000000021855696, y: -0.00000004371139, z: 1.0165752e-15, w: 1}
-          s: {x: 10, y: 10, z: 10}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 0, z: 0}
-          q: {x: 0.000000021855696, y: -0.00000004371139, z: 1.0165752e-15, w: 1}
-          s: {x: 10, y: 10, z: 10}
         - t: {x: -0, y: 0, z: 0}
           q: {x: 0.000000021855696, y: -0.00000004371139, z: 1.0165752e-15, w: 1}
           s: {x: 10, y: 10, z: 10}
@@ -878,7 +608,7 @@ Avatar:
           q: {x: 0.3829729, y: -0.0000000070573116, z: 0.000000011090062, w: 0.92375964}
           s: {x: 0.99999994, y: 0.99999994, z: 1}
         - t: {x: -0.014621567, y: 0.0023610287, z: -0.015807701}
-          q: {x: -0.016509509, y: -0.70263505, z: 0.043073986, w: 0.71005356}
+          q: {x: -0.016509555, y: -0.70263505, z: 0.043074034, w: 0.71005356}
           s: {x: 1.0000002, y: 1.0000001, z: 1}
         - t: {x: -0.021173405, y: -0.0021393131, z: 0.005140045}
           q: {x: 0.13108757, y: -0.38920844, z: 0.10076095, w: 0.90618986}
@@ -992,7 +722,7 @@ Avatar:
           q: {x: -0.000000074971474, y: -0.000000013969837, z: -0.0000011883676, w: 1}
           s: {x: 1.0000001, y: 1, z: 1}
         - t: {x: -0.035000015, y: -0.026999978, z: 0.024849989}
-          q: {x: -0.11912792, y: -0.015579327, z: 0.9554216, w: 0.26969495}
+          q: {x: -0.11912794, y: -0.015579312, z: 0.9554216, w: 0.2696951}
           s: {x: 0.99999994, y: 1, z: 1.0000002}
         - t: {x: -0.044999998, y: -0.00000003695488, z: -0.000000008940696}
           q: {x: -0.0037689866, y: -0.0067532207, z: 0.15199436, w: 0.9883511}
@@ -1045,169 +775,7 @@ Avatar:
         - t: {x: -0, y: 0, z: 0}
           q: {x: 0.000000021855696, y: -0.00000004371139, z: 1.0165752e-15, w: 1}
           s: {x: 10, y: 10, z: 10}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 2.2035599, z: -0.036469202}
-          q: {x: 0.49999937, y: -0.5000006, z: -0.49999937, w: 0.50000066}
-          s: {x: 10, y: 10, z: 10.000001}
-        - t: {x: -0, y: 0, z: 0}
-          q: {x: 0.000000021855696, y: -0.00000004371139, z: 1.0165752e-15, w: 1}
-          s: {x: 10, y: 10, z: 10}
-        - t: {x: -0, y: 0, z: 0}
-          q: {x: 0.000000021855696, y: -0.00000004371139, z: 1.0165752e-15, w: 1}
-          s: {x: 10, y: 10, z: 10}
-    m_SkeletonNameIDArray: 0000000054559590b931e0b181e17425b8a4f2651f1bf7db017a19116d792380a259c1079e4c745171a8fa2a5c00caba7d6fcb30d9da74ed7197304c2b44a0fac131891148f2a71a790ebd43ba5d9068fb6c8b713cfaca3eaacacd49109bc4d086abc3a76d5c8c06d70d859f413d82e82c6d971f963c9e86000c99f1ebfbd65051aadfc9c79ad8beef3eba34556fb3adc35fb4da8fea6e33bae77b1712aa3fb64879af00a20c86eb2bcfa8e003800555c0d3287e81e2336746747228d044755f6a157cc6fc257bb117d23410ad833d893bb33afe56e32f09ecb226907a8221e795b002222fe10bbbb9d10ccc91756e462b2467dfbd1460a8ecd761c95e3ed108e46fd891725fdfe6d1cabb7847fabc0fdb97aeb64e1d085bf44c01c2627c06b5c1e9622b57d9655ca10007779122498f2b734016bd4347611ed623ff88e6248832e7e64089c14cebe785041bf5806605ad594041b82c76caeafc431184b80be196bd69ffce644fbbdb117930336e528ee794dd3e59318cdbe0e632caba705142469d78a84d3a3711318cbbd74738c164fe5408d20413ccfff9291510c603ccc1afb1161168d4e3df22f977dc4c9e2e13c9915e3b04a7dd3abbc79879d63daa486cc30b66625efb0d107587a03be8b3e967f156c3ffe3c1e9251476c52d997cca803dfb93a1ecd8690715fae37388e616397006a15d76192f9483909248ae6ed83fc86a359fa99f8d1d2a009d752a21aac518fd183ab882b6558f36b43695041a5035cc7cdee93986625abda106fa89c20cfd49c94a2388dc1418c779d76d9b170ddbb02100c44facdd567df5
+    m_SkeletonNameIDArray: 0000000054559590b931e0b181e17425b8a4f2651f1bf7db017a19116d792380a259c1079e4c745171a8fa2a5c00caba7d6fcb30d9da74ed7197304c2b44a0fac131891148f2a71a790ebd43ba5d9068fb6c8b713cfaca3eaacacd49109bc4d086abc3a76d5c8c06d70d859f413d82e82c6d971f963c9e86000c99f1ebfbd65051aadfc9c79ad8beef3eba34556fb3adc35fb4da8fea6e33bae77b1712aa3fb64879af00a20c86eb2bcfa8e003800555c0d3287e81e2336746747228d044755f6a157cc6fc257bb117d23410ad833d893bb33afe56e32f09ecb226907a8221e795b002222fe10bbbb9d10ccc91756e462b2467dfbd1460a8ecd761c95e3ed108e46fd891725fdfe6d1cabb7847fabc0fdb97aeb64e1d085bf44c01c2627c06b5c1e9622b57d9655ca10007779122498f2b734016bd4347611ed623ff88e6248832e7e64089c14cebe785041bf5806605ad594041b82c76caeafc431184b80be196bd69ffce644fbbdb117930336e528ee794dd3e
     m_Human:
       data:
         serializedVersion: 2
@@ -1286,44 +854,28 @@ Avatar:
   m_TOS:
     0: 
     80733240: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleL1/S_MantleL2/S_MantleL3/S_MantleL4/S_MantleL5
-    234577506: ganon_Blink_Heavyouch_VIS_O_OBJShape
-    269822457: ganon_Eye_Talk_VIS_O_OBJShape.001
-    286699951: ganon_Eye_Final_VIS_O_OBJShape.001
-    288832077: ganon_Eyeblow_Heavyhit_VIS_O_OBJShape
-    321822284: ganon_Blink_VIS_O_OBJShape
     345101571: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleC1/S_MantleC2
     345197121: model-armature/Trans/Rot/Hip/Waist/Bust/Neck/Head
     356322359: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleC1/S_MantleC2/S_MantleC3/S_MantleC4
-    384206963: ganon_Mouth_Escape_VIS_O_OBJShape
-    396062167: ganon_Mouth_Down_VIS_O_OBJShape
-    419240133: ganon_Mouth_Capture_VIS_O_OBJShape.001
-    436507958: ganon_Mouth_Heavyhit_VIS_O_OBJShape
     529249388: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR40/FingerR41/FingerR42
     531393665: model-armature/Trans/Rot
     547058648: model-armature/Trans
-    565238541: ganon_Mouth_Down_VIS_O_OBJShape.001
     609855351: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleL1
     746921438: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10
     751592950: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL
     762156791: model-armature/Trans/Rot/Hip/LegL/KneeL/FootL
     786008396: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleR1/S_MantleR2
-    790197853: ganon_Mouth_PatternA_VIS_O_OBJShape
     798076677: model-armature/Trans/Rot/Hip/Waist
     817111149: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR31/FingerR32/FingerR33
     892247583: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR
-    896190527: ganon_Mouth_Attack_VIS_O_OBJShape.001
     948236610: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/HaveL
-    987604740: ganon_Blink_Catch_VIS_O_OBJShape
-    996053449: ganon_Blink_Talk_VIS_O_OBJShape
     1032746090: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleL1/S_MantleL2/S_MantleL3
     1054708967: GamemodelShape
-    1112633530: ganon_Eyeblow_Capture_VIS_O_OBJShape
     1158754755: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL21/FingerL22
     1167025857: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10
     1185324399: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30/FingerL31/FingerL32/FingerL33
     1185686237: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL21/FingerL22/FingerL23
     1191573853: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR31
-    1219116502: ganon_Blink_Ouch_VIS_O_OBJShape
     1250240304: model-armature/Trans/Rot/Hip/LegR/KneeR
     1262092733: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR40/FingerR41/FingerR42/FingerR43
     1303491407: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/H_ArmL
@@ -1333,101 +885,63 @@ Avatar:
     1374013625: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL11/FingerL12/FingerL13
     1498253983: model-armature/Trans/Rot/Hip/LegL
     1654521367: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleC1/S_MantleC2/S_MantleC3/S_MantleC4/S_MantleC5
-    1690384455: ganon_Eyeblow_Result_VIS_O_OBJShape
-    1712046956: ganon_Blink_Heavyhit_VIS_O_OBJShape
     1771637102: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30/FingerL40/FingerL41/FingerL42
     1773295205: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR21/FingerR22/FingerR23
-    1775824033: ganon_Mouth_HeavyAttack_VIS_O_OBJShape
     1781441986: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL51/FingerL52/FingerL53
-    2040055739: ganon_Blink_Capture_VIS_O_OBJShape
-    2043090964: ganon_Mouth_Furafura_VIS_O_OBJShape.001
     2087694415: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/H_ArmR
-    2093757776: ganon_Mouth_Heavyhit_VIS_O_OBJShape.001
     2121512537: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleC1/S_MantleC2/S_MantleC3
     2135121676: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR40
     2141998284: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL
-    2251942366: ganon_Mouth_Heavyouch_VIS_O_OBJShape
     2261485148: model-armature/Trans/Rot/Hip/Waist/Bust
     2272001472: model-armature/Trans/Rot/Hip/LegL/KneeL
     2311648115: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR11/FingerR12/FingerR13
     2367396482: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR31/FingerR32
-    2376051103: ganon_Mouth_Final_VIS_O_OBJShape
     2425705812: model-armature
-    2458944404: ganon_Mouth_PatternA_VIS_O_OBJShape.001
-    2482716032: ganon_Mouth_VoiceC_VIS_O_OBJShape.001
     2521192090: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR11
     2527170735: model-armature/Trans/Rot/Throw
     2532440935: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleC1/S_MantleC2/S_MantleC3/S_MantleC4/S_MantleC5/S_MantleC6_null
-    2634033693: ganon_Mouth_Final_VIS_O_OBJShape.001
     2637957641: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR21/FingerR22
     2670248599: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30/FingerL31
     2672425023: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/HaveR
     2680947386: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleL1/S_MantleL2/S_MantleL3/S_MantleL4
-    2693231888: ganon_Blink_Furafura_VIS_O_OBJShape
-    2701553721: ganon_Mouth_Escape_VIS_O_OBJShape.001
     2713028338: model-armature/Trans/Rot/Hip/Waist/Bust/Neck/Head/FaceN/Mouth_group/Jaw_offset
-    2713541218: ganon_Mouth_Heavyouch_VIS_O_OBJShape.001
     2718297658: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30/FingerL31/FingerL32
     2719661640: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL11/FingerL12
     2739058684: model-armature/Trans/Rot/Hip/LegR
     2747382712: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleC1
     2788077825: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL21
     2809029830: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30/FingerL40
-    2826476870: ganon_Eyeblow_Ouch_VIS_O_OBJShape
-    2854300277: ganon_Mouth_Capture_VIS_O_OBJShape
     2873313907: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL11
-    2890908672: ganon_Mouth_Result_VIS_O_OBJShape
     2925717101: model-armature/Trans/Rot/Hip/LegR/KneeR/FootR
     2965463635: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR21
     2986581512: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR51/FingerR52/FingerR53
     2993848099: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleL1/S_MantleL2/S_MantleL3/S_MantleL4/S_MantleL5/S_MantleL6_null
     3002298628: model-armature/Trans/Rot/Hip/Waist/Bust/Neck/Head/FaceN
-    3023474517: ganon_Mouth_Ouch_VIS_O_OBJShape.001
     3027836153: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleL1/S_MantleL2
     3035983130: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR11/FingerR12
-    3062020154: ganon_Mouth_Ouch_VIS_O_OBJShape
     3128291340: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleR1/S_MantleR2/S_MantleR3
     3243974408: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30/FingerL40/FingerL41
-    3251372998: ganon_Eye_Final_VIS_O_OBJShape
-    3263822342: ganon_Mouth_Ottotto_VIS_O_OBJShape
-    3277255015: ganon_Blink_Result_VIS_O_OBJShape
     3312468019: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL51/FingerL52
-    3312849957: ganon_Mouth_Talk_VIS_O_OBJShape
     3358765270: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20/FingerL30
     3362508902: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleR1/S_MantleR2/S_MantleR3/S_MantleR4/S_MantleR5
-    3377069324: ganon_Mouth_Ottotto_VIS_O_OBJShape.001
-    3392333536: ganon_Eyeblow_Catch_VIS_O_OBJShape
     3396089295: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20
-    3397163309: ganon_Mouth_VoiceC_VIS_O_OBJShape
     3476000631: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL51
     3495976764: model-armature/Trans/Rot/Hip/LegR/H_KneeR
-    3523761406: ganon_Eyeblow_Result2_VIS_O_OBJShape
     3550450529: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR51/FingerR52
     3603126421: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR
-    3619392561: ganon_Eyeblow_Furafura_VIS_O_OBJShape
     3627286740: model-armature/Trans/Rot/Hip
-    3631132232: ganon_Mouth_Attack_VIS_O_OBJShape
     3646392913: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL
-    3683397977: ganon_Eyeblow_Talk_VIS_O_OBJShape
-    3698850082: ganon_Eye_Heavyhit_VIS_O_OBJShape.001
-    3699909450: ganon_Mouth_Furafura_VIS_O_OBJShape
     3739050884: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30
     3755497727: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR
-    3756250216: ganon_Eye_Heavyhit_VIS_O_OBJShape
     3771278008: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL
     3777389816: model-armature/Trans/Rot/Hip/Waist/Bust/Neck
-    3824817415: ganon_Mouth_HeavyAttack_VIS_O_OBJShape.001
     3854545925: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR
     3878397574: model-armature/Trans/Rot/Hip/Waist/Bust/Neck/Head/FaceN/Mouth_group/Jaw_offset/Jaw
     3886938576: model-armature/Trans/Rot/Hip/LegL/KneeL/FootL/ToeL
-    3920881723: ganon_Blink_Down_VIS_O_OBJShape
-    3921798143: ganon_Blink_Result2_VIS_O_OBJShape
     3997526960: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR20/FingerR30/FingerR40/FingerR41
     4028143784: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleR1
     4048482998: model-armature/Trans/Rot/Hip/Waist/Bust/Neck/Head/FaceN/Mouth_group
     4062876574: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR/HandR/FingerR10/FingerR51
-    4118632157: ganon_Mouth_Result_VIS_O_OBJShape.001
     4141471531: model-armature/Trans/Rot/Hip/LegR/KneeR/FootR/ToeR
     4150864166: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/FingerL10/FingerL20
     4218779563: model-armature/Trans/Rot/Hip/Waist/Bust/S_MantleR1/S_MantleR2/S_MantleR3/S_MantleR4/S_MantleR5/S_MantleR6_null
-    4291564292: ganon_Eye_Talk_VIS_O_OBJShape

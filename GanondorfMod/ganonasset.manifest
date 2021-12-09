@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2928428810
+CRC: 1763322578
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 810c045067539108366ee1fc230599ec
+    Hash: 5b1aee3a40ba2caf841ff979389d6aa1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -71,10 +71,12 @@ Assets:
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
 - Assets/GanonAsset/Animator/Animations/Taunt1.anim
 - Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
+- Assets/GanonAsset/Animator/Animations/UpBStart.anim
 - Assets/GanonAsset/Animator/GanonAnimator.controller
 - Assets/GanonAsset/Animator/Animations/Running.anim
 - Assets/GanonAsset/particle/GanondorfFlameEffect.prefab
 - Assets/GanonAsset/Animator/Animations/Dash.anim
+- Assets/GanonAsset/Animator/Animations/UpBFinishGrab.anim
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
@@ -82,6 +84,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
 - Assets/GanonAsset/icons/skin1.png
 - Assets/GanonAsset/Animator/Animations/SpecialKickEnd.anim
+- Assets/GanonAsset/Animator/Animations/UpBGrabbed.anim
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
@@ -93,7 +96,6 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
-- Assets/GanonAsset/Mesh/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
 - Assets/GanonAsset/particle/Shaders/ParticleDissolveAlpha.shader
 - Assets/GanonAsset/Animator/Animations/RunBrake.anim
@@ -105,17 +107,19 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
 - Assets/GanonAsset/Animator/Animations/Landing.anim
 - Assets/GanonAsset/particle/Shaders/Panner.shader
-- Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/icons/warlockPunchIcon.png
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
+- Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
 - Assets/GanonAsset/Material/ganontex.mat
 - Assets/GanonAsset/icons/wizardFootIcon.png
 - Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
 - Assets/GanonAsset/Animator/Animations/Punch.anim
+- Assets/GanonAsset/Mesh/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
 - Assets/GanonAsset/Animator/Animations/warlockNofoot.anim
+- Assets/GanonAsset/Animator/Animations/InfernoKick.anim
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
 - Assets/GanonAsset/Animator/Animations/Falling.anim
 - Assets/GanonAsset/Animator/Animations/Wait1.anim
