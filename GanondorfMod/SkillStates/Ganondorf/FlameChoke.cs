@@ -83,14 +83,6 @@ namespace GanondorfMod.SkillStates
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
-            HitBoxGroup hitBoxGroup = null;
-            Transform modelTransform = base.GetModelTransform();
-            if (modelTransform)
-            {
-                hitBoxGroup = Array.Find(modelTransform.GetComponents<HitBoxGroup>(),
-                    (HitBoxGroup element) => element.groupName == "melee");
-            }
-
             //Create blast attack, 
             attack = new BlastAttack();
             attack.damageType = DamageType.Stun1s;

@@ -335,7 +335,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region MasterySkin
-            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 100f, Color.white, 1.0f);
+            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 1f, Color.white, 1.0f);
             CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
                 masteryMat,

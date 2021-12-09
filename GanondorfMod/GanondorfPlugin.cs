@@ -103,23 +103,30 @@ namespace GanondorfMod
 
         private void GlobalEventManager_OnCharacterDeath(On.RoR2.GlobalEventManager.orig_OnCharacterDeath orig, GlobalEventManager self, DamageReport damageReport) {
             orig(self, damageReport);
-            if (damageReport.attackerBody.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME") {
-                int amountToAdd = 0;
-                if (damageReport.victimIsBoss) {
-                    amountToAdd += Modules.StaticValues.bossKillStackAmount;
-                }
-                if (damageReport.victimIsChampion) {
-                    amountToAdd += Modules.StaticValues.championKillStackAmount;
-                }
-                if (damageReport.victimIsElite) {
-                    amountToAdd += Modules.StaticValues.eliteKillStackAmount;
-                }
+            if (damageReport.attackerBody != null && damageReport.attacker != null && damageReport != null) {
+                if (damageReport.attackerBody.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME")
+                {
+                    int amountToAdd = 0;
+                    if (damageReport.victimIsBoss)
+                    {
+                        amountToAdd += Modules.StaticValues.bossKillStackAmount;
+                    }
+                    if (damageReport.victimIsChampion)
+                    {
+                        amountToAdd += Modules.StaticValues.championKillStackAmount;
+                    }
+                    if (damageReport.victimIsElite)
+                    {
+                        amountToAdd += Modules.StaticValues.eliteKillStackAmount;
+                    }
 
-                if (!damageReport.victimIsBoss && !damageReport.victimIsElite && !damageReport.victimIsChampion) {
-                    amountToAdd += Modules.StaticValues.normalKillStackAmount;
-                }
+                    if (!damageReport.victimIsBoss && !damageReport.victimIsElite && !damageReport.victimIsChampion)
+                    {
+                        amountToAdd += Modules.StaticValues.normalKillStackAmount;
+                    }
 
-                damageReport.attacker.GetComponent<TriforceBuffComponent>().AddToBuffCount(amountToAdd);
+                    damageReport.attacker.GetComponent<TriforceBuffComponent>().AddToBuffCount(amountToAdd);
+                }
             }
         }
 
