@@ -166,7 +166,7 @@ namespace GanondorfMod.SkillStates
         //Setup the hitbox for warlock punch.
         public void setupWarlockPunchHitbox() {
             
-            int randomNum = UnityEngine.Random.Range(1, 101);
+            int randomNum = UnityEngine.Random.Range(1, 1001);
             if (randomNum < 5)
             {
                 this.damageCoefficient = Modules.StaticValues.warlockPunchDamageCoefficient * Modules.StaticValues.warlockMemeDamage;

@@ -33,13 +33,6 @@ namespace GanondorfMod.Modules.Survivors
                 HandMaxStackL = childLocator.FindChild("MaxStackL").GetComponent<ParticleSystem>();
                 HandMaxStackR = childLocator.FindChild("MaxStackR").GetComponent<ParticleSystem>();
             }
-
-            Debug.Log(FootLFire);
-            Debug.Log(HandLFire);
-            Debug.Log(FootRFire);
-            Debug.Log(HandRFire);
-            Debug.Log(HandRLightning);
-            Debug.Log(ShoulderRLightning);
         }
 
         public void DisableAllParticles() {

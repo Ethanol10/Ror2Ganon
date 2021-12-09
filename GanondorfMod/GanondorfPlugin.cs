@@ -32,7 +32,7 @@ namespace GanondorfMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "1.0.0";
+        public const string MODVERSION = "1.0.1";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;

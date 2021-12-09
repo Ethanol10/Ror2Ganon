@@ -332,7 +332,7 @@ namespace GanondorfMod.SkillStates
             float bseEarlyExitTime = 1.3f;
             float hitStopDur = 0.1f;
             float atkRecoil = 0.75f;
-            float hitHopVelo = 4f;
+            float hitHopVelo = 2.5f;
             HitBoxGroup hitBoxGroup = null;
             Transform modelTransform = base.GetModelTransform();
 
@@ -376,7 +376,7 @@ namespace GanondorfMod.SkillStates
             float bseEarlyExitTime = 1.4f;
             float hitStopDur = 0.012f;
             float atkRecoil = 0.75f;
-            float hitHopVelo = 5f;
+            float hitHopVelo = 2.5f;
             HitBoxGroup hitBoxGroup = null;
             Transform modelTransform = base.GetModelTransform();
 
