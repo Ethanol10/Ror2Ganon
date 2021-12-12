@@ -14,6 +14,8 @@ namespace GanondorfMod.SkillStates
         private Transform modelTransform;
         private Quaternion originalRotation;
         private Collider collider;
+        private SphereCollider sphCollider;
+        private CapsuleCollider capCollider;
 
         private void Awake()
         {
@@ -22,7 +24,19 @@ namespace GanondorfMod.SkillStates
             this.direction = this.GetComponent<CharacterDirection>();
             this.modelLocator = this.GetComponent<ModelLocator>();
             this.collider = this.gameObject.GetComponent<Collider>();
-            collider.enabled = false;
+            this.sphCollider = this.gameObject.GetComponent<SphereCollider>();
+            this.capCollider = this.gameObject.GetComponent<CapsuleCollider>();
+
+            if (this.collider) {
+                collider.enabled = false;
+            }
+            if (this.sphCollider) {
+                sphCollider.enabled = false;
+            }
+            if (this.capCollider) {
+                capCollider.enabled = false;
+            }
+            
             
             if (this.direction) this.direction.enabled = false;
 
@@ -32,6 +46,11 @@ namespace GanondorfMod.SkillStates
                 {
                     this.modelTransform = modelLocator.modelTransform;
                     this.originalRotation = this.modelTransform.rotation;
+
+                    if (this.modelLocator.gameObject.name == "GreaterWispBody(Clone)") {
+                        this.modelLocator.dontDetatchFromParent = true;
+                        this.modelLocator.dontReleaseModelOnDeath = true;
+                    }
 
                     this.modelLocator.enabled = false;
                 }
@@ -71,6 +90,8 @@ namespace GanondorfMod.SkillStates
             if (this.modelTransform) this.modelTransform.rotation = this.originalRotation;
             if (this.direction) this.direction.enabled = true;
             if (this.collider) this.collider.enabled = true;
+            if (this.sphCollider) this.sphCollider.enabled = true;
+            if (this.capCollider) this.capCollider.enabled = true;
             Destroy(this);
         }
     }

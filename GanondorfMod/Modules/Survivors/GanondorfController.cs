@@ -18,6 +18,8 @@ namespace GanondorfMod.Modules.Survivors
         public ParticleSystem HandRFire;
         public ParticleSystem HandRLightning;
         public ParticleSystem ShoulderRLightning;
+        public ParticleSystem FootRInfernoFire;
+        public ParticleSystem PullShockwave;
 
         public void Awake() {
             characterBody = gameObject.GetComponent<CharacterBody>();
@@ -32,6 +34,8 @@ namespace GanondorfMod.Modules.Survivors
                 ShoulderRLightning = childLocator.FindChild("ShoulderRLightningParticle").GetComponent<ParticleSystem>();
                 HandMaxStackL = childLocator.FindChild("MaxStackL").GetComponent<ParticleSystem>();
                 HandMaxStackR = childLocator.FindChild("MaxStackR").GetComponent<ParticleSystem>();
+                FootRInfernoFire = childLocator.FindChild("InfernoGuillotineFlame").GetComponent<ParticleSystem>();
+                PullShockwave = childLocator.FindChild("PullShockwaveEffect").GetComponent<ParticleSystem>();
             }
         }
 

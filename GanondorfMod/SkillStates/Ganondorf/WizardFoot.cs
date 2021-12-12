@@ -39,7 +39,7 @@ namespace GanondorfMod.SkillStates
         protected float pushForce = 4000f;
         protected Vector3 bonusForce = Vector3.zero;
         protected float baseEarlyExitTime = 0.75f;
-        protected float hitStopDuration = 0.03f;
+        protected float hitStopDuration = 0.1f;
         protected float attackRecoil = 0.75f;
         protected float hitHopVelocity = 4f;
         protected bool cancelled = false;
@@ -140,7 +140,6 @@ namespace GanondorfMod.SkillStates
             base.FixedUpdate();
             this.RecalculateRollSpeed();
             //Update hitpause timer
-            this.hitPauseTimer -= Time.fixedDeltaTime;
 
             //Change forward to aimDirection and update FOV
             if (base.characterDirection) base.characterDirection.forward = this.aimRayDir;
@@ -171,12 +170,13 @@ namespace GanondorfMod.SkillStates
             }
             else
             {
+                this.hitPauseTimer -= Time.fixedDeltaTime;
                 if (base.characterMotor) base.characterMotor.velocity = Vector3.zero;
                 if (this.animator) this.animator.SetFloat("kick.playbackRate", 0f);
             }
 
             //Trigger attack if within the active hitbox timing.
-            if (this.stopwatch >= (duration * this.attackStartTime) && this.stopwatch <= (duration * this.attackEndTime))
+            if (this.stopwatch >= (this.attackStartTime) && this.stopwatch <= (this.attackEndTime))
             {
                 FireAttack();
             }

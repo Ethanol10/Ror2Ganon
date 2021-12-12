@@ -11,11 +11,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	1752481894	grabStartSFX			\Default Work Unit\grabStartSFX	
 	1800641154	Spawning			\Default Work Unit\Spawning	
 	2320755133	hardHitsSFX			\Default Work Unit\hardHitsSFX	
+	2337929022	superHitsVoice			\Default Work Unit\superHitsVoice	
 	2501655105	warlockPunchSFX			\Default Work Unit\warlockPunchSFX	
 	2566988422	swingSFX			\Default Work Unit\swingSFX	
 	2785723162	warlockPunchVoice			\Default Work Unit\warlockPunchVoice	
 	2837319454	flameChokeSFXEnd			\Default Work Unit\flameChokeSFXEnd	
 	3654510015	grabSounds			\Default Work Unit\grabSounds	
+	3692475780	infernoKickStart			\Default Work Unit\infernoKickStart	
 	3798764932	darkDive1			\Default Work Unit\darkDive1	
 	3798764935	darkDive2			\Default Work Unit\darkDive2	
 	4164963883	wizardsFootVoice			\Default Work Unit\wizardsFootVoice	
@@ -36,23 +38,25 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	283584535	tauntPunchThunder2	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\tauntPunchThunder2_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitSFX\tauntPunchThunder2		7185
 	299597539	darkDiveSFX	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\se_ganon_special_H02_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\grabStartSFX\darkDiveSFX		5610
 	339396881	attack1sfx	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack1sfx_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitSFX\attack1sfx		5274
-	400381884	attack6	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack6_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\attack6		5120
+	400381884	attack6	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack6_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\superHardHits\attack6		5120
 	418447717	vc_ganon_win03	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\vc_ganon_win03_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\spawnRandomVoice\vc_ganon_win03		19613
 	541742107	attack1	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack1_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\attack1		4391
 	576921918	tauntSpin	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\tauntSpin_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\tauntSpin		4686
 	589921182	hmph	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\vc_ganon_appeal_S01_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitsVoice\hmph		4819
 	598505434	flameChokeSFXend	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\se_ganon_special_S01_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\flameChokeSFXend		9244
+	598621185	infernoKickStart	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\vc_ganon_attackhard_Chunk0_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\infernoKickStart		8217
 	632191689	warlockAttack2	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\warlockAttack2_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\warlockPunchVoice\warlockAttack2		16303
 	637531951	jump2	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\jump2_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\jumpSFX\jump2		5779
 	642989671	wizardFoot1	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\wizardFoot1_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\wizardFoot1		5968
+	657109559	infernoKickEnd	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\vc_ganon_attackhard_Chunk1_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\superHardHits\infernoKickEnd		5788
 	676595524	tauntPunch	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\tauntPunch_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitSFX\tauntPunch		2260
 	678504018	flameChokeSFXGrabbed	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\se_ganon_special_S03_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\GrabSounds\flameChokeSFXGrabbed		6000
 	686060726	attack4	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack4_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitsVoice\attack4		3652
 	725642921	memeExplosion	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\memeExplosion_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\memeExplosion		41885
 	758614773	ganonDying	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\vc_ganon_damage_twinkle_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\ganonDying		21643
-	773765328	attack7	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack7_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\attack7		6004
+	773765328	attack7	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack7_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\superHardHits\attack7		6004
 	778499621	darkDive1	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\vc_ganon_special_H01_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\darkDive1		3967
-	795453842	attack8doriya	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack8doriya_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\attack8doriya		7662
+	795453842	attack8doriya	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack8doriya_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\superHardHits\attack8doriya		7662
 	820779463	flameChokeSFXstart	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\se_ganon_special_S02_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\grabStartSFX\flameChokeSFXstart		7095
 	845274911	attack2	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack2_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitsVoice\attack2		3550
 	848635819	attack5	C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\SFX\attack5_F0C34EB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\attack5		5705

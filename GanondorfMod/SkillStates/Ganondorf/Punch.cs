@@ -55,11 +55,13 @@ namespace GanondorfMod.SkillStates
         {
             //Set up animators and intialise bools
             base.OnEnter();
+            this.inHitPause = false;
             this.swingSoundString = "swingSFX";
             this.hasFired = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             this.animator.SetBool("attacking", true);
+            this.animator.SetFloat("punch.playbackRate", 1.0f);
             punchActive = false;
             kickActive = false;
             dashActive = false;
@@ -152,6 +154,9 @@ namespace GanondorfMod.SkillStates
             {
                 Util.PlaySound(this.heavyKickHitSoundString, base.gameObject);
             }
+            if (lightKickFired) {
+                base.SmallHop(base.characterMotor, this.lightKickHitHopVelocity);
+            }
             if (!this.hasHopped)
             {
                 if (base.characterMotor && !base.characterMotor.isGrounded && this.hitHopVelocity > 0f)
@@ -161,6 +166,7 @@ namespace GanondorfMod.SkillStates
 
                 this.hasHopped = true;
             }
+            
 
             if (!this.inHitPause && this.hitStopDuration > 0f)
             {
@@ -172,16 +178,13 @@ namespace GanondorfMod.SkillStates
 
             //Increment Buff count
             GetComponent<TriforceBuffComponent>().AddToBuffCount(1);
-            //if (GanondorfPlugin.triforceBuff.GetMaxStackState()) {
-            //    Modules.Survivors.Ganondorf.ganondorfController
-            //}
         }
 
         //check based on what attack has been selected at the beginning!
         public override void FixedUpdate()
         {
             //Dash forward only if dash is active.
-            if (dashActive && stopwatch >= dashDuration)
+            if (dashActive && stopwatch <= dashDuration)
             {
                 this.RecalculateDashSpeed();
 
@@ -206,10 +209,7 @@ namespace GanondorfMod.SkillStates
                 this.PlayAttackAnimation();
                 isAttacking = false;
             }
-            //Increment Timers for hitstun
-            this.hitPauseTimer -= Time.fixedDeltaTime;
-            this.stopwatch += Time.fixedDeltaTime;
-
+            
             //Return player back to usual speed once hitpause is over
             if (this.hitPauseTimer <= 0f && this.inHitPause)
             {
@@ -224,26 +224,39 @@ namespace GanondorfMod.SkillStates
             }
             else
             {
+                //Increment Timers for hitstun
+                this.hitPauseTimer -= Time.fixedDeltaTime;
                 //Set velocity to zero, and punch playback rate to 0 to simulate a strong hit
                 if (base.characterMotor) base.characterMotor.velocity = Vector3.zero;
                 if (this.animator) this.animator.SetFloat("punch.playbackRate", 0f);
             }
 
             //check if lightKick should fire.
-            if (kickActive && this.stopwatch >= (this.duration * this.lightKickAttackStartTime)
-                && this.stopwatch <= (this.duration * this.lightKickAttackEndTime) )
+            if (kickActive && this.stopwatch >= (this.lightKickAttackStartTime)
+                && this.stopwatch <= (this.lightKickAttackEndTime) )
             {
                 this.FireLightKickAttack();
             }
 
             //Check if Dash or punch should trigger
-            if (this.stopwatch >= (this.duration * this.attackStartTime) && this.stopwatch <= (this.duration * this.attackEndTime))
+            if (this.stopwatch >= (this.attackStartTime) && this.stopwatch <= (this.attackEndTime))
             {
                 if (kickActive) {
                     //Play Particle effect
                     ganonController.FootLFire.Play();
                 }
                 this.FireAttack();    
+            }
+
+            //end the move early.
+            if (this.stopwatch >= (this.earlyExitTime) && base.isAuthority)
+            {
+                if (base.inputBank.skill1.down)
+                {
+                    if (!this.hasFired) this.FireAttack();
+                    this.SetNextState();
+                    return;
+                }
             }
 
             //End move if timer exceeds duration.
@@ -253,6 +266,12 @@ namespace GanondorfMod.SkillStates
                 return;
             }
         }
+
+        protected override void SetNextState()
+        {
+            this.outer.SetNextState(new Punch());
+        }
+
 
         public void FireLightKickAttack() {
             if (!lightKickFired)
@@ -327,10 +346,10 @@ namespace GanondorfMod.SkillStates
             float pushFrce = 500f;
             Vector3 bonusFrce = Vector3.zero;
             float baseDur = 1.25f;
-            float atkStartTime = 0.291f;
-            float atkEndTime = 0.8f;
-            float bseEarlyExitTime = 1.3f;
-            float hitStopDur = 0.1f;
+            float atkStartTime = 0.2f;
+            float atkEndTime = 0.55f;
+            float bseEarlyExitTime = 0.9f;
+            float hitStopDur = 0.2f;
             float atkRecoil = 0.75f;
             float hitHopVelo = 2.5f;
             HitBoxGroup hitBoxGroup = null;
@@ -370,13 +389,12 @@ namespace GanondorfMod.SkillStates
             float procCoeff = 1f;
             float pushFrce = 0f;
             Vector3 bonusFrce = Vector3.zero;
-            float baseDur = 1.5f;
+            float baseDur = 1.229f;
             float atkStartTime = 0.1f;
             float atkEndTime = 0.33f;
-            float bseEarlyExitTime = 1.4f;
             float hitStopDur = 0.012f;
             float atkRecoil = 0.75f;
-            float hitHopVelo = 2.5f;
+            float hitHopVelo = 1.5f;
             HitBoxGroup hitBoxGroup = null;
             Transform modelTransform = base.GetModelTransform();
 
@@ -406,7 +424,6 @@ namespace GanondorfMod.SkillStates
             this.lightKickAttackRecoil = atkRecoil;
             this.lightKickHitHopVelocity = hitHopVelo;
             this.lightKickDuration = baseDur / this.attackSpeedStat;
-            this.lightKickEarlyExitTime = bseEarlyExitTime / this.attackSpeedStat;
 
             HitBoxGroup group2;
 
@@ -419,10 +436,10 @@ namespace GanondorfMod.SkillStates
             this.procCoefficient = 1f;
             this.pushForce = 600f;
             this.bonusForce = Vector3.zero;
-            this.baseDuration = 1.5f;
-            this.attackStartTime = 0.75f;
-            this.attackEndTime = 1.04f;
-            this.baseEarlyExitTime = 1.4f;
+            this.baseDuration = 1.229f;
+            this.attackStartTime = 0.60f;
+            this.attackEndTime = 0.75f;
+            this.baseEarlyExitTime = 0.9f;
             this.hitStopDuration = 0.1f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 10f;
@@ -459,11 +476,11 @@ namespace GanondorfMod.SkillStates
             this.procCoefficient = 1f;
             this.pushForce = 4000f;
             this.bonusForce = forwardDirection;
-            this.baseDuration = 1.13f;
-            this.attackStartTime = 0.3f;
+            this.baseDuration = 0.81f;
+            this.attackStartTime = 0.25f;
             this.attackEndTime = 0.55f;
-            this.baseEarlyExitTime = 1.1f;
-            this.hitStopDuration = 0.02f;
+            this.baseEarlyExitTime = 0.6f;
+            this.hitStopDuration = 0.1f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 6f;
 

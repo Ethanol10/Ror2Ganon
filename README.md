@@ -37,7 +37,17 @@ Dash forward grabbing enemies in a row and choke slamming them dealing 500% dama
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335824211998/warlockPunchIcon.png"><br>
 Charge up a powerful punch unleashing 1650% damage onto close range foes.
 
+
 ## Changelog
+- 2.0.0 -> New Features! Hooray! (This will probably be my last update for this mod regarding new content, as I am a terrible animator. However, if someone wants to offer help with animations for more moves, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated.)
+    - 2 New moves! (Unlock them and find out what they are)
+    - Another skin! (also with an unlock condition)
+    - (slight) VFX updates!
+    - Actual hit pauses! (get that weak no-hitpause garbage outta here)
+    - Bug Fixes included (as usual)
+        - Fixed Ganon not triggering an attack when he lands with Flame Choke. (For later reference, set the position of the blast attack RIGHT BEFORE you trigger the attack.)
+        - Fixed Ganon having ridiculously large item displays when in use with other mods (Unless someone decides to use the name positions that I've made.)
+        - Fixed Ganon leaving Greater Wisp Corpses lying all over the place. Gotta make the place clean while destroying everything.
 - 1.0.3 - Fixes to the following: (I promise this is the last thing I'll update for awhile, I'll get back to making something new)
     - Fixed Ganondorf from not being able to grab those stupid hitscan wisps. Slam those guys into the ground for me will ya.
     - Ganon's character model should be *ｐｒｉｓｔｉｎｅ* and not bugged to hell and back anymore.
@@ -71,8 +81,8 @@ Charge up a powerful punch unleashing 1650% damage onto close range foes.
 ~~literally none, I am a programming god /sarcasm~~
 
 - Animation issues when performing a move before the move finishes, specifically the transition from Aerial Kick to Warlock Punch
-- When using Flame Choke from a high spot above the ground, the attack sometimes doesn't register when landing on the ground.
-- Flame Choke has some issues when trying to grab a Greater Wisp, it pushes back against Ganondorf, possibly sending him through the floor and out the level for a bit.
+- Flame Choke has some issues when trying to grab a Wandering Vagrant, Greater Wisp, Solus Control Unit (this isn't an exhaustive list), it pushes back against Ganondorf, possibly sending him through the floor and out the level for a bit.
+- Special move #2 *very rarely* doesn't register that it hit the floor and as a result, leaves you stuck in the air for a bit. I've only ever encountered this once, so if you do encounter it again, please tell me exactly how you replicated it.
  
 ## Credits
 - Rob's HenryMod -> literally the only thing that convinced me to start making a character, for that thank you so much 

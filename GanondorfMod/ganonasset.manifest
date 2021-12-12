@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1763322578
+CRC: 2999931851
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5b1aee3a40ba2caf841ff979389d6aa1
+    Hash: a125aec0f9f020a845d61272c30717d8
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -67,10 +67,12 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
 - Assets/GanonAsset/icons/skin0.png
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
+- Assets/GanonAsset/Mesh/untitled.fbx
 - Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
 - Assets/GanonAsset/Animator/Animations/Taunt1.anim
 - Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
+- Assets/GanonAsset/Animator/Animations/InfernoKick.anim
 - Assets/GanonAsset/Animator/Animations/UpBStart.anim
 - Assets/GanonAsset/Animator/GanonAnimator.controller
 - Assets/GanonAsset/Animator/Animations/Running.anim
@@ -78,6 +80,8 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Dash.anim
 - Assets/GanonAsset/Animator/Animations/UpBFinishGrab.anim
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
+- Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
+- Assets/GanonAsset/Mesh/standard.mat
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
@@ -93,6 +97,7 @@ Assets:
 - Assets/GanonAsset/Material/ganonTex04.mat
 - Assets/GanonAsset/icons/TriforceIcon.png
 - Assets/GanonAsset/particle/firestuff.png
+- Assets/GanonAsset/Mesh/Torus.mesh
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
@@ -100,6 +105,7 @@ Assets:
 - Assets/GanonAsset/particle/Shaders/ParticleDissolveAlpha.shader
 - Assets/GanonAsset/Animator/Animations/RunBrake.anim
 - Assets/GanonAsset/icons/texGanondorfIcon.png
+- Assets/GanonAsset/Animator/Animations/PunchAlternate.anim
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
@@ -118,8 +124,9 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Punch.anim
 - Assets/GanonAsset/Mesh/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
+- Assets/GanonAsset/particle/PullShockwaveParticle.prefab
 - Assets/GanonAsset/Animator/Animations/warlockNofoot.anim
-- Assets/GanonAsset/Animator/Animations/InfernoKick.anim
+- Assets/GanonAsset/Animator/Animations/InfernoKickStart.anim
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
 - Assets/GanonAsset/Animator/Animations/Falling.anim
 - Assets/GanonAsset/Animator/Animations/Wait1.anim
@@ -127,6 +134,7 @@ Assets:
 - Assets/GanonAsset/Animator/GanonLobby.controller
 - Assets/GanonAsset/Animator/Animations/GroundedGrabFinish.anim
 - Assets/GanonAsset/Animator/Animations/Grabbing.anim
+- Assets/GanonAsset/Animator/Animations/InfernoKickLanding.anim
 - Assets/GanonAsset/particle/Light.prefab
 - Assets/GanonAsset/Animator/Animations/Jump.anim
 - Assets/GanonAsset/icons/punchIcon.png

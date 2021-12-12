@@ -67,8 +67,12 @@ namespace GanondorfMod.Modules
 
             #region Special
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_NAME", "Warlock Punch");
-            LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch unleashing" 
+            LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch, while gaining a short burst of Super Armor, unleashing" 
                 + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes.");
+
+            LanguageAPI.Add(prefix + "INFERNO_KICK_NAME", "Inferno Guillotine");
+            LanguageAPI.Add(prefix + "INFERNO_KICK_DESCRIPTION", $"Pull enemies into their demise, slamming your foot down, dealing"
+                + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> in a radius around you.");
             #endregion
 
             #region Scepter Upgrade
@@ -84,7 +88,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Ganondorf: Mastery");
 
             LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_NAME", "Ganondorf: Forbidden Methods");
-            LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_DESC", "As Ganondorf, collect 8 Lunar Items in a single run.");
+            LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_DESC", "As Ganondorf, collect 8 Lunar Items in a single run. (Only base game Lunar Items.)");
             LanguageAPI.Add(prefix + "EIGHTLUNAR_UNLOCKABLE_NAME", "Ganondorf: Forbidden Methods");
             #endregion
             #endregion

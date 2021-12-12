@@ -15,7 +15,7 @@ namespace GanondorfMod.Modules
 
         internal const float flameChokeDamageCoefficient = 5.0f;
 
-        internal const float wizardFootDamageCoefficient = 2.5f;
+        internal const float wizardFootDamageCoefficient = 1.8f;
 
         internal const float warlockPunchDamageCoefficient = 16.5f;
 
@@ -23,8 +23,12 @@ namespace GanondorfMod.Modules
 
         internal const float warlockPunchDamageReducer = 10.0f;
 
+        internal const float infernoGuillotineCoefficient = 20f;
+
+        internal const float infernoGuillotineAirborneCoefficient = 1.0f;
+
         //Maxmimum stack of triforce buffs.
-        //Max stack allows the player to stack to 150, but anything above 100 doesn't do anything.
+        //Max stack allows the player to stack to maxStack, but anything above maxPowerStack doesn't contribute to damage or armor.
         internal const int maxStack = 120;
         internal const int maxPowerStack = 100;
         internal const int stackAmountToDecay = 2;

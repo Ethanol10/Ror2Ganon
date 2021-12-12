@@ -296,10 +296,10 @@ namespace GanondorfMod.SkillStates
                 base.characterMotor.velocity = Vector3.zero;
                 stopwatch += Time.fixedDeltaTime;
                 if (stopwatch > aerialAttackStart && stopwatch < aerialAttackEnd) {
-                    attack.position = this.FindModelChild("HandL").position;
                     if (!hasFired && base.isAuthority)
                     {
                         hasFired = true;
+                        attack.position = this.FindModelChild("HandL").position;
                         int hitCount = attack.Fire().hitCount;
                         if (hitCount > 0) {
                             OnHitEnemyAuthority(hitCount);
@@ -310,6 +310,7 @@ namespace GanondorfMod.SkillStates
                 }
                 if (stopwatch > aerialLetGo) {
                     if (!hasFired && base.isAuthority) {
+                        attack.position = this.FindModelChild("HandL").position;
                         int hitCount = attack.Fire().hitCount;
                         if (hitCount > 0)
                         {
@@ -324,10 +325,10 @@ namespace GanondorfMod.SkillStates
         public void GroundedFinisher() {
             if (stopwatch > groundedAttackStart && stopwatch < groundedAttackEnd) {
                 base.characterMotor.velocity = Vector3.zero;
-                attack.position = this.FindModelChild("HandL").position;
                 if (!hasFired && base.isAuthority)
                 {
                     hasFired = true;
+                    attack.position = this.FindModelChild("HandL").position;
                     int hitCount = attack.Fire().hitCount;
                     if (hitCount > 0)
                     {
@@ -340,6 +341,7 @@ namespace GanondorfMod.SkillStates
             }
             if (stopwatch >= groundedLetGo) {
                 if (!hasFired && base.isAuthority) {
+                    attack.position = this.FindModelChild("HandL").position;
                     int hitCount = attack.Fire().hitCount;
                     if (hitCount > 0)
                     {
