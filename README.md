@@ -39,7 +39,7 @@ Charge up a powerful punch unleashing 1650% damage onto close range foes.
 
 
 ## Changelog
-- 2.0.0 -> New Features! Hooray! (This will probably be my last update for this mod regarding new content, as I am a terrible animator. However, if someone wants to offer help with animations for more moves, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated.)
+- 2.0.0 -> New Features! Hooray! (This will probably be my last update for this mod regarding new content, as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated.)
     - 2 New moves! (Unlock them and find out what they are)
     - Another skin! (also with an unlock condition)
     - (slight) VFX updates!

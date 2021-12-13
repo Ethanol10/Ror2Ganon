@@ -5,6 +5,8 @@ using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
 using GanondorfMod.Modules;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GanondorfMod.SkillStates
 {
@@ -28,7 +30,15 @@ namespace GanondorfMod.SkillStates
         private float dropForce = 100f;
         private KickState state;
         private float initialSmallhop = 20.0f;
+        private float pullRadius = 30f;
         private bool isExplosion;
+        private float explosionRadius = 20f;
+        private bool alreadyPulled;
+        private float pullForce = 1.5f;
+        private float pullMultiplier = 2f;
+        private Transform slamIndicatorInstance;
+        private Transform slamCenterIndicatorInstance;
+        private Ray downRay;
 
         public override void OnEnter()
         {
@@ -36,6 +46,7 @@ namespace GanondorfMod.SkillStates
             this.swingSoundString = "tauntSpin";
             this.hasFired = false;
             this.isExplosion = true;
+            this.alreadyPulled = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             ganonController = base.GetComponent<GanondorfController>();
@@ -60,6 +71,8 @@ namespace GanondorfMod.SkillStates
             ganonController.PullShockwave.Play();
 
             Util.PlaySound(this.voiceLine, base.gameObject);
+
+            CreateIndicator();
 
             //Play attack anim
             PlayAttackAnimation();
@@ -101,7 +114,10 @@ namespace GanondorfMod.SkillStates
             if (state == KickState.CHARGE) {
                 //increment the timer.
                 stopwatch += Time.fixedDeltaTime;
-
+                if (!alreadyPulled) {
+                    SearchToPull();
+                }
+                UpdateSlamIndicator();
 
                 if (stopwatch > windupTimer) {
                     state = KickState.DROP;
@@ -160,7 +176,7 @@ namespace GanondorfMod.SkillStates
                     }
                 }
 
-                for (int i = 0; i <= 8; i++)
+                for (int i = 0; i <= 6; i++)
                 {
                     Vector3 effectPosition = base.characterBody.footPosition + (UnityEngine.Random.insideUnitSphere * 8f);
                     effectPosition.y = base.characterBody.footPosition.y;
@@ -175,18 +191,117 @@ namespace GanondorfMod.SkillStates
             }
         }
 
+        public void SearchToPull()
+        {
+            if (NetworkServer.active) {
+                Collider[] array = Physics.OverlapSphere(base.transform.position, explosionRadius * pullMultiplier, LayerIndex.defaultLayer.mask);
+                foreach (Collider collider in array) {
+                    HealthComponent healthComponent = collider.GetComponent<HealthComponent>();
+                    if (healthComponent) {
+                        TeamComponent component2 = healthComponent.GetComponent<TeamComponent>();
+                        if (component2.teamIndex != TeamIndex.Player) {
+                            CharacterBody characterBody = healthComponent.body;
+
+                            if (characterBody) {
+                                Vector3 pull = (base.transform.position - characterBody.corePosition) * pullForce;
+                                CharacterMotor motor = characterBody.GetComponent<CharacterMotor>();
+                                Rigidbody rigidbody = characterBody.GetComponent<Rigidbody>();
+
+                                float mass = 1;
+                                if (motor)
+                                {
+                                    mass = motor.mass;
+                                }
+                                else if(rigidbody)
+                                {
+                                    mass = rigidbody.mass;
+                                }
+                                if (mass < 100) {
+                                    mass = 100;
+                                }
+
+                                pull *= mass;
+
+                                DamageInfo info = new DamageInfo
+                                {
+                                    attacker = base.gameObject,
+                                    inflictor = base.gameObject,
+                                    damage = 0,
+                                    damageColorIndex = DamageColorIndex.Default,
+                                    damageType = DamageType.Generic,
+                                    crit = false,
+                                    dotIndex = DotController.DotIndex.None,
+                                    force = pull,
+                                    position = base.transform.position,
+                                    procChainMask = default(ProcChainMask),
+                                    procCoefficient = 0
+                                };
+
+                                characterBody.healthComponent.TakeDamageForce(info, true, true);
+                                alreadyPulled = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void CreateIndicator()
+        {
+            if (EntityStates.Huntress.ArrowRain.areaIndicatorPrefab)
+            {
+                this.downRay = new Ray
+                {
+                    direction = Vector3.down,
+                    origin = base.transform.position
+                };
+
+                this.slamIndicatorInstance = UnityEngine.Object.Instantiate<GameObject>(EntityStates.Huntress.ArrowRain.areaIndicatorPrefab).transform;
+                this.slamIndicatorInstance.localScale = Vector3.one * explosionRadius;
+
+                this.slamCenterIndicatorInstance = UnityEngine.Object.Instantiate<GameObject>(EntityStates.Huntress.ArrowRain.areaIndicatorPrefab).transform;
+                this.slamCenterIndicatorInstance.localScale = (Vector3.one * explosionRadius) / 3f;
+            }
+        }
+
+        private void UpdateSlamIndicator()
+        {
+            if (this.slamIndicatorInstance)
+            {
+                float maxDistance = 250f;
+
+                this.downRay = new Ray
+                {
+                    direction = Vector3.down,
+                    origin = base.transform.position
+                };
+
+                RaycastHit raycastHit;
+                if (Physics.Raycast(this.downRay, out raycastHit, maxDistance, LayerIndex.world.mask))
+                {
+                    this.slamIndicatorInstance.transform.position = raycastHit.point;
+                    this.slamIndicatorInstance.transform.up = raycastHit.normal;
+
+                    this.slamCenterIndicatorInstance.transform.position = raycastHit.point;
+                    this.slamCenterIndicatorInstance.transform.up = raycastHit.normal;
+                }
+            }
+        }
+
         //Use base exit.
         public override void OnExit()
         {
             //stop playing particles
             ganonController.FootRInfernoFire.Stop();
 
+            if (this.slamIndicatorInstance) EntityState.Destroy(this.slamIndicatorInstance.gameObject);
+            if (this.slamCenterIndicatorInstance) EntityState.Destroy(this.slamCenterIndicatorInstance.gameObject);
+
             base.OnExit();
         }
 
         //Setup the hitbox for warlock punch.
         public void setupInfernoGuillotineAttack() {
-            float explosionRadius;
             //int randomNum = UnityEngine.Random.Range(1, 1001);
             //if (randomNum < 5)
             //{
@@ -201,8 +316,6 @@ namespace GanondorfMod.SkillStates
             this.voiceLine = "infernoKickStart";
             this.damageCoefficient = Modules.StaticValues.infernoGuillotineCoefficient;
             this.pushForce = 10000f;
-            explosionRadius = 50f;
-
             this.procCoefficient = 1.5f;
             this.bonusForce = Vector3.up;
             this.baseDuration = 2.25f;

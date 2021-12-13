@@ -238,8 +238,6 @@ namespace GanondorfMod.SkillStates
         //grab radius of 10f is a little too big, try not to go over.
         public void AttemptGrab(float grabRadius)
         {
-            Ray aimRay = base.GetAimRay();
-
             BullseyeSearch search = new BullseyeSearch
             {
                 teamMaskFilter = TeamMask.GetEnemyTeams(base.GetTeam()),
