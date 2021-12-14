@@ -114,7 +114,7 @@ namespace GanondorfMod.Modules
             bodyComponent.levelJumpPower = bodyInfo.jumpPowerGrowth;
 
             bodyComponent.baseDamage = bodyInfo.damage;
-            bodyComponent.levelDamage = bodyComponent.baseDamage * 0.2f;
+            bodyComponent.levelDamage = bodyInfo.damageGrowth;
 
             bodyComponent.baseAttackSpeed = bodyInfo.attackSpeed;
             bodyComponent.levelAttackSpeed = bodyInfo.attackSpeedGrowth;
@@ -448,6 +448,7 @@ internal class BodyInfo
     internal float jumpPowerGrowth = 0f;// jump power per level exists for some reason
 
     internal float damage = 12f;
+    internal float damageGrowth = 2.4f;
 
     internal float attackSpeed = 1f;
     internal float attackSpeedGrowth = 0f;

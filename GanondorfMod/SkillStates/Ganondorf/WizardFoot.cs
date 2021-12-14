@@ -48,6 +48,10 @@ namespace GanondorfMod.SkillStates
         private Transform modelTrans;
         private Quaternion _lookRot;
         private GanondorfController ganonController;
+        private TriforceBuffComponent triforceBuffCon;
+
+        private bool isSecondary;
+        private bool isBoosted;
 
         public override void OnEnter()
         {
@@ -57,7 +61,10 @@ namespace GanondorfMod.SkillStates
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             base.characterBody.outOfCombatStopwatch = 0f;
+            isSecondary = false;
+            isBoosted = false;
             ganonController = base.GetComponent<GanondorfController>();
+            triforceBuffCon = base.GetComponent<TriforceBuffComponent>();
 
             //Get Animator to play animation.
             this.animator = base.GetModelAnimator();
@@ -79,13 +86,33 @@ namespace GanondorfMod.SkillStates
                     (HitBoxGroup element) => element.groupName == "kick") ;
             }
 
+            //Enable particle effects
+            ganonController.FootRFire.Play();
+
+            //Change the move based on which button was pressed.
+            float damage = 0;
+            if (base.inputBank.skill2.down){
+                isSecondary = true;
+                damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + (this.damageStat * (this.moveSpeedStat / 2.0f));
+            }
+            else if (base.inputBank.skill3.down) {
+                isSecondary = false;
+                float boost = 1.0f;
+                if (triforceBuffCon.GetBuffCount() >= Modules.StaticValues.utilityStackConsumption) {
+                    isBoosted = true;
+                    boost = Modules.StaticValues.utilityBoostCoefficient;
+                    ganonController.BodyLightning.Play();
+                }
+                damage = (Modules.StaticValues.wizardFootAltDamageCoefficient * this.damageStat * boost) + (this.damageStat * (this.moveSpeedStat / 5.0f));
+            }
+
             //This governs the info on the attack
             attack = new OverlapAttack();
             attack.damageType = this.damageType;
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();
-            attack.damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + ( this.damageStat * (this.moveSpeedStat / 2.0f));
+            attack.damage = damage;
             attack.procCoefficient = this.procCoefficient;
             attack.forceVector = this.bonusForce;
             attack.pushAwayForce = this.pushForce;
@@ -122,13 +149,12 @@ namespace GanondorfMod.SkillStates
                 base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             }
 
-            //Enable particle effects
-            ganonController.FootRFire.Play();
+            
         }
 
         private void RecalculateRollSpeed()
         {
-            this.rollSpeed = this.moveSpeedStat * Mathf.Lerp(WizardFoot.initialSpeedCoefficient, WizardFoot.finalSpeedCoefficient, base.fixedAge / this.duration);
+            this.rollSpeed = this.moveSpeedStat * Mathf.Lerp(isSecondary ? WizardFoot.initialSpeedCoefficient : WizardFoot.initialSpeedCoefficient * 1.4f , WizardFoot.finalSpeedCoefficient, base.fixedAge / this.duration);
         }
 
         private void RecalculateModelRot() {
@@ -220,7 +246,14 @@ namespace GanondorfMod.SkillStates
 
         protected virtual void OnHitEnemyAuthority() {
             Util.PlaySound(this.hitSoundString, base.gameObject);
-            GetComponent<TriforceBuffComponent>().AddToBuffCount(2);
+            if (isSecondary || !isBoosted)
+            {
+                triforceBuffCon.AddToBuffCount(2);
+            }
+            if (isBoosted) {
+                triforceBuffCon.RemoveAmountOfBuff(Modules.StaticValues.utilityStackConsumption);
+            }
+
             if (!this.inHitPause && this.hitStopDuration > 0f)
             {
                 storedVelocity = base.characterMotor.velocity;
@@ -234,6 +267,7 @@ namespace GanondorfMod.SkillStates
         {
             //Disable particle effects
             ganonController.FootRFire.Stop();
+            ganonController.BodyLightning.Stop();
 
             //Clean up by turning off bodyFlags for falldamage and rotate to correct position.
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;

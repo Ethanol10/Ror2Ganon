@@ -24,17 +24,18 @@ namespace GanondorfMod.Modules.Survivors
         internal override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
             armor = 20f,
-            armorGrowth = 0.01f,
+            armorGrowth = 0.1f,
             bodyName = "GanondorfBody",
             bodyNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_NAME",
             bodyColor = Color.red,
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             damage = 24f,
-            healthGrowth = 33f,
+            damageGrowth = 4f,
+            healthGrowth = 15f,
             healthRegen = 1.5f,
             jumpCount = 2,
-            maxHealth = 300.0f,
+            maxHealth = 250.0f,
             subtitleNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SUBTITLE",
             podPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
             jumpPower = 20.0f,
@@ -152,8 +153,8 @@ namespace GanondorfMod.Modules.Survivors
 
             #endregion
 
-            #region Secondary
-            SkillDef wizardFootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            #region Secondary/Utility Section
+            SkillDef wizardFoot = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
@@ -177,12 +178,7 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1,
                 keywordTokens = new string[] { "KEYWORD_HEAVY" }
             });
-
-            Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFootSkillDef);
-            #endregion
-
-            #region Utility
-
+            
             SkillDef flameChoke = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
@@ -192,6 +188,34 @@ namespace GanondorfMod.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
+                baseRechargeInterval = 7.0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
+            
+            Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFoot);
+            Modules.Skills.AddUtilitySkills(bodyPrefab, flameChoke);
+
+            //THIS ONE IS WEAKER AND INTENDED FOR SECONDARY SLOTS.
+            SkillDef flameChokeAlt = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_GRAB_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("flameChokeIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 2,
                 baseRechargeInterval = 5.0f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
@@ -207,7 +231,33 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1,
             });
 
-            Modules.Skills.AddUtilitySkills(bodyPrefab, flameChoke);
+            //THIS ONE IS STRONGER AND IS INTENDED FOR UTILITY SLOTS
+            SkillDef wizardFootAlt = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_UTILITY_KICK_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_KICK_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_KICK_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("wizardFootIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WizardFoot)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 8.0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = true,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.Skill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+                keywordTokens = new string[] { "KEYWORD_HEAVY" }
+            });
+            Modules.Skills.AddSecondarySkills(bodyPrefab, flameChokeAlt);
+            Modules.Skills.AddUtilitySkills(bodyPrefab, wizardFootAlt);
             #endregion
 
             #region Special
@@ -362,7 +412,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region MasterySkin
-            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 20f, Color.white, 1.0f);
+            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 15f, Color.white, 1.0f);
             CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
                 masteryMat,

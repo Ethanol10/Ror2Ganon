@@ -101,6 +101,15 @@ namespace GanondorfMod.Modules
             }
         }
 
+        public void RemoveAmountOfBuff(int decr) {
+            buffCountToApply -= decr;
+            timer = 0f;
+            lastTimeDecayed = 0f;
+            if (buffCountToApply <= 0) {
+                buffCountToApply = 0;
+            }
+        }
+
         public bool GetMaxStackState() {
             return isMaxStack;
         }

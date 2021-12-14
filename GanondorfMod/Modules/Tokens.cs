@@ -57,12 +57,18 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SECONDARY_KICK_NAME", "Wizard's Foot");
             LanguageAPI.Add(prefix + "SECONDARY_KICK_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
                 $"{100f * StaticValues.wizardFootDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_GRAB_NAME", "Flame Choke");
+            LanguageAPI.Add(prefix + "SECONDARY_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing "
+                + $"<style=cIsDamage>{100f * StaticValues.flameChokeAltDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Utility
             LanguageAPI.Add(prefix + "UTILITY_GRAB_NAME", "Flame Choke");
             LanguageAPI.Add(prefix + "UTILITY_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing " 
                 + $"<style=cIsDamage>{100f * StaticValues.flameChokeDamageCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_KICK_NAME", "Wizard's Foot");
+            LanguageAPI.Add(prefix + "UTILITY_KICK_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
+                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Special
@@ -72,7 +78,7 @@ namespace GanondorfMod.Modules
 
             LanguageAPI.Add(prefix + "INFERNO_KICK_NAME", "Inferno Guillotine");
             LanguageAPI.Add(prefix + "INFERNO_KICK_DESCRIPTION", $"Pull enemies into their demise, slamming your foot down, dealing"
-                + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> in a radius around you.");
+                + $" <style=cIsDamage>{100f * StaticValues.infernoGuillotineCoefficient}% damage</style> in a radius around you." + Helpers.DownsideDescription(" No Super Armor."));
             #endregion
 
             #region Scepter Upgrade

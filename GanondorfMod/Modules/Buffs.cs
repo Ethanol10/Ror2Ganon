@@ -14,8 +14,8 @@ namespace GanondorfMod.Modules
 
         internal static void RegisterBuffs()
         {
-            armorBuff = AddNewBuff("GanonArmorBuff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
-            triforceBuff = AddNewBuff("TriforceBuff", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforcePower"), Color.yellow, true, false);
+            armorBuff = AddNewBuff("Ganondorf Super Armor Buff", Resources.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
+            triforceBuff = AddNewBuff("Triforce Buff", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforcePower"), Color.yellow, true, false);
         }
 
         // simple helper method

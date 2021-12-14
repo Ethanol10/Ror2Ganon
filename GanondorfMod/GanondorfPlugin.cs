@@ -163,7 +163,9 @@ namespace GanondorfMod
 
                 //Add armour if buff is available.
                 if (self.HasBuff(Modules.Buffs.triforceBuff)) {
-                    self.armor += self.GetComponent<TriforceBuffComponent>().GetBuffCount()*(Modules.StaticValues.triforceMaxArmour/100.0f);
+                    TriforceBuffComponent triforceBuffComponent = self.GetComponent<TriforceBuffComponent>();
+                    self.armor += triforceBuffComponent.GetBuffCount()*(Modules.StaticValues.triforceMaxArmour/ Modules.StaticValues.maxPowerStack);
+                    self.damage += triforceBuffComponent.GetBuffCount() * (Modules.StaticValues.triforceMaxDamage / Modules.StaticValues.maxPowerStack);
                 }
             }
         }

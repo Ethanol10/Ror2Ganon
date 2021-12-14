@@ -315,7 +315,7 @@ namespace GanondorfMod.SkillStates
             this.hitSoundString = "superHitsVoice";
             this.voiceLine = "infernoKickStart";
             this.damageCoefficient = Modules.StaticValues.infernoGuillotineCoefficient;
-            this.pushForce = 10000f;
+            this.pushForce = 6000f;
             this.procCoefficient = 1.5f;
             this.bonusForce = Vector3.up;
             this.baseDuration = 2.25f;

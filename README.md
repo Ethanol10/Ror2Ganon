@@ -48,6 +48,25 @@ Charge up a powerful punch unleashing 1650% damage onto close range foes.
         - Fixed Ganon not triggering an attack when he lands with Flame Choke. (For later reference, set the position of the blast attack RIGHT BEFORE you trigger the attack.)
         - Fixed Ganon having ridiculously large item displays when in use with other mods (Unless someone decides to use the name positions that I've made.)
         - Fixed Ganon leaving Greater Wisp Corpses lying all over the place. Gotta make the place clean while destroying everything.
+    - Aaaaaaaaaaand balance changes:
+        - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 700% base damage)
+        - However! It's not all nerfs here. Stacks at max power (100 stacks), now buff more damage on Warlock Punch (10x damage -> 15x damage), still giving an incentive to build up those stacks to one-shot Mithrix out of existance.
+        - You can now mess around with what Utility/Secondary you'd like! Wanna go on a Kicking spree? Just bind both Utility and Secondary to Wizard's foot! Grab hungry? Bind both to Flame Choke! (Don't worry, defaults are still one of each so you don't have to manually select variety.)
+        - Secondary and Utility now share moves, but have varying stats based on what slot they are placed in. Secondary is focused on multiple, short charges and lower damage, but Utility is focused on High damage, consumes Triforce buff and powers your move to 2x more damage depending on whether you have enough buff to use. Without the buff, the move does more damage than secondary. (15 stacks are consumed on a successful hit of a Utility move.)
+        - Ganondorf's Health growth has been reduced (33 per level -> 15 per level)
+        - Ganondorf's armor growth has been increased (0.01 per level -> 0.1 per level)
+        - Ganondorf's Max base health is reduced (300 -> 250)
+        - Stacks of Triforce of Power will now buff your armor more at full stacks (30 -> 40).
+        - Stacks of Triforce of Power will now buff your damage (ever so slightly.) (0 -> 35)
+        - Punch Damage has been reduced. (200% -> 150%)
+        - Punch Launch Force has been reduced. (4000 -> 500)
+        - Punch can be fired faster sequentially, end time reduced. (0.6 -> 0.5)
+        - Punch hitbox duration has been decreased (0.3s -> 0.2s)
+        - Dash Attack (Punch) damage has been reduced (400% -> 200%)
+        - Heavy Aerial Kick (Punch) damage has been reduced (300% -> 200%)
+        - Flame Choke (Utility) damage has been reduced (500% -> 450%)
+        - Wizard's Foot (Secondary) damage has been reduced (250% -> 150%)
+        - Wizard's Foot (Secondary) Heavy Damage scaling reduced.
 - 1.0.3 - Fixes to the following: (I promise this is the last thing I'll update for awhile, I'll get back to making something new)
     - Fixed Ganondorf from not being able to grab those stupid hitscan wisps. Slam those guys into the ground for me will ya.
     - Ganon's character model should be *ｐｒｉｓｔｉｎｅ* and not bugged to hell and back anymore.

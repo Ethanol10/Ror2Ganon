@@ -112,7 +112,6 @@ namespace GanondorfMod.SkillStates
                 //Play particle effect
                 ganonController.HandRLightning.Play();
             }
-            
         }
 
         private void RecalculateDashSpeed()
@@ -474,12 +473,12 @@ namespace GanondorfMod.SkillStates
             this.damageType = DamageType.Generic;
             this.damageCoefficient = Modules.StaticValues.punchDamageCoefficient;
             this.procCoefficient = 1f;
-            this.pushForce = 4000f;
+            this.pushForce = 500f;
             this.bonusForce = forwardDirection;
             this.baseDuration = 0.81f;
             this.attackStartTime = 0.25f;
-            this.attackEndTime = 0.55f;
-            this.baseEarlyExitTime = 0.6f;
+            this.attackEndTime = 0.45f;
+            this.baseEarlyExitTime = 0.5f;
             this.hitStopDuration = 0.1f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 6f;

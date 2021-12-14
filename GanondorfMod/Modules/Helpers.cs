@@ -14,6 +14,10 @@ namespace GanondorfMod.Modules
             return "\n<color=#d299ff>SCEPTER: " + desc + "</color>";
         }
 
+        internal static string DownsideDescription(string desc) {
+            return "<color=#D2042D>" + desc + "</color>";
+        }
+
         public static T[] Append<T>(ref T[] array, List<T> list)
         {
             var orig = array.Length;

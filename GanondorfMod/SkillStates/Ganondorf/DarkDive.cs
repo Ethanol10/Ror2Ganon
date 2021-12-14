@@ -12,7 +12,7 @@ using GanondorfMod.Modules;
 
 namespace GanondorfMod.SkillStates
 {
-    public class FlameChoke : BaseSkillState
+    public class DarkDive : BaseSkillState
     {
         private float grabDuration = 0.4f;
         private float windupDuration = 0.3f;
@@ -41,16 +41,12 @@ namespace GanondorfMod.SkillStates
         private bool playedGrabSound = false;
         private bool hasFired = false;
         private GanondorfController ganonController;
-        private TriforceBuffComponent triforceBuffComponent;
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
         public static float grabEndExplosionRadius = 10f;
         public static float flameChokeDamageCoefficient = Modules.StaticValues.flameChokeDamageCoefficient;
         public static float flameChokeProcCoefficient = 1f;
         public static float slamForce = 5000f;
-
-        private bool isSecondary;
-        private bool isBoosted;
 
         public override void OnEnter()
         {
@@ -63,10 +59,7 @@ namespace GanondorfMod.SkillStates
             this.doGroundedFinisher = false;
             this.doAerialFinisher = false;
             this.stateFixed = false;
-            this.isSecondary = false;
-            this.isBoosted = false;
             ganonController = base.GetComponent<GanondorfController>();
-            triforceBuffComponent = base.GetComponent<TriforceBuffComponent>();
             anim.SetFloat("flameChoke.playbackrate", 2.5f);
             anim.SetBool("enemyCaught", false);
             anim.SetBool("continueGrabbing", true);
@@ -90,38 +83,18 @@ namespace GanondorfMod.SkillStates
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
-            float damage = 0;
-            if (base.inputBank.skill2.down)
-            {
-                isBoosted = false;
-                isSecondary = true;
-                damage = Modules.StaticValues.flameChokeAltDamageCoefficient * this.damageStat;
-            }
-            else if (base.inputBank.skill3.down)
-            {
-                float boost = 1f;
-                
-                if (triforceBuffComponent.GetBuffCount() >= Modules.StaticValues.utilityStackConsumption) {
-                    boost = Modules.StaticValues.utilityBoostCoefficient;
-                    isBoosted = true;
-                    ganonController.BodyLightning.Play();
-                }
-                damage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat * boost;
-            }
-
             //Create blast attack, 
             attack = new BlastAttack();
             attack.damageType = DamageType.Stun1s;
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();
-            attack.baseDamage = damage;
+            attack.baseDamage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat;
             attack.procCoefficient = 1.0f;
             attack.baseForce = 1500f;
             attack.radius = grabEndExplosionRadius;
             attack.crit = base.RollCrit();
 
-            //Play Particle effects
             ganonController.HandLFire.Play();
         }
 
@@ -186,7 +159,6 @@ namespace GanondorfMod.SkillStates
             //Finish the move after either function is finished.
             if (finishMove) {
                 //Stop all particle effects
-                ganonController.BodyLightning.Stop();
                 ganonController.HandLFire.Stop();
                 SpeedBoostOnGrabDuration();
                 anim.SetBool("continueGrabbing", false);
@@ -230,18 +202,13 @@ namespace GanondorfMod.SkillStates
             else {
                 lerpVal = stopwatch - windupDuration / this.grabDuration;
             }
-            return Mathf.Lerp(isSecondary ? FlameChoke.initialSpeedCoefficient * 0.7f : FlameChoke.initialSpeedCoefficient , FlameChoke.finalSpeedCoefficient, lerpVal);
+            return Mathf.Lerp(FlameChoke.initialSpeedCoefficient, FlameChoke.finalSpeedCoefficient, lerpVal);
         }
 
         protected virtual void OnHitEnemyAuthority(int hitCount)
         {
             Util.PlaySound("flameChokeSFXend", base.gameObject);
-            if (isSecondary || !isBoosted) {
-                triforceBuffComponent.AddToBuffCount(hitCount);
-            }
-            if (isBoosted) {
-                triforceBuffComponent.RemoveAmountOfBuff(Modules.StaticValues.utilityStackConsumption);
-            }
+            GetComponent<TriforceBuffComponent>().AddToBuffCount(hitCount);
         }
 
         public override void OnExit()
@@ -251,7 +218,7 @@ namespace GanondorfMod.SkillStates
                 base.cameraTargetParams.fovOverride = -1f;
             }
 
-            //Release all controllers.
+            //Chat.AddMessage(grabController.Count + "");
             if (grabController.Count > 0) {
                 foreach (GrabController gCon in grabController)
                 {
