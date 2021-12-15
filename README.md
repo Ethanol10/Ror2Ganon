@@ -26,7 +26,7 @@ On the ground, punch forward for 150% damage.
 <br>When airborne, kick twice for 50% damage and 200% damage.
 
 ### Secondary: Wizard's Foot
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335484477460/wizardFootIcon.png"><br>
+<img src="https://cdn.discordapp.com/attachments/399901440023330816/920686118024929350/wizardFootIcon.png"><br>
 Heavy. Launch yourself forward pushing light enemies away for 150% damage.
 
 ### Utility: Flame Choke
@@ -40,7 +40,7 @@ Charge up a powerful punch unleashing 800% damage onto close range foes.
 ## And More... (well not that much more, but more...)
 
 ## Changelog
-- 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated.)
+- 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated. Might do some balance changes as well.)
     - 2 New moves! (Unlock them and find out what they are)
     - Another skin! (also with an unlock condition)
     - (slight) VFX updates!
@@ -67,7 +67,7 @@ Charge up a powerful punch unleashing 800% damage onto close range foes.
         - Heavy Aerial Kick (Punch) damage has been reduced (300% -> 200%)
         - Flame Choke (Utility) damage has been reduced (500% -> 450%)
         - Wizard's Foot (Secondary) damage has been reduced (250% -> 150%)
-        - Wizard's Foot (Secondary) Heavy Damage scaling reduced.
+        - Wizard's Foot (Secondary) Heavy Damage scaling reduced. (this move was disgusting, it had to be nerfed.)
 - 1.0.3 - Fixes to the following: (I promise this is the last thing I'll update for awhile, I'll get back to making something new)
     - Fixed Ganondorf from not being able to grab those stupid hitscan wisps. Slam those guys into the ground for me will ya.
     - Ganon's character model should be *ｐｒｉｓｔｉｎｅ* and not bugged to hell and back anymore.
