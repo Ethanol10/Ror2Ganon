@@ -34,8 +34,8 @@ namespace GanondorfMod.SkillStates
         private bool isExplosion;
         private float explosionRadius = 20f;
         private bool alreadyPulled;
-        private float pullForce = 1.5f;
-        private float pullMultiplier = 2f;
+        private float pullForce = 1f;
+        private float pullMultiplier = 1.5f;
         private Transform slamIndicatorInstance;
         private Transform slamCenterIndicatorInstance;
         private Ray downRay;
@@ -122,6 +122,7 @@ namespace GanondorfMod.SkillStates
                 if (stopwatch > windupTimer) {
                     state = KickState.DROP;
                     ganonController.PullShockwave.Stop();
+                    ganonController.InfernoKickFalling.Play();
                 }
             }
 
@@ -155,6 +156,7 @@ namespace GanondorfMod.SkillStates
                 }
 
                 if (isGrounded) {
+                    ganonController.InfernoKickFalling.Stop();
                     base.ConsumeHitStopCachedState(this.hitStopCachedState, base.characterMotor, this.animator);
                     this.inHitPause = false;
                     base.characterMotor.velocity = Vector3.zero;

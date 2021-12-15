@@ -36,7 +36,7 @@ namespace GanondorfMod.SkillStates
         protected float attackStartTime = 0.13f;
         protected float attackEndTime = 0.7f;
         protected float procCoefficient = 1f;
-        protected float pushForce = 4000f;
+        protected float pushForce = 1000f;
         protected Vector3 bonusForce = Vector3.zero;
         protected float baseEarlyExitTime = 0.75f;
         protected float hitStopDuration = 0.1f;
@@ -87,13 +87,14 @@ namespace GanondorfMod.SkillStates
             }
 
             //Enable particle effects
-            ganonController.FootRFire.Play();
+            //ganonController.FootRFire.Play();
+            ganonController.KneeRSpeedLines.Play();
 
             //Change the move based on which button was pressed.
             float damage = 0;
             if (base.inputBank.skill2.down){
                 isSecondary = true;
-                damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + (this.damageStat * (this.moveSpeedStat / 2.0f));
+                damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + (this.damageStat * (this.moveSpeedStat / 100.0f));
             }
             else if (base.inputBank.skill3.down) {
                 isSecondary = false;
@@ -103,7 +104,7 @@ namespace GanondorfMod.SkillStates
                     boost = Modules.StaticValues.utilityBoostCoefficient;
                     ganonController.BodyLightning.Play();
                 }
-                damage = (Modules.StaticValues.wizardFootAltDamageCoefficient * this.damageStat * boost) + (this.damageStat * (this.moveSpeedStat / 5.0f));
+                damage = (Modules.StaticValues.wizardFootAltDamageCoefficient * this.damageStat * boost) + (this.damageStat * (this.moveSpeedStat / 75.0f));
             }
 
             //This governs the info on the attack
@@ -266,8 +267,9 @@ namespace GanondorfMod.SkillStates
         public override void OnExit()
         {
             //Disable particle effects
-            ganonController.FootRFire.Stop();
+            //ganonController.FootRFire.Stop();
             ganonController.BodyLightning.Stop();
+            ganonController.KneeRSpeedLines.Stop();
 
             //Clean up by turning off bodyFlags for falldamage and rotate to correct position.
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;

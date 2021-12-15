@@ -15,7 +15,7 @@ namespace GanondorfMod.SkillStates
         private float dmgMultiplier = 1f;
         private bool hitEnemy = false;
         private GanondorfController ganonController;
-        
+
         //If character is grounded, just use default and call basemeleeattack.
         public override void OnEnter()
         {
@@ -41,6 +41,8 @@ namespace GanondorfMod.SkillStates
 
             //Enable Particle Effects
             ganonController.HandLFire.Play();
+            ganonController.PunchCharge.Play();
+            ganonController.HandLSpeedLines.Play();
         }
 
         protected override void PlayAttackAnimation()
@@ -121,9 +123,14 @@ namespace GanondorfMod.SkillStates
                 this.FireAttack();    
             }
 
+            if (this.stopwatch >= (this.attackEndTime)) {
+                ganonController.HandLSpeedLines.Stop();
+            }
+
             //End move if timer exceeds duration.
             if (this.stopwatch >= this.duration && base.isAuthority)
             {
+                this.FireAttack();
                 this.outer.SetNextStateToMain();
                 return;
             }
@@ -140,9 +147,15 @@ namespace GanondorfMod.SkillStates
 
                 if (base.isAuthority)
                 {
-                    this.PlaySwingEffect();
                     base.AddRecoil(-1f * this.attackRecoil, -2f * this.attackRecoil, -0.5f * this.attackRecoil, 0.5f * this.attackRecoil);
                 }
+
+                EffectManager.SpawnEffect(Modules.Assets.warlockPunchEffect, new EffectData
+                {
+                    origin = base.GetAimRay().origin + 5 * new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z),
+                    scale = 1f,
+                    rotation = Quaternion.LookRotation(new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z))
+                }, false) ;
             }
 
             if (base.isAuthority)
@@ -159,7 +172,9 @@ namespace GanondorfMod.SkillStates
         {
             //stop playing particles
             ganonController.HandLFire.Stop();
-
+            ganonController.PunchCharge.Stop();
+            ganonController.HandLSpeedLines.Stop();
+            this.animator.SetBool("attacking", false);
             base.OnExit();
         }
 
@@ -215,7 +230,6 @@ namespace GanondorfMod.SkillStates
             this.attack.teamIndex = base.GetTeam();
             this.attack.damage = this.damageCoefficient * this.damageStat * this.dmgMultiplier;
             this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
             this.attack.forceVector = this.bonusForce;
             this.attack.pushAwayForce = this.pushForce;
             this.attack.hitBoxGroup = hitBoxGroup;

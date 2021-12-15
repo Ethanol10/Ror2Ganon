@@ -31,7 +31,7 @@ namespace GanondorfMod.Modules.Survivors
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             damage = 24f,
-            damageGrowth = 4f,
+            damageGrowth = 2f,
             healthGrowth = 15f,
             healthRegen = 1.5f,
             jumpCount = 2,
@@ -163,7 +163,7 @@ namespace GanondorfMod.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WizardFoot)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 2,
-                baseRechargeInterval = 6.0f,
+                baseRechargeInterval = 5f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = true,
@@ -188,7 +188,7 @@ namespace GanondorfMod.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 7.0f,
+                baseRechargeInterval = 8.0f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
@@ -216,7 +216,7 @@ namespace GanondorfMod.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FlameChoke)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 2,
-                baseRechargeInterval = 5.0f,
+                baseRechargeInterval = 4.5f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
@@ -241,7 +241,7 @@ namespace GanondorfMod.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.WizardFoot)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 8.0f,
+                baseRechargeInterval = 7.0f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = true,
@@ -412,7 +412,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region MasterySkin
-            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 15f, Color.white, 1.0f);
+            Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 10f, Color.white, 1.0f);
             CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
                 masteryMat,

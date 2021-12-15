@@ -18,7 +18,7 @@ namespace GanondorfMod.Modules
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
 
-        internal static GameObject FlameEffect;
+        internal static GameObject warlockPunchEffect;
 
         // networked hit sounds
         internal static NetworkSoundEventDef punchSFX;
@@ -75,25 +75,22 @@ namespace GanondorfMod.Modules
 
             // feel free to delete everything in here and load in your own assets instead
             // it should work fine even if left as is- even if the assets aren't in the bundle
-
             punchSFX = CreateNetworkSoundEventDef("attack1sfx");
-            FlameEffect = LoadEffect("GanondorfFlameEffect");
-
-            //if (FlameEffect)
-            //{
-            //    ShakeEmitter shakeEmitter = FlameEffect.AddComponent<ShakeEmitter>();
-            //    shakeEmitter.amplitudeTimeDecay = true;
-            //    shakeEmitter.duration = 0.5f;
-            //    shakeEmitter.radius = 200f;
-            //    shakeEmitter.scaleShakeRadiusWithLocalScale = false;
-
-            //    shakeEmitter.wave = new Wave
-            //    {
-            //        amplitude = 1f,
-            //        frequency = 40f,
-            //        cycleOffset = 0f
-            //    };
-            //}
+            warlockPunchEffect = LoadEffect("PunchHitParticle", false);
+            if (warlockPunchEffect)
+            {
+                ShakeEmitter shakeEmitter = warlockPunchEffect.AddComponent<ShakeEmitter>();
+                shakeEmitter.amplitudeTimeDecay = true;
+                shakeEmitter.duration = 0.5f;
+                shakeEmitter.radius = 200f;
+                shakeEmitter.scaleShakeRadiusWithLocalScale = false;
+                shakeEmitter.wave = new Wave
+                {
+                    amplitude = 1f,
+                    frequency = 40f,
+                    cycleOffset = 0f
+                };
+            }
 
             //swordSwingEffect = LoadEffect("HenrySwordSwingEffect", true);
             //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");

@@ -45,12 +45,10 @@ namespace GanondorfMod.Modules
 
             //turn on flame effects if stacks are above the max power stack.
             if (isMaxStack) {
-                ganondorfController.HandMaxStackL.Play();
-                ganondorfController.HandMaxStackR.Play();
+                ganondorfController.BodyAura.Play();
             }
             else {
-                ganondorfController.HandMaxStackL.Stop();
-                ganondorfController.HandMaxStackR.Stop();
+                ganondorfController.BodyAura.Stop();
             }
         }
 

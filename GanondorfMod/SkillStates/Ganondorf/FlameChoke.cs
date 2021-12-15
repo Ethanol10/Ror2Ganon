@@ -122,7 +122,8 @@ namespace GanondorfMod.SkillStates
             attack.crit = base.RollCrit();
 
             //Play Particle effects
-            ganonController.HandLFire.Play();
+            //ganonController.HandLFire.Play();
+            ganonController.HandLSpeedLines.Play();
         }
 
         public override void FixedUpdate()
@@ -187,7 +188,8 @@ namespace GanondorfMod.SkillStates
             if (finishMove) {
                 //Stop all particle effects
                 ganonController.BodyLightning.Stop();
-                ganonController.HandLFire.Stop();
+                //ganonController.HandLFire.Stop();
+                ganonController.HandLSpeedLines.Stop();
                 SpeedBoostOnGrabDuration();
                 anim.SetBool("continueGrabbing", false);
                 this.outer.SetNextStateToMain();
@@ -323,7 +325,7 @@ namespace GanondorfMod.SkillStates
             this.AttemptGrab(grabRadius);
 
             if (isGrounded) {
-
+                ganonController.HandLSpeedLines.Stop();
                 base.characterMotor.velocity = Vector3.zero;
                 stopwatch += Time.fixedDeltaTime;
                 if (stopwatch > aerialAttackStart && stopwatch < aerialAttackEnd) {

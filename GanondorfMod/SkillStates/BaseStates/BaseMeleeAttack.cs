@@ -83,8 +83,8 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         public override void OnExit()
         {
-            if (!this.hasFired /*&& !this.cancelled*/) this.FireAttack();
-            this.animator.SetBool("attacking", false);
+            //if (!this.hasFired /*&& !this.cancelled*/) this.FireAttack();
+            
             base.OnExit();
         }
 

@@ -40,6 +40,8 @@ namespace GanondorfMod.SkillStates
 
             //Enable Particle Effects
             ganonController.HandLFire.Play();
+            ganonController.PunchCharge.Play();
+            ganonController.HandLSpeedLines.Play();
         }
 
         protected override void PlayAttackAnimation()
@@ -157,7 +159,8 @@ namespace GanondorfMod.SkillStates
         {
             //stop playing particles
             ganonController.HandLFire.Stop();
-
+            ganonController.PunchCharge.Stop();
+            ganonController.HandLSpeedLines.Stop();
             base.OnExit();
         }
 

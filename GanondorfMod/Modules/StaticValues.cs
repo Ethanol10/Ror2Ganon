@@ -11,7 +11,7 @@ namespace GanondorfMod.Modules
 
         internal const float heavyKickDamageCoefficient = 2f;
 
-        internal const float dashDamageCoefficient = 2f;
+        internal const float dashDamageCoefficient = 300f;
 
         internal const float flameChokeDamageCoefficient = 4.5f;
 
@@ -39,7 +39,7 @@ namespace GanondorfMod.Modules
         internal const float triforceMaxArmour = 40f;
         internal const float triforceMaxDamage = 35f;
         internal const float maxTimeToDecay = 3f;
-        internal const float timeBetweenDecay = 1.5f;
+        internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move
         internal const int utilityStackConsumption = 20;
         internal const float utilityBoostCoefficient = 2.0f; 

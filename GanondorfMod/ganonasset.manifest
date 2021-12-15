@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3738877126
+CRC: 3624940755
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 06ffa8fa44134ff89a26aa22a26e409d
+    Hash: 898966c1382a9f2b8961af2840740e75
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -81,7 +81,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/UpBFinishGrab.anim
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
-- Assets/GanonAsset/Mesh/standard.mat
+- Assets/GanonAsset/Material/WarlockPunchmat.mat
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
@@ -101,6 +101,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
+- Assets/GanonAsset/Mesh/spikeEffect.mesh
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
 - Assets/GanonAsset/particle/Shaders/ParticleDissolveAlpha.shader
 - Assets/GanonAsset/Animator/Animations/RunBrake.anim
@@ -118,6 +119,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
+- Assets/GanonAsset/particle/first.prefab
 - Assets/GanonAsset/Material/ganontex.mat
 - Assets/GanonAsset/icons/wizardFootIcon.png
 - Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
@@ -126,6 +128,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
 - Assets/GanonAsset/particle/PullShockwaveParticle.prefab
 - Assets/GanonAsset/Animator/Animations/warlockNofoot.anim
+- Assets/GanonAsset/particle/speedLines.prefab
 - Assets/GanonAsset/Animator/Animations/InfernoKickStart.anim
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
 - Assets/GanonAsset/Animator/Animations/Falling.anim
@@ -139,4 +142,5 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Jump.anim
 - Assets/GanonAsset/icons/punchIcon.png
 - Assets/GanonAsset/particle/GanondorfLightningEffect.prefab
+- Assets/GanonAsset/particle/PunchHitParticle.prefab
 Dependencies: []

@@ -10,8 +10,7 @@ namespace GanondorfMod.Modules.Survivors
     {
         public CharacterBody characterBody;
         public ChildLocator childLocator;
-        public ParticleSystem HandMaxStackL;
-        public ParticleSystem HandMaxStackR;
+        public ParticleSystem BodyAura;
         public ParticleSystem FootLFire;
         public ParticleSystem HandLFire;
         public ParticleSystem FootRFire;
@@ -21,6 +20,10 @@ namespace GanondorfMod.Modules.Survivors
         public ParticleSystem FootRInfernoFire;
         public ParticleSystem PullShockwave;
         public ParticleSystem BodyLightning;
+        public ParticleSystem PunchCharge;
+        public ParticleSystem HandLSpeedLines;
+        public ParticleSystem KneeRSpeedLines;
+        public ParticleSystem InfernoKickFalling;
 
         public void Awake() {
             characterBody = gameObject.GetComponent<CharacterBody>();
@@ -31,13 +34,16 @@ namespace GanondorfMod.Modules.Survivors
                 HandLFire = childLocator.FindChild("HandLFlameParticle").GetComponent<ParticleSystem>();
                 FootRFire = childLocator.FindChild("FootRFlameParticle").GetComponent<ParticleSystem>();
                 HandRFire = childLocator.FindChild("HandRFlameParticle").GetComponent<ParticleSystem>();
+                BodyAura = childLocator.FindChild("BodyAuraMaxStack").GetComponent<ParticleSystem>();
                 HandRLightning = childLocator.FindChild("HandRLightningParticle").GetComponent<ParticleSystem>();
                 ShoulderRLightning = childLocator.FindChild("ShoulderRLightningParticle").GetComponent<ParticleSystem>();
-                HandMaxStackL = childLocator.FindChild("MaxStackL").GetComponent<ParticleSystem>();
-                HandMaxStackR = childLocator.FindChild("MaxStackR").GetComponent<ParticleSystem>();
                 FootRInfernoFire = childLocator.FindChild("InfernoGuillotineFlame").GetComponent<ParticleSystem>();
                 PullShockwave = childLocator.FindChild("PullShockwaveEffect").GetComponent<ParticleSystem>();
                 BodyLightning = childLocator.FindChild("BodyLightning").GetComponent<ParticleSystem>();
+                PunchCharge = childLocator.FindChild("PunchChargeEffect").GetComponent<ParticleSystem>();
+                HandLSpeedLines = childLocator.FindChild("HandLSpeedLines").GetComponent<ParticleSystem>();
+                KneeRSpeedLines = childLocator.FindChild("KneeRSpeedLines").GetComponent<ParticleSystem>();
+                InfernoKickFalling = childLocator.FindChild("InfernoKickFalling").GetComponent<ParticleSystem>();
             }
         }
 

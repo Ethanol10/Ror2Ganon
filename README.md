@@ -9,37 +9,38 @@ Standalone Ancient Scepter Compatible.
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
 
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
-<br><b>He's coming to grab you...</b>
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/918475278051848202/unknown.png">
+<br><b>Now with fancier effects...</b>
+<img src="https://cdn.discordapp.com/attachments/399901440023330816/920678269035106344/unknown.png">
   
 
 ## Skills
 
 ### Passive: Triforce of Power
 #### <img src="https://cdn.discordapp.com/attachments/399901440023330816/918085033204514816/fullTriforceIcon.png">
-Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 30 extra armor. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1000% at the maximum amount of stacks.
+Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 40 extra armor and 35 extra base damage. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1250% at the maximum amount of stacks.
 
 ### Primary: Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335216062464/punchIcon.png"><br>
-On the ground, punch forward for 200% damage.
-<br>Stunning. When sprinting, dash forward, plowing through enemies for 400% damage. 
-<br>When airborne, kick twice for 50% damage and 300% damage.
+On the ground, punch forward for 150% damage.
+<br>Stunning. When sprinting, dash forward, plowing through enemies for 300% damage. 
+<br>When airborne, kick twice for 50% damage and 200% damage.
 
 ### Secondary: Wizard's Foot
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335484477460/wizardFootIcon.png"><br>
-Heavy. Launch yourself forward pushing light enemies away for 250% damage.
+Heavy. Launch yourself forward pushing light enemies away for 150% damage.
 
 ### Utility: Flame Choke
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083336092667904/flameChokeIcon.png"><br>
-Dash forward grabbing enemies in a row and choke slamming them dealing 500% damage.
+Dash forward grabbing enemies in a row and choke slamming them dealing 450% damage.
 
 ### Special: Warlock Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335824211998/warlockPunchIcon.png"><br>
-Charge up a powerful punch unleashing 1650% damage onto close range foes.
+Charge up a powerful punch unleashing 800% damage onto close range foes.
 
+## And More... (well not that much more, but more...)
 
 ## Changelog
-- 2.0.0 -> New Features! Hooray! (This will probably be my last update for this mod regarding new content, as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated.)
+- 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated.)
     - 2 New moves! (Unlock them and find out what they are)
     - Another skin! (also with an unlock condition)
     - (slight) VFX updates!
@@ -49,13 +50,13 @@ Charge up a powerful punch unleashing 1650% damage onto close range foes.
         - Fixed Ganon having ridiculously large item displays when in use with other mods (Unless someone decides to use the name positions that I've made.)
         - Fixed Ganon leaving Greater Wisp Corpses lying all over the place. Gotta make the place clean while destroying everything.
     - Aaaaaaaaaaand balance changes:
-        - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 700% base damage)
+        - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 800% base damage)
         - However! It's not all nerfs here. Stacks at max power (100 stacks), now buff more damage on Warlock Punch (10x damage -> 15x damage), still giving an incentive to build up those stacks to one-shot Mithrix out of existance.
         - You can now mess around with what Utility/Secondary you'd like! Wanna go on a Kicking spree? Just bind both Utility and Secondary to Wizard's foot! Grab hungry? Bind both to Flame Choke! (Don't worry, defaults are still one of each so you don't have to manually select variety.)
         - Secondary and Utility now share moves, but have varying stats based on what slot they are placed in. Secondary is focused on multiple, short charges and lower damage, but Utility is focused on High damage, consumes Triforce buff and powers your move to 2x more damage depending on whether you have enough buff to use. Without the buff, the move does more damage than secondary. (15 stacks are consumed on a successful hit of a Utility move.)
-        - Ganondorf's Health growth has been reduced (33 per level -> 15 per level)
-        - Ganondorf's armor growth has been increased (0.01 per level -> 0.1 per level)
-        - Ganondorf's Max base health is reduced (300 -> 250)
+        - Health growth has been reduced (33 per level -> 15 per level)
+        - Armor growth has been increased (0.01 per level -> 0.1 per level)
+        - Max base health is reduced (300 -> 250)
         - Stacks of Triforce of Power will now buff your armor more at full stacks (30 -> 40).
         - Stacks of Triforce of Power will now buff your damage (ever so slightly.) (0 -> 35)
         - Punch Damage has been reduced. (200% -> 150%)

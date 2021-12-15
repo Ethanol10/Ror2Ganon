@@ -78,8 +78,9 @@ namespace GanondorfMod.SkillStates
             Util.PlaySound("grabStartSFX", base.gameObject);
 
             //Hopefully this makes him yeet across the map at max speed while grabbing.
-
-            base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
+            if (NetworkServer.active) {
+                base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
+            }
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
