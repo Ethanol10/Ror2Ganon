@@ -41,7 +41,7 @@ namespace GanondorfMod.Modules
         internal const float maxTimeToDecay = 3f;
         internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move
-        internal const int utilityStackConsumption = 20;
+        internal const int utilityStackConsumption = 15;
         internal const float utilityBoostCoefficient = 2.0f; 
         //Amounts to add to buff when killed
         internal const int bossKillStackAmount = 10;

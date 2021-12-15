@@ -65,10 +65,12 @@ namespace GanondorfMod.Modules
             #region Utility
             LanguageAPI.Add(prefix + "UTILITY_GRAB_NAME", "Flame Choke");
             LanguageAPI.Add(prefix + "UTILITY_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing " 
-                + $"<style=cIsDamage>{100f * StaticValues.flameChokeDamageCoefficient}% damage</style>.");
+                + $"<style=cIsDamage>{100f * StaticValues.flameChokeDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}" +
+                $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
             LanguageAPI.Add(prefix + "UTILITY_KICK_NAME", "Wizard's Foot");
             LanguageAPI.Add(prefix + "UTILITY_KICK_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
-                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>.");
+                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}" +
+                $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
             #endregion
 
             #region Special
