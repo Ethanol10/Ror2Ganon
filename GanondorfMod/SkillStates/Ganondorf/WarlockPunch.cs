@@ -155,7 +155,7 @@ namespace GanondorfMod.SkillStates
                     origin = base.GetAimRay().origin + 5 * new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z),
                     scale = 1f,
                     rotation = Quaternion.LookRotation(new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z))
-                }, false) ;
+                }, false);
             }
 
             if (base.isAuthority)
@@ -175,14 +175,15 @@ namespace GanondorfMod.SkillStates
             ganonController.PunchCharge.Stop();
             ganonController.HandLSpeedLines.Stop();
             this.animator.SetBool("attacking", false);
+            base.PlayAnimation("FullBody, Override", "BufferEmpty");
             base.OnExit();
         }
 
         //Setup the hitbox for warlock punch.
         public void setupWarlockPunchHitbox() {
             
-            int randomNum = UnityEngine.Random.Range(1, 1001);
-            if (randomNum < 5)
+            int randomNum = UnityEngine.Random.Range(1, 100);
+            if (randomNum < 2)
             {
                 this.damageCoefficient = Modules.StaticValues.warlockPunchDamageCoefficient * Modules.StaticValues.warlockMemeDamage;
                 this.voiceLine = "ganonScreamingWarlockPunch";

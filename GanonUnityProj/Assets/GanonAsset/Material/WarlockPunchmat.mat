@@ -74,7 +74,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Intesity: 0.5
-    - _MFade: 0
+    - _MFade: 0.148
     - _MIntesity: -0.174
     - _Metallic: 0
     - _Mode: 0
@@ -83,10 +83,10 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 1
-    - _SpeedU: 0
-    - _SpeedUd: 5
-    - _SpeedV: 0
-    - _SpeedVd: 5
+    - _SpeedU: 100
+    - _SpeedUd: 10
+    - _SpeedV: 100
+    - _SpeedVd: 10
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

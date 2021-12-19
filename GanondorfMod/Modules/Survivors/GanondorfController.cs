@@ -22,6 +22,7 @@ namespace GanondorfMod.Modules.Survivors
         public ParticleSystem BodyLightning;
         public ParticleSystem PunchCharge;
         public ParticleSystem HandLSpeedLines;
+        public ParticleSystem HandRSpeedLines;
         public ParticleSystem KneeRSpeedLines;
         public ParticleSystem InfernoKickFalling;
 
@@ -29,7 +30,9 @@ namespace GanondorfMod.Modules.Survivors
             characterBody = gameObject.GetComponent<CharacterBody>();
             childLocator = GetComponentInChildren<ChildLocator>();
 
+            //If childlocator exists
             if (childLocator) {
+                //Cringe.
                 FootLFire = childLocator.FindChild("FootLFlameParticle").GetComponent<ParticleSystem>();
                 HandLFire = childLocator.FindChild("HandLFlameParticle").GetComponent<ParticleSystem>();
                 FootRFire = childLocator.FindChild("FootRFlameParticle").GetComponent<ParticleSystem>();
@@ -42,6 +45,7 @@ namespace GanondorfMod.Modules.Survivors
                 BodyLightning = childLocator.FindChild("BodyLightning").GetComponent<ParticleSystem>();
                 PunchCharge = childLocator.FindChild("PunchChargeEffect").GetComponent<ParticleSystem>();
                 HandLSpeedLines = childLocator.FindChild("HandLSpeedLines").GetComponent<ParticleSystem>();
+                HandRSpeedLines = childLocator.FindChild("HandRSpeedLines").GetComponent<ParticleSystem>();
                 KneeRSpeedLines = childLocator.FindChild("KneeRSpeedLines").GetComponent<ParticleSystem>();
                 InfernoKickFalling = childLocator.FindChild("InfernoKickFalling").GetComponent<ParticleSystem>();
             }

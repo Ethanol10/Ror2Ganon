@@ -2,6 +2,7 @@
 using BepInEx.Bootstrap;
 using GanondorfMod.Modules;
 using GanondorfMod.Modules.Survivors;
+using GanondorfMod.SkillStates;
 using R2API.Utils;
 using RoR2;
 using System.Collections.Generic;
@@ -98,7 +99,7 @@ namespace GanondorfMod
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
             On.RoR2.GenericPickupController.GrantItem += GenericPickupController_GrantItem;
-            On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
+            On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath; 
         }
 
         private void GlobalEventManager_OnCharacterDeath(On.RoR2.GlobalEventManager.orig_OnCharacterDeath orig, GlobalEventManager self, DamageReport damageReport) {

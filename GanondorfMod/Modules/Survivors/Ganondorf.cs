@@ -202,10 +202,34 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
-            
+
+            SkillDef darkDive = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("flameChokeIconUtility"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DarkDive)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 8.0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
+
             Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFoot);
             Modules.Skills.AddUtilitySkills(bodyPrefab, flameChoke);
-
+            
             //THIS ONE IS WEAKER AND INTENDED FOR SECONDARY SLOTS.
             SkillDef flameChokeAlt = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -258,6 +282,7 @@ namespace GanondorfMod.Modules.Survivors
             });
             Modules.Skills.AddSecondarySkills(bodyPrefab, flameChokeAlt);
             Modules.Skills.AddUtilitySkills(bodyPrefab, wizardFootAlt);
+            Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive);
             #endregion
 
             #region Special

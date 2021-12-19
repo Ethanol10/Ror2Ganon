@@ -31,6 +31,8 @@ namespace GanondorfMod.Modules
 
         internal const float infernoGuillotineAirborneCoefficient = 1.0f;
 
+        internal const float infernoGuillotinePullForce = 12f;
+
         //Maxmimum stack of triforce buffs.
         //Max stack allows the player to stack to maxStack, but anything above maxPowerStack doesn't contribute to damage or armor.
         internal const int maxStack = 120;

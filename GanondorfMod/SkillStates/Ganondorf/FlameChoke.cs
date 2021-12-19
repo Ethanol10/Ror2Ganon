@@ -84,9 +84,6 @@ namespace GanondorfMod.SkillStates
             //Play Sound
             Util.PlaySound("grabStartSFX", base.gameObject);
 
-            //Hopefully this makes him yeet across the map at max speed while grabbing.
-
-            base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
@@ -185,11 +182,8 @@ namespace GanondorfMod.SkillStates
             }
 
             //Finish the move after either function is finished.
-            if (finishMove) {
-                //Stop all particle effects
-                ganonController.BodyLightning.Stop();
-                //ganonController.HandLFire.Stop();
-                ganonController.HandLSpeedLines.Stop();
+            if (finishMove && base.isAuthority) {
+
                 SpeedBoostOnGrabDuration();
                 anim.SetBool("continueGrabbing", false);
                 this.outer.SetNextStateToMain();
@@ -248,7 +242,11 @@ namespace GanondorfMod.SkillStates
 
         public override void OnExit()
         {
-            base.OnExit();
+            //Stop all particle effects
+            ganonController.BodyLightning.Stop();
+            //ganonController.HandLFire.Stop();
+            ganonController.HandLSpeedLines.Stop();
+            base.PlayAnimation("FullBody, Override", "BufferEmpty");
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;
             }
@@ -263,9 +261,8 @@ namespace GanondorfMod.SkillStates
                     }
                 }
             }
-            if (NetworkServer.active) {
-                base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
-            }
+
+            base.OnExit();
         }
 
         //Attempt grab, don't stop for any enemy.

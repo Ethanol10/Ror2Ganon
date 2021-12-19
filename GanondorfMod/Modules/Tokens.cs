@@ -73,6 +73,17 @@ namespace GanondorfMod.Modules
                 $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
             #endregion
 
+            #region Utility 2: Dark Dive
+            LanguageAPI.Add(prefix + "UTILITY_LIFESTEAL_GRAB_NAME", "Dark Dive");
+            LanguageAPI.Add(prefix + "UTILITY_LIFESTEAL_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing "
+                + $"<style=cIsDamage>{100f * StaticValues.flameChokeDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}" +
+                $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_LIFESTEAL_GRAB_NAME", "Dark Dive");
+            LanguageAPI.Add(prefix + "SECONDARY_LIFESTEAL_GRAB_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
+                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}" +
+                $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
+            #endregion
+
             #region Special
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_NAME", "Warlock Punch");
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch, while gaining a short burst of Super Armor, unleashing" 

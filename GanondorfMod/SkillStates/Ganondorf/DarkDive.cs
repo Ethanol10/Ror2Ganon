@@ -14,16 +14,37 @@ namespace GanondorfMod.SkillStates
 {
     public class DarkDive : BaseSkillState
     {
-        private float grabDuration = 0.4f;
-        private float windupDuration = 0.3f;
+        private enum DarkDiveState : ushort
+        {
+            START = 1,
+            JUMP = 2,
+            EXPLODE = 3,
+            FORCEBACK = 4,
+            END = 5
+        }
+
+        private float stopwatch;
+        private Animator anim;
+        private DarkDiveState state;
+        private float waitVal = 0.375f;
+        private float jumpDuration = 1.58f;
+        private float grabDuration = 0.5f;
+        private Vector3 jumpVector = Vector3.up;
         public static float initialSpeedCoefficient = 3.2f;
         public static float finalSpeedCoefficient = 0f;
+        private List<GrabController> grabController;
+        private GanondorfController ganonController;
+        private float blastInterval = 0.1f;
+        private int noOfBlasts = 5;
+        private int blastsDone;
+        private bool isExploded;
+
+
         private Vector3 aimRayDir;
         private float grabSpeed;
         private float dropForce = 50f; // how fast ganon should fall.
-        private List<GrabController> grabController;
-        private float stopwatch;
-        private Animator anim;
+
+
         private Vector3 previousPosition;
         private bool finishMove;
         private bool doGroundedFinisher;
@@ -40,7 +61,7 @@ namespace GanondorfMod.SkillStates
         private float invincibilityWindow = 1.5f;
         private bool playedGrabSound = false;
         private bool hasFired = false;
-        private GanondorfController ganonController;
+
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
         public static float grabEndExplosionRadius = 10f;
@@ -51,21 +72,20 @@ namespace GanondorfMod.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            state = DarkDiveState.START;
             this.anim = base.GetModelAnimator();
-            this.aimRayDir = base.GetAimRay().direction;
             stopwatch = 0.0f;
+            blastsDone = 0;
             grabController = new List<GrabController>();
             this.finishMove = false;
             this.doGroundedFinisher = false;
             this.doAerialFinisher = false;
             this.stateFixed = false;
+            isExploded = false;
             ganonController = base.GetComponent<GanondorfController>();
-            anim.SetFloat("flameChoke.playbackrate", 2.5f);
             anim.SetBool("enemyCaught", false);
-            anim.SetBool("continueGrabbing", true);
-            anim.SetBool("performAerialSlam", false);
 
-            base.PlayAnimation("FullBody, Override", "GrabStart", "flameChoke.playbackRate", grabDuration);
+            base.PlayAnimation("FullBody, Override", "UpBStart", "flameChoke.playbackRate", grabDuration);
 
             this.grabSpeed = this.moveSpeedStat * LerpSpeedCoefficient();
 
@@ -76,11 +96,6 @@ namespace GanondorfMod.SkillStates
             }
             //Play Sound
             Util.PlaySound("grabStartSFX", base.gameObject);
-
-            //Hopefully this makes him yeet across the map at max speed while grabbing.
-            if (NetworkServer.active) {
-                base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
-            }
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
@@ -95,121 +110,98 @@ namespace GanondorfMod.SkillStates
             attack.baseForce = 1500f;
             attack.radius = grabEndExplosionRadius;
             attack.crit = base.RollCrit();
-
-            ganonController.HandLFire.Play();
+            
+            ganonController.HandRSpeedLines.Play();
         }
 
         public override void FixedUpdate()
         {
-            //We need to keep track of state during the move
             base.FixedUpdate();
+            this.stopwatch += Time.fixedDeltaTime;
 
-            if (!this.doGroundedFinisher || !this.doAerialFinisher) {
-                stopwatch += Time.fixedDeltaTime;
-            }
-
-            //Check if the windup is complete, it should only play for a set amount of time.
-            //Give speed towards aimray direction for the duration of the grab.
-            if ( (stopwatch > windupDuration && stopwatch < grabDuration + windupDuration)) {
-                SpeedBoostOnGrabDuration();
-                AttemptGrab(grabRadius);
-            }
-
-            //Once grab duration is over, check if a finisher is required
-            if (stopwatch > windupDuration + grabDuration && !stateFixed)
+            //Stay on the ground for duration of jump squat in animation.
+            //Jump squat ends frame 9 of a 24fps animation.
+            if (state == DarkDiveState.START)
             {
-                //Prepare to finish move by running the function to handle attack based on being grounded.
-                if (grabController.Count > 0)
-                {
-                    if (isGrounded)
-                    {
-                        //Anim isGrounded is already set by the game
-                        
-                        this.doGroundedFinisher = true;
-                        anim.SetBool("performAerialSlam", false);
-                    }
-                    else
-                    {
-                        //Not grounded, do the aerial grab.
-                        base.characterMotor.velocity = Vector3.zero;
-                        anim.SetBool("performAerialSlam", true);
-                        this.doAerialFinisher = true;
-                    }
-                    anim.SetBool("enemyCaught", true);
-                    anim.SetBool("continueGrabbing", false);
+                if (this.stopwatch >= this.waitVal) {
+
                 }
-                else {
-                    finishMove = true;
-                    anim.SetBool("continueGrabbing", false);
+            }
+
+            //Handle Jump and grab everything during jump. End after duration.
+            if (state == DarkDiveState.JUMP)
+            {
+                MoveUpwards();
+                AttemptGrab();
+                if (this.stopwatch >= this.jumpDuration) {
+                    if (grabController.Count > 0)
+                    {
+                        this.state = DarkDiveState.EXPLODE;
+                        this.stopwatch = 0f;
+                    }
+                    else {
+                        this.state = DarkDiveState.END;
+                    }
                 }
-                // Fix the state so that no other path can be selected.
-                this.stateFixed = true;
-                stopwatch = 0.0f;
             }
 
-            //Perform grounded finisher.
-            if (this.doGroundedFinisher) {
-                GroundedFinisher();
+            //Trigger blast attack "noOfTimes" spaced in "blastIntervalCooldown"
+            if (state == DarkDiveState.EXPLODE)
+            {
+                isExploded = true;
+                if (blastsDone < noOfBlasts) {
+                    if (stopwatch > blastInterval) {
+                        stopwatch = 0f;
+                        int hitCount = attack.Fire().hitCount;
+                        if (hitCount > 0) {
+                            OnHitEnemyAuthority(hitCount);
+                        }
+                        blastsDone++;
+                    }
+                }
+
+                if (blastsDone >= noOfBlasts) {
+                    this.state = DarkDiveState.FORCEBACK;
+                }
             }
 
-            //Perform aerial slam.
-            if (this.doAerialFinisher) {
-                StartDrop();
+            //Trigger one final blast and force ganon backwards.
+            if (state == DarkDiveState.FORCEBACK) {
+                //Blast attack
+                //move backwards and upwards for a few seconds.
             }
 
-            //Finish the move after either function is finished.
-            if (finishMove) {
-                //Stop all particle effects
-                ganonController.HandLFire.Stop();
-                SpeedBoostOnGrabDuration();
-                anim.SetBool("continueGrabbing", false);
+            //End move, send to OnExit
+            if (state == DarkDiveState.END)
+            {
+                //end the move.
+                if (!isExploded) {
+
+                }
                 this.outer.SetNextStateToMain();
             }
         }
 
-        //Roll code
-        private void SpeedBoostOnGrabDuration() {
-            this.grabSpeed = this.moveSpeedStat * LerpSpeedCoefficient();
-            if (base.characterDirection)
-            {
-                base.characterDirection.forward = this.aimRayDir;
-            }
-            if (base.cameraTargetParams)
-            {
-                base.cameraTargetParams.fovOverride
-                   = Mathf.Lerp(WizardFoot.dodgeFOV, 60f, stopwatch - windupDuration / this.grabDuration);
-            }
-
-            Vector3 normalized = (base.transform.position - this.previousPosition).normalized;
-            if (base.characterMotor && base.characterDirection && normalized != Vector3.zero)
-            {
-                Vector3 vector = normalized * this.grabSpeed;
-                float d = Mathf.Max(Vector3.Dot(vector, this.aimRayDir), 0f);
-                vector = this.aimRayDir * d;
-
-                base.characterMotor.velocity = vector;
-            }
-            this.previousPosition = base.transform.position;
+        private void MoveUpwards() {
+            base.characterMotor.rootMotion += this.jumpVector * (this.moveSpeedStat * LerpSpeedCoefficient() * Time.fixedDeltaTime);
+            base.characterMotor.velocity.y = 0f;
         }
 
-        //Lerp code, modified to keep max speed until the last 1/10th of the move.
+        //Lerp code
+        private float LerpTime()
+        {
+            float timeFraction = this.stopwatch / this.jumpDuration;
+            return timeFraction >= 1 ? 1 : 1 - (float)Math.Pow(2, -10 * timeFraction);
+        }
+
         private float LerpSpeedCoefficient()
         {
-            float lerpVal;
-            if (stopwatch - windupDuration / this.grabDuration < 0.9)
-            {
-                lerpVal = 0.0f;
-            }
-            else {
-                lerpVal = stopwatch - windupDuration / this.grabDuration;
-            }
-            return Mathf.Lerp(FlameChoke.initialSpeedCoefficient, FlameChoke.finalSpeedCoefficient, lerpVal);
+            return Mathf.Lerp(DarkDive.initialSpeedCoefficient, DarkDive.finalSpeedCoefficient, LerpTime());
         }
 
-        protected virtual void OnHitEnemyAuthority(int hitCount)
+        protected void OnHitEnemyAuthority(int hitCount)
         {
-            Util.PlaySound("flameChokeSFXend", base.gameObject);
-            GetComponent<TriforceBuffComponent>().AddToBuffCount(hitCount);
+
         }
 
         public override void OnExit()
@@ -218,7 +210,7 @@ namespace GanondorfMod.SkillStates
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;
             }
-
+            base.PlayAnimation("FullBody, Override", "BufferEmpty");
             //Chat.AddMessage(grabController.Count + "");
             if (grabController.Count > 0) {
                 foreach (GrabController gCon in grabController)
@@ -229,15 +221,12 @@ namespace GanondorfMod.SkillStates
                     }
                 }
             }
-            if (NetworkServer.active) {
-                base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
-            }
         }
 
         //Attempt grab, don't stop for any enemy.
         //Uses bullseye search, and puts every enemy into the grab controller.
         //grab radius of 10f is a little too big, try not to go over.
-        public void AttemptGrab(float grabRadius)
+        public void AttemptGrab()
         {
             BullseyeSearch search = new BullseyeSearch
             {
@@ -271,7 +260,7 @@ namespace GanondorfMod.SkillStates
                                 }
                             }
                             GrabController grabbedEnemy = singularTarget.healthComponent.body.gameObject.AddComponent<GrabController>();
-                            grabbedEnemy.pivotTransform = this.FindModelChild("HandL");
+                            grabbedEnemy.pivotTransform = this.FindModelChild("HandR");
                             grabController.Add(grabbedEnemy);
                         }
                     }
@@ -288,7 +277,7 @@ namespace GanondorfMod.SkillStates
         public void StartDrop() {
             base.characterMotor.disableAirControlUntilCollision = true;
             base.characterMotor.velocity.y = -dropForce;
-            this.AttemptGrab(grabRadius);
+            this.AttemptGrab();
 
             if (isGrounded) {
 

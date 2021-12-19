@@ -140,14 +140,12 @@ namespace GanondorfMod.SkillStates
             this.animator.SetBool("isKicking", true);
             this.animator.SetBool("attacking", true);
 
+
             if (NetworkServer.active)
             {
                 //Add buffs here
                 base.characterBody.AddTimedBuffAuthority(Modules.Buffs.armorBuff.buffIndex, this.duration);
                 //base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.5f * this.duration);
-
-                //Disable Fall damage
-                base.characterBody.bodyFlags |= CharacterBody.BodyFlags.IgnoreFallDamage;
             }
 
             
@@ -273,14 +271,13 @@ namespace GanondorfMod.SkillStates
 
             //Clean up by turning off bodyFlags for falldamage and rotate to correct position.
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
-            if (NetworkServer.active) {
-                base.characterBody.bodyFlags &= CharacterBody.BodyFlags.IgnoreFallDamage;
-            }
             modelTrans.rotation = Quaternion.identity;
             this.animator.SetBool("isKicking", false);
-            base.OnExit();
+
             this.animator.SetBool("attacking", false);
             base.characterMotor.disableAirControlUntilCollision = false;
+
+            base.OnExit();
         }
 
         public override void OnSerialize(NetworkWriter writer)

@@ -143,6 +143,12 @@ namespace GanondorfMod.SkillStates
                     this.PlaySwingEffect();
                     base.AddRecoil(-1f * this.attackRecoil, -2f * this.attackRecoil, -0.5f * this.attackRecoil, 0.5f * this.attackRecoil);
                 }
+                EffectManager.SpawnEffect(Modules.Assets.warlockPunchEffect, new EffectData
+                {
+                    origin = base.GetAimRay().origin + 5 * new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z),
+                    scale = 1f,
+                    rotation = Quaternion.LookRotation(new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z))
+                }, false);
             }
 
             if (base.isAuthority)
@@ -158,6 +164,7 @@ namespace GanondorfMod.SkillStates
         public override void OnExit()
         {
             //stop playing particles
+            base.PlayAnimation("FullBody, Override", "BufferEmpty");
             ganonController.HandLFire.Stop();
             ganonController.PunchCharge.Stop();
             ganonController.HandLSpeedLines.Stop();

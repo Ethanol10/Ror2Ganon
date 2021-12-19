@@ -19,6 +19,8 @@ namespace GanondorfMod.SkillStates
             EXPLODE = 2
         }
 
+        private bool checkedWeight;
+        private float maxWeight;
         private bool isAttacking;
         private string voiceLine = "";
         private float dmgMultiplier = 1f;
@@ -34,7 +36,6 @@ namespace GanondorfMod.SkillStates
         private bool isExplosion;
         private float explosionRadius = 20f;
         private bool alreadyPulled;
-        private float pullForce = 1f;
         private float pullMultiplier = 1.5f;
         private Transform slamIndicatorInstance;
         private Transform slamCenterIndicatorInstance;
@@ -43,10 +44,12 @@ namespace GanondorfMod.SkillStates
         public override void OnEnter()
         {
             base.OnEnter();
+            maxWeight = Modules.StaticValues.infernoGuillotinePullForce;
             this.swingSoundString = "tauntSpin";
             this.hasFired = false;
             this.isExplosion = true;
             this.alreadyPulled = false;
+            this.checkedWeight = false;
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             ganonController = base.GetComponent<GanondorfController>();
@@ -65,7 +68,7 @@ namespace GanondorfMod.SkillStates
                 base.characterMotor.velocity = Vector3.zero;
                 base.SmallHop(base.characterMotor, this.initialSmallhop);
             }
-
+            
             //Enable Particle Effects
             ganonController.FootRInfernoFire.Play();
             ganonController.PullShockwave.Play();
@@ -114,9 +117,7 @@ namespace GanondorfMod.SkillStates
             if (state == KickState.CHARGE) {
                 //increment the timer.
                 stopwatch += Time.fixedDeltaTime;
-                if (!alreadyPulled) {
-                    SearchToPull();
-                }
+                SearchToPull();
                 UpdateSlamIndicator();
 
                 if (stopwatch > windupTimer) {
@@ -163,7 +164,6 @@ namespace GanondorfMod.SkillStates
                     state = KickState.EXPLODE;
                 }
             }
-
             //explode
             if (state == KickState.EXPLODE) {
                 //Animation automatically transitions due to a condition that checks if we're grounded. Don't panic.
@@ -193,59 +193,67 @@ namespace GanondorfMod.SkillStates
             }
         }
 
-        public void SearchToPull()
+        public void GetMaxWeight()
         {
-            if (NetworkServer.active) {
-                Collider[] array = Physics.OverlapSphere(base.transform.position, explosionRadius * pullMultiplier, LayerIndex.defaultLayer.mask);
-                foreach (Collider collider in array) {
-                    HealthComponent healthComponent = collider.GetComponent<HealthComponent>();
-                    if (healthComponent) {
-                        TeamComponent component2 = healthComponent.GetComponent<TeamComponent>();
-                        if (component2.teamIndex != TeamIndex.Player) {
-                            CharacterBody characterBody = healthComponent.body;
+            BullseyeSearch search = new BullseyeSearch
+            {
+                teamMaskFilter = TeamMask.GetEnemyTeams(base.GetTeam()),
+                filterByLoS = false,
+                searchOrigin = base.transform.position,
+                searchDirection = UnityEngine.Random.onUnitSphere,
+                sortMode = BullseyeSearch.SortMode.Distance,
+                maxDistanceFilter = pullRadius,
+                maxAngleFilter = 360f
+            };
 
-                            if (characterBody) {
-                                Vector3 pull = (base.transform.position - characterBody.corePosition) * pullForce;
-                                CharacterMotor motor = characterBody.GetComponent<CharacterMotor>();
-                                Rigidbody rigidbody = characterBody.GetComponent<Rigidbody>();
+            search.RefreshCandidates();
+            search.FilterOutGameObject(base.gameObject);
+            maxWeight = Modules.StaticValues.infernoGuillotinePullForce;
 
-                                float mass = 1;
-                                if (motor)
-                                {
-                                    mass = motor.mass;
-                                }
-                                else if(rigidbody)
-                                {
-                                    mass = rigidbody.mass;
-                                }
-                                if (mass < 100) {
-                                    mass = 100;
-                                }
+            this.checkedWeight = true;
 
-                                pull *= mass;
-
-                                DamageInfo info = new DamageInfo
-                                {
-                                    attacker = base.gameObject,
-                                    inflictor = base.gameObject,
-                                    damage = 0,
-                                    damageColorIndex = DamageColorIndex.Default,
-                                    damageType = DamageType.Generic,
-                                    crit = false,
-                                    dotIndex = DotController.DotIndex.None,
-                                    force = pull,
-                                    position = base.transform.position,
-                                    procChainMask = default(ProcChainMask),
-                                    procCoefficient = 0
-                                };
-
-                                characterBody.healthComponent.TakeDamageForce(info, true, true);
-                                alreadyPulled = true;
+            List<HurtBox> target = search.GetResults().ToList<HurtBox>();
+            foreach (HurtBox singularTarget in target)
+            {
+                if (singularTarget)
+                {
+                    if (singularTarget.healthComponent && singularTarget.healthComponent.body)
+                    {
+                        if (singularTarget.healthComponent.body.characterMotor)
+                        {
+                            if (singularTarget.healthComponent.body.characterMotor.mass > maxWeight){
+                                maxWeight = singularTarget.healthComponent.body.characterMotor.mass;
+                            }
+                        }
+                        else if (singularTarget.healthComponent.body.rigidbody) {
+                            if (singularTarget.healthComponent.body.rigidbody.mass > maxWeight) {
+                                maxWeight = singularTarget.healthComponent.body.rigidbody.mass;
                             }
                         }
                     }
                 }
             }
+        }
+
+        public void SearchToPull() {
+            if (!checkedWeight) {
+                GetMaxWeight();
+            }
+
+            BlastAttack pullAttack = new BlastAttack();
+            pullAttack.damageType = DamageType.Generic;
+            pullAttack.position = base.transform.position;
+            pullAttack.attacker = base.gameObject;
+            pullAttack.inflictor = base.gameObject;
+            pullAttack.teamIndex = base.teamComponent.teamIndex;
+            pullAttack.baseDamage = 0f;
+            pullAttack.procCoefficient = 0f;
+            pullAttack.radius = explosionRadius * 2f;
+            pullAttack.bonusForce = Vector3.zero;
+            pullAttack.baseForce = -maxWeight;
+            pullAttack.crit = false;
+
+            pullAttack.Fire();
         }
 
         private void CreateIndicator()
@@ -295,10 +303,10 @@ namespace GanondorfMod.SkillStates
         {
             //stop playing particles
             ganonController.FootRInfernoFire.Stop();
-
+            base.PlayAnimation("FullBody, Override", "BufferEmpty");
             if (this.slamIndicatorInstance) EntityState.Destroy(this.slamIndicatorInstance.gameObject);
             if (this.slamCenterIndicatorInstance) EntityState.Destroy(this.slamCenterIndicatorInstance.gameObject);
-
+            base.characterMotor.Motor.RebuildCollidableLayers();
             base.OnExit();
         }
 
@@ -317,7 +325,7 @@ namespace GanondorfMod.SkillStates
             this.hitSoundString = "superHitsVoice";
             this.voiceLine = "infernoKickStart";
             this.damageCoefficient = Modules.StaticValues.infernoGuillotineCoefficient;
-            this.pushForce = 6000f;
+            this.pushForce = maxWeight;
             this.procCoefficient = 1.5f;
             this.bonusForce = Vector3.up;
             this.baseDuration = 2.25f;
@@ -335,12 +343,13 @@ namespace GanondorfMod.SkillStates
             blastAttack.damageType = DamageType.Stun1s;
             blastAttack.attacker = base.gameObject;
             blastAttack.inflictor = base.gameObject;
-            blastAttack.teamIndex = base.GetTeam();
+            blastAttack.teamIndex = base.teamComponent.teamIndex;
             blastAttack.baseDamage = this.damageCoefficient * this.damageStat * this.dmgMultiplier;
             blastAttack.procCoefficient = 1.0f;
             blastAttack.radius = explosionRadius;
             blastAttack.bonusForce = this.bonusForce;
             blastAttack.baseForce = this.pushForce;
+            blastAttack.falloffModel = BlastAttack.FalloffModel.None;
             blastAttack.crit = base.RollCrit();
 
             this.duration = this.baseDuration; /*/ this.attackSpeedStat;*/ //doesn't scale at all.
@@ -371,7 +380,7 @@ namespace GanondorfMod.SkillStates
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.Death;
+            return InterruptPriority.Frozen;
         }
     }
 }

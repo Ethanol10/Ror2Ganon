@@ -332,7 +332,7 @@ namespace GanondorfMod.SkillStates
             ganonController.FootLFire.Stop();
             ganonController.ShoulderRLightning.Stop();
             ganonController.HandRLightning.Stop();
-
+            base.PlayAnimation("FullBody, Override", "BufferEmpty");
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.OnExit();
         }

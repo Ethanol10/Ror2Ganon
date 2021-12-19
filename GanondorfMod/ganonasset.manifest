@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 939226842
+CRC: 3578145620
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7ea0bbb69a3fd8642d2d621056d0a0b9
+    Hash: 4fb961e37a1c1a406f2366383f7c3202
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -79,6 +79,7 @@ Assets:
 - Assets/GanonAsset/particle/GanondorfFlameEffect.prefab
 - Assets/GanonAsset/Animator/Animations/Dash.anim
 - Assets/GanonAsset/Animator/Animations/UpBFinishGrab.anim
+- Assets/GanonAsset/particle/FireHit.prefab
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
 - Assets/GanonAsset/Material/WarlockPunchmat.mat
