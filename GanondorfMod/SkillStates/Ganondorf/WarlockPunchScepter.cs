@@ -92,9 +92,7 @@ namespace GanondorfMod.SkillStates
                 Util.PlaySound(voiceLine, base.gameObject);
                 isAttacking = false;
             }
-            //Increment Timers for hitstun
-            this.hitPauseTimer -= Time.fixedDeltaTime;
-            this.stopwatch += Time.fixedDeltaTime;
+            
 
             //Return player back to usual speed once hitpause is over
             if (this.hitPauseTimer <= 0f && this.inHitPause)
@@ -110,13 +108,15 @@ namespace GanondorfMod.SkillStates
             }
             else
             {
+                //Increment Timers for hitstun
+                this.hitPauseTimer -= Time.fixedDeltaTime;
                 //Set velocity to zero, and punch playback rate to 0 to simulate a strong hit
                 if (base.characterMotor) base.characterMotor.velocity = Vector3.zero;
                 if (this.animator) this.animator.SetFloat("warlockPunch.playbackRate", 0f);
             }
 
             //Check if Dash or punch should trigger
-            if (this.stopwatch >= (this.duration * this.attackStartTime) && this.stopwatch <= (this.duration * this.attackEndTime))
+            if (this.stopwatch >= (this.attackStartTime) && this.stopwatch <= (this.attackEndTime))
             {
                 this.FireAttack();    
             }
@@ -197,7 +197,7 @@ namespace GanondorfMod.SkillStates
             this.attackStartTime = 1.4f;
             this.attackEndTime = 2.04f;
             this.baseEarlyExitTime = 2.7f;
-            this.hitStopDuration = 0.2f;
+            this.hitStopDuration = 0.5f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 10f;
 

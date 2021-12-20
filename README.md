@@ -49,7 +49,7 @@ Charge up a powerful punch unleashing 800% damage onto close range foes.
         - Fixed Ganon not triggering an attack when he lands with Flame Choke. (For later reference, set the position of the blast attack RIGHT BEFORE you trigger the attack.)
         - Fixed Ganon having ridiculously large item displays when in use with other mods (Unless someone decides to use the name positions that I've made.)
         - Fixed Ganon leaving Greater Wisp Corpses lying all over the place. Gotta make the place clean while destroying everything.
-        - Fixed Ganon animation transitions between kick and Warlock punch.
+        - Fixed Ganon animation transitions between moves, particularly, Aerial Kick (Punch) and Warlock Punch.
     - Aaaaaaaaaaand balance changes:
         - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 800% base damage)
         - However! It's not all nerfs here. Stacks at max power (100 stacks), now buff more damage on Warlock Punch (10x damage -> 15x damage), still giving an incentive to build up those stacks to one-shot Mithrix out of existance.

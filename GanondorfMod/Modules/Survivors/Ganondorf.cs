@@ -208,7 +208,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("flameChokeIconUtility"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DarkDive)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,

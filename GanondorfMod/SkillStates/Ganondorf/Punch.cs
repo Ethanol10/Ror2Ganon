@@ -231,14 +231,14 @@ namespace GanondorfMod.SkillStates
             }
 
             //check if lightKick should fire.
-            if (kickActive && this.stopwatch >= (this.lightKickAttackStartTime)
-                && this.stopwatch <= (this.lightKickAttackEndTime) )
+            if (kickActive && this.stopwatch >= (this.lightKickAttackStartTime / this.attackSpeedStat)
+                && this.stopwatch <= (this.lightKickAttackEndTime / this.attackSpeedStat) )
             {
                 this.FireLightKickAttack();
             }
 
             //Check if Dash or punch should trigger
-            if (this.stopwatch >= (this.attackStartTime) && this.stopwatch <= (this.attackEndTime))
+            if (this.stopwatch >= (this.attackStartTime / this.attackSpeedStat) && this.stopwatch <= (this.attackEndTime / this.attackSpeedStat))
             {
                 if (kickActive) {
                     //Play Particle effect
