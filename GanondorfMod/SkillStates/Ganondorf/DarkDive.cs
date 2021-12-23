@@ -35,6 +35,7 @@ namespace GanondorfMod.SkillStates
         private List<GrabController> grabController;
         private GanondorfController ganonController;
         private float blastInterval = 0.1f;
+        private float damperVal = 0.7f; //This value should be lower than 1.0f, otherwise it'll do the opposite and make him fly up further.
         private int noOfBlasts = 5;
         private int blastsDone;
         private bool isExploded;
@@ -124,7 +125,8 @@ namespace GanondorfMod.SkillStates
             if (state == DarkDiveState.START)
             {
                 if (this.stopwatch >= this.waitVal) {
-
+                    stopwatch = 0f;
+                    this.state = DarkDiveState.JUMP;
                 }
             }
 
@@ -183,7 +185,7 @@ namespace GanondorfMod.SkillStates
         }
 
         private void MoveUpwards() {
-            base.characterMotor.rootMotion += this.jumpVector * (this.moveSpeedStat * LerpSpeedCoefficient() * Time.fixedDeltaTime);
+            base.characterMotor.rootMotion += this.jumpVector * (LerpSpeedCoefficient() * damperVal);
             base.characterMotor.velocity.y = 0f;
         }
 
@@ -211,7 +213,8 @@ namespace GanondorfMod.SkillStates
                 base.cameraTargetParams.fovOverride = -1f;
             }
             base.PlayAnimation("FullBody, Override", "BufferEmpty");
-            //Chat.AddMessage(grabController.Count + "");
+            ganonController.HandRSpeedLines.Stop();
+
             if (grabController.Count > 0) {
                 foreach (GrabController gCon in grabController)
                 {

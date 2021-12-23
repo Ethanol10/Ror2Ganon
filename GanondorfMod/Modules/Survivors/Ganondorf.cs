@@ -436,6 +436,35 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(skin2);
             #endregion
 
+            #region BrawlGanon
+            Material brawlSkinMat = Modules.Assets.CreateMaterial("ganonTexBrawl", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] brawlSkinRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                brawlSkinMat,
+                brawlSkinMat,
+                brawlSkinMat,
+                brawlSkinMat
+            });
+
+            SkinDef brawlSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                brawlSkinRendererInfos,
+                mainRenderer,
+                model);
+                //, addUnlockConditionHere);
+
+            brawlSkin.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonBrawlMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(brawlSkin);
+            #endregion
+
             #region MasterySkin
             Material masteryMat = Modules.Assets.CreateMaterial("ganonTex04", 10f, Color.white, 1.0f);
             CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]

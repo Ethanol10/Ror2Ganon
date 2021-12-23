@@ -33,6 +33,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
             LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Regal");
             LanguageAPI.Add(prefix + "SKIN2_NAME", "Wise");
+            LanguageAPI.Add(prefix + "BRAWL_SKIN_NAME", "Royal");
             #endregion
 
             #region Passive

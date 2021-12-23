@@ -5134,6 +5134,10 @@ MonoBehaviour:
   m_Exclusions:
   - {fileID: 7200967950282033536}
   - {fileID: 749753973761637732}
+  - {fileID: 6311508816275014117}
+  - {fileID: 6280747911616426828}
+  - {fileID: 1144983235421886529}
+  - {fileID: 7100197380794660757}
   m_FreezeAxis: 0
   m_DistantDisable: 1
   m_ReferenceObject: {fileID: 0}

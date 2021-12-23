@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3578145620
+CRC: 1784078552
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4fb961e37a1c1a406f2366383f7c3202
+    Hash: d5a1c37793d2d59cddd4e1e1deb305bf
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -105,6 +105,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
 - Assets/GanonAsset/Mesh/spikeEffect.mesh
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
+- Assets/GanonAsset/Material/ganonTexBrawl.mat
 - Assets/GanonAsset/particle/Shaders/ParticleDissolveAlpha.shader
 - Assets/GanonAsset/Animator/Animations/RunBrake.anim
 - Assets/GanonAsset/icons/texGanondorfIcon.png
@@ -122,6 +123,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
+- Assets/GanonAsset/Mesh/ganonBrawlMesh.mesh
 - Assets/GanonAsset/particle/first.prefab
 - Assets/GanonAsset/Material/ganontex.mat
 - Assets/GanonAsset/icons/wizardFootIconSecondary.png
@@ -145,5 +147,6 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Jump.anim
 - Assets/GanonAsset/icons/punchIcon.png
 - Assets/GanonAsset/particle/GanondorfLightningEffect.prefab
+- Assets/GanonAsset/Material/tex1ganonbrawl.png
 - Assets/GanonAsset/particle/PunchHitParticle.prefab
 Dependencies: []
