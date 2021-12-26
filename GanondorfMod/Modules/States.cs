@@ -20,6 +20,8 @@ namespace GanondorfMod.Modules
 
             entityStates.Add(typeof(WizardFoot));
 
+            entityStates.Add(typeof(DarkDive));
+
             entityStates.Add(typeof(WarlockPunch));
 
             entityStates.Add(typeof(WarlockPunchScepter));

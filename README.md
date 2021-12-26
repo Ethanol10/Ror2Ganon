@@ -45,6 +45,7 @@ Charge up a powerful punch unleashing 800% damage onto close range foes.
     - Another skin! (also with an unlock condition)
     - (slight) VFX updates!
     - Actual hit pauses! (get that weak no-hitpause garbage outta here)
+    - Changes to Sound level, sorry for blasting ears in 1.0.3
     - Bug Fixes included (as usual)
         - Fixed Ganon not triggering an attack when he lands with Flame Choke. (For later reference, set the position of the blast attack RIGHT BEFORE you trigger the attack.)
         - Fixed Ganon having ridiculously large item displays when in use with other mods (Unless someone decides to use the name positions that I've made.)

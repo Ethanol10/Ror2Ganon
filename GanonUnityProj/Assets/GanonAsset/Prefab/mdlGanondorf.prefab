@@ -39368,6 +39368,11 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
       objectReference: {fileID: 0}
+    - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
+        type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9072179337103255211, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}
       propertyPath: m_Name
@@ -39697,6 +39702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
+        type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9072179337103255211, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}
@@ -41761,6 +41771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: VelocityModule.orbitalZ.minMaxState
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
+        type: 3}
+      propertyPath: TrailModule.lifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9072179337103255211, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}

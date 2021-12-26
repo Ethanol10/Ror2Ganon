@@ -13,6 +13,7 @@ namespace GanondorfMod.SkillStates
         private bool isAttacking;
         private string voiceLine = "";
         private float dmgMultiplier = 1f;
+        private float duration = 1.0f;
         private bool hitEnemy = false;
         private GanondorfController ganonController;
 

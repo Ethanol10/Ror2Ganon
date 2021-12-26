@@ -205,9 +205,9 @@ namespace GanondorfMod.Modules.Survivors
 
             SkillDef darkDive = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_NAME",
-                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_NAME",
-                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_LIFESTEAL_GRAB_DESCRIPTION",
+                skillName = prefix + "_GANONDORF_BODY_UTILITY_AERIAL_GRAB_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_AERIAL_GRAB_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_AERIAL_GRAB_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DarkDive)),
                 activationStateMachineName = "Weapon",
@@ -447,7 +447,7 @@ namespace GanondorfMod.Modules.Survivors
             });
 
             SkinDef brawlSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
                 brawlSkinRendererInfos,
                 mainRenderer,
                 model);
@@ -582,7 +582,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             localPos = new Vector3(-0.00289F, 0.02069F, 0.00026F),
                             localAngles = new Vector3(293.6736F, 80.62831F, 6.56808F),
                             localScale = new Vector3(0.025F, 0.025F, 0.025F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -729,7 +729,7 @@ localScale = new Vector3(0.0846F, 0.0846F, 0.0758F),
                             localPos = new Vector3(-0.00601F, 0.01382F, 0.00031F),
                             localAngles = new Vector3(289.1977F, 84.07439F, 11.49006F),
                             localScale = new Vector3(0.06F, 0.06F, 0.06F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -771,7 +771,7 @@ localScale = new Vector3(0.0501F, 0.0501F, 0.0501F),
                             localPos = new Vector3(-0.01F, 0F, 0F),
                             localAngles = new Vector3(270F, 90F, 0F),
                             localScale = new Vector3(0.08F, 0.08F, 0.08F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
 
                     }
@@ -919,7 +919,7 @@ localScale = new Vector3(0.0289F, 0.0289F, 0.0289F),
                             localPos = new Vector3(-0.01446F, 0.00488F, -0.00033F),
                             localAngles = new Vector3(5.02862F, 1.15325F, 73.43647F),
                             localScale = new Vector3(0.1F, 0.1F, 0.1F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1075,7 +1075,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
                             localPos = new Vector3(0.03941F, -0.00122F, 0.00208F),
                             localAngles = new Vector3(279.6632F, 328.884F, 115.9476F),
                             localScale = new Vector3(0.1F, 0.1F, 0.1F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1180,7 +1180,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
                             localPos = new Vector3(0.02226F, -0.03436F, -0.00665F),
                             localAngles = new Vector3(324.1017F, 260.9333F, 188.7581F),
                             localScale = new Vector3(0.01F, 0.01F, 0.01F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1295,7 +1295,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
                             localPos = new Vector3(-0.0112F, 0.00454F, 0.01047F),
                             localAngles = new Vector3(333.6707F, 268.5498F, 54.30248F),
                             localScale = new Vector3(0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         },
                         new ItemDisplayRule
                         {
@@ -1305,7 +1305,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
                             localPos = new Vector3(-0.01301F, 0.00564F, -0.00893F),
                             localAngles = new Vector3(341.8323F, 264.8607F, 314.3775F),
                             localScale = new Vector3(-0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1683,7 +1683,7 @@ localScale = new Vector3(0.0687F, 0.0687F, 0.0687F),
                             localPos = new Vector3(-0.01777F, -0.00055F, 0.00121F),
                             localAngles = new Vector3(23.79291F, 337.9178F, 73.58833F),
                             localScale = new Vector3(0.025F, 0.025F, 0.025F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1746,7 +1746,7 @@ localScale = new Vector3(0.1511F, 0.1511F, 0.1511F),
                             localPos = new Vector3(-0.0166F, 0.00537F, -0.00799F),
                             localAngles = new Vector3(0.42134F, 175.9255F, 278.2194F),
                             localScale = new Vector3(0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         },
                         new ItemDisplayRule
                         {
@@ -1756,7 +1756,7 @@ localScale = new Vector3(0.1511F, 0.1511F, 0.1511F),
                             localPos = new Vector3(-0.0171F, 0.00706F, 0.0091F),
                             localAngles = new Vector3(14.67922F, 12.3438F, 72.866F),
                             localScale = new Vector3(0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1861,7 +1861,7 @@ localScale = new Vector3(0.2731F, 0.2731F, 0.0273F),
                             localPos = new Vector3(-0.02147F, -0.0172F, 0.00227F),
                             localAngles = new Vector3(336.0344F, 354.2175F, 73.6545F),
                             localScale = new Vector3(0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -1903,7 +1903,7 @@ localScale = new Vector3(0.4814F, 0.4814F, 0.4814F),
                             localPos = new Vector3(-0.00367F, 0.01786F, 0.00503F),
                             localAngles = new Vector3(342.6146F, 188.5165F, 198.2434F),
                             localScale = new Vector3(0.015F, 0.015F, 0.015F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -2176,7 +2176,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
                             localPos = new Vector3(-0.02159F, 0.01004F, 0.00755F),
                             localAngles = new Vector3(51.64918F, 209.0314F, 270.7932F),
                             localScale = new Vector3(0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         },
                         new ItemDisplayRule
                         {
@@ -2186,7 +2186,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
                             localPos = new Vector3(-0.02274F, 0.00921F, -0.00663F),
                             localAngles = new Vector3(339.7332F, 126.4673F, 272.4875F),
                             localScale = new Vector3(0.05F, 0.05F, 0.05F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -2228,7 +2228,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
                             localPos = new Vector3(-0.02037F, 0.00811F, 0.00006F),
                             localAngles = new Vector3(66.69865F, 259.349F, 341.9424F),
                             localScale = new Vector3(0.04F, 0.015F, 0.015F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -2291,7 +2291,7 @@ localScale = new Vector3(0.02F, 0.02F, 0.02F),
                             localPos = new Vector3(-0.00446F, 0.00651F, 0.00032F),
                             localAngles = new Vector3(344.9017F, 0F, 0F),
                             localScale = new Vector3(0.1F, 0.1F, 0.1F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }
@@ -2689,7 +2689,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
                             localPos = new Vector3(-0.02396F, 0.00015F, 0.001F),
                             localAngles = new Vector3(342.6126F, 272.7209F, 189.5704F),
                             localScale = new Vector3(0.0025F, 0.0025F, 0.0025F),
-                            limbMask = LimbFlags.None
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }

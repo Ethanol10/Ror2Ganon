@@ -124,6 +124,7 @@ namespace GanondorfMod.SkillStates
                     state = KickState.DROP;
                     ganonController.PullShockwave.Stop();
                     ganonController.InfernoKickFalling.Play();
+                    base.PlayAnimation("FullBody, Override", "InfernoKickAirtime", "warlockPunch.playbackRate", this.duration);
                 }
             }
 
@@ -162,6 +163,7 @@ namespace GanondorfMod.SkillStates
                     this.inHitPause = false;
                     base.characterMotor.velocity = Vector3.zero;
                     state = KickState.EXPLODE;
+                    base.PlayAnimation("FullBody, Override", "InfernoKickLanding", "warlockPunch.playbackRate", this.duration);
                 }
             }
             //explode

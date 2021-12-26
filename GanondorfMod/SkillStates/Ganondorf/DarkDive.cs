@@ -20,37 +20,39 @@ namespace GanondorfMod.SkillStates
             JUMP = 2,
             EXPLODE = 3,
             FORCEBACK = 4,
-            END = 5
+            FASTFALL = 5,
+            END = 6
         }
 
         private float stopwatch;
         private Animator anim;
         private DarkDiveState state;
+        private bool fastFalltrigger;
         private float waitVal = 0.375f;
-        private float jumpDuration = 1.58f;
-        private float grabDuration = 0.5f;
-        private Vector3 jumpVector = Vector3.up;
-        public static float initialSpeedCoefficient = 3.2f;
-        public static float finalSpeedCoefficient = 0f;
+        private float jumpDuration = 1.0f;
+        private float forcebackDuration = 1.0f;
+        private float grabDuration = 0.3f;
+        private Vector3 jumpVector;
+        public static float initialSpeedCoefficient = 4.0f;
+        public static float finalSpeedCoefficient = 0.2f;
         private List<GrabController> grabController;
         private GanondorfController ganonController;
-        private float blastInterval = 0.1f;
+        private float blastInterval;
         private float damperVal = 0.7f; //This value should be lower than 1.0f, otherwise it'll do the opposite and make him fly up further.
-        private int noOfBlasts = 5;
+        private int noOfBlasts;
         private int blastsDone;
         private bool isExploded;
-
+        private bool isBoosted;
+        private bool isSecondary;
+        private float damage;
+        private TriforceBuffComponent triforceComponent;
+        private bool grabFailed;
+        private float buttonHeldDownTimer;
 
         private Vector3 aimRayDir;
         private float grabSpeed;
         private float dropForce = 50f; // how fast ganon should fall.
 
-
-        private Vector3 previousPosition;
-        private bool finishMove;
-        private bool doGroundedFinisher;
-        private bool doAerialFinisher;
-        private bool stateFixed;
         private float aerialAttackStart = 0.4f;
         private float aerialAttackEnd = 0.5f;
         private float aerialLetGo = 0.5f;
@@ -58,7 +60,8 @@ namespace GanondorfMod.SkillStates
         private float groundedAttackEnd = 0.5f;
         private float groundedLetGo = 0.6f;
         private BlastAttack attack;
-        private float grabRadius = 8f;
+        private BlastAttack miniBlast;
+        private float grabRadius = 5f;
         private float invincibilityWindow = 1.5f;
         private bool playedGrabSound = false;
         private bool hasFired = false;
@@ -66,39 +69,68 @@ namespace GanondorfMod.SkillStates
 
         public static float dodgeFOV = EntityStates.Commando.DodgeState.dodgeFOV;
         public static float grabEndExplosionRadius = 10f;
-        public static float flameChokeDamageCoefficient = Modules.StaticValues.flameChokeDamageCoefficient;
-        public static float flameChokeProcCoefficient = 1f;
         public static float slamForce = 5000f;
 
         public override void OnEnter()
         {
             base.OnEnter();
+            DarkDive.initialSpeedCoefficient = 3.2f;
+            buttonHeldDownTimer = 0f;
             state = DarkDiveState.START;
             this.anim = base.GetModelAnimator();
             stopwatch = 0.0f;
             blastsDone = 0;
             grabController = new List<GrabController>();
-            this.finishMove = false;
-            this.doGroundedFinisher = false;
-            this.doAerialFinisher = false;
-            this.stateFixed = false;
+            hasFired = false;
             isExploded = false;
             ganonController = base.GetComponent<GanondorfController>();
+            triforceComponent = base.GetComponent<TriforceBuffComponent>();
+            jumpVector = Vector3.up;
             anim.SetBool("enemyCaught", false);
+            grabFailed = false;
+            fastFalltrigger = false;
 
-            base.PlayAnimation("FullBody, Override", "UpBStart", "flameChoke.playbackRate", grabDuration);
+            blastInterval = Modules.StaticValues.darkDiveBlastInterval;//attackSpeedStat;
+            noOfBlasts = Modules.StaticValues.darkDiveBlastCountBase + (1 * (int)(attackSpeedStat / 2));
+
+            base.PlayAnimation("FullBody, Override", "UpBStart", "flameChoke.playbackRate", jumpDuration);
 
             this.grabSpeed = this.moveSpeedStat * LerpSpeedCoefficient();
 
-            if (base.characterMotor && base.characterDirection)
-            {
-                //base.characterMotor.velocity.y = 0f;
-                base.characterMotor.velocity = this.aimRayDir * this.grabSpeed;
-            }
             //Play Sound
+            Util.PlaySound("darkDive1", base.gameObject);
             Util.PlaySound("grabStartSFX", base.gameObject);
-            Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
-            this.previousPosition = base.transform.position - b;
+
+            if (base.inputBank.skill2.down)
+            {
+                isBoosted = false;
+                isSecondary = true;
+                damage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat;
+            }
+            else if (base.inputBank.skill3.down)
+            {
+                float boost = 1f;
+
+                if (triforceComponent.GetBuffCount() >= Modules.StaticValues.utilityStackConsumption)
+                {
+                    boost = Modules.StaticValues.utilityBoostCoefficient;
+                    isBoosted = true;
+                    ganonController.BodyLightning.Play();
+                }
+                damage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * boost;
+            }
+
+            //Create blast attack, 
+            miniBlast = new BlastAttack();
+            miniBlast.damageType = DamageType.Stun1s;
+            miniBlast.attacker = base.gameObject;
+            miniBlast.inflictor = base.gameObject;
+            miniBlast.teamIndex = base.GetTeam();
+            miniBlast.baseDamage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * Modules.StaticValues.darkDiveDamageReducer;
+            miniBlast.procCoefficient = 1.0f;
+            miniBlast.baseForce = 500f;
+            miniBlast.radius = grabEndExplosionRadius;
+            miniBlast.crit = base.RollCrit();
 
             //Create blast attack, 
             attack = new BlastAttack();
@@ -106,9 +138,10 @@ namespace GanondorfMod.SkillStates
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();
-            attack.baseDamage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat;
+            attack.baseDamage = damage;
             attack.procCoefficient = 1.0f;
-            attack.baseForce = 1500f;
+            attack.bonusForce = Vector3.up;
+            attack.baseForce = 500f;
             attack.radius = grabEndExplosionRadius;
             attack.crit = base.RollCrit();
             
@@ -119,6 +152,17 @@ namespace GanondorfMod.SkillStates
         {
             base.FixedUpdate();
             this.stopwatch += Time.fixedDeltaTime;
+            if ((base.inputBank.skill2.down && isSecondary) || (!isSecondary && base.inputBank.skill3.down))
+            {
+                this.buttonHeldDownTimer += Time.fixedDeltaTime;
+            }
+            else {
+                this.buttonHeldDownTimer = 0f;
+            }
+
+            if (buttonHeldDownTimer >= 1f) {
+                fastFalltrigger = true;
+            }
 
             //Stay on the ground for duration of jump squat in animation.
             //Jump squat ends frame 9 of a 24fps animation.
@@ -127,6 +171,7 @@ namespace GanondorfMod.SkillStates
                 if (this.stopwatch >= this.waitVal) {
                     stopwatch = 0f;
                     this.state = DarkDiveState.JUMP;
+                    
                 }
             }
 
@@ -134,12 +179,24 @@ namespace GanondorfMod.SkillStates
             if (state == DarkDiveState.JUMP)
             {
                 MoveUpwards();
-                AttemptGrab();
-                if (this.stopwatch >= this.jumpDuration) {
-                    if (grabController.Count > 0)
+                if (!grabFailed) {
+                    AttemptGrab();
+                }
+                if (this.stopwatch >= this.grabDuration) {
+                    if (grabController.Count == 0) {
+                        grabFailed = true;
+                    }
+                    if (grabController.Count > 0 && !grabFailed)
                     {
                         this.state = DarkDiveState.EXPLODE;
                         this.stopwatch = 0f;
+                        base.PlayAnimation("FullBody, Override", "UpBGrabbed", "flameChoke.playbackRate", 0.3f);
+                    }
+                }
+                if (this.stopwatch >= this.jumpDuration && grabFailed) {
+                    if (fastFalltrigger)
+                    {
+                        this.state = DarkDiveState.FASTFALL;
                     }
                     else {
                         this.state = DarkDiveState.END;
@@ -150,20 +207,38 @@ namespace GanondorfMod.SkillStates
             //Trigger blast attack "noOfTimes" spaced in "blastIntervalCooldown"
             if (state == DarkDiveState.EXPLODE)
             {
+                base.characterMotor.velocity = Vector3.zero;
                 isExploded = true;
                 if (blastsDone < noOfBlasts) {
                     if (stopwatch > blastInterval) {
                         stopwatch = 0f;
-                        int hitCount = attack.Fire().hitCount;
-                        if (hitCount > 0) {
-                            OnHitEnemyAuthority(hitCount);
+                        miniBlast.position = base.transform.position;
+                        Util.PlaySound("lightHitSFX", base.gameObject);
+                        int hitCount = miniBlast.Fire().hitCount;
+                        if (hitCount > 0)
+                        {
+                            OnMiniBlastHitEnemyAuthority();
                         }
                         blastsDone++;
                     }
                 }
 
                 if (blastsDone >= noOfBlasts) {
+                    jumpVector = (Vector3.up + (base.GetAimRay().direction * -1f)).normalized;
+                    anim.SetBool("enemyCaught", false);
                     this.state = DarkDiveState.FORCEBACK;
+                    base.PlayAnimation("FullBody, Override", "UpBFinishGrab", "flameChoke.playbackRate", forcebackDuration);
+                    stopwatch = 0f;
+                    if (grabController.Count > 0)
+                    {
+                        foreach (GrabController gCon in grabController)
+                        {
+                            if (gCon)
+                            {
+                                gCon.Release();
+                            }
+                        }
+                    }
                 }
             }
 
@@ -171,14 +246,51 @@ namespace GanondorfMod.SkillStates
             if (state == DarkDiveState.FORCEBACK) {
                 //Blast attack
                 //move backwards and upwards for a few seconds.
+                base.characterMotor.disableAirControlUntilCollision = true;
+                DarkDive.initialSpeedCoefficient = 2.5f;
+                MoveUpwards();
+                if (!hasFired) {
+                    hasFired = true;
+                    attack.position = base.transform.position;
+                    Util.PlaySound("darkDive2", base.gameObject);
+                    int hitCount = attack.Fire().hitCount;
+                    if (hitCount > 0)
+                    {
+                        OnHitEnemyAuthority(hitCount);
+                    }
+                }
+
+                if (stopwatch >= forcebackDuration && fastFalltrigger)
+                {
+                    state = DarkDiveState.FASTFALL;
+                }
+                else if (stopwatch >= forcebackDuration)
+                {
+                    state = DarkDiveState.END;
+                }
+            }
+
+            if (state == DarkDiveState.FASTFALL) {
+                base.characterMotor.velocity.y = -dropForce;
+                if (isGrounded) {
+                    base.characterMotor.velocity = Vector3.zero;
+                    state = DarkDiveState.END;
+                }
             }
 
             //End move, send to OnExit
             if (state == DarkDiveState.END)
             {
+                base.characterMotor.disableAirControlUntilCollision = false;
+
                 //end the move.
                 if (!isExploded) {
-
+                    attack.position = base.transform.position;
+                    int hitCount = attack.Fire().hitCount;
+                    if (hitCount > 0)
+                    {
+                        OnHitEnemyAuthority(hitCount);
+                    }
                 }
                 this.outer.SetNextStateToMain();
             }
@@ -203,7 +315,18 @@ namespace GanondorfMod.SkillStates
 
         protected void OnHitEnemyAuthority(int hitCount)
         {
+            if (isSecondary || !isBoosted)
+            {
+                triforceComponent.AddToBuffCount(hitCount);
+            }
+            if (isBoosted)
+            {
+                triforceComponent.RemoveAmountOfBuff(Modules.StaticValues.utilityStackConsumption);
+            }
+        }
 
+        protected void OnMiniBlastHitEnemyAuthority() {
+            triforceComponent.IncrementBuffCount();
         }
 
         public override void OnExit()
@@ -212,7 +335,8 @@ namespace GanondorfMod.SkillStates
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;
             }
-            base.PlayAnimation("FullBody, Override", "BufferEmpty");
+            //We can try cancel the move out before it ends and instead not revert to buffer empty.
+            //base.PlayAnimation("FullBody, Override", "BufferEmpty");
             ganonController.HandRSpeedLines.Stop();
 
             if (grabController.Count > 0) {
@@ -277,74 +401,12 @@ namespace GanondorfMod.SkillStates
             return meetsConditions;
         }
 
-        public void StartDrop() {
-            base.characterMotor.disableAirControlUntilCollision = true;
-            base.characterMotor.velocity.y = -dropForce;
-            this.AttemptGrab();
-
-            if (isGrounded) {
-
-                base.characterMotor.velocity = Vector3.zero;
-                stopwatch += Time.fixedDeltaTime;
-                if (stopwatch > aerialAttackStart && stopwatch < aerialAttackEnd) {
-                    if (!hasFired && base.isAuthority)
-                    {
-                        hasFired = true;
-                        attack.position = this.FindModelChild("HandL").position;
-                        int hitCount = attack.Fire().hitCount;
-                        if (hitCount > 0) {
-                            OnHitEnemyAuthority(hitCount);
-                        }
-                    }
-                    //play sounds after firing
-                    Util.PlaySound("flameChokeSFXEnd", base.gameObject);
-                }
-                if (stopwatch > aerialLetGo) {
-                    if (!hasFired && base.isAuthority) {
-                        attack.position = this.FindModelChild("HandL").position;
-                        int hitCount = attack.Fire().hitCount;
-                        if (hitCount > 0)
-                        {
-                            OnHitEnemyAuthority(hitCount);
-                        }
-                    }
-                    finishMove = true;
-                }
-            }
-        }
-
-        public void GroundedFinisher() {
-            if (stopwatch > groundedAttackStart && stopwatch < groundedAttackEnd) {
-                base.characterMotor.velocity = Vector3.zero;
-                if (!hasFired && base.isAuthority)
-                {
-                    hasFired = true;
-                    attack.position = this.FindModelChild("HandL").position;
-                    int hitCount = attack.Fire().hitCount;
-                    if (hitCount > 0)
-                    {
-                        OnHitEnemyAuthority(hitCount);
-                    }
-                }
-
-                //Play sounds after firing
-                Util.PlaySound("flameChokeSFXEnd", base.gameObject);
-            }
-            if (stopwatch >= groundedLetGo) {
-                if (!hasFired && base.isAuthority) {
-                    attack.position = this.FindModelChild("HandL").position;
-                    int hitCount = attack.Fire().hitCount;
-                    if (hitCount > 0)
-                    {
-                        OnHitEnemyAuthority(hitCount);
-                    }
-                }
-                finishMove = true;
-            }
-        }
-
         public override InterruptPriority GetMinimumInterruptPriority()
         {
+            if (state == DarkDiveState.FORCEBACK || state == DarkDiveState.END || state == DarkDiveState.JUMP || state == DarkDiveState.FASTFALL) {
+                return InterruptPriority.Any;
+            }
+
             return InterruptPriority.Frozen;
         }
     }

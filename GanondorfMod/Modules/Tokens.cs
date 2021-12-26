@@ -16,7 +16,7 @@ namespace GanondorfMod.Modules
             desc = desc + "< ! > Use Flame Choke to grab multiple enemies in a row, disabling them in the process." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Wizard's Foot is a great mobility tool, and a way to send enemies flying." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Warlock Punch to release a devastating explosive punch." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor and the power of your Warlock Punch." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor and the power of your Special." + Environment.NewLine + Environment.NewLine;
             //desc = desc + "";
 
             string outro = "..and so he left, spreading malice in his wake.";
@@ -40,7 +40,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "PASSIVE_NAME", "Triforce of Power");
             LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", 
                 $"Every successful hit and kill will build up stacks that increase Ganondorf's armor. Stacks decay after 2 seconds of no build up." +
-                $" All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to" +
+                $" All stacks will be consumed to power up a successful hit of your Special, increasing the damage up to" +
                 $" <style=cIsDamage>{Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer * 100f}%</style> at the maximum amount of stacks.");
             #endregion
 
@@ -75,14 +75,16 @@ namespace GanondorfMod.Modules
             #endregion
 
             #region Utility 2: Dark Dive
-            LanguageAPI.Add(prefix + "UTILITY_LIFESTEAL_GRAB_NAME", "Dark Dive");
-            LanguageAPI.Add(prefix + "UTILITY_LIFESTEAL_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing "
-                + $"<style=cIsDamage>{100f * StaticValues.flameChokeDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}" +
+            LanguageAPI.Add(prefix + "UTILITY_AERIAL_GRAB_NAME", "Dark Dive");
+            LanguageAPI.Add(prefix + "UTILITY_AERIAL_GRAB_DESCRIPTION", $"Leap upwards grabbing enemies in your path, blasting them to smitherines, firstly hitting"
+                + $" 5 mini-blasts at base for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient * StaticValues.darkDiveDamageReducer}% damage</style>" +
+                $" and then finally unleashing a blast for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient}% damage</style>." +
+                $" The number of mini-blasts scales with attack speed. Holding the button down before the move ends will cause Ganondorf to fastfall." +
+                $" Consumes {StaticValues.utilityStackConsumption}" +
                 $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
-            LanguageAPI.Add(prefix + "SECONDARY_LIFESTEAL_GRAB_NAME", "Dark Dive");
-            LanguageAPI.Add(prefix + "SECONDARY_LIFESTEAL_GRAB_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
-                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}" +
-                $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_AERIAL_GRAB_NAME", "Dark Dive");
+            LanguageAPI.Add(prefix + "SECONDARY_AERIAL_GRAB_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
+                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}");
             #endregion
 
             #region Special

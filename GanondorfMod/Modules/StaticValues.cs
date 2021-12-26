@@ -1,4 +1,5 @@
 ﻿using System;
+using static RoR2.CharacterBody;
 
 namespace GanondorfMod.Modules
 {
@@ -16,6 +17,11 @@ namespace GanondorfMod.Modules
         internal const float flameChokeDamageCoefficient = 4.5f;
 
         internal const float wizardFootDamageCoefficient = 1.5f;
+
+        internal const float darkDiveDamageCoefficient = 3.0f;
+        internal const float darkDiveDamageReducer = 0.1f;
+        internal const int darkDiveBlastCountBase = 5;
+        internal const float darkDiveBlastInterval = 0.1f;
 
         internal const float flameChokeAltDamageCoefficient = 1.8f;
 
@@ -50,5 +56,7 @@ namespace GanondorfMod.Modules
         internal const int eliteKillStackAmount = 5;
         internal const int championKillStackAmount = 15;
         internal const int normalKillStackAmount = 1;
+
+        internal const BodyFlags defaultFlags = BodyFlags.ImmuneToExecutes;
     }
 }

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1784078552
+CRC: 852093804
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d5a1c37793d2d59cddd4e1e1deb305bf
+    Hash: 09e01041c97c5cfe1c0b808fd8fc64a1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -64,6 +64,7 @@ ClassTypes:
 - Class: 319
   Script: {instanceID: 0}
 Assets:
+- Assets/GanonAsset/icons/brawlSkinIcon.png
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
 - Assets/GanonAsset/icons/skin0.png
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
