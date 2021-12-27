@@ -101,7 +101,15 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SCEPTERSPECIAL_NAME", "True Warlock Punch");
             LanguageAPI.Add(prefix + "SCEPTERSPECIAL_DESCRIPTION", $"Charge up a powerful punch unleashing" 
                 + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes." 
-                + $" The Power increase from the Triforce of Power buff is increased to 100% per stack of buff.");
+                + $" The Scaling of Warlock Punch is now stronger, maxing out at " +
+                $"<style=cIsDamage>{100f * (Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter)}% damage</style>.");
+
+            LanguageAPI.Add(prefix + "SCEPTER_SPECIAL_KICK_NAME", "True Inferno Guillotine");
+            LanguageAPI.Add(prefix + "SCEPTER_SPECIAL_KICK_DESCRIPTION", $"Pull enemies into their demise, slamming your foot down, dealing"
+                + $" <style=cIsDamage>{100f * StaticValues.infernoGuillotineCoefficient}% damage</style> " +
+                $"in a radius around you." + Helpers.DownsideDescription(" No Super Armor.") + 
+                $" The Scaling of Inferno Guillotine is now stronger, maxing out at " +
+                $"<style=cIsDamage>{100f * (Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter)}% damage</style>.");
             #endregion
 
             #region Achievements

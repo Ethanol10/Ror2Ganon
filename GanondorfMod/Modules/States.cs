@@ -25,6 +25,10 @@ namespace GanondorfMod.Modules
             entityStates.Add(typeof(WarlockPunch));
 
             entityStates.Add(typeof(WarlockPunchScepter));
+
+            entityStates.Add(typeof(InfernoGuillotine));
+
+            entityStates.Add(typeof(InfernoGuillotineScepter));
         }
     }
 }

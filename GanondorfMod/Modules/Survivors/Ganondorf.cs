@@ -346,7 +346,7 @@ namespace GanondorfMod.Modules.Survivors
         private void CreateScepterSkills()
         {
             string prefix = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_";
-            SkillDef replacingDef = Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef warlockPunchScepter = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "SCEPTERSPECIAL_NAME",
                 skillNameToken = prefix + "SCEPTERSPECIAL_NAME",
@@ -369,7 +369,31 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
-            AncientScepterItem.instance.RegisterScepterSkill(replacingDef, instance.fullBodyName, SkillSlot.Special, 0);
+            AncientScepterItem.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
+
+            SkillDef InfernoGuillotineScepter = Skills.CreateSkillDef(new SkillDefInfo {
+                skillName = prefix + "SCEPTER_SPECIAL_KICK_NAME",
+                skillNameToken = prefix + "SCEPTER_SPECIAL_KICK_NAME",
+                skillDescriptionToken = prefix + "SCEPTER_SPECIAL_KICK_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.InfernoGuillotineScepter)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+            AncientScepterItem.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
         }
 
         #endregion

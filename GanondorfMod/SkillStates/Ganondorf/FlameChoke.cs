@@ -52,6 +52,8 @@ namespace GanondorfMod.SkillStates
         private bool isSecondary;
         private bool isBoosted;
 
+        private int blastCount;
+
         public override void OnEnter()
         {
             base.OnEnter();

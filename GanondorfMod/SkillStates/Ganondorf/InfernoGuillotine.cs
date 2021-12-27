@@ -125,12 +125,10 @@ namespace GanondorfMod.SkillStates
 
                 if (!halfBoosted && !fullBoosted)
                 {
-                    Debug.Log(Modules.StaticValues.maxPowerStack / 10);
                     GetComponent<TriforceBuffComponent>().AddToBuffCount(Modules.StaticValues.maxPowerStack / 10);
                 }
                 else if (halfBoosted)
                 {
-                    Debug.Log(Modules.StaticValues.maxPowerStack / 2);
                     GetComponent<TriforceBuffComponent>().RemoveAmountOfBuff(Modules.StaticValues.maxPowerStack / 2);
                 }
                 else if (fullBoosted)
