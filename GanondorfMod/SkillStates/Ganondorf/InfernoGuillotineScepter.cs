@@ -70,7 +70,7 @@ namespace GanondorfMod.SkillStates
             }
             else if (buffCount >= Modules.StaticValues.maxPowerStack / 2 && buffCount < Modules.StaticValues.maxPowerStack)
             {
-                dmgMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter / 2;
+                dmgMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter / 3;
                 halfBoosted = true;
             }
             else if (buffCount >= Modules.StaticValues.maxPowerStack) {

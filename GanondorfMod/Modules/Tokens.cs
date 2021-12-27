@@ -30,16 +30,21 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "OUTRO_FAILURE", outroFailure);
 
             #region Skins
-            LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
+            LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Classic");
             LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Regal");
-            LanguageAPI.Add(prefix + "SKIN2_NAME", "Wise");
+            LanguageAPI.Add(prefix + "OLD_SKIN_NAME", "Wise");
             LanguageAPI.Add(prefix + "BRAWL_SKIN_NAME", "Royal");
+            LanguageAPI.Add(prefix + "SKIN1_NAME", "Saturated Classic");
+            LanguageAPI.Add(prefix + "SKIN2_NAME", "Purple");
+            LanguageAPI.Add(prefix + "SKIN3_NAME", "Green");
+            LanguageAPI.Add(prefix + "SKIN5_NAME", "Hulking Malice");
+            LanguageAPI.Add(prefix + "SKIN7_NAME", "Brown");
             #endregion
 
             #region Passive
             LanguageAPI.Add(prefix + "PASSIVE_NAME", "Triforce of Power");
             LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", 
-                $"Every successful hit and kill will build up stacks that increase Ganondorf's armor. Stacks decay after 2 seconds of no build up." +
+                $"Every successful hit and kill will build up stacks that increase Ganondorf's armor and base damage. Stacks decay after 2 seconds of no build up." +
                 $" All stacks will be consumed to power up a successful hit of your Special, increasing the damage up to" +
                 $" <style=cIsDamage>{Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer * 100f}%</style> at the maximum amount of stacks.");
             #endregion
@@ -90,11 +95,17 @@ namespace GanondorfMod.Modules
             #region Special
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_NAME", "Warlock Punch");
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch, while gaining a short burst of Super Armor, unleashing" 
-                + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes.");
+                + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes." +
+                $"\nConsume 50 stacks to power the move up by " +
+                $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}</style> damage. " +
+                $"Consume 100 stacks to power the move up by {100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer} damage.");
 
             LanguageAPI.Add(prefix + "INFERNO_KICK_NAME", "Inferno Guillotine");
             LanguageAPI.Add(prefix + "INFERNO_KICK_DESCRIPTION", $"Pull enemies into their demise, slamming your foot down, dealing"
-                + $" <style=cIsDamage>{100f * StaticValues.infernoGuillotineCoefficient}% damage</style> in a radius around you." + Helpers.DownsideDescription(" No Super Armor."));
+                + $" <style=cIsDamage>{100f * StaticValues.infernoGuillotineCoefficient}% damage</style> in a radius around you." + Helpers.DownsideDescription(" No Super Armor.") +
+                $"\nConsume 50 stacks to power the move up by " +
+                $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}</style> damage. " +
+                $"Consume 100 stacks to power the move up by {100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer} damage.");
             #endregion
 
             #region Scepter Upgrade

@@ -431,24 +431,24 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(defaultSkin);
             #endregion
 
-            #region skin2
-            Material skin2mat = Modules.Assets.CreateMaterial("ganonTex06", 0f, Color.white, 1.0f);
-            CharacterModel.RendererInfo[] skin2RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            #region Skin01
+            Material skin01Mat = Modules.Assets.CreateMaterial("ganonTex01", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] skin01RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
-                skin2mat,
-                skin2mat,
-                skin2mat,
-                skin2mat
+                skin01Mat,
+                skin01Mat,
+                skin01Mat,
+                skin01Mat
             });
 
-            SkinDef skin2 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN2_NAME",
+            SkinDef skin01 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN1_NAME",
                 Assets.mainAssetBundle.LoadAsset<Sprite>("skin1"),
-                skin2RendererInfos,
+                skin01RendererInfos,
                 mainRenderer,
                 model,
                 secondarySkinUnlockableDef);
 
-            skin2.meshReplacements = new SkinDef.MeshReplacement[]
+            skin01.meshReplacements = new SkinDef.MeshReplacement[]
             {
                 new SkinDef.MeshReplacement
                 {
@@ -457,36 +457,152 @@ namespace GanondorfMod.Modules.Survivors
                 }
             };
 
-            skins.Add(skin2);
+            skins.Add(skin01);
             #endregion
 
-            #region BrawlGanon
-            Material brawlSkinMat = Modules.Assets.CreateMaterial("ganonTexBrawl", 0f, Color.white, 1.0f);
-            CharacterModel.RendererInfo[] brawlSkinRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            #region Skin02
+            Material skin02Mat = Modules.Assets.CreateMaterial("ganonTex02", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] skin02RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
             {
-                brawlSkinMat,
-                brawlSkinMat,
-                brawlSkinMat,
-                brawlSkinMat
+                skin02Mat,
+                skin02Mat,
+                skin02Mat,
+                skin02Mat
             });
 
-            SkinDef brawlSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
-                brawlSkinRendererInfos,
+            SkinDef skin02 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN2_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin2"),
+                skin02RendererInfos,
                 mainRenderer,
-                model);
-                //, addUnlockConditionHere);
+                model,
+                secondarySkinUnlockableDef);
 
-            brawlSkin.meshReplacements = new SkinDef.MeshReplacement[]
+            skin02.meshReplacements = new SkinDef.MeshReplacement[]
             {
                 new SkinDef.MeshReplacement
                 {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonBrawlMesh"),
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
                     renderer = defaultRenderers[instance.mainRendererIndex].renderer
                 }
             };
 
-            skins.Add(brawlSkin);
+            skins.Add(skin02);
+            #endregion
+
+            #region Skin03
+            Material skin03Mat = Modules.Assets.CreateMaterial("ganonTex03", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] skin03RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                skin03Mat,
+                skin03Mat,
+                skin03Mat,
+                skin03Mat
+            });
+
+            SkinDef skin03 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN3_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin3"),
+                skin03RendererInfos,
+                mainRenderer,
+                model,
+                secondarySkinUnlockableDef);
+
+            skin03.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(skin03);
+            #endregion
+
+            #region Skin05
+            Material skin05Mat = Modules.Assets.CreateMaterial("ganonTex05", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] skin05RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                skin05Mat,
+                skin05Mat,
+                skin05Mat,
+                skin05Mat
+            });
+
+            SkinDef skin05 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN5_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin5"),
+                skin05RendererInfos,
+                mainRenderer,
+                model,
+                secondarySkinUnlockableDef);
+
+            skin05.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(skin05);
+            #endregion
+
+            #region Skin07
+            Material skin07Mat = Modules.Assets.CreateMaterial("ganonTex07", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] skin07RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                skin07Mat,
+                skin07Mat,
+                skin07Mat,
+                skin07Mat
+            });
+
+            SkinDef skin07 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN7_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin7"),
+                skin07RendererInfos,
+                mainRenderer,
+                model,
+                secondarySkinUnlockableDef);
+
+            skin07.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(skin07);
+            #endregion
+
+            #region oldManSkin6
+            Material oldManSkinMat = Modules.Assets.CreateMaterial("ganonTex06", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] oldManSkinRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                oldManSkinMat,
+                oldManSkinMat,
+                oldManSkinMat,
+                oldManSkinMat
+            });
+
+            SkinDef oldManSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_OLD_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("skin6"),
+                oldManSkinRendererInfos,
+                mainRenderer,
+                model,
+                secondarySkinUnlockableDef);
+
+            oldManSkin.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(oldManSkin);
             #endregion
 
             #region MasterySkin
@@ -518,7 +634,38 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(masterySkin);
             #endregion
 
+            #region BrawlGanon
+            Material brawlSkinMat = Modules.Assets.CreateMaterial("ganonTexBrawl", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] brawlSkinRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                brawlSkinMat,
+                brawlSkinMat,
+                brawlSkinMat,
+                brawlSkinMat
+            });
+
+            SkinDef brawlSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
+                brawlSkinRendererInfos,
+                mainRenderer,
+                model);
+            //, addUnlockConditionHere);
+
+            brawlSkin.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonBrawlMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(brawlSkin);
+            #endregion
+
             skinController.skins = skins.ToArray();
+
+            
         }
 
         internal override void SetItemDisplays()

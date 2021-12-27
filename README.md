@@ -6,6 +6,8 @@ Network Compatible (unless otherwise found not to be, please tell me if there ar
 
 Standalone Ancient Scepter Compatible.
 
+## It is HIGHLY recommended to use Scrollable UI to easily select the skin you want
+
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
 
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
@@ -31,18 +33,19 @@ Heavy. Launch yourself forward pushing light enemies away for 150% damage.
 
 ### Utility: Flame Choke
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083336092667904/flameChokeIcon.png"><br>
-Dash forward grabbing enemies in a row and choke slamming them dealing 450% damage.
+Dash forward grabbing enemies in a row and choke slamming them dealing 300% damage.
 
 ### Special: Warlock Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335824211998/warlockPunchIcon.png"><br>
-Charge up a powerful punch unleashing 800% damage onto close range foes.
+Charge up a powerful punch unleashing 400% damage onto close range foes. Consume 50 stacks to power the move up by 416% damage. Consume 100 stacks to power the move up by 1250% damage.
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
 - 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated. Might do some balance changes as well.)
     - 2 New moves! (Unlock them and find out what they are)
-    - Another skin! (also with an unlock condition)
+    - Alt skins from Ultimate added!
+    - Also an entirely different skin not from Ultimate (Unlock to find out!)
     - (slight) VFX updates!
     - Actual hit pauses! (get that weak no-hitpause garbage outta here)
     - Changes to Sound level, sorry for blasting ears in 1.0.3

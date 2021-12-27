@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3190372627
+CRC: 3622504868
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 739e6c3e90425897f8c59c2c622d24bc
+    Hash: fbbca7de798780c948eaf8714831c503
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -64,18 +64,24 @@ ClassTypes:
 - Class: 319
   Script: {instanceID: 0}
 Assets:
+- Assets/GanonAsset/Texture/ganonTex07.png
 - Assets/GanonAsset/icons/brawlSkinIcon.png
+- Assets/GanonAsset/Texture/ganonTex02.png
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
+- Assets/GanonAsset/Material/ganonTex01.mat
 - Assets/GanonAsset/icons/skin0.png
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
 - Assets/GanonAsset/Mesh/untitled.fbx
 - Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
+- Assets/GanonAsset/Texture/ganonprm.png
 - Assets/GanonAsset/Animator/Animations/Taunt1.anim
+- Assets/GanonAsset/icons/skin5.png
 - Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKick.anim
 - Assets/GanonAsset/Animator/Animations/UpBStart.anim
 - Assets/GanonAsset/Animator/GanonAnimator.controller
+- Assets/GanonAsset/icons/skin3.png
 - Assets/GanonAsset/Animator/Animations/Running.anim
 - Assets/GanonAsset/particle/GanondorfFlameEffect.prefab
 - Assets/GanonAsset/Animator/Animations/Dash.anim
@@ -84,22 +90,29 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
 - Assets/GanonAsset/Material/WarlockPunchmat.mat
+- Assets/GanonAsset/Material/ganonTex07.mat
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
+- Assets/GanonAsset/Texture/ganonTex04.png
+- Assets/GanonAsset/Material/ganonTex05.mat
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
-- Assets/GanonAsset/icons/skin1.png
+- Assets/GanonAsset/icons/skin6.png
+- Assets/GanonAsset/Material/ganonTex02.mat
 - Assets/GanonAsset/Animator/Animations/SpecialKickEnd.anim
 - Assets/GanonAsset/Animator/Animations/UpBGrabbed.anim
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
+- Assets/GanonAsset/Texture/ganontex.png
 - Assets/GanonAsset/icons/flameChokeIconUtility.png
 - Assets/GanonAsset/Animator/upperbodymask.mask
 - Assets/GanonAsset/Material/ganonTex04.mat
 - Assets/GanonAsset/icons/TriforceIcon.png
 - Assets/GanonAsset/particle/firestuff.png
+- Assets/GanonAsset/Material/ganonTex03.mat
+- Assets/GanonAsset/Texture/emissionMap.png
 - Assets/GanonAsset/Mesh/Torus.mesh
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
@@ -116,17 +129,21 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/icons/warlockPunchBoosted.png
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
+- Assets/GanonAsset/icons/skin1.png
 - Assets/GanonAsset/icons/wizardFootIconUtility.png
 - Assets/GanonAsset/Animator/Animations/Landing.anim
 - Assets/GanonAsset/particle/Shaders/Panner.shader
 - Assets/GanonAsset/icons/warlockPunchIcon.png
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
+- Assets/GanonAsset/Texture/ganonTex03.png
+- Assets/GanonAsset/Texture/ganonTex05.png
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Mesh/ganonBrawlMesh.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
 - Assets/GanonAsset/particle/first.prefab
 - Assets/GanonAsset/Material/ganontex.mat
+- Assets/GanonAsset/icons/skin2.png
 - Assets/GanonAsset/icons/wizardFootIconSecondary.png
 - Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
 - Assets/GanonAsset/Animator/Animations/Punch.anim
@@ -141,13 +158,18 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Wait1.anim
 - Assets/GanonAsset/Animator/Animations/SecondJump.anim
 - Assets/GanonAsset/Animator/GanonLobby.controller
+- Assets/GanonAsset/icons/skin7.png
 - Assets/GanonAsset/Animator/Animations/GroundedGrabFinish.anim
 - Assets/GanonAsset/Animator/Animations/Grabbing.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKickLanding.anim
 - Assets/GanonAsset/particle/Light.prefab
+- Assets/GanonAsset/Texture/ganonNorm.png
 - Assets/GanonAsset/Animator/Animations/Jump.anim
 - Assets/GanonAsset/icons/punchIcon.png
 - Assets/GanonAsset/particle/GanondorfLightningEffect.prefab
-- Assets/GanonAsset/Material/tex1ganonbrawl.png
+- Assets/GanonAsset/Texture/ganonTex6.png
+- Assets/GanonAsset/Texture/tex1ganonbrawl.png
 - Assets/GanonAsset/particle/PunchHitParticle.prefab
+- Assets/GanonAsset/Texture/Materials/ganonTex04.mat
+- Assets/GanonAsset/Texture/ganonTex01.png
 Dependencies: []

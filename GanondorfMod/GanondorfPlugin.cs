@@ -37,7 +37,6 @@ namespace GanondorfMod
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
-        private CharacterBody ganondorfCharacterBody;
         public static GanondorfController ganondorfController;
 
         //Scepter Vars
