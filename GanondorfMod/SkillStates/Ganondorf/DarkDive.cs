@@ -61,7 +61,7 @@ namespace GanondorfMod.SkillStates
         private float groundedLetGo = 0.6f;
         private BlastAttack attack;
         private BlastAttack miniBlast;
-        private float grabRadius = 5f;
+        private float grabRadius;
         private float invincibilityWindow = 1.5f;
         private bool playedGrabSound = false;
         private bool hasFired = false;
@@ -75,6 +75,7 @@ namespace GanondorfMod.SkillStates
         {
             base.OnEnter();
             DarkDive.initialSpeedCoefficient = 3.2f;
+            grabRadius = 5f;
             buttonHeldDownTimer = 0f;
             state = DarkDiveState.START;
             this.anim = base.GetModelAnimator();
@@ -160,7 +161,7 @@ namespace GanondorfMod.SkillStates
                 this.buttonHeldDownTimer = 0f;
             }
 
-            if (buttonHeldDownTimer >= 1f) {
+            if (buttonHeldDownTimer >= 0.5f) {
                 fastFalltrigger = true;
             }
 
@@ -181,6 +182,10 @@ namespace GanondorfMod.SkillStates
                 MoveUpwards();
                 if (!grabFailed) {
                     AttemptGrab();
+                }
+
+                if (this.stopwatch >= 0.1f) {
+                    grabRadius = 8f;
                 }
                 if (this.stopwatch >= this.grabDuration) {
                     if (grabController.Count == 0) {
@@ -217,7 +222,7 @@ namespace GanondorfMod.SkillStates
                         int hitCount = miniBlast.Fire().hitCount;
                         if (hitCount > 0)
                         {
-                            OnMiniBlastHitEnemyAuthority();
+                            OnMiniBlastHitEnemyAuthority(hitCount);
                         }
                         blastsDone++;
                     }
@@ -325,8 +330,8 @@ namespace GanondorfMod.SkillStates
             }
         }
 
-        protected void OnMiniBlastHitEnemyAuthority() {
-            triforceComponent.IncrementBuffCount();
+        protected void OnMiniBlastHitEnemyAuthority(int hitCount) {
+            triforceComponent.AddToBuffCount(hitCount);
         }
 
         public override void OnExit()

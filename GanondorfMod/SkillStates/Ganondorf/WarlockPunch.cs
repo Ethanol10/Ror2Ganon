@@ -16,6 +16,8 @@ namespace GanondorfMod.SkillStates
         private float duration = 1.0f;
         private bool hitEnemy = false;
         private GanondorfController ganonController;
+        private bool halfBoosted;
+        private bool fullBoosted;
 
         //If character is grounded, just use default and call basemeleeattack.
         public override void OnEnter()
@@ -29,10 +31,28 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             isAttacking = true;
-            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff) / Modules.StaticValues.warlockPunchDamageReducer;
-            if (dmgMultiplier < 1.0f) {
+
+            //Boosts the damage ONLY if at 50 or more stack.
+            halfBoosted = false;
+            fullBoosted = false;
+
+            int buffCount = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff);
+
+            if (buffCount < Modules.StaticValues.maxPowerStack / 2)
+            {
                 dmgMultiplier = 1.0f;
             }
+            else if (buffCount >= Modules.StaticValues.maxPowerStack / 2 && buffCount < Modules.StaticValues.maxPowerStack)
+            {
+                dmgMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3;
+                halfBoosted = true;
+            }
+            else if (buffCount >= Modules.StaticValues.maxPowerStack)
+            {
+                dmgMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer;
+                fullBoosted = true;
+            }
+
             setupWarlockPunchHitbox();
 
             if (NetworkServer.active)
@@ -79,7 +99,20 @@ namespace GanondorfMod.SkillStates
             }
 
             //Wipe buff if hit.
-            GetComponent<TriforceBuffComponent>().WipeBuffCount();
+            if (!halfBoosted && !fullBoosted)
+            {
+                Debug.Log(Modules.StaticValues.maxPowerStack / 10);
+                GetComponent<TriforceBuffComponent>().AddToBuffCount(Modules.StaticValues.maxPowerStack / 10);
+            }
+            else if (halfBoosted)
+            {
+                Debug.Log(Modules.StaticValues.maxPowerStack / 2);
+                GetComponent<TriforceBuffComponent>().RemoveAmountOfBuff(Modules.StaticValues.maxPowerStack / 2);
+            }
+            else if (fullBoosted)
+            {
+                GetComponent<TriforceBuffComponent>().RemoveAmountOfBuff(Modules.StaticValues.maxPowerStack);
+            }
             //base.characterBody.SetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex, 0);
             //base.characterBody.OnClientBuffsChanged();
             //}

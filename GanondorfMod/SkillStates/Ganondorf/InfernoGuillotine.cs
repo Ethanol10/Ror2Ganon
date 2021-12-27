@@ -40,6 +40,8 @@ namespace GanondorfMod.SkillStates
         private Transform slamIndicatorInstance;
         private Transform slamCenterIndicatorInstance;
         private Ray downRay;
+        private bool halfBoosted;
+        private bool fullBoosted;
 
         public override void OnEnter()
         {
@@ -47,7 +49,7 @@ namespace GanondorfMod.SkillStates
             maxWeight = Modules.StaticValues.infernoGuillotinePullForce;
             this.swingSoundString = "tauntSpin";
             this.hasFired = false;
-            this.isExplosion = true;
+            this.isExplosion = false;
             this.alreadyPulled = false;
             this.checkedWeight = false;
             this.animator = base.GetModelAnimator();
@@ -56,10 +58,26 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             isAttacking = true;
-            dmgMultiplier = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff) / Modules.StaticValues.warlockPunchDamageReducer;
-            if (dmgMultiplier < 1.0f) {
+
+            //Boosts the damage ONLY if at 50 or more stack.
+            halfBoosted = false;
+            fullBoosted = false;
+
+            int buffCount = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff);
+
+            if (buffCount < Modules.StaticValues.maxPowerStack / 2) {
                 dmgMultiplier = 1.0f;
             }
+            else if (buffCount >= Modules.StaticValues.maxPowerStack / 2 && buffCount < Modules.StaticValues.maxPowerStack)
+            {
+                dmgMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 2;
+                halfBoosted = true;
+            }
+            else if (buffCount >= Modules.StaticValues.maxPowerStack) {
+                dmgMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer;
+                fullBoosted = true;
+            }
+
             setupInfernoGuillotineAttack();
 
             //Reset
@@ -104,7 +122,21 @@ namespace GanondorfMod.SkillStates
 
             //Wipe buff if hit.
             if(this.isExplosion){
-                GetComponent<TriforceBuffComponent>().WipeBuffCount();
+
+                if (!halfBoosted && !fullBoosted)
+                {
+                    Debug.Log(Modules.StaticValues.maxPowerStack / 10);
+                    GetComponent<TriforceBuffComponent>().AddToBuffCount(Modules.StaticValues.maxPowerStack / 10);
+                }
+                else if (halfBoosted)
+                {
+                    Debug.Log(Modules.StaticValues.maxPowerStack / 2);
+                    GetComponent<TriforceBuffComponent>().RemoveAmountOfBuff(Modules.StaticValues.maxPowerStack / 2);
+                }
+                else if (fullBoosted)
+                {
+                    GetComponent<TriforceBuffComponent>().RemoveAmountOfBuff(Modules.StaticValues.maxPowerStack);
+                }               
             }
         }
 
@@ -173,9 +205,9 @@ namespace GanondorfMod.SkillStates
                 Util.PlaySound(this.swingSoundString, base.gameObject);
                 if (!hasFired) {
                     hasFired = true;
+                    this.isExplosion = true;
                     blastAttack.position = this.transform.position;
                     if (blastAttack.Fire().hitCount > 0) {
-                        this.isExplosion = true;
                         OnHitEnemyAuthority();
                     }
                 }

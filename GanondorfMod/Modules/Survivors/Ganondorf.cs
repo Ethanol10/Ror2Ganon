@@ -1075,7 +1075,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
                             localPos = new Vector3(0.03941F, -0.00122F, 0.00208F),
                             localAngles = new Vector3(279.6632F, 328.884F, 115.9476F),
                             localScale = new Vector3(0.1F, 0.1F, 0.1F),
-                            limbMask = LimbFlags.Head
+                            limbMask = LimbFlags.None
                         }
                     }
                 }

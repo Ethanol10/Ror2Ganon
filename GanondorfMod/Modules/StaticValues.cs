@@ -7,36 +7,30 @@ namespace GanondorfMod.Modules
     {
         //Damage coefficients govern how much the base damage should be multiplied
         internal const float punchDamageCoefficient = 1.5f;
-
         internal const float lightKickDamageCoefficient = 0.5f;
-
         internal const float heavyKickDamageCoefficient = 2f;
+        internal const float dashDamageCoefficient = 2.5f;
 
-        internal const float dashDamageCoefficient = 3f;
-
-        internal const float flameChokeDamageCoefficient = 4.5f;
+        internal const float flameChokeDamageCoefficient = 2.5f;
+        internal const float flameChokeAltDamageCoefficient = 1.8f;
+        internal const int flameChokeBlastCountBase = 2;
+        internal const float flameChokeBlastInterval = 0.1f;
 
         internal const float wizardFootDamageCoefficient = 1.5f;
+        internal const float wizardFootAltDamageCoefficient = 3.0f;
 
         internal const float darkDiveDamageCoefficient = 3.0f;
         internal const float darkDiveDamageReducer = 0.1f;
         internal const int darkDiveBlastCountBase = 5;
         internal const float darkDiveBlastInterval = 0.1f;
 
-        internal const float flameChokeAltDamageCoefficient = 1.8f;
-
-        internal const float wizardFootAltDamageCoefficient = 3.0f;
-
-        internal const float warlockPunchDamageCoefficient = 8.0f;
-
+        internal const float warlockPunchDamageCoefficient = 4.0f;
         internal const float warlockMemeDamage = 3.0f;
-
         internal const float warlockPunchDamageReducer = 8.0f;
+        internal const float warlockPunchDamageReducerScepter = 5.0f;
 
-        internal const float infernoGuillotineCoefficient = 10.0f;
-
+        internal const float infernoGuillotineCoefficient = 3.5f;
         internal const float infernoGuillotineAirborneCoefficient = 1.0f;
-
         internal const float infernoGuillotinePullForce = 12f;
 
         //Maxmimum stack of triforce buffs.

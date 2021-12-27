@@ -5857,7 +5857,7 @@ MonoBehaviour:
   - name: RotRoot
     transform: {fileID: 8598063044678555953}
   - name: GanonHead
-    transform: {fileID: 3515594366613451807}
+    transform: {fileID: 546062796739775456}
   - name: Bust
     transform: {fileID: 5827960258866273072}
   - name: HandL
