@@ -20,7 +20,7 @@ namespace GanondorfMod.Modules
             //desc = desc + "";
 
             string outro = "..and so he left, spreading malice in his wake.";
-            string outroFailure = "..and so he vanished, in .";
+            string outroFailure = "..and so he vanished, sealed for eternity...";
 
             LanguageAPI.Add(prefix + "NAME", "Ganondorf");
             LanguageAPI.Add(prefix + "DESCRIPTION", desc);
@@ -82,14 +82,17 @@ namespace GanondorfMod.Modules
             #region Utility 2: Dark Dive
             LanguageAPI.Add(prefix + "UTILITY_AERIAL_GRAB_NAME", "Dark Dive");
             LanguageAPI.Add(prefix + "UTILITY_AERIAL_GRAB_DESCRIPTION", $"Leap upwards grabbing enemies in your path, blasting them to smitherines, firstly hitting"
-                + $" 5 mini-blasts at base for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient * StaticValues.darkDiveDamageReducer}% damage</style>" +
+                + $" {StaticValues.darkDiveBlastCountBase} mini-blasts at base for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient * StaticValues.darkDiveDamageReducer}% damage</style>" +
                 $" and then finally unleashing a blast for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient}% damage</style>." +
                 $" The number of mini-blasts scales with attack speed. Holding the button down before the move ends will cause Ganondorf to fastfall." +
                 $" Consumes {StaticValues.utilityStackConsumption}" +
                 $" stacks on a successful hit in exchange for <style=cIsDamage>{100f * StaticValues.utilityBoostCoefficient}% more damage</style>.");
             LanguageAPI.Add(prefix + "SECONDARY_AERIAL_GRAB_NAME", "Dark Dive");
-            LanguageAPI.Add(prefix + "SECONDARY_AERIAL_GRAB_DESCRIPTION", Helpers.heavyPrefix + $" Launch yourself forward pushing light enemies away for <style=cIsDamage>" +
-                $"{100f * StaticValues.wizardFootAltDamageCoefficient}% damage</style>. Consumes {StaticValues.utilityStackConsumption}");
+            LanguageAPI.Add(prefix + "SECONDARY_AERIAL_GRAB_DESCRIPTION", $"Leap upwards grabbing enemies in your path, blasting them to smitherines, firstly hitting"
+                + $" {StaticValues.darkDiveBlastCountBase} mini-blasts at base for " +
+                $"<style=cIsDamage>{100f * StaticValues.darkDiveAltDamageCoefficient * StaticValues.darkDiveDamageReducer}% damage</style>" +
+                $" and then finally unleashing a blast for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient}% damage</style>." +
+                $" The number of mini-blasts scales with attack speed. Holding the button down before the move ends will cause Ganondorf to fastfall.");
             #endregion
 
             #region Special
@@ -97,15 +100,17 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch, while gaining a short burst of Super Armor, unleashing" 
                 + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes." +
                 $"\nConsume 50 stacks to power the move up by " +
-                $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}</style> damage. " +
-                $"Consume 100 stacks to power the move up by {100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer} damage.");
+                $"<style=cIsDamage>{(int)100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}%</style> damage. " +
+                $"Consume 100 stacks to power the move up by " +
+                $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
 
             LanguageAPI.Add(prefix + "INFERNO_KICK_NAME", "Inferno Guillotine");
             LanguageAPI.Add(prefix + "INFERNO_KICK_DESCRIPTION", $"Pull enemies into their demise, slamming your foot down, dealing"
                 + $" <style=cIsDamage>{100f * StaticValues.infernoGuillotineCoefficient}% damage</style> in a radius around you." + Helpers.DownsideDescription(" No Super Armor.") +
                 $"\nConsume 50 stacks to power the move up by " +
-                $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}</style> damage. " +
-                $"Consume 100 stacks to power the move up by {100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer} damage.");
+                $"<style=cIsDamage>{(int)100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}%</style> damage. " +
+                $"Consume 100 stacks to power the move up by " +
+                $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
             #endregion
 
             #region Scepter Upgrade
@@ -131,6 +136,10 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_NAME", "Ganondorf: Forbidden Methods");
             LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_DESC", "As Ganondorf, collect 8 Lunar Items in a single run. (Only base game Lunar Items.)");
             LanguageAPI.Add(prefix + "EIGHTLUNAR_UNLOCKABLE_NAME", "Ganondorf: Forbidden Methods");
+
+            LanguageAPI.Add(prefix + "TENGRAB_ACHIEVEMENT_NAME", "Ganondorf: Hands-on");
+            LanguageAPI.Add(prefix + "TENGRAB_ACHIEVEMENT_DESC", "As Ganondorf, grab 10 or more enemies in a single grab.");
+            LanguageAPI.Add(prefix + "TENGRAB_UNLOCKABLE_NAME", "Ganondorf: Hands-on");
             #endregion
             #endregion
         }

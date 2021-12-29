@@ -60,6 +60,7 @@ namespace GanondorfMod.Modules.Survivors
         internal override UnlockableDef characterUnlockableDef { get; set; }
         private static UnlockableDef masterySkinUnlockableDef;
         private static UnlockableDef secondarySkinUnlockableDef;
+        private static UnlockableDef tenGrabUnlockableDef;
 
         internal override void InitializeCharacter()
         {
@@ -80,6 +81,7 @@ namespace GanondorfMod.Modules.Survivors
         {
             masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.MasteryAchievement>(true);
             secondarySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.EightLunarItemsAchievement>(true);
+            tenGrabUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.TenGrabAchievement>(true);
         }
 
         internal override void InitializeDoppelganger()
@@ -229,7 +231,7 @@ namespace GanondorfMod.Modules.Survivors
 
             Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFoot);
             Modules.Skills.AddUtilitySkills(bodyPrefab, flameChoke);
-            
+
             //THIS ONE IS WEAKER AND INTENDED FOR SECONDARY SLOTS.
             SkillDef flameChokeAlt = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -280,9 +282,35 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1,
                 keywordTokens = new string[] { "KEYWORD_HEAVY" }
             });
+
+            SkillDef darkDiveAlt = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_SECONDARY_AERIAL_GRAB_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_AERIAL_GRAB_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_AERIAL_GRAB_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DarkDive)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 2,
+                baseRechargeInterval = 5.0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
             Modules.Skills.AddSecondarySkills(bodyPrefab, flameChokeAlt);
-            Modules.Skills.AddUtilitySkills(bodyPrefab, wizardFootAlt);
-            Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive);
+            Modules.Skills.AddUtilitySkill(bodyPrefab, wizardFootAlt, null);
+            Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive, tenGrabUnlockableDef);
+            Modules.Skills.AddSecondarySkill(bodyPrefab, darkDiveAlt, tenGrabUnlockableDef);
+
             #endregion
 
             #region Special

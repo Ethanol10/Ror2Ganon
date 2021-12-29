@@ -45,6 +45,7 @@ namespace GanondorfMod.SkillStates
         private bool isBoosted;
         private bool isSecondary;
         private float damage;
+        private float miniDamage;
         private TriforceBuffComponent triforceComponent;
         private bool grabFailed;
         private float buttonHeldDownTimer;
@@ -91,6 +92,7 @@ namespace GanondorfMod.SkillStates
             grabFailed = false;
             fastFalltrigger = false;
 
+            //Calculate blast properties regarding occurence
             blastInterval = Modules.StaticValues.darkDiveBlastInterval;//attackSpeedStat;
             noOfBlasts = Modules.StaticValues.darkDiveBlastCountBase + (1 * (int)(attackSpeedStat / 2));
 
@@ -106,7 +108,9 @@ namespace GanondorfMod.SkillStates
             {
                 isBoosted = false;
                 isSecondary = true;
-                damage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat;
+                damage = Modules.StaticValues.darkDiveAltDamageCoefficient * this.damageStat;
+                miniDamage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * Modules.StaticValues.darkDiveDamageReducer;
+                initialSpeedCoefficient = 3.0f;
             }
             else if (base.inputBank.skill3.down)
             {
@@ -119,6 +123,8 @@ namespace GanondorfMod.SkillStates
                     ganonController.BodyLightning.Play();
                 }
                 damage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * boost;
+                miniDamage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * (Modules.StaticValues.darkDiveDamageReducer * 2);
+                initialSpeedCoefficient = 4.0f;
             }
 
             //Create blast attack, 
@@ -127,7 +133,7 @@ namespace GanondorfMod.SkillStates
             miniBlast.attacker = base.gameObject;
             miniBlast.inflictor = base.gameObject;
             miniBlast.teamIndex = base.GetTeam();
-            miniBlast.baseDamage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * Modules.StaticValues.darkDiveDamageReducer;
+            miniBlast.baseDamage = miniDamage;
             miniBlast.procCoefficient = 1.0f;
             miniBlast.baseForce = 500f;
             miniBlast.radius = grabEndExplosionRadius;
@@ -218,7 +224,7 @@ namespace GanondorfMod.SkillStates
                     if (stopwatch > blastInterval) {
                         stopwatch = 0f;
                         miniBlast.position = base.transform.position;
-                        Util.PlaySound("lightHitSFX", base.gameObject);
+                        Util.PlaySound("thunderPunch", base.gameObject);
                         int hitCount = miniBlast.Fire().hitCount;
                         if (hitCount > 0)
                         {
@@ -343,6 +349,7 @@ namespace GanondorfMod.SkillStates
             //We can try cancel the move out before it ends and instead not revert to buffer empty.
             //base.PlayAnimation("FullBody, Override", "BufferEmpty");
             ganonController.HandRSpeedLines.Stop();
+            ganonController.BodyLightning.Stop();
 
             if (grabController.Count > 0) {
                 foreach (GrabController gCon in grabController)

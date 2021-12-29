@@ -52,8 +52,6 @@ namespace GanondorfMod.SkillStates
         private bool isSecondary;
         private bool isBoosted;
 
-        private int blastCount;
-
         public override void OnEnter()
         {
             base.OnEnter();
@@ -89,12 +87,13 @@ namespace GanondorfMod.SkillStates
             Vector3 b = base.characterMotor ? base.characterMotor.velocity : Vector3.zero;
             this.previousPosition = base.transform.position - b;
 
+            //Move changes based on what slot it was selected in.
             float damage = 0;
             if (base.inputBank.skill2.down)
             {
                 isBoosted = false;
                 isSecondary = true;
-                damage = Modules.StaticValues.flameChokeAltDamageCoefficient * this.damageStat;
+                damage = Modules.StaticValues.flameChokeAltDamageCoefficient * this.damageStat * (this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer);
             }
             else if (base.inputBank.skill3.down)
             {
@@ -105,7 +104,7 @@ namespace GanondorfMod.SkillStates
                     isBoosted = true;
                     ganonController.BodyLightning.Play();
                 }
-                damage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat * boost;
+                damage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat * boost * (this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer * 1.5f);
             }
 
             //Create blast attack, 
@@ -252,6 +251,9 @@ namespace GanondorfMod.SkillStates
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;
             }
+
+            ganonController.SetMaxVal(grabController.Count);
+            Debug.Log(grabController.Count);
 
             //Release all controllers.
             if (grabController.Count > 0) {

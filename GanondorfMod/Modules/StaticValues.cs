@@ -13,13 +13,15 @@ namespace GanondorfMod.Modules
 
         internal const float flameChokeDamageCoefficient = 3.0f;
         internal const float flameChokeAltDamageCoefficient = 1.8f;
+        internal const float flameChokeDamageReducer = 0.2f;
         internal const int flameChokeBlastCountBase = 2;
-        internal const float flameChokeBlastInterval = 0.3f;
+        internal const float flameChokeBlastInterval = 0.15f;
 
         internal const float wizardFootDamageCoefficient = 1.5f;
         internal const float wizardFootAltDamageCoefficient = 3.5f;
 
         internal const float darkDiveDamageCoefficient = 3.0f;
+        internal const float darkDiveAltDamageCoefficient = 1.5f;
         internal const float darkDiveDamageReducer = 0.1f;
         internal const int darkDiveBlastCountBase = 5;
         internal const float darkDiveBlastInterval = 0.1f;

@@ -10,6 +10,7 @@ namespace GanondorfMod.Modules.Survivors
     {
         public CharacterBody characterBody;
         public ChildLocator childLocator;
+        public int maxGrabbedVal;
         public ParticleSystem BodyAura;
         public ParticleSystem FootLFire;
         public ParticleSystem HandLFire;
@@ -29,6 +30,7 @@ namespace GanondorfMod.Modules.Survivors
         public void Awake() {
             characterBody = gameObject.GetComponent<CharacterBody>();
             childLocator = GetComponentInChildren<ChildLocator>();
+            maxGrabbedVal = 0;
 
             //If childlocator exists
             if (childLocator) {
@@ -48,6 +50,12 @@ namespace GanondorfMod.Modules.Survivors
                 HandRSpeedLines = childLocator.FindChild("HandRSpeedLines").GetComponent<ParticleSystem>();
                 KneeRSpeedLines = childLocator.FindChild("KneeRSpeedLines").GetComponent<ParticleSystem>();
                 InfernoKickFalling = childLocator.FindChild("InfernoKickFalling").GetComponent<ParticleSystem>();
+            }
+        }
+
+        public void SetMaxVal(int newVal) {
+            if (newVal > maxGrabbedVal) {
+                maxGrabbedVal = newVal;
             }
         }
 

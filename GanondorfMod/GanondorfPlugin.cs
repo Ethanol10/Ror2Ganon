@@ -56,7 +56,6 @@ namespace GanondorfMod
 
             //make triforcebuff and ganondorfcharacterbody null for now.
             triforceBuff = null;
-            ganondorfCharacterBody = null;
 
             //Check for ancient scepter plugin
             if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
