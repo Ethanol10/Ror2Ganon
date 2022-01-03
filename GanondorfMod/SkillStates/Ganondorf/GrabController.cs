@@ -80,7 +80,6 @@ namespace GanondorfMod.SkillStates
 
             if (this.rigidMotor)
             {
-                Debug.Log(this.modelLocator.gameObject.name);
                 this.rigidMotor.moveVector = Vector3.zero;
                 this.rigidMotor.rootMotion = Vector3.zero;
                 if (this.rigidbody) {

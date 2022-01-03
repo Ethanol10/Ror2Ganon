@@ -56,7 +56,6 @@ namespace GanondorfMod.Modules.Achievements
                      JELLYFISH_BODY_NAME
                      MINIMUSHROOM_BODY_NAME
                     */
-                    Debug.Log(damageReport.victimBody.baseNameToken);
                     switch (damageReport.victimBody.baseNameToken) {
                         case "LEMURIAN_BODY_NAME":
                             lemCount++;

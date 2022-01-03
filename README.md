@@ -11,7 +11,7 @@ Standalone Ancient Scepter Compatible.
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
 
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
-<br><b>Now with fancier effects...</b>
+<br><b>Now with (a little) fancier effects...</b>
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/920678269035106344/unknown.png">
   
 
@@ -42,6 +42,7 @@ Charge up a powerful punch unleashing 400% damage onto close range foes. Consume
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.0.1 -> *silently removes debug logs*
 - 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated. Might do some balance changes as well.)
     - 2 New moves! (Unlock them and find out what they are)
     - All Alt-skins from Ultimate added!
@@ -61,7 +62,7 @@ Charge up a powerful punch unleashing 400% damage onto close range foes. Consume
         - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 600% base damage)
         - Specials now don't consume your entire stack of buffs on use. Instead, stacks will only be consumed if you have 50 or more stacks. Between 50 and 100, you will consume 50 stacks to boost the damage of your Special by 416% damage. At 100 stacks+, you will consume 100 stacks to boost the damage of your Special by 1250% damage. If you have less than 50 stacks, you get no bonus damage, but gain 10 stacks on hit. NOTE: In the older versions, it would consume all stacks, but only apply 100 stacks worth of damage, so don't panic, in fact this is much better than last time!
         - You can now mess around with what Utility/Secondary you'd like! Wanna go on a Kicking spree? Just bind both Utility and Secondary to Wizard's foot! Grab hungry? Bind both to Flame Choke! (Don't worry, defaults are still one of each so you don't have to manually select variety.)
-        - Secondary and Utility now share moves, but have varying stats based on what slot they are placed in. Secondary is focused on multiple, short charges and lower damage, but Utility is focused on High damage, consumes Triforce buff and powers your move to 4x more damage depending on whether you have enough buff to use. Without the buff, the move does more damage than secondary. (15 stacks are consumed on a successful hit of a Utility move.)
+        - Secondary and Utility now share moves, but have varying stats based on what slot they are placed in. Secondary is focused on multiple, short charges and lower damage, but Utility is focused on High damage, consumes Triforce buff and powers your move to 4x more damage depending on whether you have enough buff to use. Without the buff, the move does more damage than secondary. (20 stacks are consumed on a successful hit of a Utility move.)
         - Health growth has been reduced (33 per level -> 15 per level)
         - Armor growth has been increased (0.01 per level -> 0.1 per level)
         - Max base health is reduced (300 -> 250)

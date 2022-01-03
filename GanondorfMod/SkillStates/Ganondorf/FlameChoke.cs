@@ -253,7 +253,6 @@ namespace GanondorfMod.SkillStates
             }
 
             ganonController.SetMaxVal(grabController.Count);
-            Debug.Log(grabController.Count);
 
             //Release all controllers.
             if (grabController.Count > 0) {

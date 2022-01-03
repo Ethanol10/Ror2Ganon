@@ -41315,7 +41315,7 @@ PrefabInstance:
     - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}
       propertyPath: moveWithTransform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}
@@ -41325,7 +41325,7 @@ PrefabInstance:
     - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9072179337103255209, guid: 47c66bad76920c949b83befb30af41b8,
         type: 3}

@@ -45,7 +45,7 @@ namespace GanondorfMod.Modules
         internal const float maxTimeToDecay = 3f;
         internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move
-        internal const int utilityStackConsumption = 15;
+        internal const int utilityStackConsumption = 20;
         internal const float utilityBoostCoefficient = 4.0f; 
         //Amounts to add to buff when killed
         internal const int bossKillStackAmount = 10;
@@ -53,6 +53,6 @@ namespace GanondorfMod.Modules
         internal const int championKillStackAmount = 15;
         internal const int normalKillStackAmount = 1;
 
-        internal const BodyFlags defaultFlags = BodyFlags.ImmuneToExecutes;
+        internal const BodyFlags defaultFlags = BodyFlags.ImmuneToExecutes | BodyFlags.IgnoreFallDamage;
     }
 }
