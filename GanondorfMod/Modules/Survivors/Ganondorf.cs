@@ -57,10 +57,14 @@ namespace GanondorfMod.Modules.Survivors
         internal override ItemDisplayRuleSet itemDisplayRuleSet { get; set; }
         internal override List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules { get; set; }
 
+        //Unlockables.
         internal override UnlockableDef characterUnlockableDef { get; set; }
         private static UnlockableDef masterySkinUnlockableDef;
         private static UnlockableDef secondarySkinUnlockableDef;
         private static UnlockableDef tenGrabUnlockableDef;
+        private static UnlockableDef heavyDamageUnlockableDef;
+        private static UnlockableDef collectScrapUnlockableDef;
+        private static UnlockableDef massacreUnlockableDef;
 
         internal override void InitializeCharacter()
         {
@@ -82,6 +86,9 @@ namespace GanondorfMod.Modules.Survivors
             masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.MasteryAchievement>(true);
             secondarySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.EightLunarItemsAchievement>(true);
             tenGrabUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.TenGrabAchievement>(true);
+            heavyDamageUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.HeavyDamageAchievement>(true);
+            collectScrapUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.ItemExperiementationAchievement>(true);
+            massacreUnlockableDef = Modules.Unlockables.AddUnlockable<Achievements.MassacreAchievement>(true);
         }
 
         internal override void InitializeDoppelganger()
@@ -210,7 +217,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_UTILITY_AERIAL_GRAB_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_AERIAL_GRAB_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_UTILITY_AERIAL_GRAB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("darkDiveIconUtility"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DarkDive)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -288,7 +295,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_SECONDARY_AERIAL_GRAB_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_AERIAL_GRAB_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_AERIAL_GRAB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("darkDiveIconSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DarkDive)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 2,
@@ -306,7 +313,7 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
-            Modules.Skills.AddSecondarySkills(bodyPrefab, flameChokeAlt);
+            Modules.Skills.AddSecondarySkill(bodyPrefab, flameChokeAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, wizardFootAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive, tenGrabUnlockableDef);
             Modules.Skills.AddSecondarySkill(bodyPrefab, darkDiveAlt, tenGrabUnlockableDef);
@@ -338,7 +345,7 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkills(bodyPrefab, WarlockPunch);
+            Modules.Skills.AddSpecialSkill(bodyPrefab, WarlockPunch, null);
 
             //Inferno Guillotine
             SkillDef InfernoGuillotine = Modules.Skills.CreateSkillDef(new SkillDefInfo
@@ -346,7 +353,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "_GANONDORF_BODY_INFERNO_KICK_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_INFERNO_KICK_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_INFERNO_KICK_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("InfernoGuillotineIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.InfernoGuillotine)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -365,7 +372,7 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkills(bodyPrefab, InfernoGuillotine);
+            Modules.Skills.AddSpecialSkill(bodyPrefab, InfernoGuillotine, heavyDamageUnlockableDef);
             #endregion
         }
 
@@ -403,7 +410,7 @@ namespace GanondorfMod.Modules.Survivors
                 skillName = prefix + "SCEPTER_SPECIAL_KICK_NAME",
                 skillNameToken = prefix + "SCEPTER_SPECIAL_KICK_NAME",
                 skillDescriptionToken = prefix + "SCEPTER_SPECIAL_KICK_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("InfernoGuillotineIconBoosted"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.InfernoGuillotineScepter)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -474,7 +481,7 @@ namespace GanondorfMod.Modules.Survivors
                 skin01RendererInfos,
                 mainRenderer,
                 model,
-                secondarySkinUnlockableDef);
+                collectScrapUnlockableDef);
 
             skin01.meshReplacements = new SkinDef.MeshReplacement[]
             {
@@ -503,7 +510,7 @@ namespace GanondorfMod.Modules.Survivors
                 skin02RendererInfos,
                 mainRenderer,
                 model,
-                secondarySkinUnlockableDef);
+                collectScrapUnlockableDef);
 
             skin02.meshReplacements = new SkinDef.MeshReplacement[]
             {
@@ -532,7 +539,7 @@ namespace GanondorfMod.Modules.Survivors
                 skin03RendererInfos,
                 mainRenderer,
                 model,
-                secondarySkinUnlockableDef);
+                collectScrapUnlockableDef);
 
             skin03.meshReplacements = new SkinDef.MeshReplacement[]
             {
@@ -561,7 +568,7 @@ namespace GanondorfMod.Modules.Survivors
                 skin05RendererInfos,
                 mainRenderer,
                 model,
-                secondarySkinUnlockableDef);
+                collectScrapUnlockableDef);
 
             skin05.meshReplacements = new SkinDef.MeshReplacement[]
             {
@@ -590,7 +597,7 @@ namespace GanondorfMod.Modules.Survivors
                 skin07RendererInfos,
                 mainRenderer,
                 model,
-                secondarySkinUnlockableDef);
+                collectScrapUnlockableDef);
 
             skin07.meshReplacements = new SkinDef.MeshReplacement[]
             {
@@ -676,8 +683,8 @@ namespace GanondorfMod.Modules.Survivors
                 Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
                 brawlSkinRendererInfos,
                 mainRenderer,
-                model);
-            //, addUnlockConditionHere);
+                model,
+                massacreUnlockableDef);
 
             brawlSkin.meshReplacements = new SkinDef.MeshReplacement[]
             {

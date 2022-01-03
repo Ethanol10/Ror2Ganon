@@ -441,7 +441,7 @@ namespace GanondorfMod.SkillStates
             this.baseEarlyExitTime = 0.9f;
             this.hitStopDuration = 0.1f;
             this.attackRecoil = 0.5f;
-            this.hitHopVelocity = 10f;
+            this.hitHopVelocity = 10f / this.attackSpeedStat;
 
             this.swingSoundString = "jumpSFX";
             this.hitSoundString = "lightHitSFX";

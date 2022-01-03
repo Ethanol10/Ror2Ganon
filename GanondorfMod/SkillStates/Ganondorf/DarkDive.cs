@@ -187,7 +187,7 @@ namespace GanondorfMod.SkillStates
             {
                 MoveUpwards();
                 if (!grabFailed) {
-                    AttemptGrab();
+                    AttemptGrab(grabRadius);
                 }
 
                 if (this.stopwatch >= 0.1f) {
@@ -365,7 +365,7 @@ namespace GanondorfMod.SkillStates
         //Attempt grab, don't stop for any enemy.
         //Uses bullseye search, and puts every enemy into the grab controller.
         //grab radius of 10f is a little too big, try not to go over.
-        public void AttemptGrab()
+        public void AttemptGrab(float grabRadius)
         {
             BullseyeSearch search = new BullseyeSearch
             {
@@ -382,7 +382,8 @@ namespace GanondorfMod.SkillStates
             search.FilterOutGameObject(base.gameObject);
 
             List<HurtBox> target = search.GetResults().ToList<HurtBox>();
-            foreach (HurtBox singularTarget in target) {
+            foreach (HurtBox singularTarget in target)
+            {
                 if (singularTarget)
                 {
                     if (singularTarget.healthComponent && singularTarget.healthComponent.body)
@@ -398,9 +399,21 @@ namespace GanondorfMod.SkillStates
                                     base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, this.invincibilityWindow);
                                 }
                             }
-                            GrabController grabbedEnemy = singularTarget.healthComponent.body.gameObject.AddComponent<GrabController>();
-                            grabbedEnemy.pivotTransform = this.FindModelChild("HandR");
-                            grabController.Add(grabbedEnemy);
+                            bool found = false;
+                            for (int i = 0; i < grabController.Count; i++)
+                            {
+                                if (grabController[i].gameObject.GetInstanceID() == singularTarget.healthComponent.body.gameObject.GetInstanceID())
+                                {
+                                    found = true;
+                                    break; //Break out of loop.
+                                }
+                            }
+                            if (!found)
+                            {
+                                GrabController grabbedEnemy = singularTarget.healthComponent.body.gameObject.AddComponent<GrabController>();
+                                grabbedEnemy.pivotTransform = this.FindModelChild("HandL");
+                                grabController.Add(grabbedEnemy);
+                            }
                         }
                     }
                 }

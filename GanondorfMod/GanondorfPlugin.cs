@@ -92,12 +92,26 @@ namespace GanondorfMod
         private void Hook()
         {
             On.RoR2.CharacterModel.Awake += CharacterModel_Awake;
-            // run hooks here, disabling one is as simple as commenting out the line
+
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
             On.RoR2.GenericPickupController.GrantItem += GenericPickupController_GrantItem;
-            On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath; 
+            On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
+            On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
+        }
+
+        private void GlobalEventManager_OnHitEnemy(On.RoR2.GlobalEventManager.orig_OnHitEnemy orig, GlobalEventManager self, DamageInfo damageInfo, GameObject victim) {
+            orig(self, damageInfo, victim);
+            if (damageInfo.attacker != null && damageInfo != null) {
+                if (damageInfo.attacker.name.Contains("GanondorfBody")){
+                    GanondorfController ganonCon = damageInfo.attacker.GetComponent<GanondorfController>();
+
+                    if (ganonCon) {
+                        ganonCon.SetMaxDamage(damageInfo.damage);
+                    }
+                }
+            }
         }
 
         private void GlobalEventManager_OnCharacterDeath(On.RoR2.GlobalEventManager.orig_OnCharacterDeath orig, GlobalEventManager self, DamageReport damageReport) {
@@ -105,6 +119,7 @@ namespace GanondorfMod
             if (damageReport.attackerBody != null && damageReport.attacker != null && damageReport != null) {
                 if (damageReport.attackerBody.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME")
                 {
+                    //Add to Counters to check how much buff should be applied after killing an enemy
                     int amountToAdd = 0;
                     if (damageReport.victimIsBoss)
                     {

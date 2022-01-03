@@ -11,6 +11,7 @@ namespace GanondorfMod.Modules.Survivors
         public CharacterBody characterBody;
         public ChildLocator childLocator;
         public int maxGrabbedVal;
+        public float maxDamage;
         public ParticleSystem BodyAura;
         public ParticleSystem FootLFire;
         public ParticleSystem HandLFire;
@@ -31,6 +32,7 @@ namespace GanondorfMod.Modules.Survivors
             characterBody = gameObject.GetComponent<CharacterBody>();
             childLocator = GetComponentInChildren<ChildLocator>();
             maxGrabbedVal = 0;
+            maxDamage = 0;
 
             //If childlocator exists
             if (childLocator) {
@@ -56,6 +58,12 @@ namespace GanondorfMod.Modules.Survivors
         public void SetMaxVal(int newVal) {
             if (newVal > maxGrabbedVal) {
                 maxGrabbedVal = newVal;
+            }
+        }
+
+        public void SetMaxDamage(float newVal) {
+            if (newVal > maxDamage) {
+                maxDamage = newVal;
             }
         }
 

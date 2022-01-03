@@ -6,7 +6,7 @@ namespace GanondorfMod.Modules
     internal static class StaticValues
     {
         //Damage coefficients govern how much the base damage should be multiplied
-        internal const float punchDamageCoefficient = 1.5f;
+        internal const float punchDamageCoefficient = 1.7f;
         internal const float lightKickDamageCoefficient = 0.5f;
         internal const float heavyKickDamageCoefficient = 2f;
         internal const float dashDamageCoefficient = 2.5f;
@@ -26,12 +26,12 @@ namespace GanondorfMod.Modules
         internal const int darkDiveBlastCountBase = 5;
         internal const float darkDiveBlastInterval = 0.1f;
 
-        internal const float warlockPunchDamageCoefficient = 4.0f;
+        internal const float warlockPunchDamageCoefficient = 6.0f;
         internal const float warlockMemeDamage = 3.0f;
         internal const float warlockPunchDamageReducer = 8.0f;
         internal const float warlockPunchDamageReducerScepter = 5.0f;
 
-        internal const float infernoGuillotineCoefficient = 3.5f;
+        internal const float infernoGuillotineCoefficient = 6.5f;
         internal const float infernoGuillotineAirborneCoefficient = 1.0f;
         internal const float infernoGuillotinePullForce = 12f;
 
@@ -46,7 +46,7 @@ namespace GanondorfMod.Modules
         internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move
         internal const int utilityStackConsumption = 15;
-        internal const float utilityBoostCoefficient = 2.0f; 
+        internal const float utilityBoostCoefficient = 4.0f; 
         //Amounts to add to buff when killed
         internal const int bossKillStackAmount = 10;
         internal const int eliteKillStackAmount = 5;

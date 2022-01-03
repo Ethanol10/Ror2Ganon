@@ -13,7 +13,7 @@ namespace GanondorfMod.Modules.Achievements
         public override string PrerequisiteUnlockableIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_UNLOCKABLE_REWARD_ID";
         public override string UnlockableNameToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_TENGRAB_UNLOCKABLE_NAME";
         public override string AchievementDescToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_TENGRAB_ACHIEVEMENT_DESC";
-        public override Sprite Sprite { get; } = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texMasteryAchievement");
+        public override Sprite Sprite { get; } = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("darkDiveIconUtility");
 
         private GanondorfController ganonCon;
 
@@ -40,7 +40,7 @@ namespace GanondorfMod.Modules.Achievements
                     ganonCon = self.gameObject.GetComponent<GanondorfController>();
                 }
 
-                if (ganonCon.maxGrabbedVal >= 10) {
+                if (ganonCon.maxGrabbedVal >= 15) {
                     base.Grant();
                 }
             }

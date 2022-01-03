@@ -10,6 +10,8 @@ namespace GanondorfMod.SkillStates
         private CharacterBody body;
         private CharacterMotor motor;
         private CharacterDirection direction;
+        private Rigidbody rigidbody;
+        private RigidbodyMotor rigidMotor;
         private ModelLocator modelLocator;
         private Transform modelTransform;
         private Quaternion originalRotation;
@@ -17,15 +19,19 @@ namespace GanondorfMod.SkillStates
         private SphereCollider sphCollider;
         private CapsuleCollider capCollider;
 
+        private Vector3 oldMoveVec;
+
         private void Awake()
         {
             this.body = this.GetComponent<CharacterBody>();
             this.motor = this.GetComponent<CharacterMotor>();
             this.direction = this.GetComponent<CharacterDirection>();
+            this.rigidMotor = this.gameObject.GetComponent<RigidbodyMotor>();
             this.modelLocator = this.GetComponent<ModelLocator>();
             this.collider = this.gameObject.GetComponent<Collider>();
             this.sphCollider = this.gameObject.GetComponent<SphereCollider>();
             this.capCollider = this.gameObject.GetComponent<CapsuleCollider>();
+            this.rigidbody = this.gameObject.GetComponent<Rigidbody>();
 
             if (this.collider) {
                 collider.enabled = false;
@@ -35,6 +41,11 @@ namespace GanondorfMod.SkillStates
             }
             if (this.capCollider) {
                 capCollider.enabled = false;
+            }
+
+            if (this.rigidMotor) {
+                
+                oldMoveVec = this.rigidMotor.moveVector;
             }
             
             
@@ -64,8 +75,18 @@ namespace GanondorfMod.SkillStates
                 this.motor.disableAirControlUntilCollision = true;
                 this.motor.velocity = Vector3.zero;
                 this.motor.rootMotion = Vector3.zero;
-
                 this.motor.Motor.SetPosition(this.pivotTransform.position, true);
+            }
+
+            if (this.rigidMotor)
+            {
+                Debug.Log(this.modelLocator.gameObject.name);
+                this.rigidMotor.moveVector = Vector3.zero;
+                this.rigidMotor.rootMotion = Vector3.zero;
+                if (this.rigidbody) {
+                    this.rigidbody.position = this.pivotTransform.position;
+                    this.rigidbody.velocity = Vector3.zero;
+                }
             }
 
             if (this.pivotTransform)
@@ -92,6 +113,7 @@ namespace GanondorfMod.SkillStates
             if (this.collider) this.collider.enabled = true;
             if (this.sphCollider) this.sphCollider.enabled = true;
             if (this.capCollider) this.capCollider.enabled = true;
+            if (this.rigidMotor) this.rigidMotor.moveVector = oldMoveVec;
             Destroy(this);
         }
     }

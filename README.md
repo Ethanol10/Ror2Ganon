@@ -44,7 +44,7 @@ Charge up a powerful punch unleashing 400% damage onto close range foes. Consume
 ## Changelog
 - 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated. Might do some balance changes as well.)
     - 2 New moves! (Unlock them and find out what they are)
-    - Alt skins from Ultimate added!
+    - All Alt-skins from Ultimate added!
     - Also an entirely different skin not from Ultimate (Unlock to find out!)
     - (slight) VFX updates!
     - Actual hit pauses! (get that weak no-hitpause garbage outta here)
@@ -58,16 +58,16 @@ Charge up a powerful punch unleashing 400% damage onto close range foes. Consume
         - #### FIXED THE STUPID ITEM DISPLAYS YEAAAAAAAAH BOIIIIIII
             - ahem: The item displays should now look not jank *on the head* when transitioning between stages. For those developing their own character and run into the same problem: make sure the child you're attaching it on does not have a collider.
     - Aaaaaaaaaaand balance changes:
-        - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 400% base damage)
-        - Specials now don't consume your entire stack of buffs on use. Instead, stacks will only be consumed if you have 50 or more stacks. Between 50 and 100, you will consume 50 stacks to boost the damage of your Special by 416% damage. At 100 stacks+, you will consume 100 stacks to boost the damage of your Special by 1250% damage. If you have less than 50 stacks, you get no bonus damage, but gain 10 stacks on hit.
+        - Warlock Punch was an end goal to the stacks, but nothing more than that. It was also stupidly powerful. I have changed it such that the base damage for Warlock Punch is much lower, while still being a good source of damage when at full stacks. (1650% -> 600% base damage)
+        - Specials now don't consume your entire stack of buffs on use. Instead, stacks will only be consumed if you have 50 or more stacks. Between 50 and 100, you will consume 50 stacks to boost the damage of your Special by 416% damage. At 100 stacks+, you will consume 100 stacks to boost the damage of your Special by 1250% damage. If you have less than 50 stacks, you get no bonus damage, but gain 10 stacks on hit. NOTE: In the older versions, it would consume all stacks, but only apply 100 stacks worth of damage, so don't panic, in fact this is much better than last time!
         - You can now mess around with what Utility/Secondary you'd like! Wanna go on a Kicking spree? Just bind both Utility and Secondary to Wizard's foot! Grab hungry? Bind both to Flame Choke! (Don't worry, defaults are still one of each so you don't have to manually select variety.)
-        - Secondary and Utility now share moves, but have varying stats based on what slot they are placed in. Secondary is focused on multiple, short charges and lower damage, but Utility is focused on High damage, consumes Triforce buff and powers your move to 2x more damage depending on whether you have enough buff to use. Without the buff, the move does more damage than secondary. (15 stacks are consumed on a successful hit of a Utility move.)
+        - Secondary and Utility now share moves, but have varying stats based on what slot they are placed in. Secondary is focused on multiple, short charges and lower damage, but Utility is focused on High damage, consumes Triforce buff and powers your move to 4x more damage depending on whether you have enough buff to use. Without the buff, the move does more damage than secondary. (15 stacks are consumed on a successful hit of a Utility move.)
         - Health growth has been reduced (33 per level -> 15 per level)
         - Armor growth has been increased (0.01 per level -> 0.1 per level)
         - Max base health is reduced (300 -> 250)
         - Stacks of Triforce of Power will now buff your armor more at full stacks (30 -> 40).
         - Stacks of Triforce of Power will now buff your damage (ever so slightly.) (0 -> 35)
-        - Punch Damage has been reduced. (200% -> 150%)
+        - Punch Damage has been reduced. (200% -> 170%)
         - Punch Launch Force has been reduced. (4000 -> 500)
         - Punch can be fired faster sequentially, end time reduced. (0.6 -> 0.5)
         - Punch hitbox duration has been decreased (0.3s -> 0.2s)
@@ -98,10 +98,9 @@ Charge up a powerful punch unleashing 400% damage onto close range foes. Consume
 - 1.0.0 - Initial Release
  
 ## Future Plans
-- Implement new skills
+- Work on new skills? This is a big Ｈｍｍ because I don't have the animation expertise to match what's already been implemented.
 - Fix some bugs (in Known issues)
-- Balance the current skills (They may feel a little too strong at the start)  
-- Update Ancient Scepter skill for Warlock Punch (it's a little underwhelming)
+- Update Ancient Scepter skill for Specials (it's a little underwhelming)
 - Add some on-hit VFX, it completely slipped my mind.
 
 ## Known Issues

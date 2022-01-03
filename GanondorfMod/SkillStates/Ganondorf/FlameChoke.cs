@@ -305,9 +305,19 @@ namespace GanondorfMod.SkillStates
                                     base.characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, this.invincibilityWindow);
                                 }
                             }
-                            GrabController grabbedEnemy = singularTarget.healthComponent.body.gameObject.AddComponent<GrabController>();
-                            grabbedEnemy.pivotTransform = this.FindModelChild("HandL");
-                            grabController.Add(grabbedEnemy);
+                            bool found = false;
+                            for ( int i = 0; i < grabController.Count; i++) {
+                                if (grabController[i].gameObject.GetInstanceID() == singularTarget.healthComponent.body.gameObject.GetInstanceID())
+                                {
+                                    found = true;
+                                    break; //Break out of loop.
+                                }
+                            }
+                            if (!found) {
+                                GrabController grabbedEnemy = singularTarget.healthComponent.body.gameObject.AddComponent<GrabController>();
+                                grabbedEnemy.pivotTransform = this.FindModelChild("HandL");
+                                grabController.Add(grabbedEnemy);
+                            }
                         }
                     }
                 }

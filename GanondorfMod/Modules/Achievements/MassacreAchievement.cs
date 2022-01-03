@@ -1,0 +1,134 @@
+﻿using GanondorfMod.Modules.Survivors;
+using RoR2;
+using System;
+using UnityEngine;
+
+namespace GanondorfMod.Modules.Achievements
+{
+    internal class MassacreAchievement : ModdedUnlockable
+    {
+        public override string AchievementIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_ID";
+        public override string UnlockableIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_REWARD_ID";
+        public override string AchievementNameToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_NAME";
+        public override string PrerequisiteUnlockableIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_UNLOCKABLE_REWARD_ID";
+        public override string UnlockableNameToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_UNLOCKABLE_NAME";
+        public override string AchievementDescToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_DESC";
+        public override Sprite Sprite { get; } = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon");
+
+        int lemCount = 0;
+        int beetleCount = 0;
+        int wispCount = 0;
+        int impCount = 0;
+        int jellyfishCount = 0;
+        int mushroomCount = 0;
+        int maxAmount = 50;
+
+        public override Func<string> GetHowToUnlock { get; } = (() => Language.GetStringFormatted("UNLOCK_VIA_ACHIEVEMENT_FORMAT", new object[]
+                            {
+                                Language.GetString(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_NAME"),
+                                Language.GetString(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_DESC")
+                            }));
+        public override Func<string> GetUnlocked { get; } = (() => Language.GetStringFormatted("UNLOCKED_FORMAT", new object[]
+                            {
+                                Language.GetString(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_NAME"),
+                                Language.GetString(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_DESC")
+                            }));
+
+        public override BodyIndex LookUpRequiredBodyIndex()
+        {
+            return BodyCatalog.FindBodyIndex(Modules.Survivors.Ganondorf.instance.fullBodyName);
+        }
+
+        public void GlobalEventManager_OnCharacterDeath(On.RoR2.GlobalEventManager.orig_OnCharacterDeath orig, GlobalEventManager self, DamageReport damageReport)
+        {
+            orig(self, damageReport);
+            if (damageReport.attackerBody != null && damageReport.attacker != null && damageReport != null)
+            {
+                if (damageReport.attackerBody.baseNameToken == GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_NAME")
+                {
+                    //Achievement related counters
+                    /*
+                     Body names:
+                     LEMURIAN_BODY_NAME
+                     BEETLE_BODY_NAME
+                     WISP_BODY_NAME
+                     IMP_BODY_NAME
+                     JELLYFISH_BODY_NAME
+                     MINIMUSHROOM_BODY_NAME
+                    */
+                    Debug.Log(damageReport.victimBody.baseNameToken);
+                    switch (damageReport.victimBody.baseNameToken) {
+                        case "LEMURIAN_BODY_NAME":
+                            lemCount++;
+                            break;
+                        case "BEETLE_BODY_NAME":
+                            beetleCount++;
+                            break;
+                        case "WISP_BODY_NAME":
+                            wispCount++;
+                            break;
+                        case "IMP_BODY_NAME":
+                            impCount++;
+                            break;
+                        case "JELLYFISH_BODY_NAME":
+                            jellyfishCount++;
+                            break;
+                        case "MINIMUSHROOM_BODY_NAME":
+                            mushroomCount++;
+                            break;
+                    }
+                    checkCap();
+                    int total = lemCount + beetleCount + wispCount + impCount + jellyfishCount + mushroomCount;
+                    if (total == maxAmount * 5) {
+                        base.Grant();
+                    }
+                }
+            }
+        }
+
+        public void checkCap() {
+            if (lemCount > maxAmount) {
+                lemCount = maxAmount;
+            }
+            if (beetleCount > maxAmount){
+                beetleCount = maxAmount;
+            }
+            if (wispCount > maxAmount){
+                wispCount = maxAmount;
+            }
+            if (impCount > maxAmount){
+                impCount = maxAmount;
+            }
+            if (jellyfishCount > maxAmount){
+                jellyfishCount = maxAmount;
+            }
+            if (mushroomCount > maxAmount) {
+                mushroomCount = maxAmount;
+            }
+        }
+
+        public void ClearStatistics(Run run)
+        {
+            lemCount = 0;
+            beetleCount = 0;
+            wispCount = 0;
+            impCount = 0;
+            jellyfishCount = 0;
+            mushroomCount = 0;
+        }
+
+        public override void OnInstall()
+        {
+            base.OnInstall();
+            On.RoR2.GlobalEventManager.OnCharacterDeath += this.GlobalEventManager_OnCharacterDeath;
+            Run.onRunDestroyGlobal += this.ClearStatistics;
+        }
+
+        public override void OnUninstall()
+        {
+            base.OnUninstall();
+            On.RoR2.GlobalEventManager.OnCharacterDeath -= this.GlobalEventManager_OnCharacterDeath;
+            Run.onRunDestroyGlobal -= this.ClearStatistics;
+        }
+    }
+}

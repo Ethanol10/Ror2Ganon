@@ -112,7 +112,7 @@ namespace GanondorfMod.Modules
             }
         }
 
-        internal static void AddSpecialSkill(GameObject targetPrefab, SkillDef skillDef)
+        internal static void AddSpecialSkill(GameObject targetPrefab, SkillDef skillDef, UnlockableDef unlockDef)
         {
             SkillLocator skillLocator = targetPrefab.GetComponent<SkillLocator>();
 
@@ -122,7 +122,8 @@ namespace GanondorfMod.Modules
             skillFamily.variants[skillFamily.variants.Length - 1] = new SkillFamily.Variant
             {
                 skillDef = skillDef,
-                viewableNode = new ViewablesCatalog.Node(skillDef.skillNameToken, false, null)
+                viewableNode = new ViewablesCatalog.Node(skillDef.skillNameToken, false, null),
+                unlockableDef = unlockDef
             };
         }
 
@@ -130,7 +131,7 @@ namespace GanondorfMod.Modules
         {
             foreach (SkillDef i in skillDefs)
             {
-                AddSpecialSkill(targetPrefab, i);
+                AddSpecialSkill(targetPrefab, i, null);
             }
         }
 

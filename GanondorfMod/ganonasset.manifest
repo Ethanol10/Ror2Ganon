@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3622504868
+CRC: 360637637
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fbbca7de798780c948eaf8714831c503
+    Hash: 52a0070354c898a8f508df3d00b6429a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6de4e0a73c2605a57ae0fd9f559969c2
@@ -94,8 +94,10 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
 - Assets/GanonAsset/Texture/ganonTex04.png
+- Assets/GanonAsset/icons/InfernoGuillotineIcon.png
 - Assets/GanonAsset/Material/ganonTex05.mat
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
+- Assets/GanonAsset/icons/darkDiveIconUtility.png
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
 - Assets/GanonAsset/icons/skin6.png
@@ -132,10 +134,12 @@ Assets:
 - Assets/GanonAsset/icons/skin1.png
 - Assets/GanonAsset/icons/wizardFootIconUtility.png
 - Assets/GanonAsset/Animator/Animations/Landing.anim
+- Assets/GanonAsset/icons/darkDiveIconSecondary.png
 - Assets/GanonAsset/particle/Shaders/Panner.shader
 - Assets/GanonAsset/icons/warlockPunchIcon.png
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
+- Assets/GanonAsset/icons/InfernoGuillotineIconBoosted.png
 - Assets/GanonAsset/Texture/ganonTex03.png
 - Assets/GanonAsset/Texture/ganonTex05.png
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
@@ -156,6 +160,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
 - Assets/GanonAsset/Animator/Animations/Falling.anim
 - Assets/GanonAsset/Animator/Animations/Wait1.anim
+- Assets/GanonAsset/icons/achievementMultiSkinIcon.png
 - Assets/GanonAsset/Animator/Animations/SecondJump.anim
 - Assets/GanonAsset/Animator/GanonLobby.controller
 - Assets/GanonAsset/icons/skin7.png

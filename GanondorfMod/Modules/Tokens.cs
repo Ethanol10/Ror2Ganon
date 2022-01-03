@@ -16,7 +16,7 @@ namespace GanondorfMod.Modules
             desc = desc + "< ! > Use Flame Choke to grab multiple enemies in a row, disabling them in the process." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Wizard's Foot is a great mobility tool, and a way to send enemies flying." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Warlock Punch to release a devastating explosive punch." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor and the power of your Special." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor, attack and the power of your Special." + Environment.NewLine + Environment.NewLine;
             //desc = desc + "";
 
             string outro = "..and so he left, spreading malice in his wake.";
@@ -138,8 +138,20 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "EIGHTLUNAR_UNLOCKABLE_NAME", "Ganondorf: Forbidden Methods");
 
             LanguageAPI.Add(prefix + "TENGRAB_ACHIEVEMENT_NAME", "Ganondorf: Hands-on");
-            LanguageAPI.Add(prefix + "TENGRAB_ACHIEVEMENT_DESC", "As Ganondorf, grab 10 or more enemies in a single grab.");
+            LanguageAPI.Add(prefix + "TENGRAB_ACHIEVEMENT_DESC", "As Ganondorf, grab 15 or more enemies in a single grab.");
             LanguageAPI.Add(prefix + "TENGRAB_UNLOCKABLE_NAME", "Ganondorf: Hands-on");
+
+            LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_NAME", "Ganondorf: Heavy-handed \"Punch\"-ishment");
+            LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_DESC", "As Ganondorf, perform a move that deals over 7,500 damage in a single hit.");
+            LanguageAPI.Add(prefix + "HEAVYDAMAGE_UNLOCKABLE_NAME", "Ganondorf: Heavy-handed \"Punch\"-ishment");
+
+            LanguageAPI.Add(prefix + "ITEMGATHERER_ACHIEVEMENT_NAME", "Ganondorf: Open for Experimentation");
+            LanguageAPI.Add(prefix + "ITEMGATHERER_ACHIEVEMENT_DESC", "As Ganondorf, hold onto one scrap from each item tier.");
+            LanguageAPI.Add(prefix + "ITEMGATHERER_UNLOCKABLE_NAME", "Ganondorf: Open for Experimentation");
+
+            LanguageAPI.Add(prefix + "MASSACRE_ACHIEVEMENT_NAME", "Ganondorf: Malice Bringer");
+            LanguageAPI.Add(prefix + "MASSACRE_ACHIEVEMENT_DESC", "As Ganondorf: Kill 50 Lemurians, Wisps, Jellyfishes, Beetles, Mini Mushrums and Imps in a single run.");
+            LanguageAPI.Add(prefix + "MASSACRE_UNLOCKABLE_NAME", "Ganondorf: Malice Bringer");
             #endregion
             #endregion
         }
