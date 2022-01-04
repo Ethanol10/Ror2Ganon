@@ -91,7 +91,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SECONDARY_AERIAL_GRAB_DESCRIPTION", $"Leap upwards grabbing enemies in your path, blasting them to smitherines, firstly hitting"
                 + $" {StaticValues.darkDiveBlastCountBase} mini-blasts at base for " +
                 $"<style=cIsDamage>{100f * StaticValues.darkDiveAltDamageCoefficient * StaticValues.darkDiveDamageReducer}% damage</style>" +
-                $" and then finally unleashing a blast for <style=cIsDamage>{100f * StaticValues.darkDiveDamageCoefficient}% damage</style>." +
+                $" and then finally unleashing a blast for <style=cIsDamage>{100f * StaticValues.darkDiveAltDamageCoefficient}% damage</style>." +
                 $" The number of mini-blasts scales with attack speed. Holding the button down before the move ends will cause Ganondorf to fastfall.");
             #endregion
 
@@ -142,7 +142,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "TENGRAB_UNLOCKABLE_NAME", "Ganondorf: Hands-on");
 
             LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_NAME", "Ganondorf: Heavy-handed \"Punch\"-ishment");
-            LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_DESC", "As Ganondorf, perform a move that deals over 7,500 damage in a single hit.");
+            LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_DESC", "As Ganondorf, perform a move that deals over 6,000 damage in a single hit.");
             LanguageAPI.Add(prefix + "HEAVYDAMAGE_UNLOCKABLE_NAME", "Ganondorf: Heavy-handed \"Punch\"-ishment");
 
             LanguageAPI.Add(prefix + "ITEMGATHERER_ACHIEVEMENT_NAME", "Ganondorf: Open for Experimentation");

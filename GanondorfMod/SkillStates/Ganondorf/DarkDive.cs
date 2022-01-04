@@ -76,7 +76,7 @@ namespace GanondorfMod.SkillStates
         {
             base.OnEnter();
             DarkDive.initialSpeedCoefficient = 3.2f;
-            grabRadius = 5f;
+            grabRadius = 8f;
             buttonHeldDownTimer = 0f;
             state = DarkDiveState.START;
             this.anim = base.GetModelAnimator();
@@ -191,7 +191,7 @@ namespace GanondorfMod.SkillStates
                 }
 
                 if (this.stopwatch >= 0.1f) {
-                    grabRadius = 8f;
+                    grabRadius = 10f;
                 }
                 if (this.stopwatch >= this.grabDuration) {
                     if (grabController.Count == 0) {

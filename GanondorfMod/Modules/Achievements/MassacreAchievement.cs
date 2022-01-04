@@ -15,6 +15,13 @@ namespace GanondorfMod.Modules.Achievements
         public override string AchievementDescToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASSACRE_ACHIEVEMENT_DESC";
         public override Sprite Sprite { get; } = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon");
 
+        bool lemFinished = false;
+        bool beetleFinished = false;
+        bool wispFinished = false;
+        bool impFinished = false;
+        bool jellyfishFinished = false;
+        bool mushroomFinished = false;
+
         int lemCount = 0;
         int beetleCount = 0;
         int wispCount = 0;
@@ -88,32 +95,65 @@ namespace GanondorfMod.Modules.Achievements
         public void checkCap() {
             if (lemCount > maxAmount) {
                 lemCount = maxAmount;
+                if (!lemFinished) {
+                    lemFinished = true;
+                    Chat.AddMessage(Helpers.DownsideDescription("Lemurians Consumed."));
+                }
             }
             if (beetleCount > maxAmount){
                 beetleCount = maxAmount;
+                if (!beetleFinished) {
+                    beetleFinished = true;
+                    Chat.AddMessage(Helpers.DownsideDescription("Beetles Consumed."));
+                }
             }
             if (wispCount > maxAmount){
                 wispCount = maxAmount;
+                if (!wispFinished) {
+                    wispFinished = true;
+                    Chat.AddMessage(Helpers.DownsideDescription("Wips Consumed."));
+                }
             }
             if (impCount > maxAmount){
                 impCount = maxAmount;
+                if (!impFinished) {
+                    impFinished = true;
+                    Chat.AddMessage(Helpers.DownsideDescription("Imps Consumed."));
+                }
             }
             if (jellyfishCount > maxAmount){
                 jellyfishCount = maxAmount;
+                if (!jellyfishFinished) {
+                    jellyfishFinished = true;
+                    Chat.AddMessage(Helpers.DownsideDescription("Jellyfish Consumed."));
+                }
             }
             if (mushroomCount > maxAmount) {
                 mushroomCount = maxAmount;
+                if (!mushroomFinished) {
+                    mushroomFinished = true;
+                    Chat.AddMessage(Helpers.DownsideDescription("Mushrums Consumed."));
+                }
             }
         }
 
         public void ClearStatistics(Run run)
         {
+            //Reset counters
             lemCount = 0;
             beetleCount = 0;
             wispCount = 0;
             impCount = 0;
             jellyfishCount = 0;
             mushroomCount = 0;
+
+            //Reset bools
+            lemFinished = false;
+            beetleFinished = false;
+            wispFinished = false;
+            impFinished = false;
+            jellyfishFinished = false;
+            mushroomFinished = false;
         }
 
         public override void OnInstall()

@@ -94,7 +94,7 @@ namespace GanondorfMod.SkillStates
             float damage = 0;
             if (base.inputBank.skill2.down){
                 isSecondary = true;
-                damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + (this.damageStat * (this.moveSpeedStat / 100.0f));
+                damage = (Modules.StaticValues.wizardFootDamageCoefficient * this.damageStat) + (this.damageStat * (this.moveSpeedStat / 50.0f));
                 initialSpeedCoefficient = 3.0f;
             }
             else if (base.inputBank.skill3.down) {
@@ -105,7 +105,7 @@ namespace GanondorfMod.SkillStates
                     boost = Modules.StaticValues.utilityBoostCoefficient;
                     ganonController.BodyLightning.Play();
                 }
-                damage = (Modules.StaticValues.wizardFootAltDamageCoefficient * this.damageStat * boost) + (this.damageStat * (this.moveSpeedStat / 75.0f));
+                damage = (Modules.StaticValues.wizardFootAltDamageCoefficient * this.damageStat * boost) + (this.damageStat * (this.moveSpeedStat / 25.0f));
                 initialSpeedCoefficient = 4.5f;
             }
 

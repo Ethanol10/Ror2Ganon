@@ -109,7 +109,7 @@ namespace GanondorfMod.SkillStates
             base.PlaySwingEffect();
         }
 
-        protected override void OnHitEnemyAuthority()
+        protected void OnHitEnemyAuthority(int hitcount)
         {
             //Create hitstop cache.
             if (!this.inHitPause && this.hitStopDuration > 0f)
@@ -125,7 +125,7 @@ namespace GanondorfMod.SkillStates
 
                 if (!halfBoosted && !fullBoosted)
                 {
-                    GetComponent<TriforceBuffComponent>().AddToBuffCount(Modules.StaticValues.maxPowerStack / 10);
+                    GetComponent<TriforceBuffComponent>().AddToBuffCount(Modules.StaticValues.maxPowerStack / 10 * hitcount);
                 }
                 else if (halfBoosted)
                 {
@@ -205,8 +205,9 @@ namespace GanondorfMod.SkillStates
                     hasFired = true;
                     this.isExplosion = true;
                     blastAttack.position = this.transform.position;
-                    if (blastAttack.Fire().hitCount > 0) {
-                        OnHitEnemyAuthority();
+                    int hitcount = blastAttack.Fire().hitCount;
+                    if (hitcount > 0) {
+                        OnHitEnemyAuthority(hitcount);
                     }
                 }
 

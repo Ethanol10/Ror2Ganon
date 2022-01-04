@@ -33,15 +33,26 @@ Heavy. Launch yourself forward pushing light enemies away for 150% damage.
 
 ### Utility: Flame Choke
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083336092667904/flameChokeIcon.png"><br>
-Dash forward grabbing enemies in a row and choke slamming them dealing 300% damage.
+Dash forward grabbing enemies in a row and choke slamming them dealing 450% damage.
 
 ### Special: Warlock Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335824211998/warlockPunchIcon.png"><br>
-Charge up a powerful punch unleashing 400% damage onto close range foes. Consume 50 stacks to power the move up by 416% damage. Consume 100 stacks to power the move up by 1250% damage.
+Charge up a powerful punch unleashing 600% damage onto close range foes. Consume 50 stacks to power the move up by 416% damage. Consume 100 stacks to power the move up by 1250% damage.
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.0.2 -> Changes to the following:
+    - Wizard's Foot (Secondary/Utility) *Perhaps I was a little too harsh on you*: Increased Heavy scaling a little bit.
+    - Wizard's Foot (Utility) Boosted damage (300% -> 450%)
+    - Flame Choke (Secondary) was hitting like a wet noodle so I buffed it (180% -> 300%)
+    - Flame Choke (Utility) also recieved a buff to produce parity between his multi-hit cousin, Dark dive (300% -> 500%)
+    - Dark Dive (Secondary) recieved a damage buff too (150% -> 200%)
+    - Dark Dive (Utility) recieved a damage buff (300% -> 350%)
+    - Dark Dive (Secondary/Utility) increased grab radius on ground and in the air (5 -> 8 grounded) (8 -> 10 aerial)
+    - Inferno Guillotine now gives 10 stacks per hitcount when un-buffed by the stacks, rather than just a flat 10.
+    - Ganondorf: Malice Bringer Achievement now has milestones printed when you successfully kill 50 of a required enemy type.
+    - Ganondorf: Heavy-handed "Punch"-ishment Achievement *cringe*, has the total damage reduced required to unlock the move. (7500 -> 6000) 
 - 2.0.1 -> *silently removes debug logs*
 - 2.0.0 -> New Features! Hooray! (This will probably be my last update, for this mod regarding new content (note: for a long time, not forever), as I am a terrible animator. However, if someone wants to offer help with animations for more moves, OR I manage to make my own moves in the time it takes to find someone new, I'm down to continue this project. If the mod breaks with new RoR2 Content, I'll try update it so that it won't be deprecated. Might do some balance changes as well.)
     - 2 New moves! (Unlock them and find out what they are)
