@@ -40,7 +40,7 @@ namespace GanondorfMod.Modules.Achievements
                     ganonCon = self.gameObject.GetComponent<GanondorfController>();
                 }
 
-                if (ganonCon.maxDamage >= 6000) {
+                if (ganonCon.maxDamage >= 7500) {
                     base.Grant();
                 }
             }

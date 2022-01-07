@@ -19,29 +19,46 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
 
 ### Passive: Triforce of Power
 #### <img src="https://cdn.discordapp.com/attachments/399901440023330816/918085033204514816/fullTriforceIcon.png">
-Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 40 extra armor and 35 extra base damage. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1250% at the maximum amount of stacks.
+Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 40 extra armor and 60 extra base damage. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1000% at the maximum amount of stacks.
 
 ### Primary: Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335216062464/punchIcon.png"><br>
-On the ground, punch forward for 150% damage.
-<br>Stunning. When sprinting, dash forward, plowing through enemies for 250% damage. 
-<br>When airborne, kick twice for 50% damage and 200% damage.
+On the ground, punch forward for 200% damage.
+<br>Stunning. When sprinting, dash forward, plowing through enemies for 400% damage. 
+<br>When airborne, kick twice for 90% damage and 250% damage.
 
 ### Secondary: Wizard's Foot
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/920686118024929350/wizardFootIcon.png"><br>
-Heavy. Launch yourself forward pushing light enemies away for 150% damage.
+Heavy. Launch yourself forward pushing light enemies away for 300% damage.
 
 ### Utility: Flame Choke
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083336092667904/flameChokeIcon.png"><br>
-Dash forward grabbing enemies in a row and choke slamming them dealing 450% damage.
+Dash forward grabbing enemies in a row and choke slamming them dealing 700% damage.
 
 ### Special: Warlock Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335824211998/warlockPunchIcon.png"><br>
-Charge up a powerful punch unleashing 600% damage onto close range foes. Consume 50 stacks to power the move up by 416% damage. Consume 100 stacks to power the move up by 1250% damage.
+Charge up a powerful punch unleashing 1000% damage onto close range foes. Consume 50 stacks to power the move up by 333% damage. Consume 100 stacks to power the move up by 1000% damage.
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.0.3 -> Changes to the following: Boosted damage overall because I was a little too crazy trying to not make him too strong, but part of the fun was going around and kicking things and also making them pop. SO...:
+    - Punch damage increased (170% -> 200%)
+    - Aerial Light kick damage increased (50% -> 90%)
+    - Aerial Heavy kick damage increased (200% -> 250%)
+    - Dash damage increased (250% -> 400%)
+    - Flame Choke (Utility) damage increased (500% -> 700%)
+    - Flame Choke (Secondary) damage increased (300% -> 550%)
+    - Flame Choke damage recalculation changed such that attack speed should increase damage by a slight amount the more you have.
+    - Wizard's Foot (Secondary) damage increased (150% -> 300%)
+    - Wizard's Foot (Utility) damage increased (400% -> 700%)
+    - Dark Dive (Utility) damage increased (350% -> 650%)
+    - Dark Dive (Secondary) damage increased (200% -> 450%)
+    - Warlock Punch damage increased (600% -> 1000%)
+    - Special Scaling from stacks of Triforce buff reduced (1250% -> 1000% at max) (416% -> 333% at 50 stacks)
+    - Inferno Guillotine damage increased (650% -> 1100%)
+    - Damage gained from Triforce of Power increased (35 -> 60)
+    - Utility Boost from Triforce of Power decreased (4x -> 3x)
 - 2.0.2 -> Changes to the following:
     - Wizard's Foot (Secondary/Utility) *Perhaps I was a little too harsh on you*: Increased Heavy scaling a little bit.
     - Wizard's Foot (Utility) Boosted damage (300% -> 450%)
@@ -120,6 +137,7 @@ Charge up a powerful punch unleashing 600% damage onto close range foes. Consume
 
 - Grab moves have some issues when trying to grab a Wandering Vagrant, Greater Wisp, Solus Control Unit (this isn't an exhaustive list), it pushes back against Ganondorf, possibly sending him through the floor and out the level for a bit.
 - Special move #2 *very rarely* doesn't register that it hit the floor and as a result, leaves you stuck in the air for a bit. I've only ever encountered this once, so if you do encounter it again, please tell me exactly how you replicated it.
+- Grab has a weird bug where the enemies don't detatch on end, causing it to stick to ganon preventing you from moving. If this happens, jump off a cliff and it should reset.
  
 ## Credits
 - Rob's HenryMod -> literally the only thing that convinced me to start making a character, for that thank you so much 

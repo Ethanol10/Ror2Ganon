@@ -100,7 +100,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SPECIAL_PUNCH_DESCRIPTION", $"Charge up a powerful punch, while gaining a short burst of Super Armor, unleashing" 
                 + $" <style=cIsDamage>{100f * StaticValues.warlockPunchDamageCoefficient}% damage</style> onto close range foes." +
                 $"\nConsume 50 stacks to power the move up by " +
-                $"<style=cIsDamage>{(int)100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}%</style> damage. " +
+                $"<style=cIsDamage>{(int)100f * (int)Modules.StaticValues.maxPowerStack / (int)Modules.StaticValues.warlockPunchDamageReducer / 3}%</style> damage. " +
                 $"Consume 100 stacks to power the move up by " +
                 $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
 
@@ -108,7 +108,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "INFERNO_KICK_DESCRIPTION", $"Pull enemies into their demise, slamming your foot down, dealing"
                 + $" <style=cIsDamage>{100f * StaticValues.infernoGuillotineCoefficient}% damage</style> in a radius around you." + Helpers.DownsideDescription(" No Super Armor.") +
                 $"\nConsume 50 stacks to power the move up by " +
-                $"<style=cIsDamage>{(int)100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3}%</style> damage. " +
+                $"<style=cIsDamage>{(int)100f * (int)Modules.StaticValues.maxPowerStack / (int)Modules.StaticValues.warlockPunchDamageReducer / 3 }%</style> damage. " +
                 $"Consume 100 stacks to power the move up by " +
                 $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
             #endregion
@@ -142,7 +142,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "TENGRAB_UNLOCKABLE_NAME", "Ganondorf: Hands-on");
 
             LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_NAME", "Ganondorf: Heavy-handed \"Punch\"-ishment");
-            LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_DESC", "As Ganondorf, perform a move that deals over 6,000 damage in a single hit.");
+            LanguageAPI.Add(prefix + "HEAVYDAMAGE_ACHIEVEMENT_DESC", "As Ganondorf, perform a move that deals over 7,500 damage in a single hit.");
             LanguageAPI.Add(prefix + "HEAVYDAMAGE_UNLOCKABLE_NAME", "Ganondorf: Heavy-handed \"Punch\"-ishment");
 
             LanguageAPI.Add(prefix + "ITEMGATHERER_ACHIEVEMENT_NAME", "Ganondorf: Open for Experimentation");

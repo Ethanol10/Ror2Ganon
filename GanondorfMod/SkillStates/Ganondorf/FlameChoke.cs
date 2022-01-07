@@ -93,7 +93,7 @@ namespace GanondorfMod.SkillStates
             {
                 isBoosted = false;
                 isSecondary = true;
-                damage = Modules.StaticValues.flameChokeAltDamageCoefficient * this.damageStat * (this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer);
+                damage = Modules.StaticValues.flameChokeAltDamageCoefficient * this.damageStat + (this.damageStat * this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer);
             }
             else if (base.inputBank.skill3.down)
             {
@@ -104,7 +104,7 @@ namespace GanondorfMod.SkillStates
                     isBoosted = true;
                     ganonController.BodyLightning.Play();
                 }
-                damage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat * boost * (this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer * 1.5f);
+                damage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat * boost + (this.damageStat * this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer * 1.5f);
             }
 
             //Create blast attack, 
