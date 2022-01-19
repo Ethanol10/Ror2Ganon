@@ -42,6 +42,8 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.0.4 -> Minor Fixes to the following:
+    - Lunar Item achievement reworked to take into account all lunar items from all mods, no longer mod limited!
 - 2.0.3 -> Changes to the following: Boosted damage overall because I was a little too crazy trying to not make him too strong, but part of the fun was going around and kicking things and also making them pop. SO...:
     - Punch damage increased (170% -> 200%)
     - Aerial Light kick damage increased (50% -> 90%)

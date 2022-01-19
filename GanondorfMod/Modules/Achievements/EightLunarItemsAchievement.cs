@@ -44,30 +44,7 @@ namespace GanondorfMod.Modules.Achievements
 
         private int InventoryCheck(Inventory inventory) {
             int count = 0;
-
-            count += inventory.GetItemCount(RoR2Content.Items.LunarBadLuck);
-            count += inventory.GetItemCount(RoR2Content.Items.LunarTrinket);
-            count += inventory.GetItemCount(RoR2Content.Items.GoldOnHit);
-            count += inventory.GetItemCount(RoR2Content.Items.RepeatHeal);
-            count += inventory.GetItemCount(RoR2Content.Items.MonstersOnShrineUse);
-            count += inventory.GetItemCount(RoR2Content.Items.LunarPrimaryReplacement);
-            count += inventory.GetItemCount(RoR2Content.Items.FocusConvergence);
-            count += inventory.GetItemCount(RoR2Content.Items.AutoCastEquipment);
-            count += inventory.GetItemCount(RoR2Content.Items.LunarSecondaryReplacement);
-            count += inventory.GetItemCount(RoR2Content.Items.RandomDamageZone);
-            count += inventory.GetItemCount(RoR2Content.Items.LunarDagger);
-            count += inventory.GetItemCount(RoR2Content.Items.LunarUtilityReplacement);
-            count += inventory.GetItemCount(RoR2Content.Items.ShieldOnly);
-            count += inventory.GetItemCount(RoR2Content.Items.LunarPrimaryReplacement);
-
-            if (inventory.GetEquipmentIndex() == RoR2Content.Equipment.LunarPotion.equipmentIndex
-                || inventory.GetEquipmentIndex() == RoR2Content.Equipment.Meteor.equipmentIndex 
-                || inventory.GetEquipmentIndex() == RoR2Content.Equipment.CrippleWard.equipmentIndex 
-                || inventory.GetEquipmentIndex() == RoR2Content.Equipment.Tonic.equipmentIndex
-                || inventory.GetEquipmentIndex() == RoR2Content.Equipment.BurnNearby.equipmentIndex) {
-                count++;
-            }
-
+            count += inventory.GetTotalItemCountOfTier(ItemTier.Lunar);
             return count;
         }
 

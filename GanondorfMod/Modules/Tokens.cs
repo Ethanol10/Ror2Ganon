@@ -134,7 +134,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Ganondorf: Mastery");
 
             LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_NAME", "Ganondorf: Forbidden Methods");
-            LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_DESC", "As Ganondorf, collect 8 Lunar Items in a single run. (Only base game Lunar Items.)");
+            LanguageAPI.Add(prefix + "EIGHTLUNAR_ACHIEVEMENT_DESC", "As Ganondorf, collect 8 Lunar Items in a single run.");
             LanguageAPI.Add(prefix + "EIGHTLUNAR_UNLOCKABLE_NAME", "Ganondorf: Forbidden Methods");
 
             LanguageAPI.Add(prefix + "TENGRAB_ACHIEVEMENT_NAME", "Ganondorf: Hands-on");
