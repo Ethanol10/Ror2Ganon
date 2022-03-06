@@ -13,9 +13,9 @@ namespace GanondorfMod.Modules
         internal static void RegisterProjectiles()
         {
             // only separating into separate methods for my sanity
-            CreateBomb();
+            //CreateBomb();
 
-            AddProjectile(bombPrefab);
+            //AddProjectile(bombPrefab);
         }
 
         internal static void AddProjectile(GameObject projectileToAdd)
@@ -23,25 +23,25 @@ namespace GanondorfMod.Modules
             Modules.Prefabs.projectilePrefabs.Add(projectileToAdd);
         }
 
-        private static void CreateBomb()
-        {
-            bombPrefab = CloneProjectilePrefab("CommandoGrenadeProjectile", "HenryBombProjectile");
+        //private static void CreateBomb()
+        //{
+        //    bombPrefab = CloneProjectilePrefab("CommandoGrenadeProjectile", "HenryBombProjectile");
 
-            ProjectileImpactExplosion bombImpactExplosion = bombPrefab.GetComponent<ProjectileImpactExplosion>();
-            InitializeImpactExplosion(bombImpactExplosion);
+        //    ProjectileImpactExplosion bombImpactExplosion = bombPrefab.GetComponent<ProjectileImpactExplosion>();
+        //    InitializeImpactExplosion(bombImpactExplosion);
 
-            bombImpactExplosion.blastRadius = 16f;
-            bombImpactExplosion.destroyOnEnemy = true;
-            bombImpactExplosion.lifetime = 12f;
-            //bombImpactExplosion.impactEffect = Modules.Assets.bombExplosionEffect;
-            //bombImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("HenryBombExplosion");
-            bombImpactExplosion.timerAfterImpact = true;
-            bombImpactExplosion.lifetimeAfterImpact = 0.1f;
+        //    bombImpactExplosion.blastRadius = 16f;
+        //    bombImpactExplosion.destroyOnEnemy = true;
+        //    bombImpactExplosion.lifetime = 12f;
+        //    //bombImpactExplosion.impactEffect = Modules.Assets.bombExplosionEffect;
+        //    //bombImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("HenryBombExplosion");
+        //    bombImpactExplosion.timerAfterImpact = true;
+        //    bombImpactExplosion.lifetimeAfterImpact = 0.1f;
 
-            ProjectileController bombController = bombPrefab.GetComponent<ProjectileController>();
-            if (Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("HenryBombGhost") != null) bombController.ghostPrefab = CreateGhostPrefab("HenryBombGhost");
-            bombController.startSound = "";
-        }
+        //    ProjectileController bombController = bombPrefab.GetComponent<ProjectileController>();
+        //    if (Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("HenryBombGhost") != null) bombController.ghostPrefab = CreateGhostPrefab("HenryBombGhost");
+        //    bombController.startSound = "";
+        //}
 
         private static void InitializeImpactExplosion(ProjectileImpactExplosion projectileImpactExplosion)
         {
@@ -81,7 +81,7 @@ namespace GanondorfMod.Modules
 
         private static GameObject CloneProjectilePrefab(string prefabName, string newPrefabName)
         {
-            GameObject newPrefab = PrefabAPI.InstantiateClone(Resources.Load<GameObject>("Prefabs/Projectiles/" + prefabName), newPrefabName);
+            GameObject newPrefab = PrefabAPI.InstantiateClone(RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/" + prefabName), newPrefabName);
             return newPrefab;
         }
     }
