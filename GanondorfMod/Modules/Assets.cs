@@ -126,7 +126,7 @@ namespace GanondorfMod.Modules
 
             return networkSoundEventDef;
         }
-
+        
         internal static void ConvertAllRenderersToHopooShader(GameObject objectToConvert)
         {
             if (!objectToConvert) return;

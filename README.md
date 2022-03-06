@@ -9,6 +9,7 @@ Standalone Ancient Scepter Compatible.
 ## It is HIGHLY recommended to use Scrollable UI to easily select the skin you want
 
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
+Literally just cobbled this thing in 3 hours for the SOTV update, spam me if something goes wrong lol.
 
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
 <br><b>Now with (a little) fancier effects...</b>
@@ -42,6 +43,7 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.1.0 -> Updated for the Survivors of the Void DLC update!
 - 2.0.4 -> Minor Fixes to the following:
     - Lunar Item achievement reworked to take into account all lunar items from all mods, no longer mod limited!
 - 2.0.3 -> Changes to the following: Boosted damage overall because I was a little too crazy trying to not make him too strong, but part of the fun was going around and kicking things and also making them pop. SO...:

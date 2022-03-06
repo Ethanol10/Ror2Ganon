@@ -184,7 +184,7 @@ namespace GanondorfMod
             if (self.gameObject.name.Contains("GanondorfDisplay")) 
             {
                 //Load the portal effect, push the portal back a little bit on the x-axis and have ganon walk through it.
-                GameObject portalEffect = RoR2.LegacyResourcesAPI.Load<GameObject>("prefabs/effects/NullifierSpawnEffect");
+                GameObject portalEffect = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/NullifierSpawnEffect");
                 Vector3 pos = self.gameObject.transform.position;
                 Quaternion rot = self.gameObject.transform.rotation;
                 rot = Quaternion.Euler(0, 90, 0);
