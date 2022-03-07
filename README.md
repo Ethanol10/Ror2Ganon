@@ -43,6 +43,7 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.1.1 -> Removed Item Displays as I try to figure out what's going on with item duplication.
 - 2.1.0 -> Updated for the Survivors of the Void DLC update!
 - 2.0.4 -> Minor Fixes to the following:
     - Lunar Item achievement reworked to take into account all lunar items from all mods, no longer mod limited!

@@ -69,7 +69,7 @@ namespace GanondorfMod
             Modules.Buffs.RegisterBuffs(); // add and register custom buffs/debuffs
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
             Modules.Tokens.AddTokens(); // register name tokens
-            //Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
+            Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             // survivor initialization
             new Ganondorf().Initialize();
@@ -85,7 +85,7 @@ namespace GanondorfMod
         private void LateSetup(HG.ReadOnlyArray<RoR2.ContentManagement.ReadOnlyContentPack> obj)
         {
             // have to set item displays later now because they require direct object references..
-            Modules.Survivors.Ganondorf.instance.SetItemDisplays();
+            //Modules.Survivors.Ganondorf.instance.SetItemDisplays();
         }
 
         private void Hook()
