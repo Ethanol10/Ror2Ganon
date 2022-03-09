@@ -162,7 +162,6 @@ namespace GanondorfMod.Modules.Achievements
             base.OnInstall();
             On.RoR2.GlobalEventManager.OnCharacterDeath += this.GlobalEventManager_OnCharacterDeath;
             Run.onRunDestroyGlobal += this.ClearStatistics;
-            Debug.Log("What the fuck");
         }
 
         public override void OnUninstall()
