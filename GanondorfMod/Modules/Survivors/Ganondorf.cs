@@ -31,7 +31,7 @@ namespace GanondorfMod.Modules.Survivors
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             damage = 24f,
-            damageGrowth = 2f,
+            damageGrowth = 2.5f,
             healthGrowth = 15f,
             healthRegen = 1.5f,
             jumpCount = 2,
