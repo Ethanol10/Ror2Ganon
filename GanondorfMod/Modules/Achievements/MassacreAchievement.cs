@@ -63,6 +63,7 @@ namespace GanondorfMod.Modules.Achievements
                      JELLYFISH_BODY_NAME
                      MINIMUSHROOM_BODY_NAME
                     */
+
                     switch (damageReport.victimBody.baseNameToken) {
                         case "LEMURIAN_BODY_NAME":
                             lemCount++;
@@ -93,42 +94,42 @@ namespace GanondorfMod.Modules.Achievements
         }
 
         public void checkCap() {
-            if (lemCount > maxAmount) {
+            if (lemCount >= maxAmount) {
                 lemCount = maxAmount;
                 if (!lemFinished) {
                     lemFinished = true;
                     Chat.AddMessage(Helpers.DownsideDescription("Lemurians Consumed."));
                 }
             }
-            if (beetleCount > maxAmount){
+            if (beetleCount >= maxAmount){
                 beetleCount = maxAmount;
                 if (!beetleFinished) {
                     beetleFinished = true;
                     Chat.AddMessage(Helpers.DownsideDescription("Beetles Consumed."));
                 }
             }
-            if (wispCount > maxAmount){
+            if (wispCount >= maxAmount){
                 wispCount = maxAmount;
                 if (!wispFinished) {
                     wispFinished = true;
                     Chat.AddMessage(Helpers.DownsideDescription("Wips Consumed."));
                 }
             }
-            if (impCount > maxAmount){
+            if (impCount >= maxAmount){
                 impCount = maxAmount;
                 if (!impFinished) {
                     impFinished = true;
                     Chat.AddMessage(Helpers.DownsideDescription("Imps Consumed."));
                 }
             }
-            if (jellyfishCount > maxAmount){
+            if (jellyfishCount >= maxAmount){
                 jellyfishCount = maxAmount;
                 if (!jellyfishFinished) {
                     jellyfishFinished = true;
                     Chat.AddMessage(Helpers.DownsideDescription("Jellyfish Consumed."));
                 }
             }
-            if (mushroomCount > maxAmount) {
+            if (mushroomCount >= maxAmount) {
                 mushroomCount = maxAmount;
                 if (!mushroomFinished) {
                     mushroomFinished = true;
@@ -161,6 +162,7 @@ namespace GanondorfMod.Modules.Achievements
             base.OnInstall();
             On.RoR2.GlobalEventManager.OnCharacterDeath += this.GlobalEventManager_OnCharacterDeath;
             Run.onRunDestroyGlobal += this.ClearStatistics;
+            Debug.Log("What the fuck");
         }
 
         public override void OnUninstall()
