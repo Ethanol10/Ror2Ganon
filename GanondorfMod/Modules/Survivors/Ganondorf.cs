@@ -31,13 +31,13 @@ namespace GanondorfMod.Modules.Survivors
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             damage = 24f,
-            damageGrowth = 2f,
+            damageGrowth = 2.5f,
             healthGrowth = 15f,
             healthRegen = 1.5f,
             jumpCount = 2,
             maxHealth = 250.0f,
             subtitleNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SUBTITLE",
-            podPrefab = Resources.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
+            podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
             jumpPower = 20.0f,
         };
 
@@ -2285,27 +2285,6 @@ localScale = new Vector3(0.2845F, 0.2845F, 0.2845F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.CooldownOnCrit,
-                displayRuleGroup = new DisplayRuleGroup
-                {
-                    rules = new ItemDisplayRule[]
-                    {
-                        new ItemDisplayRule
-                        {
-                            ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            followerPrefab = ItemDisplays.LoadDisplay("DisplaySkull"),
-                            childName = "HandL",
-                            localPos = new Vector3(-0.01095F, -0.00776F, 0.00205F),
-                            localAngles = new Vector3(9.98726F, 288.1167F, 7.67295F),
-                            localScale = new Vector3(0.005F, 0.005F, 0.005F),
-                            limbMask = LimbFlags.None
-                        }
-                    }
-                }
-            });
-
-            itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
-            {
                 keyAsset = RoR2Content.Items.Phasing,
                 displayRuleGroup = new DisplayRuleGroup
                 {
@@ -2665,27 +2644,6 @@ childName = "dash",
 localPos = new Vector3(-0.0554F, -1.6605F, -0.3314F),
 localAngles = new Vector3(0F, 0F, 0F),
 localScale = new Vector3(0.1F, 0.1F, 0.1F),
-                            limbMask = LimbFlags.None
-                        }
-                    }
-                }
-            });
-
-            itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
-            {
-                keyAsset = RoR2Content.Items.Incubator,
-                displayRuleGroup = new DisplayRuleGroup
-                {
-                    rules = new ItemDisplayRule[]
-                    {
-                        new ItemDisplayRule
-                        {
-                            ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            followerPrefab = ItemDisplays.LoadDisplay("DisplayAncestralIncubator"),
-childName = "dash",
-localPos = new Vector3(0F, 0.3453F, 0F),
-localAngles = new Vector3(353.0521F, 317.2421F, 69.6292F),
-localScale = new Vector3(0.0528F, 0.0528F, 0.0528F),
                             limbMask = LimbFlags.None
                         }
                     }

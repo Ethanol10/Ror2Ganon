@@ -48,7 +48,7 @@ namespace GanondorfMod.Modules.Achievements
 
         public override void OnInstall()
         {
-            base.OnInstall();
+            base.OnInstall();                                                                                                       
             On.RoR2.CharacterBody.RecalculateStats += this.CharacterBody_RecalculateStats;
         }
 

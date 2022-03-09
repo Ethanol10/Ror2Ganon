@@ -10,7 +10,9 @@ using System.Security;
 using System.Security.Permissions;
 using UnityEngine;
 
+#pragma warning restore CS0618 // Type or member is obsolete
 [module: UnverifiableCode]
+#pragma warning restore CS0618 // Type or member is obsolete
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
 namespace GanondorfMod
@@ -28,12 +30,9 @@ namespace GanondorfMod
 
     public class GanondorfPlugin : BaseUnityPlugin
     {
-        // if you don't change these you're giving permission to deprecate the mod-
-        //  please change the names to your own stuff, thanks
-        //   this shouldn't even have to be said
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "2.0.4";
+        public const string MODVERSION = "2.1.2";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
@@ -86,7 +85,7 @@ namespace GanondorfMod
         private void LateSetup(HG.ReadOnlyArray<RoR2.ContentManagement.ReadOnlyContentPack> obj)
         {
             // have to set item displays later now because they require direct object references..
-            Modules.Survivors.Ganondorf.instance.SetItemDisplays();
+            //Modules.Survivors.Ganondorf.instance.SetItemDisplays();
         }
 
         private void Hook()
@@ -96,7 +95,6 @@ namespace GanondorfMod
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
-            On.RoR2.GenericPickupController.GrantItem += GenericPickupController_GrantItem;
             On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
             On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
         }
@@ -144,16 +142,6 @@ namespace GanondorfMod
             }
         }
 
-        private void GenericPickupController_GrantItem(On.RoR2.GenericPickupController.orig_GrantItem orig, GenericPickupController self, CharacterBody body, Inventory inventory) {
-            orig(self, body, inventory);
-            if (body.baseNameToken == developerPrefix + "_GANONDORF_BODY_NAME") {
-                if (self.pickupIndex.ToString() == "ItemIndex.ITEM_ANCIENT_SCEPTER") {
-                    body.gameObject.GetComponent<TriforceBuffComponent>().SetScepterActive(true);
-                }
-            }
-
-        }
-
         private void CharacterBody_FixedUpdate(On.RoR2.CharacterBody.orig_FixedUpdate orig, CharacterBody self) {
             orig(self);
 
@@ -196,7 +184,7 @@ namespace GanondorfMod
             if (self.gameObject.name.Contains("GanondorfDisplay")) 
             {
                 //Load the portal effect, push the portal back a little bit on the x-axis and have ganon walk through it.
-                GameObject portalEffect = Resources.Load<GameObject>("prefabs/effects/NullifierSpawnEffect");
+                GameObject portalEffect = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/NullifierSpawnEffect");
                 Vector3 pos = self.gameObject.transform.position;
                 Quaternion rot = self.gameObject.transform.rotation;
                 rot = Quaternion.Euler(0, 90, 0);

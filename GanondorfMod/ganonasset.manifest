@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 559446662
+CRC: 3642556879
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1cbc7440faaca9368249aee3b58b5be0
+    Hash: 6242f90b1447e32b3200d9c8075e8599
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6de4e0a73c2605a57ae0fd9f559969c2
+    Hash: fb98380650685d80d5a2c2187dc1369c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -63,6 +63,7 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 319
   Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/GanonAsset/Texture/ganonTex07.png
 - Assets/GanonAsset/icons/brawlSkinIcon.png
