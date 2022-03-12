@@ -215,6 +215,9 @@ namespace GanondorfMod.Modules
             ChildLocator childLocator = characterModel.GetComponent<ChildLocator>();
             characterModel.body = prefab.GetComponent<CharacterBody>();
 
+            characterModel.body.overrideCoreTransform = childLocator.FindChild("Bust");
+            characterModel.body.coreTransform = childLocator.FindChild("Bust");
+
             if (!childLocator)
             {
                 Debug.LogError("Failed CharacterModel setup: ChildLocator component does not exist on the model");
@@ -259,11 +262,6 @@ namespace GanondorfMod.Modules
             {
                 Debug.LogError("mainRendererIndex out of range: not setting mainSkinnedMeshRenderer for " + prefab.name);
                 return;
-            }
-            Transform coreTransform = childLocator.FindChild("MainHurtbox").gameObject.transform;
-            Debug.Log(coreTransform);
-            if (coreTransform) {
-                characterModel.coreTransform = coreTransform;
             }
 
             characterModel.mainSkinnedMeshRenderer = characterModel.baseRendererInfos[mainRendererIndex].renderer.GetComponent<SkinnedMeshRenderer>();
