@@ -712,7 +712,7 @@ namespace GanondorfMod.Modules.Survivors
             #region Item Displays
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Jetpack,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Jetpack"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -733,7 +733,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.GoldGat,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/GoldGat"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -754,7 +754,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.BFG,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/BFG"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -775,7 +775,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.CritGlasses,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/CritGlasses"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -796,7 +796,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Syringe,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Syringe"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -817,7 +817,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Behemoth,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Behemoth"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -838,7 +838,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Missile,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Missile"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -859,7 +859,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Dagger,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Dagger"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -880,7 +880,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Hoof,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Hoof"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -901,7 +901,7 @@ localScale = new Vector3(0.0846F, 0.0846F, 0.0758F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ChainLightning,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ChainLightning"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -922,7 +922,7 @@ localScale = new Vector3(0.0846F, 0.0846F, 0.0758F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.GhostOnKill,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/GhostOnKill"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -943,7 +943,7 @@ localScale = new Vector3(0.0846F, 0.0846F, 0.0758F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Mushroom,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Mushroom"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -964,7 +964,7 @@ localScale = new Vector3(0.0501F, 0.0501F, 0.0501F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.AttackSpeedOnCrit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/AttackSpeedOnCrit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -986,7 +986,7 @@ localScale = new Vector3(0.0501F, 0.0501F, 0.0501F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BleedOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BleedOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1007,7 +1007,7 @@ localScale = new Vector3(0.0501F, 0.0501F, 0.0501F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.WardOnLevel,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/WardOnLevel"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1028,7 +1028,7 @@ localScale = new Vector3(0.3162F, 0.3162F, 0.3162F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.HealOnCrit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/HealOnCrit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1049,7 +1049,7 @@ localScale = new Vector3(0.1884F, 0.1884F, 0.1884F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.HealWhileSafe,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/HealWhileSafe"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1070,7 +1070,7 @@ localScale = new Vector3(0.0289F, 0.0289F, 0.0289F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Clover,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Clover"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1091,7 +1091,7 @@ localScale = new Vector3(0.0289F, 0.0289F, 0.0289F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BarrierOnOverHeal,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BarrierOnOverHeal"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1112,7 +1112,7 @@ localScale = new Vector3(0.0289F, 0.0289F, 0.0289F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.GoldOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/GoldOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1133,7 +1133,7 @@ localScale = new Vector3(0.0289F, 0.0289F, 0.0289F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.WarCryOnMultiKill,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/WarCryOnMultiKill"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1154,7 +1154,7 @@ localScale = new Vector3(0.7094F, 0.7094F, 0.7094F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SprintArmor,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SprintArmor"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1175,7 +1175,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.IceRing,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/IceRing"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1206,7 +1206,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.FireRing,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/FireRing"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1237,7 +1237,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.UtilitySkillMagazine,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/UtilitySkillMagazine"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1268,7 +1268,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.JumpBoost,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/JumpBoost"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1289,7 +1289,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ArmorReductionOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ArmorReductionOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1310,7 +1310,7 @@ localScale = new Vector3(0.3351F, 0.3351F, 0.3351F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.NearbyDamageBonus,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/NearbyDamageBonus"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1331,7 +1331,7 @@ localScale = new Vector3(0.1236F, 0.1236F, 0.1236F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ArmorPlate,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ArmorPlate"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1352,7 +1352,7 @@ localScale = new Vector3(0.1236F, 0.1236F, 0.1236F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.CommandMissile,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/CommandMissile"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1373,7 +1373,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Feather,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Feather"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1394,7 +1394,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Crowbar,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Crowbar"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1415,7 +1415,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.FallBoots,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/FallBoots"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1446,7 +1446,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ExecuteLowHealthElite,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ExecuteLowHealthElite"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1467,7 +1467,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.EquipmentMagazine,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/EquipmentMagazine"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1488,7 +1488,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.NovaOnHeal,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/NovaOnHeal"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1519,7 +1519,7 @@ localScale = new Vector3(0.3362F, 0.3362F, 0.3362F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Infusion,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Infusion"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1540,7 +1540,7 @@ localScale = new Vector3(0.5253F, 0.5253F, 0.5253F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Medkit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Medkit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1561,7 +1561,7 @@ localScale = new Vector3(0.4907F, 0.4907F, 0.4907F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Bandolier,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Bandolier"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1582,7 +1582,7 @@ localScale = new Vector3(0.4907F, 0.4907F, 0.4907F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BounceNearby,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BounceNearby"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1603,7 +1603,7 @@ localScale = new Vector3(0.4907F, 0.4907F, 0.4907F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.IgniteOnKill,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/IgniteOnKill"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1624,7 +1624,7 @@ localScale = new Vector3(0.3165F, 0.3165F, 0.3165F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.StunChanceOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/StunChanceOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1645,7 +1645,7 @@ localScale = new Vector3(0.5672F, 0.5672F, 0.5672F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Firework,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Firework"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1666,7 +1666,7 @@ localScale = new Vector3(0.1194F, 0.1194F, 0.1194F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.LunarDagger,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/LunarDagger"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1687,7 +1687,7 @@ localScale = new Vector3(0.3385F, 0.3385F, 0.3385F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Knurl,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Knurl"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1708,7 +1708,7 @@ localScale = new Vector3(0.0848F, 0.0848F, 0.0848F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BeetleGland,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BeetleGland"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1729,7 +1729,7 @@ localScale = new Vector3(0.0848F, 0.0848F, 0.0848F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SprintBonus,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SprintBonus"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1750,7 +1750,7 @@ localScale = new Vector3(0.1655F, 0.1655F, 0.1655F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SecondarySkillMagazine,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SecondarySkillMagazine"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1771,7 +1771,7 @@ localScale = new Vector3(0.0441F, 0.0441F, 0.0441F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.StickyBomb,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/StickyBomb"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1792,7 +1792,7 @@ localScale = new Vector3(0.0736F, 0.0736F, 0.0736F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.TreasureCache,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/TreasureCache"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1813,7 +1813,7 @@ localScale = new Vector3(0.4092F, 0.4092F, 0.4092F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BossDamageBonus,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BossDamageBonus"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1834,7 +1834,7 @@ localScale = new Vector3(0.4092F, 0.4092F, 0.4092F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SlowOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SlowOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1855,7 +1855,7 @@ localScale = new Vector3(0.0687F, 0.0687F, 0.0687F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ExtraLife,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ExtraLife"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1876,7 +1876,7 @@ localScale = new Vector3(0.0687F, 0.0687F, 0.0687F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.KillEliteFrenzy,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/KillEliteFrenzy"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1897,7 +1897,7 @@ localScale = new Vector3(0.0687F, 0.0687F, 0.0687F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.RepeatHeal,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/RepeatHeal"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1918,7 +1918,7 @@ localScale = new Vector3(0.1511F, 0.1511F, 0.1511F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.AutoCastEquipment,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/AutoCastEquipment"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1939,7 +1939,7 @@ localScale = new Vector3(0.1511F, 0.1511F, 0.1511F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.IncreaseHealing,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/IncreaseHealing"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1970,7 +1970,7 @@ localScale = new Vector3(0.1511F, 0.1511F, 0.1511F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.TitanGoldDuringTP,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/TitanGoldDuringTP"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -1991,7 +1991,7 @@ localScale = new Vector3(0.1191F, 0.1191F, 0.1191F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SprintWisp,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SprintWisp"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2012,7 +2012,7 @@ localScale = new Vector3(0.1385F, 0.1385F, 0.1385F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BarrierOnKill,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BarrierOnKill"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2033,7 +2033,7 @@ localScale = new Vector3(0.1385F, 0.1385F, 0.1385F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.TPHealingNova,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/TPHealingNova"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2054,7 +2054,7 @@ localScale = new Vector3(0.2731F, 0.2731F, 0.0273F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.LunarUtilityReplacement,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/LunarUtilityReplacement"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2075,7 +2075,7 @@ localScale = new Vector3(0.2731F, 0.2731F, 0.0273F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Thorns,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Thorns"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2096,7 +2096,7 @@ localScale = new Vector3(0.4814F, 0.4814F, 0.4814F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.LunarPrimaryReplacement,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/LunarPrimaryReplacement"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2117,7 +2117,7 @@ localScale = new Vector3(0.4814F, 0.4814F, 0.4814F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.NovaOnLowHealth,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/NovaOnLowHealth"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2138,7 +2138,7 @@ localScale = new Vector3(0.4814F, 0.4814F, 0.4814F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.LunarTrinket,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/LunarTrinket"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2159,7 +2159,7 @@ localScale = new Vector3(1F, 1F, 1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Plant,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Plant"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2180,7 +2180,7 @@ localScale = new Vector3(0.0429F, 0.0429F, 0.0429F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Bear,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Bear"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2201,7 +2201,7 @@ localScale = new Vector3(0.0429F, 0.0429F, 0.0429F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.DeathMark,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/DeathMark"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2222,7 +2222,7 @@ localScale = new Vector3(0.0429F, 0.0429F, 0.0429F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ExplodeOnDeath,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ExplodeOnDeath"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2243,7 +2243,7 @@ localScale = new Vector3(0.0429F, 0.0429F, 0.0429F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Seed,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Seed"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2264,7 +2264,7 @@ localScale = new Vector3(0.0429F, 0.0429F, 0.0429F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SprintOutOfCombat,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SprintOutOfCombat"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2285,7 +2285,7 @@ localScale = new Vector3(0.2845F, 0.2845F, 0.2845F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Phasing,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Phasing"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2306,7 +2306,7 @@ localScale = new Vector3(0.1454F, 0.2399F, 0.16F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.PersonalShield,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/PersonalShield"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2327,7 +2327,7 @@ localScale = new Vector3(0.1057F, 0.1057F, 0.1057F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ShockNearby,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ShockNearby"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2348,7 +2348,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ShieldOnly,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ShieldOnly"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2379,7 +2379,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.AlienHead,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/AlienHead"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2400,7 +2400,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.HeadHunter,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/HeadHunter"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2421,7 +2421,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.EnergizedOnEquipmentUse,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/EnergizedOnEquipmentUse"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2442,7 +2442,7 @@ localScale = new Vector3(0.3229F, 0.3229F, 0.3229F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.FlatHealth,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/FlatHealth"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2463,7 +2463,7 @@ localScale = new Vector3(0.02F, 0.02F, 0.02F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Tooth,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Tooth"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2484,7 +2484,7 @@ localScale = new Vector3(0.02F, 0.02F, 0.02F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Pearl,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Pearl"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2505,7 +2505,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.ShinyPearl,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/ShinyPearl"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2526,7 +2526,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BonusGoldPackOnKill,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BonusGoldPackOnKill"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2547,7 +2547,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Squid,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Squid"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2568,7 +2568,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Icicle,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Icicle"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2589,7 +2589,7 @@ localScale = new Vector3(1F, 1F, 1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.Talisman,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/Talisman"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2610,7 +2610,7 @@ localScale = new Vector3(1F, 1F, 1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.LaserTurbine,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/LaserTurbine"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2631,7 +2631,7 @@ localScale = new Vector3(0.2159F, 0.2159F, 0.2159F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.FocusConvergence,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/FocusConvergence"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2652,7 +2652,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.FireballsOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/FireballsOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2673,7 +2673,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.SiphonOnLowHealth,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/SiphonOnLowHealth"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2694,7 +2694,7 @@ localScale = new Vector3(0.0385F, 0.0385F, 0.0385F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.BleedOnHitAndExplode,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/BleedOnHitAndExplode"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2715,7 +2715,7 @@ localScale = new Vector3(0.0385F, 0.0385F, 0.0385F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.MonstersOnShrineUse,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/MonstersOnShrineUse"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2736,7 +2736,7 @@ localScale = new Vector3(0.0246F, 0.0246F, 0.0246F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Items.RandomDamageZone,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<ItemDef>("ItemDefs/RandomDamageZone"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2757,7 +2757,7 @@ localScale = new Vector3(0.0465F, 0.0465F, 0.0465F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Fruit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Fruit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2778,7 +2778,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.AffixRed,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/AffixRed"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2809,7 +2809,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.AffixBlue,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/AffixBlue"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2840,7 +2840,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.AffixWhite,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/AffixWhite"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2861,7 +2861,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.AffixPoison,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/AffixPoison"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2882,7 +2882,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.AffixHaunted,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/AffixHaunted"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2903,7 +2903,7 @@ localScale = new Vector3(0.2118F, 0.2118F, 0.2118F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.CritOnUse,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/CritOnUse"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2924,7 +2924,7 @@ localScale = new Vector3(0.2326F, 0.2326F, 0.2326F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.DroneBackup,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/DroneBackup"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2945,7 +2945,7 @@ localScale = new Vector3(0.2641F, 0.2641F, 0.2641F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Lightning,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Lightning"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2966,7 +2966,7 @@ localScale = new Vector3(0.3413F, 0.3413F, 0.3413F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.BurnNearby,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/BurnNearby"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -2987,7 +2987,7 @@ localScale = new Vector3(0.0307F, 0.0307F, 0.0307F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.CrippleWard,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/CrippleWard"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3008,7 +3008,7 @@ localScale = new Vector3(0.2812F, 0.2812F, 0.2812F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.QuestVolatileBattery,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/QuestVolatileBattery"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3029,7 +3029,7 @@ localScale = new Vector3(0.2188F, 0.2188F, 0.2188F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.GainArmor,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/GainArmor"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3050,7 +3050,7 @@ localScale = new Vector3(0.6279F, 0.6279F, 0.6279F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Recycle,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Recycle"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3071,7 +3071,7 @@ localScale = new Vector3(0.0802F, 0.0802F, 0.0802F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.FireBallDash,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/FireBallDash"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3092,7 +3092,7 @@ localScale = new Vector3(0.1891F, 0.1891F, 0.1891F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Cleanse,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Cleanse"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3113,7 +3113,7 @@ localScale = new Vector3(0.0821F, 0.0821F, 0.0821F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Tonic,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Tonic"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3134,7 +3134,7 @@ localScale = new Vector3(0.1252F, 0.1252F, 0.1252F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Gateway,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Gateway"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3155,7 +3155,7 @@ localScale = new Vector3(0.0982F, 0.0982F, 0.0982F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Meteor,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Meteor"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3176,7 +3176,7 @@ localScale = new Vector3(1F, 1F, 1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Saw,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Saw"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3197,7 +3197,7 @@ localScale = new Vector3(0.1F, 0.1F, 0.1F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Blackhole,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Blackhole"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3218,7 +3218,7 @@ localScale = new Vector3(0.5F, 0.5F, 0.5F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.Scanner,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/Scanner"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3239,7 +3239,7 @@ localScale = new Vector3(0.0861F, 0.0861F, 0.0861F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.DeathProjectile,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/DeathProjectile"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3260,7 +3260,7 @@ localScale = new Vector3(0.0596F, 0.0596F, 0.0596F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.LifestealOnHit,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/LifestealOnHit"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]
@@ -3281,7 +3281,28 @@ localScale = new Vector3(0.0596F, 0.0596F, 0.0596F),
 
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
-                keyAsset = RoR2Content.Equipment.TeamWarCry,
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/TeamWarCry"),
+                displayRuleGroup = new DisplayRuleGroup
+                {
+                    rules = new ItemDisplayRule[]
+                    {
+                        new ItemDisplayRule
+                        {
+                            ruleType = ItemDisplayRuleType.ParentedPrefab,
+                            followerPrefab = ItemDisplays.LoadDisplay("DisplayTeamWarCry"),
+childName = "dash",
+localPos = new Vector3(0F, 0F, 0.1866F),
+localAngles = new Vector3(0F, 0F, 0F),
+localScale = new Vector3(0.1233F, 0.1233F, 0.1233F),
+                            limbMask = LimbFlags.None
+                        }
+                    }
+                }
+            });
+
+            itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
+            {
+                keyAsset = RoR2.LegacyResourcesAPI.Load<EquipmentDef>("EquipmentDefs/TeamWarCry"),
                 displayRuleGroup = new DisplayRuleGroup
                 {
                     rules = new ItemDisplayRule[]

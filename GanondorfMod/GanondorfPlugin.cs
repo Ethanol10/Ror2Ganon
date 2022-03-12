@@ -77,15 +77,15 @@ namespace GanondorfMod
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
 
-            RoR2.ContentManagement.ContentManager.onContentPacksAssigned += LateSetup;
+            RoR2Application.onLoad += LateSetup;
 
             Hook();
         }
 
-        private void LateSetup(HG.ReadOnlyArray<RoR2.ContentManagement.ReadOnlyContentPack> obj)
+        private void LateSetup()
         {
             // have to set item displays later now because they require direct object references..
-            //Modules.Survivors.Ganondorf.instance.SetItemDisplays();
+            Modules.Survivors.Ganondorf.instance.SetItemDisplays();
         }
 
         private void Hook()

@@ -260,6 +260,11 @@ namespace GanondorfMod.Modules
                 Debug.LogError("mainRendererIndex out of range: not setting mainSkinnedMeshRenderer for " + prefab.name);
                 return;
             }
+            Transform coreTransform = childLocator.FindChild("MainHurtbox").gameObject.transform;
+            Debug.Log(coreTransform);
+            if (coreTransform) {
+                characterModel.coreTransform = coreTransform;
+            }
 
             characterModel.mainSkinnedMeshRenderer = characterModel.baseRendererInfos[mainRendererIndex].renderer.GetComponent<SkinnedMeshRenderer>();
         }
@@ -325,6 +330,7 @@ namespace GanondorfMod.Modules
             mainHurtbox.gameObject.layer = LayerIndex.entityPrecise.intVal;
             mainHurtbox.healthComponent = prefab.GetComponent<HealthComponent>();
             mainHurtbox.isBullseye = true;
+            mainHurtbox.isSniperTarget = true;
             mainHurtbox.damageModifier = HurtBox.DamageModifier.Normal;
             mainHurtbox.hurtBoxGroup = hurtBoxGroup;
             mainHurtbox.indexInGroup = 0;
