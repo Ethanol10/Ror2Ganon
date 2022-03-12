@@ -43,6 +43,10 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Changelog
+- 2.1.3 -> Update the following: 
+    - Tried to smooth out animations in running/walking/falling/dashing etc.
+    - Centered core position, fixing things like Oddly shaped opal being placed at the foot.
+- 2.1.2 -> Fixed Malice Bringer Achievement requiring 51 of every type of specified enemy instead of 50.
 - 2.1.1 -> Removed Item Displays as I try to figure out what's going on with item duplication.
 - 2.1.0 -> Updated for the Survivors of the Void DLC update!
 - 2.0.4 -> Minor Fixes to the following:
