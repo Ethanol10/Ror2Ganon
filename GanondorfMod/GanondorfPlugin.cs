@@ -32,7 +32,7 @@ namespace GanondorfMod
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "2.1.3";
+        public const string MODVERSION = "3.0.0";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
@@ -200,6 +200,5 @@ namespace GanondorfMod
                 Util.PlaySound("Spawning", self.gameObject);
             }
         }
-        
     }
 }

@@ -41,7 +41,10 @@ namespace GanondorfMod.Modules.Achievements
                 }
 
                 if (ganonCon.maxGrabbedVal >= 15) {
-                    base.Grant();
+                    if (base.meetsBodyRequirement)
+                    {
+                        base.Grant();
+                    }
                 }
             }
         }

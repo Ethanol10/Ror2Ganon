@@ -37,7 +37,10 @@ namespace GanondorfMod.Modules.Achievements
             if (self && self.teamIndex == TeamIndex.Player && self.inventory) {
                 int count = InventoryCheck(self.inventory);
                 if (count >= 8) {
-                    base.Grant();
+                    if (base.meetsBodyRequirement)
+                    {
+                        base.Grant();
+                    }
                 }
             }
         }

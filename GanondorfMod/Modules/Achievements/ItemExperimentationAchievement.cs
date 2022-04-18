@@ -36,7 +36,11 @@ namespace GanondorfMod.Modules.Achievements
 
             if (self && self.teamIndex == TeamIndex.Player && self.inventory) {
                 if (InventoryCheck(self.inventory)) {
-                    base.Grant();
+
+                    if (base.meetsBodyRequirement)
+                    {
+                        base.Grant();
+                    }
                 }
             }
         }

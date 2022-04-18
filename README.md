@@ -42,8 +42,18 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
+## Support me on Ko-fi! 
+There's no need for payment for mods, but a coffee would be nice once in awhile!
+
+<a href="https://ko-fi.com/ethanol10" target="_blank">
+  <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
+</a>
+
 ## Changelog
-- 2.1.3 -> Update the following: 
+- 2.1.5 -> Fixed the buff icon when attaining super armour from being white.
+- 2.1.4 -> Updates to the following:
+    - Added back in Item Displays, hopefully they don't give you two of the same item.
+- 2.1.3 -> Updates to the following: 
     - Tried to smooth out animations in running/walking/falling/dashing etc.
     - Centered core position, fixing things like Oddly shaped opal being placed at the foot.
 - 2.1.2 -> Fixed Malice Bringer Achievement requiring 51 of every type of specified enemy instead of 50.

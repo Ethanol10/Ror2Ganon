@@ -41,7 +41,10 @@ namespace GanondorfMod.Modules.Achievements
                 }
 
                 if (ganonCon.maxDamage >= 7500) {
-                    base.Grant();
+                    if (base.meetsBodyRequirement)
+                    {
+                        base.Grant();
+                    }
                 }
             }
         }

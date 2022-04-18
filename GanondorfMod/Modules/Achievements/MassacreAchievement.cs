@@ -87,7 +87,10 @@ namespace GanondorfMod.Modules.Achievements
                     checkCap();
                     int total = lemCount + beetleCount + wispCount + impCount + jellyfishCount + mushroomCount;
                     if (total == maxAmount * 5) {
-                        base.Grant();
+                        if (base.meetsBodyRequirement)
+                        {
+                            base.Grant();
+                        }
                     }
                 }
             }
