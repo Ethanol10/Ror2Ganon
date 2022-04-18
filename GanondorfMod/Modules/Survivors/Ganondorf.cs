@@ -698,6 +698,34 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(brawlSkin);
             #endregion
 
+            #region OOTGanon
+            Material ootSkinMat = Modules.Assets.CreateMaterial("ootGanonTex", 0f, Color.white, 1.0f);
+            CharacterModel.RendererInfo[] ootSkinRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            {
+                ootSkinMat,
+                ootSkinMat,
+                ootSkinMat,
+                ootSkinMat
+            });
+
+            SkinDef ootSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
+                brawlSkinRendererInfos,
+                mainRenderer,
+                model);
+
+            ootSkin.meshReplacements = new SkinDef.MeshReplacement[]
+            {
+                new SkinDef.MeshReplacement
+                {
+                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("OOTGanonMesh"),
+                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                }
+            };
+
+            skins.Add(ootSkin);
+            #endregion
+
             skinController.skins = skins.ToArray();
 
             
