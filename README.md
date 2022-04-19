@@ -9,7 +9,6 @@ Standalone Ancient Scepter Compatible.
 ## It is HIGHLY recommended to use Scrollable UI to easily select the skin you want
 
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
-Literally just cobbled this thing in 3 hours for the SOTV update, spam me if something goes wrong lol.
 
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
 <br><b>Now with (a little) fancier effects...</b>
@@ -50,6 +49,8 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 </a>
 
 ## Changelog
+- 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I GOT WOOOOOOOO.
+    - 
 - 2.1.5 -> Fixed the buff icon when attaining super armour from being white.
 - 2.1.4 -> Updates to the following:
     - Added back in Item Displays, hopefully they don't give you two of the same item.
