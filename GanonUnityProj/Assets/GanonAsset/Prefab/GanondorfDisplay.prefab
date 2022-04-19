@@ -798,6 +798,100 @@ Transform:
   m_Father: {fileID: 3729145780245280385}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1353905758679117153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 743853164400232030}
+  - component: {fileID: 3791064318543030642}
+  - component: {fileID: 8430640925212197639}
+  - component: {fileID: 6408342112805765796}
+  m_Layer: 0
+  m_Name: SwordMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &743853164400232030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353905758679117153}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_Children: []
+  m_Father: {fileID: 2353781911942491566}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3791064318543030642
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353905758679117153}
+  m_Mesh: {fileID: 4300000, guid: 30a892957eb0bca428e5f2b8adca4a53, type: 2}
+--- !u!23 &8430640925212197639
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353905758679117153}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f8b41dfc9706e4f4dbc0952141ce81a5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &6408342112805765796
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353905758679117153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 30a892957eb0bca428e5f2b8adca4a53, type: 2}
 --- !u!1 &1495553250176850925
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,7 +951,7 @@ Transform:
   m_Children:
   - {fileID: 9057924661439585496}
   m_Father: {fileID: 3729145780245280385}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632471413588621004
 GameObject:
@@ -1217,6 +1311,38 @@ Transform:
   m_Father: {fileID: 2361470550355087276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.093133174, y: 0.56987303, z: -7.0718703}
+--- !u!1 &1870667590008775171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2353781911942491566}
+  m_Layer: 0
+  m_Name: SwordMeshContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2353781911942491566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870667590008775171}
+  m_LocalRotation: {x: 0.000000051658013, y: 0.000000059604638, z: -0.0000000149011585,
+    w: 1}
+  m_LocalPosition: {x: -0.08836376, y: 1.5688357, z: 0.16537279}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 743853164400232030}
+  m_Father: {fileID: 3729145780245280385}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064286369096654005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1744,7 @@ Transform:
   - {fileID: 4127873159929010621}
   - {fileID: 1152100234646655182}
   - {fileID: 6084677442637419372}
+  - {fileID: 3398322490633600395}
   m_Father: {fileID: 5905451187389354858}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.58697844, y: 4.524173, z: -5.5576797}
@@ -3865,6 +3992,36 @@ MonoBehaviour:
   m_Height: 0
   m_Direction: 0
   m_Bound: 0
+--- !u!1 &6892007949694019596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3398322490633600395}
+  m_Layer: 17
+  m_Name: SwordBustLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3398322490633600395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892007949694019596}
+  m_LocalRotation: {x: 0.0965536, y: -0.08176881, z: 0.7380948, w: -0.6627272}
+  m_LocalPosition: {x: -0.0299, y: -0.0304, z: 0.0085}
+  m_LocalScale: {x: 0.10000001, y: 0.09999998, z: 0.09999998}
+  m_Children: []
+  m_Father: {fileID: 3790880732556220752}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -179.583, y: 194.532, z: 83.787994}
 --- !u!1 &7014951879345541331
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,6 +4209,7 @@ Transform:
   m_Children:
   - {fileID: 6072499931235176473}
   - {fileID: 3731988157739882985}
+  - {fileID: 4772976374834284137}
   m_Father: {fileID: 1827275094917456395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 69.171394, y: -27.257824, z: -57.77412}
@@ -4149,6 +4307,36 @@ Transform:
   m_Father: {fileID: 8798500739507822688}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -6.2203183, y: -1.4024364, z: -1.0946307}
+--- !u!1 &7487145078217225863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4772976374834284137}
+  m_Layer: 0
+  m_Name: SwordHandLLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4772976374834284137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487145078217225863}
+  m_LocalRotation: {x: -0.42901832, y: -0.4945913, z: 0.5104479, w: 0.5574636}
+  m_LocalPosition: {x: -0.0147, y: 0.0045, z: -0.0096}
+  m_LocalScale: {x: 0.1, y: 0.09999997, z: 0.09999995}
+  m_Children: []
+  m_Father: {fileID: 1361720174150430961}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -181.524, y: 98.203995, z: -96.362}
 --- !u!1 &7566601040665854444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4958,6 +5146,7 @@ Transform:
   - {fileID: 5814276310670133430}
   - {fileID: 2014401213140531210}
   - {fileID: 6740943613213626943}
+  - {fileID: 2353781911942491566}
   - {fileID: 7581623031735200149}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5064,6 +5253,12 @@ MonoBehaviour:
     transform: {fileID: 2014401213140531210}
   - name: FlameChokeHitbox
     transform: {fileID: 7581623031735200149}
+  - name: SwordHandLLoc
+    transform: {fileID: 4772976374834284137}
+  - name: SwordBustLoc
+    transform: {fileID: 3398322490633600395}
+  - name: SwordMesh
+    transform: {fileID: 2353781911942491566}
 --- !u!114 &8654310524748539818
 MonoBehaviour:
   m_ObjectHideFlags: 0
