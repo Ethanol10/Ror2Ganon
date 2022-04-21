@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using AncientScepter;
 using EntityStates;
+using ThinkInvisible.ClassicItems;
 
 namespace GanondorfMod.Modules.Survivors
 {
@@ -160,6 +160,31 @@ namespace GanondorfMod.Modules.Survivors
             });
             Modules.Skills.AddPrimarySkill(bodyPrefab, punchSkillDef);
 
+            SkillDef swordSwingSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("punchIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.SwordSlashCombo)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.Any,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = false,
+                cancelSprintingOnActivation = false, // Although false, it is cancelling sprint in the OnEnter() method!
+                rechargeStock = 1,
+                requiredStock = 0,
+                stockToConsume = 0,
+                //keywordTokens = new string[] { "KEYWORD_STUNNING" }
+            });
+            Modules.Skills.AddPrimarySkill(bodyPrefab, swordSwingSkillDef);
             #endregion
 
             #region Secondary/Utility Section
@@ -404,7 +429,7 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
-            AncientScepterItem.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
+            Scepter.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
 
             SkillDef InfernoGuillotineScepter = Skills.CreateSkillDef(new SkillDefInfo {
                 skillName = prefix + "SCEPTER_SPECIAL_KICK_NAME",
@@ -428,7 +453,7 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1
             });
-            AncientScepterItem.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
+            Scepter.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
         }
 
         #endregion
@@ -710,7 +735,7 @@ namespace GanondorfMod.Modules.Survivors
 
             SkinDef ootSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
                 Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
-                brawlSkinRendererInfos,
+                ootSkinRendererInfos,
                 mainRenderer,
                 model);
 

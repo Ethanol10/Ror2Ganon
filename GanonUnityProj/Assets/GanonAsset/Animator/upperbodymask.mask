@@ -40,7 +40,7 @@ AvatarMask:
   - m_Path: model-armature/Trans/Rot/Hip/LegR/KneeR/FootR/ToeR
     m_Weight: 0
   - m_Path: model-armature/Trans/Rot/Hip/Waist
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust
     m_Weight: 1
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL

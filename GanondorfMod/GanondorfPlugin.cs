@@ -18,7 +18,7 @@ using UnityEngine;
 namespace GanondorfMod
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     [R2APISubmoduleDependency(new string[]
@@ -57,9 +57,9 @@ namespace GanondorfMod
             triforceBuff = null;
 
             //Check for ancient scepter plugin
-            if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
+            if (Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems"))
             {
-                scepterInstalled = true;
+                GanondorfPlugin.scepterInstalled = true;
             }
 
             // load assets and read config
@@ -91,6 +91,7 @@ namespace GanondorfMod
         private void Hook()
         {
             On.RoR2.CharacterModel.Awake += CharacterModel_Awake;
+            On.RoR2.CharacterModel.Start += CharacterModel_Start;
 
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
@@ -198,6 +199,32 @@ namespace GanondorfMod
                 EffectManager.SpawnEffect(portalEffect, effectData, false);
                 Util.PlaySound("spawnVoice", self.gameObject);
                 Util.PlaySound("Spawning", self.gameObject);
+            }
+        }
+
+        private void CharacterModel_Start(On.RoR2.CharacterModel.orig_Start orig, CharacterModel self)
+        {
+            orig(self);
+            if (self.gameObject.name.Contains("GanondorfDisplay"))
+            {
+                GanondorfDisplaySwordController displayHandler = self.gameObject.GetComponent<GanondorfDisplaySwordController>();
+                if (!displayHandler) 
+                {
+                    ChildLocator childLoc = self.gameObject.GetComponent<ChildLocator>();
+
+                    if (childLoc) 
+                    {
+                        Transform swordMesh = childLoc.FindChild("SwordMesh");
+                        Transform HandLTrans = childLoc.FindChild("SwordHandLLoc");
+                        Transform bustTrans = childLoc.FindChild("SwordBustLoc");
+
+                        displayHandler = self.gameObject.AddComponent<GanondorfDisplaySwordController>();
+                        displayHandler.handLoc = HandLTrans;
+                        displayHandler.meshLoc = swordMesh;
+                        displayHandler.bustLoc = bustTrans;
+                        displayHandler.targetTrans = bustTrans;
+                    }
+                }
             }
         }
     }

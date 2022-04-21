@@ -2,7 +2,6 @@
 using GanondorfMod.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
-using AncientScepter;
 
 namespace GanondorfMod.Modules
 {
@@ -17,6 +16,7 @@ namespace GanondorfMod.Modules
             entityStates.Add(typeof(FlameChoke));
 
             entityStates.Add(typeof(Punch));
+            entityStates.Add(typeof(SwordSlashCombo));
 
             entityStates.Add(typeof(WizardFoot));
 
