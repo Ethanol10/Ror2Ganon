@@ -14,6 +14,19 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
 <br><b>Now with (a little) fancier effects...</b>
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/920678269035106344/unknown.png">
   
+## What's new:
+- 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I GOT WOOOOOOOO.
+    - Added 4 moves! ALL sword based! Now you **DORIYAA!**
+        - New Primary: Cleave
+        - New Secondary: Reckless Charge  
+        - New Utility: 
+        - New Special: Obliterator
+    - Updated Punch to include a new move! Try look down while punching!
+    - Bug Fixes: 
+        - Warlock Punch's animation should not have his legs clip into the floor any longer, and should move with the rest of the body.
+    - Added another skin!
+    - Added BadassEmote support!
+
 
 ## Skills
 
@@ -48,9 +61,9 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
   <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
 </a>
 
-## Changelog
-- 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I GOT WOOOOOOOO.
-    - 
+# Old Changelog
+<details>
+<summary>Click to expand previous patch notes:</summary>
 - 2.1.5 -> Fixed the buff icon when attaining super armour from being white.
 - 2.1.4 -> Updates to the following:
     - Added back in Item Displays, hopefully they don't give you two of the same item.
@@ -146,6 +159,8 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
     - Changed the Warlock Punch to only have a random chance to deal a high amount of damage 0.5% of the time.
 - 1.0.0 - Initial Release
  
+</details>
+
 ## Future Plans
 - Work on new skills? This is a big Ｈｍｍ because I don't have the animation expertise to match what's already been implemented.
 - Fix some bugs (in Known issues)
