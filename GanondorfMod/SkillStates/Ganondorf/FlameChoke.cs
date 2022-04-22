@@ -122,6 +122,7 @@ namespace GanondorfMod.SkillStates
             //Play Particle effects
             //ganonController.HandLFire.Play();
             ganonController.HandLSpeedLines.Play();
+            ganonController.SwapToFist();
         }
 
         public override void FixedUpdate()

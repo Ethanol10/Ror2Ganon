@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using GanondorfMod.Modules.Survivors;
 using RoR2;
 using RoR2.Audio;
 using System;
@@ -14,17 +15,17 @@ namespace GanondorfMod.SkillStates.BaseStates
         protected string hitboxName = "Sword";
 
         protected DamageType damageType = DamageType.Generic;
-        protected float damageCoefficient = 3.5f;
-        protected float procCoefficient = 1f;
+        protected float damageCoefficient = Modules.StaticValues.swordSwingDamageCoefficient;
+        protected float procCoefficient = Modules.StaticValues.swordSwingprocCoefficient;
         protected float pushForce = 300f;
         protected Vector3 bonusForce = Vector3.zero;
-        protected float baseDuration = 1f;
-        protected float attackStartTime = 0.2f;
+        protected float baseDuration = 1.2f;
+        protected float attackStartTime = 0.3f;
         protected float attackEndTime = 0.4f;
-        protected float baseEarlyExitTime = 0.4f;
-        protected float hitStopDuration = 0.012f;
+        protected float baseEarlyExitTime = 1f;
+        protected float hitStopDuration = 0.05f;
         protected float attackRecoil = 0.75f;
-        protected float hitHopVelocity = 4f;
+        protected float hitHopVelocity = 10f;
         protected bool cancelled = false;
 
         protected string swingSoundString = "";
@@ -45,6 +46,7 @@ namespace GanondorfMod.SkillStates.BaseStates
         protected Animator animator;
         private BaseState.HitStopCachedState hitStopCachedState;
         private Vector3 storedVelocity;
+        private GanondorfController ganonCon;
 
         public override void OnEnter()
         {
@@ -56,6 +58,8 @@ namespace GanondorfMod.SkillStates.BaseStates
             base.StartAimMode(0.5f + this.duration, false);
             base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
+            ganonCon = this.GetComponent<GanondorfController>();
+            ganonCon.SwapToSword();
 
             HitBoxGroup hitBoxGroup = null;
             Transform modelTransform = base.GetModelTransform();
@@ -84,7 +88,7 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         protected virtual void PlayAttackAnimation()
         {
-            base.PlayCrossfade("Sheathe, Override", swingIndex == 0 ? "LeftSlash" : "RightSlash" , "Slash.playbackRate", this.duration, 0.05f);
+            base.PlayCrossfade("Sheathe, Override", swingIndex == 0 ? "LeftSlash" : "RightSlash" , "Slash.playbackRate", this.duration, 0.3f);
         }
 
         public override void OnExit()

@@ -68,6 +68,7 @@ namespace GanondorfMod.SkillStates
             isAttacking = true;
             lightKickFired = false;
             ganonController = base.GetComponent<GanondorfController>();
+            ganonController.SwapToFist();
 
             wasSprinting = base.characterBody.isSprinting;
             base.characterBody.isSprinting = false;

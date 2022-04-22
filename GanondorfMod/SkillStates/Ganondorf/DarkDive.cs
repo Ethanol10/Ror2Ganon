@@ -153,6 +153,7 @@ namespace GanondorfMod.SkillStates
             attack.crit = base.RollCrit();
             
             ganonController.HandRSpeedLines.Play();
+            ganonController.SwapToFist();
         }
 
         public override void FixedUpdate()

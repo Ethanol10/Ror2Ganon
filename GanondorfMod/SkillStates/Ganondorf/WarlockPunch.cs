@@ -64,6 +64,7 @@ namespace GanondorfMod.SkillStates
             ganonController.HandLFire.Play();
             ganonController.PunchCharge.Play();
             ganonController.HandLSpeedLines.Play();
+            ganonController.SwapToFist();
         }
 
         protected override void PlayAttackAnimation()
