@@ -214,7 +214,7 @@ namespace GanondorfMod
 
                     if (childLoc) 
                     {
-                        Transform swordMesh = childLoc.FindChild("SwordMesh");
+                        Transform swordMesh = childLoc.FindChild("SwordMeshContainer");
                         Transform HandLTrans = childLoc.FindChild("SwordHandLLoc");
                         Transform bustTrans = childLoc.FindChild("SwordBustLoc");
 

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3041273598
+CRC: 3687189462
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f0e8777e0be472b9b462c85c0b8105ee
+    Hash: 35c47a471f43089caf3304d6271c580f
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -72,6 +72,7 @@ Assets:
 - Assets/GanonAsset/Animator/SwordAnimations/RunningWithSword.anim
 - Assets/GanonAsset/Texture/ganonTex02.png
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
+- Assets/GanonAsset/Material/WarlockPunchmat 1.mat
 - Assets/GanonAsset/Material/ganonTex01.mat
 - Assets/GanonAsset/icons/skin0.png
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
@@ -102,7 +103,6 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
 - Assets/GanonAsset/Animator/SwordAnimations/LeftSlash.anim
-- Assets/GanonAsset/Material/WarlockPunchmat.mat
 - Assets/GanonAsset/Material/ganonTex07.mat
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
@@ -133,6 +133,7 @@ Assets:
 - Assets/GanonAsset/icons/TriforceIcon.png
 - Assets/GanonAsset/Animator/SwordAnimations/SwordSheathe.anim
 - Assets/GanonAsset/particle/firestuff.png
+- Assets/GanonAsset/Texture/tex1ganonbrawlemission.png
 - Assets/GanonAsset/Animator/SwordAnimations/PointSwordUp.anim
 - Assets/GanonAsset/Material/ganonTex03.mat
 - Assets/GanonAsset/Texture/emissionMap.png

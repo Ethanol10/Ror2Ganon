@@ -826,7 +826,7 @@ Transform:
   m_GameObject: {fileID: 1353905758679117153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children: []
   m_Father: {fileID: 2353781911942491566}
   m_RootOrder: 0
@@ -5257,6 +5257,8 @@ MonoBehaviour:
     transform: {fileID: 4772976374834284137}
   - name: SwordBustLoc
     transform: {fileID: 3398322490633600395}
+  - name: SwordMeshContainer
+    transform: {fileID: 2353781911942491566}
   - name: SwordMesh
     transform: {fileID: 2353781911942491566}
 --- !u!114 &8654310524748539818

@@ -31,7 +31,20 @@ namespace GanondorfMod.Modules.Survivors
 
         public void Start() 
         {
-            SetTransformTarget();
+            uint skillSelected = RoR2.Loadout.RequestInstance().bodyLoadoutManager.GetSkillVariant(RoR2.BodyCatalog.FindBodyIndex("GanondorfBody"), 0);
+            Debug.Log(skillSelected);
+            if (skillSelected == 0)
+            {
+                isInHand = false;
+                anim.SetBool("SwordEquipped", false);
+                startTimer = true;
+            }
+            else if(skillSelected == 1) 
+            {
+                isInHand = true;
+                anim.SetBool("SwordEquipped", true);
+                startTimer = true;
+            }
         }
 
         public void Update()
@@ -47,10 +60,15 @@ namespace GanondorfMod.Modules.Survivors
                 }
             }
 
-            if (meshLoc && targetTrans) 
+            if (meshLoc && targetTrans)
             {
                 meshLoc.rotation = targetTrans.rotation;
                 meshLoc.position = targetTrans.position;
+            }
+
+            if (!anim) 
+            {
+                anim = GetComponent<Animator>();
             }
         }
 
@@ -64,6 +82,11 @@ namespace GanondorfMod.Modules.Survivors
             {
                 targetTrans = bustLoc;
             }
+        }
+
+        public void OnDestroy() 
+        {
+            On.RoR2.Loadout.BodyLoadoutManager.SetSkillVariant -= Loadout_BodyLoadoutManager_SetSkillVariant;
         }
 
         private void Hooks() 
