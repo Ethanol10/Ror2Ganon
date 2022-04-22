@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace GanondorfMod.SkillStates
 {
-    public class SwordSlashCombo : BaseMeleeAttack
+    public class SwordSlashCombo : BaseSwordMelee
     {
         public override void OnEnter()
         {
-            this.hitboxName = "Sword";
+            this.hitboxName = "sword";
 
             this.damageType = DamageType.Generic;
             this.damageCoefficient = Modules.StaticValues.infernoGuillotineCoefficient;

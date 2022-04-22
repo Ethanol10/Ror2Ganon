@@ -32,7 +32,6 @@ namespace GanondorfMod.Modules.Survivors
         public void Start() 
         {
             uint skillSelected = RoR2.Loadout.RequestInstance().bodyLoadoutManager.GetSkillVariant(RoR2.BodyCatalog.FindBodyIndex("GanondorfBody"), 0);
-            Debug.Log(skillSelected);
             if (skillSelected == 0)
             {
                 isInHand = false;

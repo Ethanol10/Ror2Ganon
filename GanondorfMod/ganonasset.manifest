@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3687189462
+CRC: 1096798457
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 35c47a471f43089caf3304d6271c580f
+    Hash: 8a175cbcb230662735938d620585685e
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -72,7 +72,7 @@ Assets:
 - Assets/GanonAsset/Animator/SwordAnimations/RunningWithSword.anim
 - Assets/GanonAsset/Texture/ganonTex02.png
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
-- Assets/GanonAsset/Material/WarlockPunchmat 1.mat
+- Assets/GanonAsset/Material/WarlockPunchmat.mat
 - Assets/GanonAsset/Material/ganonTex01.mat
 - Assets/GanonAsset/icons/skin0.png
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
@@ -101,6 +101,7 @@ Assets:
 - Assets/GanonAsset/Animator/SwordAnimations/RightSlash.anim
 - Assets/GanonAsset/particle/FireHit.prefab
 - Assets/GanonAsset/Animator/Animations/Taunt3.anim
+- Assets/GanonAsset/Prefab/humanoidGanondorf.prefab
 - Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
 - Assets/GanonAsset/Animator/SwordAnimations/LeftSlash.anim
 - Assets/GanonAsset/Material/ganonTex07.mat
@@ -150,6 +151,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/PunchAlternate.anim
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
+- Assets/GanonAsset/Animator/HumanoidGanon.asset
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/icons/warlockPunchBoosted.png
 - Assets/GanonAsset/Animator/Animations/Wait2.anim

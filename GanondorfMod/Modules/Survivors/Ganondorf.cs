@@ -37,7 +37,7 @@ namespace GanondorfMod.Modules.Survivors
             jumpCount = 2,
             maxHealth = 250.0f,
             subtitleNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SUBTITLE",
-            podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
+
             jumpPower = 20.0f,
         };
 
@@ -115,8 +115,8 @@ namespace GanondorfMod.Modules.Survivors
             Transform hitboxTransform3 = childLocator.FindChild("WarlockPunchHitbox");
             Modules.Prefabs.SetupHitbox(model, hitboxTransform3, "warlock");
 
-            Transform hitboxTransform4 = childLocator.FindChild("FlameChokeHitbox");
-            Modules.Prefabs.SetupHitbox(model, hitboxTransform4, "inferno");
+            Transform hitboxTransform4 = childLocator.FindChild("SwordHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform4, "sword");
 
             Transform hitboxTransform5 = childLocator.FindChild("DashAttackHitbox");
             Modules.Prefabs.SetupHitbox(model, hitboxTransform5, "dash");

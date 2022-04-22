@@ -28,6 +28,12 @@ namespace GanondorfMod.Modules.Survivors
         public ParticleSystem KneeRSpeedLines;
         public ParticleSystem InfernoKickFalling;
 
+        //Sword Positioning
+        public Transform meshLoc;
+        public Transform bustLoc;
+        public Transform handLoc;
+        public Transform targetLoc;
+
         public void Awake() {
             characterBody = gameObject.GetComponent<CharacterBody>();
             childLocator = GetComponentInChildren<ChildLocator>();
