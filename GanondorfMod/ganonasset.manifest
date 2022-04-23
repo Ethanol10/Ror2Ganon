@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 881437173
+CRC: 3183483427
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 24727877300666259108c8902790a663
+    Hash: a641653efffd2614e773568e1d122139
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -173,6 +173,7 @@ Assets:
 - Assets/GanonAsset/Mesh/OldSword.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
 - Assets/GanonAsset/particle/first.prefab
+- Assets/GanonAsset/Animator/Animations/DownAir.anim
 - Assets/GanonAsset/Animator/SwordAnimations/MidSwordCharge.anim
 - Assets/GanonAsset/Material/ganontex.mat
 - Assets/GanonAsset/icons/skin2.png

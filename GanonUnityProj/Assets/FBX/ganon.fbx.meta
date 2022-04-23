@@ -178,6 +178,7 @@ ModelImporter:
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A00Wait3.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -185,6 +186,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A00Wait1.nuanmx.001' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -192,6 +194,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'C00Attack11.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -199,6 +202,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'C00AttackDash.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'ClavicleL'
@@ -208,6 +212,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ClavicleR'
       has scale animation that will be discarded.\n\t'FingerR20' is inbetween humanoid
       transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'KneeR'
       has translation animation that will be discarded.\n\nClip 'A02Dash.nuanmx'
       has import animation warnings that might lower retargeting quality:\nNote:
@@ -216,6 +221,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'C05AttackAirN.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'HandL'
@@ -225,6 +231,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'HandR'
       has translation animation that will be discarded.\n\t'FingerR20' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D00SpecialN.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'ClavicleL'
@@ -234,6 +241,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'HandR'
       has translation animation that will be discarded.\n\t'FingerR20' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D01SpecialS.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'HandL'
@@ -242,6 +250,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D01SpecialSStart.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'HandL'
@@ -250,6 +259,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D03SpecialLw.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -257,6 +267,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D03SpecialLwEndAir.nuanmx' has import animation warnings that might lower
       retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
@@ -265,12 +276,14 @@ ModelImporter:
       has rotation animation that will be discarded.\n\t'FingerL40' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A01WalkSlow.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL30'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A04RunFallR.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -278,6 +291,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D01SpecialAirSCatch.nuanmx' has import animation warnings that might lower
       retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
@@ -288,6 +302,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A01WalkBrakeL.nuanmx.001' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -295,6 +310,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A02RunBrakeL.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -302,12 +318,14 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'A03JumpAerialF.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL30'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'J00EntryR.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -315,6 +333,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'J01AppealSR.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -322,6 +341,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'J01AppealHiR.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'HandL'
@@ -330,6 +350,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'J01AppealLwR.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -338,6 +359,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'HandR'
       has translation animation that will be discarded.\n\t'FingerR20' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'C02AttackHi3.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'HandL'
@@ -347,6 +369,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'HandR'
       has translation animation that will be discarded.\n\t'FingerR20' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'D02SpecialHiThrow.nuanmx' has import animation warnings that might lower retargeting
       quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'HandL'
@@ -355,6 +378,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'dashAndSpin' has import animation warnings that might lower retargeting quality:\nNote:
       Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerL20'
@@ -362,6 +386,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LegL'
       has scale animation that will be discarded.\n\t'LegR' has scale animation that
       will be discarded.\n\t'KneeR' has translation animation that will be discarded.\n\nClip
@@ -378,6 +403,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LegL'
       has scale animation that will be discarded.\n\t'LegR' has scale animation that
       will be discarded.\n\nClip 'MidSwordCharge' has import animation warnings that
@@ -390,6 +416,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LegL'
       has scale animation that will be discarded.\n\t'KneeL' has translation animation
       that will be discarded.\n\t'FootL' has translation animation that will be discarded.\n\t'LegR'
@@ -402,6 +429,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR51'
       has translation animation that will be discarded.\n\t'LegL' has scale animation
       that will be discarded.\n\t'LegR' has scale animation that will be discarded.\n\nClip
@@ -411,6 +439,7 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LegL'
       has scale animation that will be discarded.\n\t'KneeL' has translation animation
       that will be discarded.\n\t'FootL' has translation animation that will be discarded.\n\t'LegR'
@@ -425,6 +454,7 @@ ModelImporter:
       and has rotation animation that will be discarded.\n\t'FingerL30' is inbetween
       humanoid transforms and has rotation animation that will be discarded.\n\t'FingerL40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LegL'
       has scale animation that will be discarded.\n\t'LegR' has scale animation that
       will be discarded.\n\nClip 'FallWithSword' has import animation warnings that
@@ -437,6 +467,7 @@ ModelImporter:
       has import animation warnings that might lower retargeting quality:\nNote:
       Activate translation DOF on avatar to improve retargeting quality.\n\t'FingerR20'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR30'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'FingerR40'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LegL'
       has scale animation that will be discarded.\n\t'LegR' has scale animation that
       will be discarded.\n"
@@ -493,415 +524,7 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human:
-    - boneName: Hip
-      humanName: Hips
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: LegL
-      humanName: LeftUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: LegR
-      humanName: RightUpperLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: KneeL
-      humanName: LeftLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: KneeR
-      humanName: RightLowerLeg
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FootL
-      humanName: LeftFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FootR
-      humanName: RightFoot
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Waist
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Neck
-      humanName: Neck
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Head
-      humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ClavicleL
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ClavicleR
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ShoulderL
-      humanName: LeftUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ShoulderR
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ArmL
-      humanName: LeftLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ArmR
-      humanName: RightLowerArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: HandL
-      humanName: LeftHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: HandR
-      humanName: RightHand
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ToeL
-      humanName: LeftToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ToeR
-      humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL51
-      humanName: Left Thumb Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL52
-      humanName: Left Thumb Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL53
-      humanName: Left Thumb Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL11
-      humanName: Left Index Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL12
-      humanName: Left Index Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL13
-      humanName: Left Index Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Bust
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL43
-      humanName: Left Little Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL42
-      humanName: Left Little Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL41
-      humanName: Left Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL33
-      humanName: Left Ring Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL32
-      humanName: Left Ring Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL31
-      humanName: Left Ring Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL23
-      humanName: Left Middle Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL22
-      humanName: Left Middle Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerL21
-      humanName: Left Middle Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR53
-      humanName: Right Thumb Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR52
-      humanName: Right Thumb Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR51
-      humanName: Right Thumb Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR13
-      humanName: Right Index Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR12
-      humanName: Right Index Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR11
-      humanName: Right Index Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR23
-      humanName: Right Middle Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR22
-      humanName: Right Middle Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR21
-      humanName: Right Middle Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR33
-      humanName: Right Ring Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR32
-      humanName: Right Ring Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR31
-      humanName: Right Ring Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR43
-      humanName: Right Little Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR42
-      humanName: Right Little Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: FingerR41
-      humanName: Right Little Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
+    human: []
     skeleton:
     - name: ganon(Clone)
       parentName: 
@@ -1389,7 +1012,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   additionalBone: 0

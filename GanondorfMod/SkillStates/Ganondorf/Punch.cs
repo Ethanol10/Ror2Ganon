@@ -69,6 +69,7 @@ namespace GanondorfMod.SkillStates
             lightKickFired = false;
             ganonController = base.GetComponent<GanondorfController>();
             ganonController.SwapToFist();
+            Chat.AddMessage("lookingdown?: " + CheckLookingDown());
 
             wasSprinting = base.characterBody.isSprinting;
             base.characterBody.isSprinting = false;
@@ -99,13 +100,18 @@ namespace GanondorfMod.SkillStates
                 //Play Particle effect
                 ganonController.ShoulderRLightning.Play();
             }
+            else if (!isGrounded && CheckLookingDown()) 
+            {
+            
+            }
             else if (!isGrounded)
             {
                 //prepare aerial attack here
                 setupLightKickHitbox();
                 kickActive = true;
             }
-            else {
+            else
+            {
                 //Prepare punch.
                 setupPunchHitbox();
                 punchActive = true;
@@ -139,6 +145,15 @@ namespace GanondorfMod.SkillStates
         protected override void PlaySwingEffect()
         {
             base.PlaySwingEffect();
+        }
+
+        private bool CheckLookingDown() 
+        {
+            if (Vector3.Dot(base.GetAimRay().direction, Vector3.down) > 0.866f) 
+            {
+                return true;
+            }
+            return false;
         }
 
         protected override void OnHitEnemyAuthority()
