@@ -38,6 +38,9 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Reference Include="AncientScepter">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\amogus_lovers-StandaloneAncientScepter\AncientScepter.dll</HintPath>
+    </Reference>
     <Reference Include="ClassicItems">
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\ThinkInvis-ClassicItems\ClassicItems.dll</HintPath>
     </Reference>

@@ -34,6 +34,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Regal");
             LanguageAPI.Add(prefix + "OLD_SKIN_NAME", "Wise");
             LanguageAPI.Add(prefix + "BRAWL_SKIN_NAME", "Royal");
+            LanguageAPI.Add(prefix + "BLAST_SKIN_NAME", "Blast from the past");
             LanguageAPI.Add(prefix + "SKIN1_NAME", "Saturated Classic");
             LanguageAPI.Add(prefix + "SKIN2_NAME", "Purple");
             LanguageAPI.Add(prefix + "SKIN3_NAME", "Green");
@@ -50,13 +51,15 @@ namespace GanondorfMod.Modules
             #endregion
 
             #region Primary
-            LanguageAPI.Add(prefix + "PRIMARY_PUNCH_NAME", "Punch");
+            LanguageAPI.Add(prefix + "PRIMARY_PUNCH_NAME", "Melee");
             LanguageAPI.Add(prefix + "PRIMARY_PUNCH_DESCRIPTION", $"On the ground, punch forward for <style=cIsDamage>{100f * StaticValues.punchDamageCoefficient}% damage</style>."
                 + Environment.NewLine 
-                + Helpers.stunningPrefix + $" When sprinting, dash forward, plowing through enemies for <style=cIsDamage>{100f * StaticValues.dashDamageCoefficient}% damage</style>"
+                + Helpers.stunningPrefix + $" When sprinting, dash forward, plowing through enemies for <style=cIsDamage>{100f * StaticValues.dashDamageCoefficient}% damage</style>."
                 + Environment.NewLine
                 + $"When airborne, kick twice for <style=cIsDamage>{100f * StaticValues.lightKickDamageCoefficient}% damage</style>" 
-                + $" and <style=cIsDamage>{100f * StaticValues.heavyKickDamageCoefficient}% damage</style>.");
+                + $" and <style=cIsDamage>{100f * StaticValues.heavyKickDamageCoefficient}% damage</style>."
+                + Environment.NewLine
+                + $"When airborne and while looking downwards, thrust your feet downwards bouncing a short distance upwards for <style=cIsDamage>{100f * StaticValues.downAirDamageCoefficient}% damage</style>.");
             #endregion
 
             #region Secondary

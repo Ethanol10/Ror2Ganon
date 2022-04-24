@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using EntityStates;
 using ThinkInvisible.ClassicItems;
+using AncientScepter;
 
 namespace GanondorfMod.Modules.Survivors
 {
@@ -62,6 +63,9 @@ namespace GanondorfMod.Modules.Survivors
         internal override ItemDisplayRuleSet itemDisplayRuleSet { get; set; }
         internal override List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules { get; set; }
 
+        internal SkillDef warlockPunch;
+        internal SkillDef infernoGuillotine;
+
         //Unlockables.
         internal override UnlockableDef characterUnlockableDef { get; set; }
         private static UnlockableDef masterySkinUnlockableDef;
@@ -80,7 +84,7 @@ namespace GanondorfMod.Modules.Survivors
             GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
 
             //Initialise Scepter if available
-            if (GanondorfPlugin.scepterInstalled)
+            if (GanondorfPlugin.scepterInstalled || GanondorfPlugin.fallbackScepter)
             {
                 CreateScepterSkills();
             }
@@ -123,6 +127,9 @@ namespace GanondorfMod.Modules.Survivors
 
             Transform hitboxTransform6 = childLocator.FindChild("LightKickHitbox");
             Modules.Prefabs.SetupHitbox(model, hitboxTransform6, "lightkick");
+
+            Transform hitboxTransform7 = childLocator.FindChild("DownAirHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform7, "downair");
         }
 
         internal override void InitializeSkills()
@@ -351,7 +358,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region Special
-            SkillDef WarlockPunch = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            warlockPunch = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SPECIAL_PUNCH_NAME",
@@ -375,10 +382,10 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkill(bodyPrefab, WarlockPunch, null);
+            Modules.Skills.AddSpecialSkill(bodyPrefab, warlockPunch, null);
 
             //Inferno Guillotine
-            SkillDef InfernoGuillotine = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            infernoGuillotine = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_INFERNO_KICK_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_INFERNO_KICK_NAME",
@@ -402,7 +409,7 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkill(bodyPrefab, InfernoGuillotine, heavyDamageUnlockableDef);
+            Modules.Skills.AddSpecialSkill(bodyPrefab, infernoGuillotine, heavyDamageUnlockableDef);
             #endregion
         }
 
@@ -434,7 +441,6 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
-            Scepter.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
 
             SkillDef InfernoGuillotineScepter = Skills.CreateSkillDef(new SkillDefInfo {
                 skillName = prefix + "SCEPTER_SPECIAL_KICK_NAME",
@@ -458,7 +464,19 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1
             });
-            Scepter.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
+
+            //if (GanondorfPlugin.scepterInstalled)
+            //{
+            //    AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
+            //    AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
+            //}
+            //else
+            if (GanondorfPlugin.fallbackScepter || GanondorfPlugin.scepterInstalled)
+            {
+                Scepter.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, warlockPunch);
+                Scepter.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, infernoGuillotine);
+            }
+            
         }
 
         #endregion

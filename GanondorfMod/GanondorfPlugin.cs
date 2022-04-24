@@ -2,7 +2,6 @@
 using BepInEx.Bootstrap;
 using GanondorfMod.Modules;
 using GanondorfMod.Modules.Survivors;
-using GanondorfMod.SkillStates;
 using R2API.Utils;
 using RoR2;
 using System.Collections.Generic;
@@ -20,6 +19,7 @@ namespace GanondorfMod
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
@@ -41,6 +41,7 @@ namespace GanondorfMod
         public static GanondorfController ganondorfController;
 
         //Scepter Vars
+        public static bool fallbackScepter = false;
         public static bool scepterInstalled = false;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
@@ -59,9 +60,13 @@ namespace GanondorfMod
             triforceBuff = null;
 
             //Check for ancient scepter plugin
-            if (Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems"))
+            if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
             {
                 GanondorfPlugin.scepterInstalled = true;
+            }
+            if (Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems") && !scepterInstalled)
+            {
+                GanondorfPlugin.fallbackScepter = true;
             }
 
              // load assets and read config

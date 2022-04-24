@@ -10,6 +10,7 @@ namespace GanondorfMod.Modules
         internal const float lightKickDamageCoefficient = 0.9f;
         internal const float heavyKickDamageCoefficient = 2.5f;
         internal const float dashDamageCoefficient = 4.0f;
+        internal const float downAirDamageCoefficient = 2.5f;
 
         internal const float swordSwingDamageCoefficient = 3.5f;
         internal const float swordSwingprocCoefficient = 1.0f;

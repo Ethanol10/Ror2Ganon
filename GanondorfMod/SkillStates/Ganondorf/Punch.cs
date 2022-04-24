@@ -13,6 +13,7 @@ namespace GanondorfMod.SkillStates
         protected bool punchActive;
         protected bool dashActive;
         protected bool kickActive;
+        protected bool downAirActive;
         protected bool isAttacking;
         // LIGHT ATTACK IN THE AIR WHEN DOUBLE KICKING.
         // Second part of kicking will use the default melee hit
@@ -66,10 +67,10 @@ namespace GanondorfMod.SkillStates
             kickActive = false;
             dashActive = false;
             isAttacking = true;
+            downAirActive = false;
             lightKickFired = false;
             ganonController = base.GetComponent<GanondorfController>();
             ganonController.SwapToFist();
-            Chat.AddMessage("lookingdown?: " + CheckLookingDown());
 
             wasSprinting = base.characterBody.isSprinting;
             base.characterBody.isSprinting = false;
@@ -102,7 +103,10 @@ namespace GanondorfMod.SkillStates
             }
             else if (!isGrounded && CheckLookingDown()) 
             {
-            
+                setupDownAirAttack();
+                downAirActive = true;
+
+                ganonController.HandRLightning.Play();
             }
             else if (!isGrounded)
             {
@@ -131,6 +135,10 @@ namespace GanondorfMod.SkillStates
             if (base.isGrounded && wasSprinting)
             {
                 base.PlayAnimation("FullBody, Override", "DashAttack", "punch.playbackRate", this.duration);
+            }
+            else if (downAirActive)
+            {
+                base.PlayAnimation("FullBody, Override", "DownAir", "punch.playbackRate", this.duration);
             }
             else if (!base.isGrounded)
             {
@@ -253,7 +261,7 @@ namespace GanondorfMod.SkillStates
                 this.FireLightKickAttack();
             }
 
-            //Check if Dash or punch should trigger
+            //Check if Dash or punch should trigger... or dair or heavy kick...
             if (this.stopwatch >= (this.attackStartTime / this.attackSpeedStat) && this.stopwatch <= (this.attackEndTime / this.attackSpeedStat))
             {
                 if (kickActive) {
@@ -498,6 +506,55 @@ namespace GanondorfMod.SkillStates
             this.hitStopDuration = 0.1f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 6f;
+
+            this.swingSoundString = "swingSFX";
+            this.hitSoundString = "tauntPunchThunder2";
+            //Replace with particle effects later.
+            //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
+            //this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;
+            this.impactSound = Modules.Assets.punchSFX.index;
+
+            HitBoxGroup hitBoxGroup = null;
+            Transform modelTransform = base.GetModelTransform();
+
+            if (modelTransform)
+            {
+                hitBoxGroup = System.Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(),
+                    (HitBoxGroup element) => element.groupName == this.hitboxName);
+            }
+            this.attack = new OverlapAttack();
+            this.attack.damageType = this.damageType;
+            this.attack.attacker = base.gameObject;
+            this.attack.inflictor = base.gameObject;
+            this.attack.teamIndex = base.GetTeam();
+            this.attack.damage = this.damageCoefficient * this.damageStat;
+            this.attack.procCoefficient = this.procCoefficient;
+            this.attack.hitEffectPrefab = this.hitEffectPrefab;
+            this.attack.forceVector = this.bonusForce;
+            this.attack.pushAwayForce = this.pushForce;
+            this.attack.hitBoxGroup = hitBoxGroup;
+            this.attack.isCrit = base.RollCrit();
+            this.attack.impactSound = this.impactSound;
+
+            this.duration = this.baseDuration / this.attackSpeedStat;
+            this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
+        }
+
+        public void setupDownAirAttack()
+        {
+            this.hitboxName = "downair";
+            this.damageType = DamageType.Stun1s;
+            this.damageCoefficient = Modules.StaticValues.downAirDamageCoefficient;
+            this.procCoefficient = 1f;
+            this.pushForce = 700f;
+            this.bonusForce = Vector3.down;
+            this.baseDuration = 1.2f;
+            this.attackStartTime = 0.3f;
+            this.attackEndTime = 0.5f;
+            this.baseEarlyExitTime = 1.0f;
+            this.hitStopDuration = 0.2f;
+            this.attackRecoil = 0.5f;
+            this.hitHopVelocity = 30f;
 
             this.swingSoundString = "swingSFX";
             this.hitSoundString = "tauntPunchThunder2";
