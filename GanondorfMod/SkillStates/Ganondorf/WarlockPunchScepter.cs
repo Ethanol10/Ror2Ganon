@@ -68,7 +68,7 @@ namespace GanondorfMod.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            base.PlayAnimation("Gesture, Override", "warlockNofoot", "warlockPunch.playbackRate", this.duration);
+            base.PlayCrossfade("Sheathe, Override", "warlockpunch", "warlockPunch.playbackRate", this.duration, 0.2f);
         }
 
         protected override void PlaySwingEffect()

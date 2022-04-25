@@ -11,17 +11,17 @@ namespace GanondorfMod.SkillStates
             this.hitboxName = "sword";
 
             this.damageType = DamageType.Generic;
-            this.damageCoefficient = Modules.StaticValues.infernoGuillotineCoefficient;
+            this.damageCoefficient = Modules.StaticValues.swordSwingDamageCoefficient;
             this.procCoefficient = 1f;
             this.pushForce = 300f;
             this.bonusForce = Vector3.zero;
-            this.baseDuration = 1f;
+            this.baseDuration = 1.3f;
             this.attackStartTime = 0.2f;
             this.attackEndTime = 0.4f;
-            this.baseEarlyExitTime = 0.4f;
-            this.hitStopDuration = 0.012f;
+            this.baseEarlyExitTime = 0.2f;
+            this.hitStopDuration = 0.05f;
             this.attackRecoil = 0.5f;
-            this.hitHopVelocity = 4f;
+            this.hitHopVelocity = 10f / this.attackSpeedStat;
 
             this.swingSoundString = "swingEffect";
             this.hitSoundString = "";

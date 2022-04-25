@@ -19,10 +19,10 @@ namespace GanondorfMod.SkillStates.BaseStates
         protected float procCoefficient = Modules.StaticValues.swordSwingprocCoefficient;
         protected float pushForce = 300f;
         protected Vector3 bonusForce = Vector3.zero;
-        protected float baseDuration = 1.2f;
+        protected float baseDuration = 2f;
         protected float attackStartTime = 0.3f;
         protected float attackEndTime = 0.4f;
-        protected float baseEarlyExitTime = 1f;
+        protected float baseEarlyExitTime = 1.2f;
         protected float hitStopDuration = 0.05f;
         protected float attackRecoil = 0.75f;
         protected float hitHopVelocity = 10f;
@@ -88,7 +88,7 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         protected virtual void PlayAttackAnimation()
         {
-            base.PlayCrossfade("Sheathe, Override", swingIndex == 0 ? "LeftSlash" : "RightSlash" , "Slash.playbackRate", this.duration, 0.3f);
+            base.PlayCrossfade("Sheathe, Override", swingIndex == 0 ? "LeftSlash" : "RightSlash" , "Slash.playbackRate", this.duration, 0.1f);
         }
 
         public override void OnExit()
@@ -157,7 +157,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             if (index == 0) index = 1;
             else index = 0;
 
-            this.outer.SetNextState(new BaseMeleeAttack
+            this.outer.SetNextState(new BaseSwordMelee
             {
                 swingIndex = index
             });
