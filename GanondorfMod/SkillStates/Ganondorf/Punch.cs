@@ -546,7 +546,7 @@ namespace GanondorfMod.SkillStates
             this.damageType = DamageType.Stun1s;
             this.damageCoefficient = Modules.StaticValues.downAirDamageCoefficient;
             this.procCoefficient = 1f;
-            this.pushForce = 700f;
+            this.pushForce = 1500f;
             this.bonusForce = Vector3.down;
             this.baseDuration = 1.2f;
             this.attackStartTime = 0.3f;
@@ -554,7 +554,7 @@ namespace GanondorfMod.SkillStates
             this.baseEarlyExitTime = 1.0f;
             this.hitStopDuration = 0.2f;
             this.attackRecoil = 0.5f;
-            this.hitHopVelocity = 30f;
+            this.hitHopVelocity = 20f;
 
             this.swingSoundString = "swingSFX";
             this.hitSoundString = "tauntPunchThunder2";

@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Achievements
 {
-    internal class EightLunarItemsAchievement : ModdedUnlockable
+    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_ACHIEVEMENT_ID", 
+        GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_REWARD_ID", null, null)]
+    public class EightLunarItemsAchievement : ModdedUnlockable
     {
         public override string AchievementIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_ACHIEVEMENT_ID";
         public override string UnlockableIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_REWARD_ID";

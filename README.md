@@ -16,7 +16,7 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
   
 ## What's new:
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I GOT WOOOOOOOO.
-    - Added 4 moves! ALL sword based! Now you **DORIYAA!**
+    - Added 4 moves! ALL sword based! Now you can **DORIYAA!**
         - New Primary: Cleave
         - New Secondary: Reckless Charge  
         - New Utility: 

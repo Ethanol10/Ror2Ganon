@@ -15,9 +15,9 @@ namespace GanondorfMod.SkillStates
             this.procCoefficient = 1f;
             this.pushForce = 300f;
             this.bonusForce = Vector3.zero;
-            this.baseDuration = 1.3f;
-            this.attackStartTime = 0.2f;
-            this.attackEndTime = 0.4f;
+            this.baseDuration = 1.1f;
+            this.attackStartTime = 0.3f;
+            this.attackEndTime = 0.5f;
             this.baseEarlyExitTime = 0.2f;
             this.hitStopDuration = 0.05f;
             this.attackRecoil = 0.5f;

@@ -76,7 +76,7 @@ namespace GanondorfMod.Modules
         }
 
         public static ILCursor CallDel_<TDelegate>(this ILCursor cursor, TDelegate target, out Int32 index)
-where TDelegate : Delegate
+        where TDelegate : Delegate
         {
             index = cursor.EmitDelegate<TDelegate>(target);
             return cursor;
@@ -85,8 +85,8 @@ where TDelegate : Delegate
             where TDelegate : Delegate => cursor.CallDel_(target, out _);
 
         private static void Init_Il(ILContext il) => new ILCursor(il)
-    .GotoNext(MoveType.AfterLabel, x => x.MatchCallOrCallvirt(typeof(UnlockableCatalog), nameof(UnlockableCatalog.SetUnlockableDefs)))
-    .CallDel_(ArrayHelper.AppendDel(unlockableDefs));
+            .GotoNext(MoveType.AfterLabel, x => x.MatchCallOrCallvirt(typeof(UnlockableCatalog), nameof(UnlockableCatalog.SetUnlockableDefs)))
+            .CallDel_(ArrayHelper.AppendDel(unlockableDefs));
 
         private static void CollectAchievementDefs(ILContext il)
         {
@@ -139,7 +139,7 @@ where TDelegate : Delegate
         Func<string> GetUnlocked { get; }
     }
 
-    internal abstract class ModdedUnlockable : BaseAchievement, IModdedUnlockableDataProvider
+    public abstract class ModdedUnlockable : BaseAchievement, IModdedUnlockableDataProvider
     {
         #region Implementation
         public void Revoke()
