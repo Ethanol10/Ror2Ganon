@@ -470,8 +470,7 @@ namespace GanondorfMod.Modules.Survivors
                 AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
                 AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
             }
-            else
-            if (GanondorfPlugin.fallbackScepter || GanondorfPlugin.scepterInstalled)
+            else if (GanondorfPlugin.fallbackScepter || GanondorfPlugin.scepterInstalled)
             {
                 Scepter.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, warlockPunch);
                 Scepter.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, infernoGuillotine);
