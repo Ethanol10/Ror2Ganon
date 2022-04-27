@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Achievements
 {
-    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_ACHIEVEMENT_ID", 
+    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_ACHIEVEMENT", 
         GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_REWARD_ID", null, null)]
     public class EightLunarItemsAchievement : ModdedUnlockable
     {
@@ -14,7 +14,7 @@ namespace GanondorfMod.Modules.Achievements
         public override string PrerequisiteUnlockableIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_UNLOCKABLE_REWARD_ID";
         public override string UnlockableNameToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_UNLOCKABLE_NAME";
         public override string AchievementDescToken { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_EIGHTLUNAR_ACHIEVEMENT_DESC";
-        public override Sprite Sprite { get; } = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("skin1");
+        public override Sprite Sprite { get; } = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("skin6");
 
         public override Func<string> GetHowToUnlock { get; } = (() => Language.GetStringFormatted("UNLOCK_VIA_ACHIEVEMENT_FORMAT", new object[]
                             {
@@ -35,7 +35,6 @@ namespace GanondorfMod.Modules.Achievements
         private void CheckItem(On.RoR2.CharacterMaster.orig_OnInventoryChanged orig, CharacterMaster self)
         {
             orig(self);
-
             if (self && self.teamIndex == TeamIndex.Player && self.inventory) {
                 int count = InventoryCheck(self.inventory);
                 if (count >= 8) {

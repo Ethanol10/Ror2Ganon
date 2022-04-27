@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Achievements
 {
+    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_ITEMGATHERER_ACHIEVEMENT",
+           GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_ITEMGATHERER_REWARD_ID", null, null)]
     internal class ItemExperiementationAchievement : ModdedUnlockable
     {
         public override string AchievementIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_ITEMGATHERER_ACHIEVEMENT_ID";

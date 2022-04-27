@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Achievements
 {
+    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASTERYUNLOCKABLE_ACHIEVEMENT",
+           GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASTERYUNLOCKABLE_REWARD_ID", null, null)]
     internal class MasteryAchievement : ModdedUnlockable
     {
         public override string AchievementIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_MASTERYUNLOCKABLE_ACHIEVEMENT_ID";

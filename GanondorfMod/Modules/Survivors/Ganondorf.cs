@@ -771,8 +771,8 @@ namespace GanondorfMod.Modules.Survivors
                 Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
                 brawlSkinRendererInfos,
                 mainRenderer,
-                model);
-                //,massacreUnlockableDef);
+                model,
+                massacreUnlockableDef);
 
             brawlSkin.meshReplacements = new SkinDef.MeshReplacement[]
             {

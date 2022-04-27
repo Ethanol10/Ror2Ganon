@@ -28,6 +28,7 @@ namespace GanondorfMod.Modules
             newUnlockableDef.getHowToUnlockString = unlockableInfo.HowToUnlockString;
             newUnlockableDef.getUnlockedString = unlockableInfo.UnlockedString;
             newUnlockableDef.sortScore = unlockableInfo.SortScore;
+            newUnlockableDef.achievementIcon = unlockableInfo.sprite;
 
             return newUnlockableDef;
         }
@@ -57,11 +58,14 @@ namespace GanondorfMod.Modules
                 Name = instance.UnlockableIdentifier,
                 HowToUnlockString = instance.GetHowToUnlock,
                 UnlockedString = instance.GetUnlocked,
-                SortScore = 200
+                SortScore = 200,
+                sprite = instance.Sprite
             });
 
             unlockableDefs.Add(unlockableDef);
+            //Is this really necessary
             achievementDefs.Add(achievementDef);
+            instance.achievementDef = achievementDef;
 
             moddedUnlocks.Add((achievementDef, unlockableDef, instance.UnlockableIdentifier));
 
@@ -123,6 +127,7 @@ namespace GanondorfMod.Modules
             internal Func<string> HowToUnlockString;
             internal Func<string> UnlockedString;
             internal int SortScore;
+            internal Sprite sprite;
         }
     }
 
@@ -141,6 +146,7 @@ namespace GanondorfMod.Modules
 
     public abstract class ModdedUnlockable : BaseAchievement, IModdedUnlockableDataProvider
     {
+
         #region Implementation
         public void Revoke()
         {
