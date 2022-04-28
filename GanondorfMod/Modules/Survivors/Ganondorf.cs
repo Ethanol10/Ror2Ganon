@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using EntityStates;
-using ThinkInvisible.ClassicItems;
 using AncientScepter;
 
 namespace GanondorfMod.Modules.Survivors
@@ -84,10 +83,7 @@ namespace GanondorfMod.Modules.Survivors
             GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
 
             //Initialise Scepter if available
-            if (GanondorfPlugin.scepterInstalled || GanondorfPlugin.fallbackScepter)
-            {
-                CreateScepterSkills();
-            }
+            CreateScepterSkills();
         }
 
         internal override void InitializeUnlockables()
@@ -130,6 +126,9 @@ namespace GanondorfMod.Modules.Survivors
 
             Transform hitboxTransform7 = childLocator.FindChild("DownAirHitbox");
             Modules.Prefabs.SetupHitbox(model, hitboxTransform7, "downair");
+
+            Transform hitboxTransform8 = childLocator.FindChild("InfernoKickHitbox");
+            Modules.Prefabs.SetupHitbox(model, hitboxTransform8, "inferno");
         }
 
         internal override void InitializeSkills()
@@ -469,13 +468,7 @@ namespace GanondorfMod.Modules.Survivors
             {
                 AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
                 AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
-            }
-            else if (GanondorfPlugin.fallbackScepter || GanondorfPlugin.scepterInstalled)
-            {
-                Scepter.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, warlockPunch);
-                Scepter.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, infernoGuillotine);
-            }
-            
+            }            
         }
 
         #endregion

@@ -88,7 +88,7 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         protected virtual void PlayAttackAnimation()
         {
-            base.PlayCrossfade("Sheathe, Override", swingIndex == 0 ? "LeftSlash" : "RightSlash" , "Slash.playbackRate", this.duration, 0.1f);
+            base.PlayCrossfade("Sheathe, Override", swingIndex == 0 ? "LeftSlash" : "RightSlash" , "Slash.playbackRate", this.duration, 0.1f/attackSpeedStat);
         }
 
         public override void OnExit()
