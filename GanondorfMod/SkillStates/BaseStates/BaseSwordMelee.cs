@@ -59,6 +59,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             base.characterBody.outOfCombatStopwatch = 0f;
             this.animator.SetBool("attacking", true);
             ganonCon = this.GetComponent<GanondorfController>();
+            this.animator.SetFloat("Slash.playbackRate", attackSpeedStat);
             ganonCon.SwapToSword();
 
             HitBoxGroup hitBoxGroup = null;
@@ -94,6 +95,7 @@ namespace GanondorfMod.SkillStates.BaseStates
         public override void OnExit()
         {
             if (!this.hasFired && !this.cancelled) this.FireAttack();
+            base.PlayCrossfade("Sheathe, Override", "Empty", "Slash.playbackRate", this.duration, 0.1f);
 
             base.OnExit();
 
@@ -183,10 +185,10 @@ namespace GanondorfMod.SkillStates.BaseStates
             else
             {
                 if (base.characterMotor) base.characterMotor.velocity = Vector3.zero;
-                if (this.animator) this.animator.SetFloat("Swing.playbackRate", 0f);
+                if (this.animator) this.animator.SetFloat("Slash.playbackRate", 0f);
             }
 
-            if (this.stopwatch >= (this.duration * this.attackStartTime) && this.stopwatch <= (this.duration * this.attackEndTime))
+            if (this.stopwatch >= (this.attackStartTime/attackSpeedStat) && this.stopwatch <= (this.attackEndTime/attackSpeedStat))
             {
                 this.FireAttack();
             }
