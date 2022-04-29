@@ -18,8 +18,9 @@ using EmotesAPI;
 namespace GanondorfMod
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     [R2APISubmoduleDependency(new string[]
@@ -62,6 +63,10 @@ namespace GanondorfMod
             if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
             {
                 GanondorfPlugin.scepterInstalled = true;
+            }
+            else if (Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems")) 
+            {
+                GanondorfPlugin.fallbackScepter = true;
             }
 
              // load assets and read config

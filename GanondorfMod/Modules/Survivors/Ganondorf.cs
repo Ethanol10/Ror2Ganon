@@ -62,8 +62,8 @@ namespace GanondorfMod.Modules.Survivors
         internal override ItemDisplayRuleSet itemDisplayRuleSet { get; set; }
         internal override List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules { get; set; }
 
-        internal SkillDef warlockPunch;
-        internal SkillDef infernoGuillotine;
+        internal static SkillDef warlockPunch;
+        internal static SkillDef infernoGuillotine;
 
         //Unlockables.
         internal override UnlockableDef characterUnlockableDef { get; set; }
@@ -464,11 +464,27 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
+
             if (GanondorfPlugin.scepterInstalled)
             {
-                AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(warlockPunchScepter, instance.fullBodyName, SkillSlot.Special, 0);
-                AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(InfernoGuillotineScepter, instance.fullBodyName, SkillSlot.Special, 1);
-            }            
+                RegisterAncientScepterStandalone(warlockPunchScepter, InfernoGuillotineScepter, null);
+            }
+            else if (GanondorfPlugin.fallbackScepter)
+            {
+                RegisterTILERScepter(warlockPunchScepter, InfernoGuillotineScepter, null);
+            }         
+        }
+
+        private static void RegisterAncientScepterStandalone(SkillDef skill1, SkillDef skill2, SkillDef skill3)
+        {
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill1, instance.fullBodyName, SkillSlot.Special, 0);
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill2, instance.fullBodyName, SkillSlot.Special, 1);
+        }
+
+        private static void RegisterTILERScepter(SkillDef skill1, SkillDef skill2, SkillDef skill3)
+        {
+            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill1, instance.fullBodyName, SkillSlot.Special, warlockPunch);
+            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill2, instance.fullBodyName, SkillSlot.Special, infernoGuillotine);
         }
 
         #endregion

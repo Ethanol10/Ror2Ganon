@@ -10,6 +10,23 @@ namespace GanondorfMod.SkillStates.Ganondorf
         public override void OnEnter()
         {
             base.OnEnter();
+            base.characterBody.jumpPower = 0f;
+
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+        }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Death;
         }
     }
 }
