@@ -21,6 +21,14 @@ namespace GanondorfMod.Modules
         internal const int flameChokeBlastCountBase = 2;
         internal const float flameChokeBlastInterval = 0.15f;
 
+        //Reckless Charge
+        internal const float recklessChargeDamageCoefficient = 1.5f;
+        internal const float recklessChargeProcCoefficient = 0.5f;
+        internal const float recklessChargeInitialChargeSpeed = 3.5f;
+        internal const float recklessChargeFinalChargeSpeedMultiplier = 3f;
+        internal const float recklessChargeTimeToFullSpeed = 20f;
+
+        //Wizards foot
         internal const float wizardFootDamageCoefficient = 3.0f;
         internal const float wizardFootAltDamageCoefficient = 7.0f;
 
