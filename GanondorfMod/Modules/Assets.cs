@@ -94,7 +94,7 @@ namespace GanondorfMod.Modules
                 };
             }
 
-            //swordSwingEffect = LoadEffect("HenrySwordSwingEffect", true);
+            swordSwingEffect = LoadEffect("HenrySwordSwingEffect", true);
             //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 

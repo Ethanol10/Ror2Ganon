@@ -38,8 +38,8 @@ namespace GanondorfMod.SkillStates.Ganondorf
             initialChargeTimer = baseInitialChargeTimer / base.attackSpeedStat;
             stateTimer = 0f;
             hasPlayedAnim = false;
-            maxSpeed = base.moveSpeedStat * Modules.StaticValues.recklessChargeFinalChargeSpeedMultiplier; 
-
+            maxSpeed = base.moveSpeedStat * Modules.StaticValues.recklessChargeFinalChargeSpeedMultiplier;
+            this.GetModelAnimator().SetFloat("Slash.playbackRate", attackSpeedStat);
 
             ganoncon.SwapToSword();
         }
