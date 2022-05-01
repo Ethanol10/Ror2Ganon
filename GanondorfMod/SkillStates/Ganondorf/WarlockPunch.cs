@@ -18,6 +18,7 @@ namespace GanondorfMod.SkillStates
         private GanondorfController ganonController;
         private bool halfBoosted;
         private bool fullBoosted;
+        private ShakeEmitter shakeEmitter;
 
         //If character is grounded, just use default and call basemeleeattack.
         public override void OnEnter()
@@ -116,6 +117,14 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.OnClientBuffsChanged();
             //}
 
+            Wave wave = new Wave
+            {
+                amplitude = 2f,
+                frequency = 180f,
+                cycleOffset = 0f
+            };
+
+            RoR2.ShakeEmitter.CreateSimpleShakeEmitter(GetAimRay().origin, wave, 0.5f, 20f, true);
         }
 
         //check based on what attack has been selected at the beginning!
@@ -189,6 +198,7 @@ namespace GanondorfMod.SkillStates
                     scale = 1f,
                     rotation = Quaternion.LookRotation(new Vector3(base.GetAimRay().direction.x, 0, base.GetAimRay().direction.z))
                 }, false);
+
             }
 
             if (base.isAuthority)

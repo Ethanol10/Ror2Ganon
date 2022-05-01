@@ -19,6 +19,8 @@ namespace GanondorfMod.Modules
         // particle effects
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
+        internal static GameObject meleeHitImpactLightning;
+        internal static GameObject meleeHitImpact;
 
         internal static GameObject warlockPunchEffect;
 
@@ -94,7 +96,9 @@ namespace GanondorfMod.Modules
                 };
             }
 
-            swordSwingEffect = LoadEffect("HenrySwordSwingEffect", true);
+            meleeHitImpact = LoadEffect("ImpactRaw", true);
+            meleeHitImpactLightning = LoadEffect("ImpactLightning", true);
+            swordSwingEffect = LoadEffect("GanonSwordSwingEffect", true);
             //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 

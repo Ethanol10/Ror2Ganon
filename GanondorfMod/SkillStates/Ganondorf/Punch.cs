@@ -391,7 +391,7 @@ namespace GanondorfMod.SkillStates
             this.attack.teamIndex = base.GetTeam();
             this.attack.damage = dmgCoeff * this.damageStat;
             this.attack.procCoefficient = procCoeff;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
+            this.attack.hitEffectPrefab = Modules.Assets.meleeHitImpactLightning;
             this.attack.forceVector = this.bonusForce;
             this.attack.pushAwayForce = pushFrce;
             this.attack.hitBoxGroup = hitBoxGroup;
@@ -471,7 +471,7 @@ namespace GanondorfMod.SkillStates
             this.hitSoundString = "lightHitSFX";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
-            //this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;
+            this.hitEffectPrefab = Modules.Assets.meleeHitImpact;
             this.impactSound = Modules.Assets.punchSFX.index;
 
             this.attack = new OverlapAttack();
@@ -529,7 +529,7 @@ namespace GanondorfMod.SkillStates
             this.attack.teamIndex = base.GetTeam();
             this.attack.damage = this.damageCoefficient * this.damageStat;
             this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
+            this.attack.hitEffectPrefab = Modules.Assets.meleeHitImpactLightning;
             this.attack.forceVector = this.bonusForce;
             this.attack.pushAwayForce = this.pushForce;
             this.attack.hitBoxGroup = hitBoxGroup;
@@ -578,7 +578,7 @@ namespace GanondorfMod.SkillStates
             this.attack.teamIndex = base.GetTeam();
             this.attack.damage = this.damageCoefficient * this.damageStat;
             this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
+            this.attack.hitEffectPrefab = Modules.Assets.meleeHitImpactLightning;
             this.attack.forceVector = this.bonusForce;
             this.attack.pushAwayForce = this.pushForce;
             this.attack.hitBoxGroup = hitBoxGroup;

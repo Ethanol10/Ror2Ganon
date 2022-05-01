@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2729403839
+CRC: 3180497615
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1dfd544beaa4ef0155f657c229d86c10
+    Hash: f8333bd63783aa05eb55b49e413e3266
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -93,6 +93,7 @@ Assets:
 - Assets/GanonAsset/Texture/OOTCombinedTex.png
 - Assets/GanonAsset/icons/skin3.png
 - Assets/GanonAsset/Animator/Animations/Running.anim
+- Assets/GanonAsset/Mesh/meshSwing.asset
 - Assets/GanonAsset/particle/GanondorfFlameEffect.prefab
 - Assets/GanonAsset/Animator/SwordAnimations/WalkingWithSword.anim
 - Assets/GanonAsset/Animator/Animations/Dash.anim
@@ -141,6 +142,7 @@ Assets:
 - Assets/GanonAsset/Mesh/Torus.mesh
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
+- Assets/GanonAsset/particle/ImpactLightning.prefab
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
 - Assets/GanonAsset/Mesh/spikeEffect.mesh
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
@@ -157,6 +159,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
 - Assets/GanonAsset/icons/skin1.png
 - Assets/GanonAsset/icons/wizardFootIconUtility.png
+- Assets/GanonAsset/particle/ImpactRaw.prefab
 - Assets/GanonAsset/Animator/Animations/Landing.anim
 - Assets/GanonAsset/icons/darkDiveIconSecondary.png
 - Assets/GanonAsset/particle/Shaders/Panner.shader
@@ -190,6 +193,7 @@ Assets:
 - Assets/GanonAsset/Material/ootGanonTex.mat
 - Assets/GanonAsset/Animator/Animations/Falling.anim
 - Assets/GanonAsset/Animator/Animations/Wait1.anim
+- Assets/GanonAsset/particle/GanonSwordSwingEffect.prefab
 - Assets/GanonAsset/icons/achievementMultiSkinIcon.png
 - Assets/GanonAsset/Animator/Animations/SecondJump.anim
 - Assets/GanonAsset/Animator/GanonLobby.controller
