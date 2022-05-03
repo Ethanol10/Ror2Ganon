@@ -5689,6 +5689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7748423391655334574}
+  - component: {fileID: 8081723939426378921}
   m_Layer: 0
   m_Name: S_MantleL1
   m_TagString: Untagged
@@ -5711,6 +5712,75 @@ Transform:
   m_Father: {fileID: 5827960258866273072}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -0.82401574, y: -13.247758, z: 174.68123}
+--- !u!114 &8081723939426378921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643019242532498871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Root: {fileID: 7748423391655334574}
+  m_UpdateRate: 60
+  m_UpdateMode: 0
+  m_Damping: 0.236
+  m_DampingDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Elasticity: 0.017
+  m_ElasticityDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Stiffness: 0.161
+  m_StiffnessDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Inert: 0.162
+  m_InertDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Radius: 0
+  m_RadiusDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_EndLength: 0
+  m_EndOffset: {x: 0, y: 0, z: 0}
+  m_Gravity: {x: 0, y: 0, z: 0}
+  m_Force: {x: 0, y: 0, z: 0}
+  m_Colliders:
+  - {fileID: 2706627878247295461}
+  - {fileID: 4247831895468173197}
+  - {fileID: 2258569088608891834}
+  - {fileID: 3362967548503202719}
+  - {fileID: 6829255992589572461}
+  - {fileID: 8687566490740529742}
+  - {fileID: 5128636914574209807}
+  - {fileID: 8909953682492088374}
+  - {fileID: 2274606937565158931}
+  m_Exclusions: []
+  m_FreezeAxis: 0
+  m_DistantDisable: 0
+  m_ReferenceObject: {fileID: 0}
+  m_DistanceToObject: 20
 --- !u!1 &1655009439329311365
 GameObject:
   m_ObjectHideFlags: 0
@@ -6200,6 +6270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6715955346244082653}
+  - component: {fileID: 5385804708376251285}
   m_Layer: 0
   m_Name: S_MantleC1
   m_TagString: Untagged
@@ -6222,6 +6293,75 @@ Transform:
   m_Father: {fileID: 5827960258866273072}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -1.6409562, y: -8.081067, z: 163.57843}
+--- !u!114 &5385804708376251285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424615514796714036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Root: {fileID: 6715955346244082653}
+  m_UpdateRate: 60
+  m_UpdateMode: 0
+  m_Damping: 0.236
+  m_DampingDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Elasticity: 0.017
+  m_ElasticityDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Stiffness: 0.161
+  m_StiffnessDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Inert: 0.162
+  m_InertDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Radius: 0
+  m_RadiusDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_EndLength: 0
+  m_EndOffset: {x: 0, y: 0, z: 0}
+  m_Gravity: {x: 0, y: 0, z: 0}
+  m_Force: {x: 0, y: 0, z: 0}
+  m_Colliders:
+  - {fileID: 2706627878247295461}
+  - {fileID: 4247831895468173197}
+  - {fileID: 2258569088608891834}
+  - {fileID: 3362967548503202719}
+  - {fileID: 6829255992589572461}
+  - {fileID: 8687566490740529742}
+  - {fileID: 5128636914574209807}
+  - {fileID: 8909953682492088374}
+  - {fileID: 2274606937565158931}
+  m_Exclusions: []
+  m_FreezeAxis: 0
+  m_DistantDisable: 0
+  m_ReferenceObject: {fileID: 0}
+  m_DistanceToObject: 20
 --- !u!1 &2467546182954214594
 GameObject:
   m_ObjectHideFlags: 0
@@ -22095,8 +22235,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5223161957534087990}
   m_LocalRotation: {x: -0.013474872, y: -0.032271724, z: 0.09913004, w: 0.99445975}
-  m_LocalPosition: {x: -0.0640559, y: 0.000000004172325, z: -0.0000000038743018}
-  m_LocalScale: {x: 0.9999998, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0640559, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7057798748524583704}
   m_Father: {fileID: 2745280621474793889}
@@ -32297,8 +32437,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5988154680773140690}
   m_LocalRotation: {x: -0.00084787357, y: 0.0010985541, z: -0.63958037, w: 0.768723}
-  m_LocalPosition: {x: -0.046600096, y: -0.000000007152557, z: -0.000000014901161}
-  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_LocalPosition: {x: -0.046600096, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7558567336648005625}
   - {fileID: 8051718844077914796}
@@ -32349,7 +32489,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.046600092, y: -0.0000000020372681, z: -0.000000027939674}
+  m_ConnectedAnchor: {x: -0.0466001, y: -0.000000014784746, z: -0.000000016763805}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -37898,6 +38038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3462114656461508876}
+  - component: {fileID: 4207807595210721151}
   m_Layer: 0
   m_Name: S_MantleR1
   m_TagString: Untagged
@@ -37920,6 +38061,75 @@ Transform:
   m_Father: {fileID: 5827960258866273072}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -1.0916922, y: -0.8598862, z: 169.4085}
+--- !u!114 &4207807595210721151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886521348533157823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Root: {fileID: 3462114656461508876}
+  m_UpdateRate: 60
+  m_UpdateMode: 0
+  m_Damping: 0.236
+  m_DampingDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Elasticity: 0.017
+  m_ElasticityDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Stiffness: 0.161
+  m_StiffnessDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Inert: 0.162
+  m_InertDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Radius: 0
+  m_RadiusDistrib:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_EndLength: 0
+  m_EndOffset: {x: 0, y: 0, z: 0}
+  m_Gravity: {x: 0, y: 0, z: 0}
+  m_Force: {x: 0, y: 0, z: 0}
+  m_Colliders:
+  - {fileID: 2706627878247295461}
+  - {fileID: 4247831895468173197}
+  - {fileID: 2258569088608891834}
+  - {fileID: 3362967548503202719}
+  - {fileID: 6829255992589572461}
+  - {fileID: 8687566490740529742}
+  - {fileID: 5128636914574209807}
+  - {fileID: 8909953682492088374}
+  - {fileID: 2274606937565158931}
+  m_Exclusions: []
+  m_FreezeAxis: 0
+  m_DistantDisable: 0
+  m_ReferenceObject: {fileID: 0}
+  m_DistanceToObject: 20
 --- !u!1 &7949308765080502023
 GameObject:
   m_ObjectHideFlags: 0
