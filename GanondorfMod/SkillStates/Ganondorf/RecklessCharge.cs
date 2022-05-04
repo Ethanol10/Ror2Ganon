@@ -19,9 +19,13 @@ namespace GanondorfMod.SkillStates.Ganondorf
         internal float endChargeTimer;
         internal float stateTimer;
 
+        internal float rampingSpeed;
+        internal float rampingSpeedIncrement;
+
         internal float baseEndHitTimer;
         internal float endHitTimer;
         internal bool isFired;
+        internal float finalTimeHeld;
 
         internal GanondorfController ganoncon;
         public enum ChargeState
@@ -35,6 +39,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
         internal float maxSpeed;
         public float originalJumpPower;
         public ChargeState state;
+        private Ray aimRay;
 
         public override void OnEnter()
         {
@@ -50,25 +55,32 @@ namespace GanondorfMod.SkillStates.Ganondorf
             endChargeTimer = baseEndChargeTimer / base.attackSpeedStat;
             baseEndHitTimer = 0.35f;
             endHitTimer = baseEndHitTimer / base.attackSpeedStat;
+            finalTimeHeld = 0f;
+
+            rampingSpeed = Modules.StaticValues.recklessChargeInitialChargeSpeed;
 
             isFired = false;
             stateTimer = 0f;
             hasPlayedAnim = false;
             maxSpeed = base.moveSpeedStat * Modules.StaticValues.recklessChargeFinalChargeSpeedMultiplier;
-            this.GetModelAnimator().SetFloat("Slash.playbackRate", attackSpeedStat);
 
+            rampingSpeedIncrement = (maxSpeed - rampingSpeed) / Modules.StaticValues.recklessChargeTimeToFullSpeed ;
+            this.GetModelAnimator().SetFloat("Slash.playbackRate", attackSpeedStat);
+            ganoncon = base.GetComponent<GanondorfController>();
             ganoncon.SwapToSword();
         }
 
         public override void OnExit()
         {
             base.OnExit();
+            base.characterBody.jumpPower = originalJumpPower;
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
             stateTimer += Time.fixedDeltaTime;
+            aimRay = base.GetAimRay();
 
             switch (state) 
             {
@@ -79,7 +91,9 @@ namespace GanondorfMod.SkillStates.Ganondorf
                         hasPlayedAnim = true;
                         base.PlayAnimation("FullBody, Override", "StartingSwordCharge", "Slash.playbackRate", initialChargeTimer);
                     }
-                    if(stateTimer > initialChargeTimer) 
+                    base.characterMotor.moveDirection = aimRay.direction.normalized * rampingSpeed;
+                    base.characterDirection.moveVector = aimRay.direction;
+                    if (stateTimer > initialChargeTimer) 
                     {
                         state = ChargeState.CHARGING;
                         base.PlayAnimation("FullBody, Override", "MidSwordCharge", "Slash.playbackRate", midChargeTimer);
@@ -88,15 +102,25 @@ namespace GanondorfMod.SkillStates.Ganondorf
                     }
                     break;
                 case ChargeState.CHARGING:
-                    if (base.isAuthority && base.inputBank.skill3.down)
+                    if (rampingSpeed < maxSpeed) 
                     {
-
+                        rampingSpeed += rampingSpeedIncrement * Time.fixedDeltaTime;
                     }
-                    else if (base.isAuthority && !base.inputBank.skill3.down) 
+
+                    if (base.isAuthority && base.inputBank.skill2.down)
+                    {
+                        //Keep running
+                        base.characterMotor.moveDirection = aimRay.direction.normalized;
+                        base.characterDirection.moveVector = aimRay.direction.normalized;
+                    }
+                    else if (base.isAuthority && !base.inputBank.skill2.down) 
                     {
                         state = ChargeState.END;
                         base.PlayAnimation("FullBody, Override", "ChargeSwordEnd", "Slash.playbackRate", endChargeTimer);
+                        finalTimeHeld = stateTimer;
                         stateTimer = 0f;
+                        base.characterMotor.moveDirection = Vector3.zero;
+                        base.characterDirection.moveVector = aimRay.direction;
                     }
                     break;
                 case ChargeState.END:
@@ -115,6 +139,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
                         blastAttack.baseForce = 1000f;
                         blastAttack.falloffModel = BlastAttack.FalloffModel.None;
                         blastAttack.crit = base.RollCrit();
+                        blastAttack.position = base.transform.position;
                         blastAttack.Fire();
                     }
                     if (stateTimer > endChargeTimer) 

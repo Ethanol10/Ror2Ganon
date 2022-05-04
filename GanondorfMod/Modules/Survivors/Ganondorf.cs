@@ -30,7 +30,7 @@ namespace GanondorfMod.Modules.Survivors
             bodyColor = Color.red,
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
-            damage = 24f,
+            damage = 20f,
             damageGrowth = 2.5f,
             healthGrowth = 15f,
             healthRegen = 1.5f,
@@ -349,10 +349,35 @@ namespace GanondorfMod.Modules.Survivors
                 requiredStock = 1,
                 stockToConsume = 1,
             });
+
+            SkillDef recklessCharge = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("darkDiveIconSecondary"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Ganondorf.RecklessCharge)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 8.0f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = true,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
             Modules.Skills.AddSecondarySkill(bodyPrefab, flameChokeAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, wizardFootAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive, tenGrabUnlockableDef);
             Modules.Skills.AddSecondarySkill(bodyPrefab, darkDiveAlt, tenGrabUnlockableDef);
+            Modules.Skills.AddSecondarySkill(bodyPrefab, recklessCharge, null);
 
             #endregion
 

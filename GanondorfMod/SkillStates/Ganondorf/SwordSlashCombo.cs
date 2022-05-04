@@ -24,7 +24,7 @@ namespace GanondorfMod.SkillStates
             this.hitHopVelocity = 15f / this.attackSpeedStat;
 
             this.swingSoundString = "swingEffect";
-            this.hitSoundString = "";
+            this.hitSoundString = "swordHitSound";
             this.muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
             this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
             this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;

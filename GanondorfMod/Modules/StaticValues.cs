@@ -12,7 +12,7 @@ namespace GanondorfMod.Modules
         internal const float dashDamageCoefficient = 4.0f;
         internal const float downAirDamageCoefficient = 2.5f;
 
-        internal const float swordSwingDamageCoefficient = 3.5f;
+        internal const float swordSwingDamageCoefficient = 2.2f;
         internal const float swordSwingprocCoefficient = 1.0f;
 
         internal const float flameChokeDamageCoefficient = 7.0f;
@@ -25,7 +25,7 @@ namespace GanondorfMod.Modules
         internal const float recklessChargeDamageCoefficient = 1.5f;
         internal const float recklessChargeProcCoefficient = 0.5f;
         internal const float recklessChargeInitialChargeSpeed = 3.5f;
-        internal const float recklessChargeFinalChargeSpeedMultiplier = 3f;
+        internal const float recklessChargeFinalChargeSpeedMultiplier = 2f;
         internal const float recklessChargeTimeToFullSpeed = 20f;
 
         //Wizards foot
@@ -53,7 +53,7 @@ namespace GanondorfMod.Modules
         internal const int maxPowerStack = 100;
         internal const int stackAmountToDecay = 2;
         internal const float triforceMaxArmour = 40f;
-        internal const float triforceMaxDamage = 60f;
+        internal const float triforceMaxDamage = 100f;
         internal const float maxTimeToDecay = 3f;
         internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move

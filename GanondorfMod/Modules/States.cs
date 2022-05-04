@@ -2,6 +2,7 @@
 using GanondorfMod.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
+using GanondorfMod.SkillStates.Ganondorf;
 
 namespace GanondorfMod.Modules
 {
@@ -19,6 +20,7 @@ namespace GanondorfMod.Modules
             entityStates.Add(typeof(SwordSlashCombo));
 
             entityStates.Add(typeof(WizardFoot));
+            entityStates.Add(typeof(RecklessCharge));
 
             entityStates.Add(typeof(DarkDive));
 
