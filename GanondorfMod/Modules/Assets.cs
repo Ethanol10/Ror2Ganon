@@ -22,11 +22,14 @@ namespace GanondorfMod.Modules
         internal static GameObject meleeHitImpactLightning;
         internal static GameObject meleeHitImpact;
 
+        //Sword throw
+        internal static GameObject swordObject;
+
         internal static GameObject warlockPunchEffect;
 
         // networked hit sounds
         internal static NetworkSoundEventDef punchSFX;
-
+        
         // lists of assets to add to contentpack
         internal static List<NetworkSoundEventDef> networkSoundEventDefs = new List<NetworkSoundEventDef>();
         internal static List<EffectDef> effectDefs = new List<EffectDef>();
@@ -99,6 +102,7 @@ namespace GanondorfMod.Modules
             meleeHitImpact = LoadEffect("ImpactRaw", true);
             meleeHitImpactLightning = LoadEffect("ImpactLightning", true);
             swordSwingEffect = LoadEffect("GanonSwordSwingEffect", true);
+            swordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordMesh");
             //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 

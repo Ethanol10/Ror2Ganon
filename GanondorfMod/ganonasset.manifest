@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 395106623
+CRC: 3647443467
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9b4c7aa9641224a9799870be5dd7f38f
+    Hash: 0e42f8535e7b6516f67eecf4aa8f8e6c
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -76,6 +76,7 @@ Assets:
 - Assets/GanonAsset/Material/ganonTex01.mat
 - Assets/GanonAsset/icons/skin0.png
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
+- Assets/GanonAsset/Material/MoteTrail.mat
 - Assets/GanonAsset/Mesh/untitled.fbx
 - Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
@@ -118,6 +119,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
 - Assets/GanonAsset/Mesh/SmashSword.mesh
+- Assets/GanonAsset/Animator/Animations/Throw.anim
 - Assets/GanonAsset/icons/skin6.png
 - Assets/GanonAsset/Animator/SwordAnimations/ChargeSwordEnd.anim
 - Assets/GanonAsset/Material/ganonTex02.mat
@@ -126,11 +128,13 @@ Assets:
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
+- Assets/GanonAsset/Prefab/SwordMesh.prefab
 - Assets/GanonAsset/Animator/SwordAnimations/ForwardSmash.anim
 - Assets/GanonAsset/Texture/ganontex.png
 - Assets/GanonAsset/icons/flameChokeIconUtility.png
 - Assets/GanonAsset/Mesh/OOTGanonMesh.mesh
 - Assets/GanonAsset/Animator/upperbodymask.mask
+- Assets/GanonAsset/particle/outerParticles.prefab
 - Assets/GanonAsset/Material/ganonTex04.mat
 - Assets/GanonAsset/icons/TriforceIcon.png
 - Assets/GanonAsset/Animator/SwordAnimations/SwordSheathe.anim
@@ -163,6 +167,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Landing.anim
 - Assets/GanonAsset/icons/darkDiveIconSecondary.png
 - Assets/GanonAsset/particle/Shaders/Panner.shader
+- Assets/GanonAsset/Animator/Animations/preemptiveThrow.anim
 - Assets/GanonAsset/icons/warlockPunchIcon.png
 - Assets/GanonAsset/Animator/Animations/SpawnIn.anim
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
@@ -183,6 +188,7 @@ Assets:
 - Assets/GanonAsset/icons/wizardFootIconSecondary.png
 - Assets/GanonAsset/Prefab/GanondorfDisplay.prefab
 - Assets/GanonAsset/Animator/Animations/Punch.anim
+- Assets/GanonAsset/Animator/SwordAnimations/dashAndSpin.anim
 - Assets/GanonAsset/Animator/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
 - Assets/GanonAsset/particle/PullShockwaveParticle.prefab

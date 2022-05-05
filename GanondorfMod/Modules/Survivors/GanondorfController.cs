@@ -32,8 +32,11 @@ namespace GanondorfMod.Modules.Survivors
         public Transform meshLoc;
         public Transform bustLoc;
         public Transform handLoc;
+        public Transform handRight;
         public Transform targetLoc;
         public bool isInHand;
+        public bool isBodySwordEnabled;
+        public bool isInRightHand;
         public Animator anim;
         public float stopwatch = 0f;
         public bool startWatch;
@@ -67,6 +70,7 @@ namespace GanondorfMod.Modules.Survivors
                 meshLoc = childLocator.FindChild("SwordMeshContainer");
                 bustLoc = childLocator.FindChild("SwordBustLoc");
                 handLoc = childLocator.FindChild("SwordHandLLoc");
+                handRight = childLocator.FindChild("SwordHandRLoc");
 
                 //Figuring out what skill is equipped to set a default 
                 if (characterBody.skillLocator.primary.skillNameToken == GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_PRIMARY_SWORD_NAME")
@@ -82,6 +86,8 @@ namespace GanondorfMod.Modules.Survivors
                     anim.SetBool("SwordEquipped", false);
                 }
 
+                isBodySwordEnabled = true;
+                isInRightHand = false;
             }
         }
 
@@ -115,10 +121,35 @@ namespace GanondorfMod.Modules.Survivors
             ShoulderRLightning.Stop();
         }
 
+        public void TempDisableSword() 
+        {
+            anim.SetBool("SwordEquipped", false);
+            isBodySwordEnabled = false;
+            characterBody.skillLocator.primary.SetSkillOverride(characterBody.skillLocator.primary, Ganondorf.punchPrimary, GenericSkill.SkillOverridePriority.Loadout);
+            meshLoc.gameObject.SetActive(false);
+        }
+
+        public void ReenableSword() 
+        {
+            anim.SetBool("SwordEquipped", false);
+            isBodySwordEnabled = true;
+            characterBody.skillLocator.primary.UnsetSkillOverride(characterBody.skillLocator.primary, Ganondorf.punchPrimary, GenericSkill.SkillOverridePriority.Loadout);
+            meshLoc.gameObject.SetActive(true);
+        }
+
+        public void SwapToRightHand() 
+        {
+            anim.SetBool("SwordEquipped", false);
+            isInRightHand = true;
+            isInHand = false;
+            targetLoc = handRight;
+        }
+
         public void SwapToSword() 
         {
             anim.SetBool("SwordEquipped", true);
             isInHand = true;
+            isInRightHand = false;
             SetTransformTarget();
         }
 
@@ -126,6 +157,7 @@ namespace GanondorfMod.Modules.Survivors
         {
             anim.SetBool("SwordEquipped", false);
             isInHand = false;
+            isInRightHand = false;
             SetTransformTarget();
         }
 

@@ -64,6 +64,7 @@ namespace GanondorfMod.Modules.Survivors
 
         internal static SkillDef warlockPunch;
         internal static SkillDef infernoGuillotine;
+        internal static SkillDef punchPrimary;
 
         //Unlockables.
         internal override UnlockableDef characterUnlockableDef { get; set; }
@@ -146,7 +147,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion 
 
             #region Primary
-            SkillDef punchSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo {
+            punchPrimary = Modules.Skills.CreateSkillDef(new SkillDefInfo {
                 skillName = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_PRIMARY_PUNCH_DESCRIPTION",
@@ -169,7 +170,7 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 0,
                 keywordTokens = new string[] { "KEYWORD_STUNNING" }
             });
-            Modules.Skills.AddPrimarySkill(bodyPrefab, punchSkillDef);
+            Modules.Skills.AddPrimarySkill(bodyPrefab, punchPrimary);
 
             SkillDef swordSwingSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {

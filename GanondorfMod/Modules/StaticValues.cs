@@ -25,8 +25,16 @@ namespace GanondorfMod.Modules
         internal const float recklessChargeDamageCoefficient = 1.5f;
         internal const float recklessChargeProcCoefficient = 0.5f;
         internal const float recklessChargeInitialChargeSpeed = 3.5f;
-        internal const float recklessChargeFinalChargeSpeedMultiplier = 2f;
-        internal const float recklessChargeTimeToFullSpeed = 20f;
+        internal const float recklessChargeFinalChargeSpeedMultiplier = 2.5f;
+        internal const float recklessChargeTimeToFullSpeed = 15f;
+
+        //Sword throw
+        internal const float swordThrowMaxDistance = 50f;
+        internal const float swordThrowMaxTimeOneWay = 2f;
+        internal const float swordBaseDamageCoefficient = 4.0f;
+        internal const float swordMaximumDamageMultiplier = 10f;
+        internal const float swordTimeToMaxCharge = 20f;
+        internal const float swordThrowBaseDistance = 10f;
 
         //Wizards foot
         internal const float wizardFootDamageCoefficient = 3.0f;
