@@ -153,7 +153,6 @@ namespace GanondorfMod.SkillStates.Ganondorf
             if (travellingBack)
             {
                 dirToFace = charBody.gameObject.transform.position - targetPosition;
-                transform.rotation = Quaternion.LookRotation(dirToFace, Vector3.up);
                 transform.Rotate(Vector3.right * (-1) * Modules.StaticValues.swordThrowRotationSpeed * Time.deltaTime);
             }
             else 

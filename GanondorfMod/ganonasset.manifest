@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1991180947
+CRC: 467682700
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 918f8c7c0886773ec0c3877b4af3fcf8
+    Hash: 2ce457c409302e75b6cd97d2535ec5be
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -129,7 +129,6 @@ Assets:
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
-- Assets/GanonAsset/Prefab/SwordMesh.prefab
 - Assets/GanonAsset/Animator/SwordAnimations/ForwardSmash.anim
 - Assets/GanonAsset/Texture/ganontex.png
 - Assets/GanonAsset/icons/flameChokeIconUtility.png
@@ -150,6 +149,7 @@ Assets:
 - Assets/GanonAsset/particle/ImpactLightning.prefab
 - Assets/GanonAsset/Animator/Animations/JumpSquat.anim
 - Assets/GanonAsset/Mesh/spikeEffect.mesh
+- Assets/GanonAsset/Prefab/SwordContainer.prefab
 - Assets/GanonAsset/Animator/Animations/FastWalk.anim
 - Assets/GanonAsset/Material/ganonTexBrawl.mat
 - Assets/GanonAsset/particle/Shaders/ParticleDissolveAlpha.shader

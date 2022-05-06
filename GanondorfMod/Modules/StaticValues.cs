@@ -35,7 +35,7 @@ namespace GanondorfMod.Modules
         internal const float swordMaximumDamageMultiplier = 10f;
         internal const float swordThrowProcCoefficient = 0.2f;
         internal const float swordTimeToMaxCharge = 30f;
-        internal const float swordThrowBaseDistance = 20;
+        internal const float swordThrowBaseDistance = 30f;
         internal const float swordThrowRotationSpeed = 50f;
         internal const float swordThrowTickFrequency = 0.1f;
         internal const float swordThrowHitRadius = 3f;

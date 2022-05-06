@@ -102,7 +102,7 @@ namespace GanondorfMod.Modules
             meleeHitImpact = LoadEffect("ImpactRaw", true);
             meleeHitImpactLightning = LoadEffect("ImpactLightning", true);
             swordSwingEffect = LoadEffect("GanonSwordSwingEffect", true);
-            swordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordMesh");
+            swordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordContainer");
             //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 
