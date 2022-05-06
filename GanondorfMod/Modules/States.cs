@@ -21,6 +21,7 @@ namespace GanondorfMod.Modules
 
             entityStates.Add(typeof(WizardFoot));
             entityStates.Add(typeof(RecklessCharge));
+            entityStates.Add(typeof(SwordThrow));
 
             entityStates.Add(typeof(DarkDive));
 

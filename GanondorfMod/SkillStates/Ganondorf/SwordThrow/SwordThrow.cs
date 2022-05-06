@@ -53,6 +53,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
         public override void OnExit()
         {
+            base.PlayAnimation("Sheathe, Override", "Empty");
             base.OnExit();
         }
 
@@ -60,35 +61,41 @@ namespace GanondorfMod.SkillStates.Ganondorf
         {
             base.FixedUpdate();
 
-            if (base.inputBank.skill2.down)
+            if (base.isAuthority) 
             {
-                if (damage < maxDamage) 
+                if (base.inputBank.skill3.down)
                 {
-                    damage += damageIncrementor * Time.fixedDeltaTime;
+                    if (damage < maxDamage)
+                    {
+                        damage += damageIncrementor * Time.fixedDeltaTime;
+                    }
+                    if (distance < maxDistance)
+                    {
+                        distance += distanceIncrementor * Time.fixedDeltaTime;
+                    }
                 }
-                if (distance < maxDistance) 
+                else if (!base.inputBank.skill3.down)
                 {
-                    distance += distanceIncrementor * Time.fixedDeltaTime;
-                }
-            }
-            else if (!base.inputBank.skill2.down) 
-            {
-                if (!swordSpawned) 
-                {
-                    swordSpawned = true;
-                    //Throw Sword
-                    GameObject swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
-                    ThrownSwordContainer swordAttributes = swordProjectile.AddComponent<ThrownSwordContainer>();
-                    swordAttributes.distanceToThrow = distance;
-                    swordAttributes.startingPosition = base.transform.position;
-                    swordAttributes.isReal = true;
-                    swordAttributes.charBody = base.characterBody;
-                    ganoncon.TempDisableSword();
-                    base.outer.SetNextStateToMain();
-                    //Later spawn projectile on all machines using a network request.
-                }
-            }
+                    if (!swordSpawned)
+                    {
+                        base.PlayAnimation("Sheathe, Override", "Throw", "Slash.playbackRate", throwTime);
+                        swordSpawned = true;
+                        //Throw Sword
+                        GameObject swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
+                        ThrownSwordContainer swordAttributes = swordProjectile.AddComponent<ThrownSwordContainer>();
+                        swordAttributes.distanceToThrow = distance;
+                        swordAttributes.startingPosition = base.transform.position;
+                        swordAttributes.isReal = true;
+                        swordAttributes.charBody = base.characterBody;
+                        swordAttributes.damageToDeal = damage;
+                        ganoncon.TempDisableSword();
+                        base.outer.SetNextStateToMain();
 
+                        //Later spawn a "projectile" on all machines using a network request.
+                    }
+
+                }
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
