@@ -6138,7 +6138,7 @@ MonoBehaviour:
   - name: SwingRight
     transform: {fileID: 521955190484406105}
   - name: SwordHandRLoc
-    transform: {fileID: 521955190484406105}
+    transform: {fileID: 784523291805340830}
 --- !u!114 &2044830611238823370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11165,7 +11165,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20700,7 +20699,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5387d3c2ba98fc44a0f5744f94ce48c, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21663,13 +21661,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4055586127092119907}
-  m_LocalRotation: {x: -0.066019975, y: 0.7748838, z: 0.20816858, w: -0.5931798}
-  m_LocalPosition: {x: -0.0498, y: 0.0049, z: -0.0102}
-  m_LocalScale: {x: 0.09999999, y: 0.10000002, z: 0.09999998}
+  m_LocalRotation: {x: -0.4957116, y: 0.45128265, z: 0.32439306, w: -0.6673704}
+  m_LocalPosition: {x: -0.0151, y: 0.0039, z: 0.0009}
+  m_LocalScale: {x: 0.09999998, y: 0.10000002, z: 0.09999999}
   m_Children: []
   m_Father: {fileID: 239137397366960680}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -14.14, y: -102.483, z: -21.112001}
+  m_LocalEulerAnglesHint: {x: 21.645, y: -83.748, z: -71.295006}
 --- !u!1 &4365772924963583390
 GameObject:
   m_ObjectHideFlags: 0

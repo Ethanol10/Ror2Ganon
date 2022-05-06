@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2968149746
+CRC: 1991180947
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a4c6eb90519d46e1cc81a2ac4bf55216
+    Hash: 918f8c7c0886773ec0c3877b4af3fcf8
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -78,6 +78,7 @@ Assets:
 - Assets/GanonAsset/icons/TriforceCouragePlus.png
 - Assets/GanonAsset/Material/MoteTrail.mat
 - Assets/GanonAsset/Mesh/untitled.fbx
+- Assets/GanonAsset/Animator/rightArmMask.mask
 - Assets/GanonAsset/Animator/Animations/RunningOffPlatform.anim
 - Assets/GanonAsset/Prefab/mdlGanondorf.prefab
 - Assets/GanonAsset/Texture/ganonprm.png

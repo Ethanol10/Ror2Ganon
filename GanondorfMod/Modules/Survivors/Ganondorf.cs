@@ -65,6 +65,7 @@ namespace GanondorfMod.Modules.Survivors
         internal static SkillDef warlockPunch;
         internal static SkillDef infernoGuillotine;
         internal static SkillDef punchPrimary;
+        internal static SkillDef swordThrow;
 
         //Unlockables.
         internal override UnlockableDef characterUnlockableDef { get; set; }
@@ -375,34 +376,59 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1,
             });
 
-            SkillDef swordThrow = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef swordCharge = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("darkDiveIconSecondary"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Ganondorf.SwordCharge)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 8.0f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+            });
+
+            swordThrow = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_NAME",
                 skillDescriptionToken = prefix + "_GANONDORF_BODY_SECONDARY_SWORD_CHARGE_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("darkDiveIconSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Ganondorf.SwordThrow)),
-                activationStateMachineName = "Body",
+                activationStateMachineName = "Slide",
                 baseMaxStock = 1,
                 baseRechargeInterval = 8.0f,
-                beginSkillCooldownOnSkillEnd = false,
+                beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
-                forceSprintDuringState = true,
+                forceSprintDuringState = false,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = true,
-                cancelSprintingOnActivation = false,
+                cancelSprintingOnActivation = true,
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
             });
+
             Modules.Skills.AddSecondarySkill(bodyPrefab, flameChokeAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, wizardFootAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive, tenGrabUnlockableDef);
             Modules.Skills.AddSecondarySkill(bodyPrefab, darkDiveAlt, tenGrabUnlockableDef);
-            Modules.Skills.AddUtilitySkill(bodyPrefab, swordThrow, null);
+            Modules.Skills.AddUtilitySkill(bodyPrefab, swordCharge, null);
             //Modules.Skills.AddSecondarySkill(bodyPrefab, recklessCharge, null);
 
             #endregion

@@ -27,6 +27,8 @@ namespace GanondorfMod.SkillStates.Ganondorf
         internal float maxDistance;
         internal float distanceIncrementor;
 
+        internal float lastAnimStopwatch;
+
         internal GanondorfController ganoncon;
         
         public override void OnEnter()
@@ -34,26 +36,16 @@ namespace GanondorfMod.SkillStates.Ganondorf
             base.OnEnter();
 
             base.GetModelAnimator().SetFloat("Slash.playbackRate", attackSpeedStat);
-            throwTime = baseThrowTime / base.attackSpeedStat;
-            throwEnd = throwTime / 0.6f;
-            throwStart = baseThrowStart / base.attackSpeedStat;
-            base.PlayAnimation("Sheathe, Override", "preemptiveThrow", "Slash.playbackRate", throwTime);
-            ganoncon = GetComponent<GanondorfController>();
-            ganoncon.SwapToRightHand();
             swordSpawned = false;
-
-            damage = Modules.StaticValues.swordBaseDamageCoefficient * base.damageStat;
-            maxDamage = damage * Modules.StaticValues.swordMaximumDamageMultiplier;
-            damageIncrementor = (maxDamage - damage) / (Modules.StaticValues.swordTimeToMaxCharge / attackSpeedStat);
-
-            distance = Modules.StaticValues.swordThrowBaseDistance;
-            maxDistance = Modules.StaticValues.swordThrowMaxDistance;
-            distanceIncrementor = (maxDistance - distance) / (Modules.StaticValues.swordTimeToMaxCharge / attackSpeedStat);
+            throwTime = baseThrowTime / this.attackSpeedStat;
+            ganoncon = GetComponent<GanondorfController>();
+            swordSpawned = false;
+            lastAnimStopwatch = 0f;
         }
 
         public override void OnExit()
         {
-            base.PlayAnimation("Sheathe, Override", "Empty");
+            base.PlayCrossfade("Sheathe, Override", "Empty", 0.2f);
             base.OnExit();
         }
 
@@ -63,37 +55,26 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
             if (base.isAuthority) 
             {
-                if (base.inputBank.skill3.down)
+                lastAnimStopwatch += Time.fixedDeltaTime;
+                if (!swordSpawned)
                 {
-                    if (damage < maxDamage)
-                    {
-                        damage += damageIncrementor * Time.fixedDeltaTime;
-                    }
-                    if (distance < maxDistance)
-                    {
-                        distance += distanceIncrementor * Time.fixedDeltaTime;
-                    }
+                    base.PlayCrossfade("Sheathe, Override", "Throw", "Slash.playbackRate", throwTime, 0.1f);
+                    swordSpawned = true;
+                    //Throw Sword
+                    GameObject swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
+                    ThrownSwordContainer swordAttributes = swordProjectile.AddComponent<ThrownSwordContainer>();
+                    swordAttributes.distanceToThrow = distance;
+                    swordAttributes.startingPosition = base.transform.position;
+                    swordAttributes.isReal = true;
+                    swordAttributes.charBody = base.characterBody;
+                    swordAttributes.damageToDeal = damage;
+                    ganoncon.TempDisableSword();
+                    //Later spawn a "projectile" on all machines using a network request.
                 }
-                else if (!base.inputBank.skill3.down)
+
+                if (swordSpawned && lastAnimStopwatch > throwTime)
                 {
-                    if (!swordSpawned)
-                    {
-                        base.PlayAnimation("Sheathe, Override", "Throw", "Slash.playbackRate", throwTime);
-                        swordSpawned = true;
-                        //Throw Sword
-                        GameObject swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
-                        ThrownSwordContainer swordAttributes = swordProjectile.AddComponent<ThrownSwordContainer>();
-                        swordAttributes.distanceToThrow = distance;
-                        swordAttributes.startingPosition = base.transform.position;
-                        swordAttributes.isReal = true;
-                        swordAttributes.charBody = base.characterBody;
-                        swordAttributes.damageToDeal = damage;
-                        ganoncon.TempDisableSword();
-                        base.outer.SetNextStateToMain();
-
-                        //Later spawn a "projectile" on all machines using a network request.
-                    }
-
+                    base.outer.SetNextStateToMain();
                 }
             }
         }

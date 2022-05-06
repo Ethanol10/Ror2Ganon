@@ -83,7 +83,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
             if (travellingBack) 
             {
-                transform.position = Vector3.Lerp(targetPosition, startingPosition, stopwatch / timeToTravel);
+                transform.position = Vector3.Lerp(targetPosition, charBody.gameObject.transform.position, stopwatch / timeToTravel);
                 if (stopwatch > timeToTravel) 
                 {
                     //Destroy, reset skills on ganondorf.
@@ -149,12 +149,16 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
         public void SPIIIIiiiiIIIIIN() 
         {
+            Vector3 dirToFace;
             if (travellingBack)
             {
+                dirToFace = charBody.gameObject.transform.position - targetPosition;
+                transform.rotation = Quaternion.LookRotation(dirToFace, Vector3.up);
                 transform.Rotate(Vector3.right * (-1) * Modules.StaticValues.swordThrowRotationSpeed * Time.deltaTime);
             }
             else 
             {
+                dirToFace = targetPosition - startingPosition;
                 transform.Rotate(Vector3.right * Modules.StaticValues.swordThrowRotationSpeed * Time.deltaTime);
             }
         }
