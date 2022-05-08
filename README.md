@@ -18,7 +18,7 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I GOT WOOOOOOOO.
     - Added 4 moves! ALL sword based! Now you can **DORIYAA!**
         - New Primary: Cleave
-        - New Secondary:   
+        - New Secondary: Serrated Whirlwind
         - New Utility: 
         - New Special: Obliterator
     - Updated Punch to include a new move! Try look down while punching!
