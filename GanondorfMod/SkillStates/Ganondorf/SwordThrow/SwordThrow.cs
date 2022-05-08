@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace GanondorfMod.SkillStates.Ganondorf
 {
@@ -77,11 +78,46 @@ namespace GanondorfMod.SkillStates.Ganondorf
                     base.outer.SetNextStateToMain();
                 }
             }
+
+            if (NetworkServer.active) 
+            {
+                lastAnimStopwatch += Time.fixedDeltaTime;
+                if (!swordSpawned)
+                {
+                    base.PlayCrossfade("Sheathe, Override", "Throw", "Slash.playbackRate", throwTime, 0.1f);
+                    swordSpawned = true;
+                    //Throw Sword
+                    GameObject swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
+                    ThrownSwordContainer swordAttributes = swordProjectile.AddComponent<ThrownSwordContainer>();
+                    swordAttributes.distanceToThrow = distance;
+                    swordAttributes.startingPosition = base.transform.position;
+                    swordAttributes.isReal = false;
+                    swordAttributes.charBody = base.characterBody;
+                    swordAttributes.damageToDeal = 0f;
+                    ganoncon.TempDisableSword();
+                    //Later spawn a "projectile" on all machines using a network request.
+                }
+
+                if (swordSpawned && lastAnimStopwatch > throwTime)
+                {
+                    base.outer.SetNextStateToMain();
+                }
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
             return InterruptPriority.PrioritySkill;
+        }
+
+        public override void OnSerialize(NetworkWriter writer)
+        {
+            base.OnSerialize(writer);
+        }
+
+        public override void OnDeserialize(NetworkReader reader)
+        {
+            base.OnDeserialize(reader);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using GanondorfMod.Modules.Survivors;
+﻿using GanondorfMod.Modules;
+using GanondorfMod.Modules.Survivors;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,25 @@ namespace GanondorfMod.SkillStates.Ganondorf
     {
         public Vector3 targetPosition;
         public CharacterBody charBody;
+        public TriforceBuffComponent triforceBuffComponent;
         public float distanceToThrow;
         public float damageToDeal;
         public Ray aimRay;
         public Vector3 startingPosition;
         public bool isReal;
+        public Transform meshObj;
 
         private bool travellingBack = false;
         private float timeToTravel;
         private float stopwatch;
         private float hitStopwatch;
         private BlastAttack blastAttack;
+        private uint spinningSound;
 
         public void Awake() 
         {
             UpdateAimRay();
+            meshObj = gameObject.transform.GetChild(0);
         }
 
         public void Start()
@@ -74,6 +79,10 @@ namespace GanondorfMod.SkillStates.Ganondorf
                 inflictor = this.gameObject,
                 procCoefficient = Modules.StaticValues.swordThrowProcCoefficient,
             };
+
+            spinningSound = AkSoundEngine.PostEvent(3308368998, this.gameObject);
+
+            triforceBuffComponent = charBody.gameObject.GetComponent<TriforceBuffComponent>();
         }
 
         public void Update() 
@@ -83,8 +92,8 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
             if (travellingBack) 
             {
-                transform.position = Vector3.Lerp(targetPosition, charBody.gameObject.transform.position, stopwatch / timeToTravel);
-                if (stopwatch > timeToTravel) 
+                transform.position = Vector3.Lerp(targetPosition, charBody.gameObject.transform.position, stopwatch / (timeToTravel/2.0f));
+                if (stopwatch > timeToTravel / 2.0f) 
                 {
                     //Destroy, reset skills on ganondorf.
                     Destroy(this.gameObject);
@@ -124,6 +133,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
         public void OnDestroy() 
         {
+            AkSoundEngine.StopPlayingID(spinningSound);
             if (isReal) 
             {
                 if (charBody) 
@@ -139,27 +149,24 @@ namespace GanondorfMod.SkillStates.Ganondorf
         {
             foreach (BlastAttack.HitPoint hitPoint in result.hitPoints) 
             {
+                Util.PlaySound("swordHitSound", base.gameObject);
                 EffectManager.SpawnEffect(Modules.Assets.swordHitImpactEffect, new EffectData
                 {
                     origin = hitPoint.hitPosition,
                     scale = 3f,
                 }, true);
+                triforceBuffComponent.AddToBuffCount(1);
             }
         }
 
         public void SPIIIIiiiiIIIIIN() 
         {
             Vector3 dirToFace;
-            if (travellingBack)
-            {
-                dirToFace = charBody.gameObject.transform.position - targetPosition;
-                transform.Rotate(Vector3.right * (-1) * Modules.StaticValues.swordThrowRotationSpeed * Time.deltaTime);
-            }
-            else 
-            {
-                dirToFace = targetPosition - startingPosition;
-                transform.Rotate(Vector3.right * Modules.StaticValues.swordThrowRotationSpeed * Time.deltaTime);
-            }
+            dirToFace = targetPosition - startingPosition;
+            transform.rotation = Quaternion.LookRotation(dirToFace, Vector3.up);
+            float rot = Modules.StaticValues.swordThrowRotationSpeed * Time.deltaTime;
+            meshObj.Rotate(rot, 0f, 0f, Space.Self);
+            meshObj.localPosition = Vector3.zero;
         }
 
         public void UpdateAimRay() 

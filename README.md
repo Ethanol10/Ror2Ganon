@@ -18,14 +18,21 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I GOT WOOOOOOOO.
     - Added 4 moves! ALL sword based! Now you can **DORIYAA!**
         - New Primary: Cleave
-        - New Secondary: Reckless Charge  
+        - New Secondary:   
         - New Utility: 
         - New Special: Obliterator
     - Updated Punch to include a new move! Try look down while punching!
     - Bug Fixes: 
+        - Fixed Scepter support! Supports both ThinkInivisible
+        - Fixed the achievements from bugging out. Sorry this took so long!
         - Warlock Punch's animation should not have his legs clip into the floor any longer, and should move with the rest of the body.
     - Added another skin!
-    - Added BadassEmote support!
+    - Added EmoteAPI support!
+    - Added ＤＹＮＡＭＩＣＢＯＮＥＳ to his cape.
+    - Stat Changes:
+        - Utility's use 40 stacks to boost their attack by 3.0x, instead of 20.
+        - 60 -> 80 damage gained from max amount of stacks.
+        - 
 
 
 ## Skills

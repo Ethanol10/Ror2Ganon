@@ -1,5 +1,8 @@
 ﻿using EntityStates;
+using GanondorfMod.Modules.Networking;
 using GanondorfMod.Modules.Survivors;
+using R2API.Networking;
+using R2API.Networking.Interfaces;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -29,6 +32,8 @@ namespace GanondorfMod.SkillStates.Ganondorf
         internal float distanceIncrementor;
 
         internal float lastAnimStopwatch;
+        internal bool isFullyCharged;
+        internal bool sentRequest;
 
         internal GanondorfController ganoncon;
         
@@ -40,7 +45,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
             throwTime = baseThrowTime / base.attackSpeedStat;
             throwEnd = throwTime / 0.6f;
             throwStart = baseThrowStart / base.attackSpeedStat;
-            base.PlayAnimation("RightArm, Override", "preemptiveThrow", "Slash.playbackRate", throwTime);
+            base.PlayCrossfade("RightArm, Override", "preemptiveThrow", "Slash.playbackRate", throwTime, 0.1f);
             ganoncon = GetComponent<GanondorfController>();
             ganoncon.SwapToRightHand();
             swordSpawned = false;
@@ -52,11 +57,16 @@ namespace GanondorfMod.SkillStates.Ganondorf
             distance = Modules.StaticValues.swordThrowBaseDistance;
             maxDistance = Modules.StaticValues.swordThrowMaxDistance;
             distanceIncrementor = (maxDistance - distance) / (Modules.StaticValues.swordTimeToMaxCharge / attackSpeedStat);
+            isFullyCharged = true;
+            new ChargingSwordNetworkRequest(characterBody.masterObjectId, true).Send(NetworkDestination.Clients);
+            sentRequest = false;
+
+            AkSoundEngine.PostEvent(4208541365, base.gameObject);
         }
 
         public override void OnExit()
         {
-            base.PlayAnimation("RightArm, Override", "Empty");
+            base.PlayCrossfade("RightArm, Override", "Empty", 0.1f);
             base.OnExit();
         }
 
@@ -66,19 +76,35 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
             if (base.isAuthority) 
             {
-                if (base.inputBank.skill3.down)
+                if (base.inputBank.skill2.down)
                 {
                     if (damage < maxDamage)
                     {
                         damage += damageIncrementor * Time.fixedDeltaTime;
+                        isFullyCharged = true;
                     }
                     if (distance < maxDistance)
                     {
                         distance += distanceIncrementor * Time.fixedDeltaTime;
+                        isFullyCharged = true;
+                    }
+
+                    if ((damage >= maxDamage || distance >= maxDistance) && isFullyCharged)
+                    {
+                        if (!sentRequest) 
+                        {
+                            sentRequest = true;
+                            AkSoundEngine.PostEvent(2184839552, base.gameObject);
+                            new ChargingSwordNetworkRequest(characterBody.masterObjectId, false).Send(NetworkDestination.Clients);
+                            new FullyChargedSwordNetworkRequest(characterBody.masterObjectId, true).Send(NetworkDestination.Clients);
+                        }
                     }
                 }
-                else if (!base.inputBank.skill3.down)
+                else if (!base.inputBank.skill2.down)
                 {
+                    AkSoundEngine.PostEvent(1506146985, base.gameObject);
+                    new ChargingSwordNetworkRequest(characterBody.masterObjectId, false).Send(NetworkDestination.Clients);
+                    new FullyChargedSwordNetworkRequest(characterBody.masterObjectId, false).Send(NetworkDestination.Clients);
                     EntityStateMachine[] stateMachines = characterBody.gameObject.GetComponents<EntityStateMachine>();
                     //"No statemachines?"
                     if (!stateMachines[0])

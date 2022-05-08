@@ -29,16 +29,16 @@ namespace GanondorfMod.Modules
         internal const float recklessChargeTimeToFullSpeed = 15f;
 
         //Sword throw
-        internal const float swordThrowMaxDistance = 100f;
-        internal const float swordThrowMaxTimeOneWay = 1.5f;
-        internal const float swordBaseDamageCoefficient = 4.0f;
-        internal const float swordMaximumDamageMultiplier = 10f;
+        internal const float swordThrowMaxDistance = 50f;
+        internal const float swordThrowMaxTimeOneWay = 3f;
+        internal const float swordBaseDamageCoefficient = 0.5f;
+        internal const float swordMaximumDamageMultiplier = 5f;
         internal const float swordThrowProcCoefficient = 0.2f;
-        internal const float swordTimeToMaxCharge = 30f;
-        internal const float swordThrowBaseDistance = 30f;
-        internal const float swordThrowRotationSpeed = 50f;
+        internal const float swordTimeToMaxCharge = 10f;
+        internal const float swordThrowBaseDistance = 15f;
+        internal const float swordThrowRotationSpeed = 1440f;
         internal const float swordThrowTickFrequency = 0.1f;
-        internal const float swordThrowHitRadius = 3f;
+        internal const float swordThrowHitRadius = 5f;
 
         //Wizards foot
         internal const float wizardFootDamageCoefficient = 3.0f;
@@ -65,11 +65,11 @@ namespace GanondorfMod.Modules
         internal const int maxPowerStack = 100;
         internal const int stackAmountToDecay = 2;
         internal const float triforceMaxArmour = 40f;
-        internal const float triforceMaxDamage = 100f;
+        internal const float triforceMaxDamage = 80f;
         internal const float maxTimeToDecay = 3f;
         internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move
-        internal const int utilityStackConsumption = 20;
+        internal const int utilityStackConsumption = 40;
         internal const float utilityBoostCoefficient = 3.0f; 
         //Amounts to add to buff when killed
         internal const int bossKillStackAmount = 10;

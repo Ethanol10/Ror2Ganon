@@ -42,7 +42,7 @@ AvatarMask:
   - m_Path: model-armature/Trans/Rot/Hip/Waist
     m_Weight: 0
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL
     m_Weight: 0
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL
@@ -94,7 +94,7 @@ AvatarMask:
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleL/ShoulderL/ArmL/HandL/HaveL
     m_Weight: 0
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR
     m_Weight: 1
   - m_Path: model-armature/Trans/Rot/Hip/Waist/Bust/ClavicleR/ShoulderR/ArmR

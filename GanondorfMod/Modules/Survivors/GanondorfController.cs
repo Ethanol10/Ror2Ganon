@@ -41,6 +41,9 @@ namespace GanondorfMod.Modules.Survivors
         public float stopwatch = 0f;
         public bool startWatch;
 
+        public bool swordFullyCharged = false;
+        public bool chargingSword = false;
+
         public void Awake() {
             characterBody = gameObject.GetComponent<CharacterBody>();
             childLocator = GetComponentInChildren<ChildLocator>();
@@ -89,6 +92,8 @@ namespace GanondorfMod.Modules.Survivors
                 isBodySwordEnabled = true;
                 isInRightHand = false;
             }
+
+            swordFullyCharged = false;
         }
 
         public void Update()

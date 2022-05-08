@@ -37,7 +37,7 @@ namespace GanondorfMod.Modules.Survivors
             jumpCount = 2,
             maxHealth = 250.0f,
             subtitleNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SUBTITLE",
-
+            podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/NullifierSpawnEffect"),
             jumpPower = 20.0f,
         };
 
@@ -428,7 +428,7 @@ namespace GanondorfMod.Modules.Survivors
             Modules.Skills.AddUtilitySkill(bodyPrefab, wizardFootAlt, null);
             Modules.Skills.AddUtilitySkill(bodyPrefab, darkDive, tenGrabUnlockableDef);
             Modules.Skills.AddSecondarySkill(bodyPrefab, darkDiveAlt, tenGrabUnlockableDef);
-            Modules.Skills.AddUtilitySkill(bodyPrefab, swordCharge, null);
+            Modules.Skills.AddSecondarySkill(bodyPrefab, swordCharge, null);
             //Modules.Skills.AddSecondarySkill(bodyPrefab, recklessCharge, null);
 
             #endregion

@@ -1,4 +1,5 @@
-﻿using GanondorfMod.SkillStates.BaseStates;
+﻿using GanondorfMod.Modules;
+using GanondorfMod.SkillStates.BaseStates;
 using RoR2;
 using UnityEngine;
 
@@ -47,6 +48,8 @@ namespace GanondorfMod.SkillStates
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
+            //Increment Buff count
+            GetComponent<TriforceBuffComponent>().AddToBuffCount(1);
         }
 
         protected override void SetNextState()

@@ -24,6 +24,8 @@ namespace GanondorfMod.Modules
 
         //Sword throw
         internal static GameObject swordObject;
+        internal static Material fullyChargedMat;
+        internal static Material chargingMat;
 
         internal static GameObject warlockPunchEffect;
 
@@ -103,6 +105,8 @@ namespace GanondorfMod.Modules
             meleeHitImpactLightning = LoadEffect("ImpactLightning", true);
             swordSwingEffect = LoadEffect("GanonSwordSwingEffect", true);
             swordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordContainer");
+            fullyChargedMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("FullyChargedMat");
+            chargingMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ChargingMat");
             //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 

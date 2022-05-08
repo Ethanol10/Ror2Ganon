@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 467682700
+CRC: 4221408201
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2ce457c409302e75b6cd97d2535ec5be
+    Hash: 85b820e335c865e346092b19583ab987
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -142,6 +142,7 @@ Assets:
 - Assets/GanonAsset/Texture/tex1ganonbrawlemission.png
 - Assets/GanonAsset/Animator/SwordAnimations/PointSwordUp.anim
 - Assets/GanonAsset/Material/ganonTex03.mat
+- Assets/GanonAsset/Material/ChargingMat.mat
 - Assets/GanonAsset/Texture/emissionMap.png
 - Assets/GanonAsset/Mesh/Torus.mesh
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
@@ -158,6 +159,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/PunchAlternate.anim
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
+- Assets/GanonAsset/Material/FullyChargedMat.mat
 - Assets/GanonAsset/Animator/HumanoidGanon.asset
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/icons/warlockPunchBoosted.png

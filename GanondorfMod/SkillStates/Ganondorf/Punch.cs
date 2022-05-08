@@ -62,7 +62,7 @@ namespace GanondorfMod.SkillStates
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             this.animator.SetBool("attacking", true);
-            this.animator.SetFloat("punch.playbackRate", 1.0f);
+            this.animator.SetFloat("punch.playbackRate", attackSpeedStat);
             punchActive = false;
             kickActive = false;
             dashActive = false;

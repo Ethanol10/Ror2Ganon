@@ -9,6 +9,8 @@ using System.Security;
 using System.Security.Permissions;
 using UnityEngine;
 using EmotesAPI;
+using R2API.Networking;
+using GanondorfMod.Modules.Networking;
 
 #pragma warning restore CS0618 // Type or member is obsolete
 [module: UnverifiableCode]
@@ -87,12 +89,19 @@ namespace GanondorfMod
             RoR2Application.onLoad += LateSetup;
 
             Hook();
+            SetupNetworkMessages();
         }
 
         private void LateSetup()
         {
             // have to set item displays later now because they require direct object references..
             Modules.Survivors.Ganondorf.instance.SetItemDisplays();
+        }
+
+        private void SetupNetworkMessages()
+        {
+            NetworkingAPI.RegisterMessageType<FullyChargedSwordNetworkRequest>();
+            NetworkingAPI.RegisterMessageType<ChargingSwordNetworkRequest>();
         }
 
         private void Hook()
@@ -105,6 +114,7 @@ namespace GanondorfMod
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
             On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
             On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
+            On.RoR2.CharacterModel.UpdateOverlays += CharacterModel_UpdateOverlays;
 
 
             if (Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI")) 
@@ -250,6 +260,43 @@ namespace GanondorfMod
                         displayHandler.targetTrans = bustTrans;
                     }
                 }
+            }
+        }
+
+        private void CharacterModel_UpdateOverlays(On.RoR2.CharacterModel.orig_UpdateOverlays orig, CharacterModel self)
+        {
+            orig(self);
+
+            if (self)
+            {
+                if (self.body)
+                {
+                    GanondorfController ganoncon = self.body.GetComponent<GanondorfController>();
+                    if (ganoncon) 
+                    {
+                        this.LiterallyGarbageOverlayFunction(Modules.Assets.chargingMat,
+                                                            ganoncon.chargingSword,
+                                                            self);
+                        this.LiterallyGarbageOverlayFunction(Modules.Assets.fullyChargedMat,
+                                                            ganoncon.swordFullyCharged,
+                                                            self);
+                    }
+                }
+            }
+        }
+
+        private void LiterallyGarbageOverlayFunction(Material overlayMaterial, bool condition, CharacterModel model)
+        {
+            if (model.activeOverlayCount >= CharacterModel.maxOverlays)
+            {
+                return;
+            }
+            if (condition)
+            {
+                Material[] array = model.currentOverlays;
+                int num = model.activeOverlayCount;
+                model.activeOverlayCount = num + 1;
+                array[num] = overlayMaterial;
             }
         }
     }
