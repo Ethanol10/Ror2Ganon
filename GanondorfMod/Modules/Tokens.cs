@@ -60,6 +60,10 @@ namespace GanondorfMod.Modules
                 + $" and <style=cIsDamage>{100f * StaticValues.heavyKickDamageCoefficient}% damage</style>."
                 + Environment.NewLine
                 + $"When airborne and while looking downwards, thrust your feet downwards bouncing a short distance upwards for <style=cIsDamage>{100f * StaticValues.downAirDamageCoefficient}% damage</style>.");
+
+            LanguageAPI.Add(prefix + "PRIMARY_SWORD_NAME", "Cleave");
+            LanguageAPI.Add(prefix + "PRIMARY_SWORD_DESCRIPTION", "Cleave your enemies");
+
             #endregion
 
             #region Secondary
@@ -69,6 +73,9 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SECONDARY_GRAB_NAME", "Flame Choke");
             LanguageAPI.Add(prefix + "SECONDARY_GRAB_DESCRIPTION", $"Dash forward grabbing enemies in a row and choke slamming them dealing "
                 + $"<style=cIsDamage>{100f * StaticValues.flameChokeAltDamageCoefficient}% damage</style>.");
+
+            LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_NAME", "Serrated Whirlwind");
+            LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_DESCRIPTION", "Hold to charge your sword, gaining damage and range for");
             #endregion
 
             #region Utility
@@ -156,6 +163,7 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add("ACHIEVEMENT_" + prefix + "MASSACRE_ACHIEVEMENT_DESCRIPTION", "As Ganondorf: Kill 50 Lemurians, Wisps, Jellyfishes, Beetles, Mini Mushrums and Imps in a single run.");
             LanguageAPI.Add(prefix + "MASSACRE_UNLOCKABLE_NAME", "Ganondorf: Malice Bringer");
             #endregion
+
             #endregion
         }
     }
