@@ -83,6 +83,8 @@ namespace GanondorfMod.Modules.Survivors
             //Attach the TriforceBuffComponent
             bodyPrefab.AddComponent<GanondorfController>();
             GanondorfPlugin.triforceBuff = bodyPrefab.AddComponent<TriforceBuffComponent>();
+            EntityStateMachine ganonEntityStateMachine = bodyPrefab.GetComponent<EntityStateMachine>();
+            ganonEntityStateMachine.initialStateType = new SerializableEntityStateType(typeof(SkillStates.SpawnState));
 
             //Initialise Scepter if available
             CreateScepterSkills();

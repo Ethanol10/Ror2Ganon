@@ -19,7 +19,7 @@ namespace GanondorfMod.Modules
             startDecaying = false;
             timer = 0f;
             lastTimeDecayed = 0f;
-            buffCountToApply = 0;
+            buffCountToApply = 120;
             scepterActive = false;
             isMaxStack = false;
             ganondorfController = GetComponent<GanondorfController>();

@@ -12,6 +12,8 @@ namespace GanondorfMod.Modules
 
         internal static void RegisterStates()
         {
+            entityStates.Add(typeof(SpawnState));
+
             entityStates.Add(typeof(BaseMeleeAttack));
 
             entityStates.Add(typeof(FlameChoke));

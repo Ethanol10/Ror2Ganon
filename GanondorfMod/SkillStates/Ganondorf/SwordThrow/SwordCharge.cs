@@ -132,7 +132,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.PrioritySkill;
+            return InterruptPriority.Frozen;
         }
     }
 }

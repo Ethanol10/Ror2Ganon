@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4221408201
+CRC: 149605052
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 85b820e335c865e346092b19583ab987
+    Hash: d7b9d08d5452c8ddcc959c505e69d220
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -176,6 +176,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Wait3.anim
 - Assets/GanonAsset/icons/InfernoGuillotineIconBoosted.png
 - Assets/GanonAsset/Texture/ganonTex03.png
+- Assets/GanonAsset/Animator/Animations/StupidSpawnIn.anim
 - Assets/GanonAsset/Texture/ganonTex05.png
 - Assets/GanonAsset/Animator/SwordAnimations/PointingForwardSpin.anim
 - Assets/GanonAsset/Animator/SwordAnimations/FallWithSword.anim
