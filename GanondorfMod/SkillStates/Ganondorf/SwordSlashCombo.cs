@@ -22,7 +22,7 @@ namespace GanondorfMod.SkillStates
             this.baseEarlyExitTime = 0.2f;
             this.hitStopDuration = 0.05f;
             this.attackRecoil = 0.5f;
-            this.hitHopVelocity = 15f / this.attackSpeedStat;
+            this.hitHopVelocity = 12f / this.attackSpeedStat;
 
             this.swingSoundString = "swingEffect";
             this.hitSoundString = "swordHitSound";

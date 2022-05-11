@@ -28,6 +28,7 @@ namespace GanondorfMod.Modules
         internal static Material chargingMat;
 
         internal static GameObject warlockPunchEffect;
+        internal static GameObject obliteratorIndicator;
 
         // networked hit sounds
         internal static NetworkSoundEventDef punchSFX;
@@ -101,6 +102,7 @@ namespace GanondorfMod.Modules
                 };
             }
 
+            obliteratorIndicator = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/FirewallAreaIndicator.prefab").WaitForCompletion();
             meleeHitImpact = LoadEffect("ImpactRaw", true);
             meleeHitImpactLightning = LoadEffect("ImpactLightning", true);
             swordSwingEffect = LoadEffect("GanonSwordSwingEffect", true);

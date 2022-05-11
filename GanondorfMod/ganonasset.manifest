@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 149605052
+CRC: 1636983946
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d7b9d08d5452c8ddcc959c505e69d220
+    Hash: 7c0c4d424ee4fe6a213f43674cbf6dec
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -72,6 +72,7 @@ Assets:
 - Assets/GanonAsset/Animator/SwordAnimations/RunningWithSword.anim
 - Assets/GanonAsset/Texture/ganonTex02.png
 - Assets/GanonAsset/Animator/Animations/DashAttack.anim
+- Assets/GanonAsset/Animator/SwordAnimations/StartForwardSmash.anim
 - Assets/GanonAsset/Material/WarlockPunchmat.mat
 - Assets/GanonAsset/Material/ganonTex01.mat
 - Assets/GanonAsset/icons/skin0.png
@@ -110,7 +111,6 @@ Assets:
 - Assets/GanonAsset/Material/ganonTex07.mat
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
-- Assets/GanonAsset/Animator/SwordAnimations/HoldFowardSmash.anim
 - Assets/GanonAsset/Texture/ganonTex04.png
 - Assets/GanonAsset/icons/InfernoGuillotineIcon.png
 - Assets/GanonAsset/Material/ganonTex05.mat
@@ -129,8 +129,8 @@ Assets:
 - Assets/GanonAsset/icons/TriforcePower.png
 - Assets/GanonAsset/Material/ganonTex06.mat
 - Assets/GanonAsset/Animator/Animations/GrabAerialFalling.anim
-- Assets/GanonAsset/Animator/SwordAnimations/ForwardSmash.anim
 - Assets/GanonAsset/Texture/ganontex.png
+- Assets/GanonAsset/Animator/SwordAnimations/HoldForwardSmash.anim
 - Assets/GanonAsset/icons/flameChokeIconUtility.png
 - Assets/GanonAsset/Mesh/OOTGanonMesh.mesh
 - Assets/GanonAsset/Animator/upperbodymask.mask
@@ -164,6 +164,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/icons/warlockPunchBoosted.png
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
+- Assets/GanonAsset/Animator/SwordAnimations/EndForwardSmash.anim
 - Assets/GanonAsset/icons/skin1.png
 - Assets/GanonAsset/icons/wizardFootIconUtility.png
 - Assets/GanonAsset/particle/ImpactRaw.prefab

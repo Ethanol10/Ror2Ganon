@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace GanondorfMod.SkillStates.Ganondorf
 {
@@ -78,15 +79,21 @@ namespace GanondorfMod.SkillStates.Ganondorf
             {
                 if (base.inputBank.skill2.down)
                 {
-                    if (damage < maxDamage)
+                    if (damage <= maxDamage)
                     {
                         damage += damageIncrementor * Time.fixedDeltaTime;
-                        isFullyCharged = true;
+                        if (damage >= maxDamage) 
+                        {
+                            isFullyCharged = true;
+                        }
                     }
-                    if (distance < maxDistance)
+                    if (distance <= maxDistance)
                     {
                         distance += distanceIncrementor * Time.fixedDeltaTime;
-                        isFullyCharged = true;
+                        if (distance >= maxDistance) 
+                        {
+                            isFullyCharged = true;
+                        }
                     }
 
                     if ((damage >= maxDamage || distance >= maxDistance) && isFullyCharged)
@@ -133,6 +140,16 @@ namespace GanondorfMod.SkillStates.Ganondorf
         public override InterruptPriority GetMinimumInterruptPriority()
         {
             return InterruptPriority.Frozen;
+        }
+
+        public override void OnSerialize(NetworkWriter writer)
+        {
+            base.OnSerialize(writer);
+        }
+
+        public override void OnDeserialize(NetworkReader reader)
+        {
+            base.OnDeserialize(reader);
         }
     }
 }

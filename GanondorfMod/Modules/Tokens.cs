@@ -121,6 +121,9 @@ namespace GanondorfMod.Modules
                 $"<style=cIsDamage>{(int)100f * (int)Modules.StaticValues.maxPowerStack / (int)Modules.StaticValues.warlockPunchDamageReducer / 3 }%</style> damage. " +
                 $"Consume 100 stacks to power the move up by " +
                 $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
+
+            LanguageAPI.Add(prefix + "OBLITERATE_SWORD_NAME", "Obliterate");
+            LanguageAPI.Add(prefix + "OBLITERATE_SWORD_DESCRIPTION", "Hold to charge, let go to unleash a series of explosions in front of you.");
             #endregion
 
             #region Scepter Upgrade
@@ -136,6 +139,9 @@ namespace GanondorfMod.Modules
                 $"in a radius around you." + Helpers.DownsideDescription(" No Super Armor.") +
                 $" The Scaling of Inferno Guillotine is now stronger, maxing out at " +
                 $"<style=cIsDamage>{100f * (Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter)}% damage</style>.");
+
+            LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_NAME", "Destruction");
+            LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_DESCRIPTION", "Hold to charge, let go to unleash a series of explosions in front of you.");
             #endregion
 
             #region Achievements

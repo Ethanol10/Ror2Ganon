@@ -63,9 +63,13 @@ namespace GanondorfMod.Modules.Survivors
         internal override List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules { get; set; }
 
         internal static SkillDef warlockPunch;
+        internal static SkillDef warlockPunchScepter;
         internal static SkillDef infernoGuillotine;
         internal static SkillDef punchPrimary;
+        internal static SkillDef wizardsFoot;
+        internal static SkillDef flameChoke;
         internal static SkillDef swordThrow;
+        internal static SkillDef obliterate;
 
         //Unlockables.
         internal override UnlockableDef characterUnlockableDef { get; set; }
@@ -203,7 +207,7 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             #region Secondary/Utility Section
-            SkillDef wizardFoot = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            wizardsFoot = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_SECONDARY_KICK_NAME",
@@ -228,7 +232,7 @@ namespace GanondorfMod.Modules.Survivors
                 keywordTokens = new string[] { "KEYWORD_HEAVY" }
             });
             
-            SkillDef flameChoke = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            flameChoke = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
                 skillNameToken = prefix + "_GANONDORF_BODY_UTILITY_GRAB_NAME",
@@ -276,7 +280,7 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1,
             });
 
-            Modules.Skills.AddSecondarySkills(bodyPrefab, wizardFoot);
+            Modules.Skills.AddSecondarySkills(bodyPrefab, wizardsFoot);
             Modules.Skills.AddUtilitySkills(bodyPrefab, flameChoke);
 
             //THIS ONE IS WEAKER AND INTENDED FOR SECONDARY SLOTS.
@@ -488,6 +492,35 @@ namespace GanondorfMod.Modules.Survivors
             });
 
             Modules.Skills.AddSpecialSkill(bodyPrefab, infernoGuillotine, heavyDamageUnlockableDef);
+
+            //Inferno Guillotine
+            obliterate = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("InfernoGuillotineIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ObliterateBeginCharging)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+
+            Modules.Skills.AddSpecialSkill(bodyPrefab, obliterate, null);
+
+
             #endregion
         }
 
@@ -496,7 +529,7 @@ namespace GanondorfMod.Modules.Survivors
         private void CreateScepterSkills()
         {
             string prefix = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_";
-            SkillDef warlockPunchScepter = Skills.CreateSkillDef(new SkillDefInfo
+            warlockPunchScepter = Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "SCEPTERSPECIAL_NAME",
                 skillNameToken = prefix + "SCEPTERSPECIAL_NAME",

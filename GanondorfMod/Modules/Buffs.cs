@@ -10,6 +10,7 @@ namespace GanondorfMod.Modules
         // armor buff gained during roll
         internal static BuffDef armorBuff;
         internal static BuffDef triforceBuff;
+        internal static BuffDef damageAbsorberBuff;
 
         internal static List<BuffDef> buffDefs = new List<BuffDef>();
 
@@ -19,6 +20,7 @@ namespace GanondorfMod.Modules
             //armorBuff = AddNewBuff("Super Armour Buff", RoR2.LegacyResourcesAPI.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
             armorBuff = AddNewBuff("Super Armor Buff", shieldSprite, Color.white, false, false);
             triforceBuff = AddNewBuff("Triforce Buff", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforcePower"), Color.yellow, true, false);
+            damageAbsorberBuff = AddNewBuff("Damage Absorber Buff", shieldSprite, Color.yellow, false, false);
         }
 
         // simple helper method
