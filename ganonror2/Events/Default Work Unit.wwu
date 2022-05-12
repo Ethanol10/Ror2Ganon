@@ -423,6 +423,34 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Attack8Doriya" ID="{8228A774-A4AB-426B-9AAA-89FD0829543A}">
+					<ChildrenList>
+						<Action Name="" ID="{D03EED67-E720-47CF-9795-DCD7F2EDFED8}" ShortID="157409572">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="attack8doriya" ID="{CD0AFE54-A0CB-461C-8E8B-AF6AD2A0D212}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Attack8DoriyaNormal" ID="{B539364D-8714-4A18-9906-E25331A2A458}">
+					<ChildrenList>
+						<Action Name="" ID="{1AC8BD91-B3E0-48C9-9F85-8B94FCEEE2D3}" ShortID="327976776">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="attack8doriyanormal" ID="{5D257F4B-07EC-4898-9E06-21961E736A15}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

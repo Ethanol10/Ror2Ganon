@@ -23,6 +23,14 @@ namespace GanondorfMod.SkillStates
         internal float maxDamage;
         internal float rampingDamageIncrement;
 
+        internal float explosionNum;
+        internal float maxExplosion;
+        internal float rampingeExplosionNumIncrement;
+
+        internal float distance;
+        internal float maxDistance;
+        internal float rampingDistanceIncrement;
+
         internal GameObject obliteratorIndicatorInstance;
 
         internal bool sentRequest;
@@ -39,9 +47,20 @@ namespace GanondorfMod.SkillStates
             new ChargingSwordNetworkRequest(characterBody.masterObjectId, true).Send(NetworkDestination.Clients);
             base.PlayCrossfade("FullBody, Override", "StartForwardSmash", 0.1f);
 
+            AkSoundEngine.PostEvent(4208541365, base.gameObject);
+
             damage = Modules.StaticValues.obliterateDamageCoefficient * this.damageStat;
             maxDamage = Modules.StaticValues.obliterateDamageCoefficient * this.damageStat * Modules.StaticValues.obliterateFinalDamageMultiplier ;
             rampingDamageIncrement = (maxDamage - damage) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
+
+            explosionNum = 1;
+            maxExplosion = Modules.StaticValues.obliterateMaxExplosionCount;
+            rampingeExplosionNumIncrement = (maxExplosion - explosionNum) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
+
+            distance = 1f;
+            maxDistance = Modules.StaticValues.obliterateMaxDistanceCovered;
+            rampingDistanceIncrement = (maxDistance - distance) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
+
             CreateIndicator();
             ganoncon = base.GetComponent<GanondorfController>();
             ganoncon.SwapToSword();
@@ -65,12 +84,14 @@ namespace GanondorfMod.SkillStates
                     if (damage <= maxDamage)
                     {
                         damage += rampingDamageIncrement * Time.fixedDeltaTime;
-                        if (damage >= maxDamage)
+                        explosionNum += rampingeExplosionNumIncrement * Time.fixedDeltaTime;
+                        distance += rampingDistanceIncrement * Time.fixedDeltaTime;
+                        if ((damage >= maxDamage) || (explosionNum >= maxExplosion) || (distance >= maxDistance))
                         {
                             isFullyCharged = true;
-                        }
+                        }                        
                     }
-                    if (damage >= maxDamage && isFullyCharged)
+                    if ((damage >= maxDamage || explosionNum >= maxExplosion || distance >= maxDistance) && isFullyCharged)
                     {
                         if (!sentRequest)
                         {
@@ -88,7 +109,9 @@ namespace GanondorfMod.SkillStates
                     new FullyChargedSwordNetworkRequest(characterBody.masterObjectId, false).Send(NetworkDestination.Clients);
                     base.outer.SetNextState(new ObliterateEnd
                     {
-                        damage = damage
+                        damage = damage,
+                        noOfExplosions = explosionNum,
+                        distance = distance
                     });
                 }
             }

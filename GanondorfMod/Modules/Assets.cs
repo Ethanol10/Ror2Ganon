@@ -109,7 +109,7 @@ namespace GanondorfMod.Modules
             swordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordContainer");
             fullyChargedMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("FullyChargedMat");
             chargingMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ChargingMat");
-            //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
+            swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

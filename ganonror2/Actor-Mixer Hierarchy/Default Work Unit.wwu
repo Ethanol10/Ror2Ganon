@@ -3304,6 +3304,84 @@
 												<ActiveSource Name="se_common_spirits_critical_l_tail" ID="{B58C7885-A369-400B-B8F2-371C45637FD6}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="attack8doriya" ID="{CD0AFE54-A0CB-461C-8E8B-AF6AD2A0D212}" ShortID="936929364">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>12</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>11</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="purposefullyLoud" ID="{93F2EA61-AFC4-49FD-843F-28A9DAA93B60}" WorkUnitID="{8B89C5F4-1B53-4987-A94F-76F380AF9A79}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6B4AE759-32EF-4506-972E-88500E1BBCFC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D5E1B56-597A-4F75-9489-5288CDC86F65}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="attack8doriya" ID="{0F14D305-F9C4-4889-B093-62B54B637D6C}">
+													<Language>SFX</Language>
+													<AudioFile>attack8doriya.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="795453842"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="attack8doriya" ID="{0F14D305-F9C4-4889-B093-62B54B637D6C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="attack8doriyanormal" ID="{5D257F4B-07EC-4898-9E06-21961E736A15}" ShortID="1018735409">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Weight" Type="Real64">
+													<ValueList>
+														<Value>11</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="purposefullyLoud" ID="{93F2EA61-AFC4-49FD-843F-28A9DAA93B60}" WorkUnitID="{8B89C5F4-1B53-4987-A94F-76F380AF9A79}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6B4AE759-32EF-4506-972E-88500E1BBCFC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D5E1B56-597A-4F75-9489-5288CDC86F65}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="attack8doriya" ID="{4A26F45C-09D4-4E01-B63A-83D33C7AD1A3}">
+													<Language>SFX</Language>
+													<AudioFile>attack8doriya.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="795453842"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="attack8doriya" ID="{4A26F45C-09D4-4E01-B63A-83D33C7AD1A3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

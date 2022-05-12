@@ -9,6 +9,7 @@
 						<ObjectRef Name="Spawning" ID="{E9E86A44-789B-405E-894B-C4D2989D9F78}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="wizardsFoot" ID="{C540A953-3BB7-41C5-AA19-326FC6512D5A}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="hardHitsSFX" ID="{0305A762-4016-41CB-9E99-6FA0E6E47017}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Attack8Doriya" ID="{8228A774-A4AB-426B-9AAA-89FD0829543A}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="superHitsVoice" ID="{5A9FA727-4107-4298-81C0-C1CF48DB9537}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="darkDive1" ID="{5574BB0B-9C03-4319-9417-46650756C51F}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="flameChokeSFXEnd" ID="{C5965791-8056-434D-AEB5-318F88177335}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
@@ -25,6 +26,7 @@
 						<ObjectRef Name="jumpSFX" ID="{B4D6696C-EC52-489F-9C1D-1503DB34B89F}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="swordHitSound" ID="{B8E1586F-D805-4953-8EDB-21C42DDA53F8}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="fullyChargedSword" ID="{B4C3526A-CD8C-4987-ADFB-BCE654573520}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Attack8DoriyaNormal" ID="{B539364D-8714-4A18-9906-E25331A2A458}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="lightHitsVoice" ID="{124B31DB-5942-4A9B-972E-C4F2A41E1291}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="randomSwingSound" ID="{C2507480-2931-4AE3-89A6-AE3B043E4A36}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ganonScreamingWarlockPunch" ID="{1EC1C38F-B5E8-4B63-9F8D-4D3F40A2D4C6}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>

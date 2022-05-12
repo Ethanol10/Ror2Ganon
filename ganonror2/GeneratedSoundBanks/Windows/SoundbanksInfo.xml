@@ -11,11 +11,27 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="270411657" Language="SFX" Hash="3577318927">
+		<SoundBank Id="270411657" Language="SFX" Hash="2586517059">
 			<ObjectPath>\SoundBanks\Default Work Unit\ganonSoundbank</ObjectPath>
 			<ShortName>ganonSoundbank</ShortName>
 			<Path>ganonSoundbank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3169574177" Name="Attack8Doriya" ObjectPath="\Events\Default Work Unit\Attack8Doriya">
+					<IncludedMemoryFiles>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2241524948" Name="Attack8DoriyaNormal" ObjectPath="\Events\Default Work Unit\Attack8DoriyaNormal">
+					<IncludedMemoryFiles>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3798764932" Name="darkDive1" ObjectPath="\Events\Default Work Unit\darkDive1">
 					<IncludedMemoryFiles>
 						<File Id="778499621" Language="SFX">
