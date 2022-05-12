@@ -89,7 +89,7 @@ namespace GanondorfMod.SkillStates
             }
 
             aimRay = base.GetAimRay();
-            aimRay.direction = new Vector3(0f, aimRay.direction.y, 0f);
+            aimRay.direction = new Vector3(aimRay.direction.x, 0f, aimRay.direction.z);
 
             distanceSub = distance / noOfExplosions;
 
@@ -146,8 +146,10 @@ namespace GanondorfMod.SkillStates
                     //Trigger Blast at distanceSpawned along ray without X/Z rot.
 
                     Vector3 pos = aimRay.GetPoint(distanceSpawned);
-                    blastAttack.position = pos;
-                    Debug.Log($"{pos}");
+                    Ray downRay = new Ray(pos, Vector3.down);
+                    RaycastHit hit;
+                    Physics.Raycast(downRay, out hit);
+                    blastAttack.position = hit.point;
                     int hitCount = blastAttack.Fire().hitCount;
                     if (hitCount > 0) 
                     {
