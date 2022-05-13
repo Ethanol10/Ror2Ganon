@@ -63,7 +63,7 @@ namespace GanondorfMod.Modules
         internal const float obliterateDamageCoefficient = 7.0f;
         internal const float obliterateDORIYACoefficient = 14.0f;
         internal const float obliterateFinalDamageMultiplier = 4.0f;
-        internal const float obliterateTimeToMaxCharge = 20f;
+        internal const float obliterateTimeToMaxCharge = 10f;
         internal const float obliterateMaxDistanceCovered = 50f;
         internal const float obliterateMaxExplosionCount = 10f;
         internal const float obliterateMinDistance = 10f;

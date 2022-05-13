@@ -84,13 +84,20 @@ namespace GanondorfMod.SkillStates
                     if (damage <= maxDamage)
                     {
                         damage += rampingDamageIncrement * Time.fixedDeltaTime;
-                        explosionNum += rampingeExplosionNumIncrement * Time.fixedDeltaTime;
-                        distance += rampingDistanceIncrement * Time.fixedDeltaTime;
-                        if ((damage >= maxDamage) || (explosionNum >= maxExplosion) || (distance >= maxDistance))
-                        {
-                            isFullyCharged = true;
-                        }                        
                     }
+                    if (explosionNum <= maxExplosion) 
+                    {
+                        explosionNum += rampingeExplosionNumIncrement * Time.fixedDeltaTime;
+                    }
+                    if (explosionNum <= maxExplosion)
+                    {
+                        distance += rampingDistanceIncrement * Time.fixedDeltaTime;
+                    }
+
+                    if ((damage >= maxDamage) || (explosionNum >= maxExplosion) || (distance >= maxDistance))
+                    {
+                        isFullyCharged = true;
+                    }                        
                     if ((damage >= maxDamage || explosionNum >= maxExplosion || distance >= maxDistance) && isFullyCharged)
                     {
                         if (!sentRequest)

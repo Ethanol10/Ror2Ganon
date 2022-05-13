@@ -147,9 +147,22 @@ namespace GanondorfMod.SkillStates
 
                     Vector3 pos = aimRay.GetPoint(distanceSpawned);
                     Ray downRay = new Ray(pos, Vector3.down);
-                    RaycastHit hit;
-                    Physics.Raycast(downRay, out hit);
-                    blastAttack.position = hit.point;
+                    Ray upRay = new Ray(pos, Vector3.up);
+                    RaycastHit downHit;
+                    RaycastHit upHit;
+                    Physics.Raycast(downRay, out downHit, 20f, 1 << 11);
+                    Physics.Raycast(upRay, out upHit, 20f, 1 << 11);
+
+                    //Compare distances from origin
+                    if (downHit.distance <= upHit.distance) 
+                    {
+                        blastAttack.position = upHit.point;
+                    }
+                    else
+                    {
+                        blastAttack.position = downHit.point;
+                    }
+
                     int hitCount = blastAttack.Fire().hitCount;
                     if (hitCount > 0) 
                     {
