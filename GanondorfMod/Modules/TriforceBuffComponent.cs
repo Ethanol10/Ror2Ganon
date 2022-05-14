@@ -14,7 +14,7 @@ namespace GanondorfMod.Modules
         private float timer;
         private float lastTimeDecayed;
         private bool startDecaying;
-        private bool pauseDecay;
+        public bool pauseDecay;
 
         public void Awake() {
             startDecaying = false;

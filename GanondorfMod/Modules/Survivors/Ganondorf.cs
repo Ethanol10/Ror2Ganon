@@ -30,7 +30,7 @@ namespace GanondorfMod.Modules.Survivors
             bodyColor = Color.red,
             characterPortrait = Modules.Assets.LoadCharacterIcon("Ganondorf"),
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
-            damage = 20f,
+            damage = 17f,
             damageGrowth = 2.5f,
             healthGrowth = 15f,
             healthRegen = 1.5f,
@@ -493,7 +493,7 @@ namespace GanondorfMod.Modules.Survivors
 
             Modules.Skills.AddSpecialSkill(bodyPrefab, infernoGuillotine, heavyDamageUnlockableDef);
 
-            //Inferno Guillotine
+            //obliterate
             obliterate = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
@@ -507,7 +507,7 @@ namespace GanondorfMod.Modules.Survivors
                 beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
-                fullRestockOnAssign = true,
+                fullRestockOnAssign = false,
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
@@ -589,7 +589,7 @@ namespace GanondorfMod.Modules.Survivors
                 beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
-                fullRestockOnAssign = true,
+                fullRestockOnAssign = false,
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,

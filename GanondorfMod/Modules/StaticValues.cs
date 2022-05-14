@@ -64,10 +64,10 @@ namespace GanondorfMod.Modules
         internal const float obliterateDORIYACoefficient = 14.0f;
         internal const float obliterateFinalDamageMultiplier = 4.0f;
         internal const float obliterateTimeToMaxCharge = 10f;
-        internal const float obliterateMaxDistanceCovered = 50f;
+        internal const float obliterateMaxDistanceCovered = 75f;
         internal const float obliterateMaxExplosionCount = 10f;
         internal const float obliterateMinDistance = 10f;
-        internal const float obliterateRadiusPerExplosion = 4f;
+        internal const float obliterateRadiusPerExplosion = 5f;
         internal const float obliterateBuffArmourMultiplier = 3f;
 
         //Maxmimum stack of triforce buffs.

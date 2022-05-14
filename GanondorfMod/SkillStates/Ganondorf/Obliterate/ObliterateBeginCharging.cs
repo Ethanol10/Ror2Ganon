@@ -1,4 +1,5 @@
 ﻿using EntityStates;
+using GanondorfMod.Modules;
 using GanondorfMod.Modules.Networking;
 using GanondorfMod.Modules.Survivors;
 using R2API.Networking;
@@ -18,6 +19,7 @@ namespace GanondorfMod.SkillStates
         //Allow him to look around while charging, use the same charging effect as Serrated Whirlwind
         //When it comes time, blast in a line in front of ganon
         //end state.
+        internal TriforceBuffComponent triforceComponent;
         internal GanondorfController ganoncon;
 
         internal float damage;
@@ -58,13 +60,16 @@ namespace GanondorfMod.SkillStates
             maxExplosion = Modules.StaticValues.obliterateMaxExplosionCount;
             rampingeExplosionNumIncrement = (maxExplosion - explosionNum) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
 
-            distance = 1f;
+            distance = 0f;
             maxDistance = Modules.StaticValues.obliterateMaxDistanceCovered;
             rampingDistanceIncrement = (maxDistance - distance) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
 
             CreateIndicator();
             ganoncon = base.GetComponent<GanondorfController>();
             ganoncon.SwapToSword();
+
+            triforceComponent = base.GetComponent<TriforceBuffComponent>();
+            triforceComponent.pauseDecay = true;
             if (NetworkServer.active) 
             {
                 characterBody.SetBuffCount(Modules.Buffs.damageAbsorberBuff.buffIndex, 1);
@@ -119,6 +124,9 @@ namespace GanondorfMod.SkillStates
                 {
                     new ChargingSwordNetworkRequest(characterBody.masterObjectId, false).Send(NetworkDestination.Clients);
                     new FullyChargedSwordNetworkRequest(characterBody.masterObjectId, false).Send(NetworkDestination.Clients);
+
+                    triforceComponent = base.GetComponent<TriforceBuffComponent>();
+                    triforceComponent.pauseDecay = false;
                     base.outer.SetNextState(new ObliterateEnd
                     {
                         damage = damage,
@@ -133,28 +141,21 @@ namespace GanondorfMod.SkillStates
         {
             if (Modules.Assets.obliteratorIndicator)
             {
-                this.downRay = new Ray
-                {
-                    direction = Vector3.down,
-                    origin = base.transform.position
-                };
-
                 this.obliteratorIndicatorInstance = UnityEngine.Object.Instantiate<GameObject>(Modules.Assets.obliteratorIndicator, this.downRay.origin, Quaternion.identity);
-                this.obliteratorIndicatorInstance.transform.localScale = new Vector3(10f, 10f, 10f);
+                this.obliteratorIndicatorInstance.transform.localScale = new Vector3(Modules.StaticValues.obliterateRadiusPerExplosion, 10f, distance);
+                this.obliteratorIndicatorInstance.transform.position = base.transform.position + new Vector3(0f, 0f, distance / 2.0f);
+                this.obliteratorIndicatorInstance.transform.parent = base.characterDirection.targetTransform;
             }
         }
 
         private void UpdateIndicator() 
         {
-            this.downRay = new Ray
-            {
-                direction = Vector3.down,
-                origin = base.transform.position
-            };
 
             if (this.obliteratorIndicatorInstance) 
             {
-                this.obliteratorIndicatorInstance.transform.position = this.downRay.origin;
+                this.obliteratorIndicatorInstance.transform.localScale = new Vector3(Modules.StaticValues.obliterateRadiusPerExplosion, 10f, distance);
+                this.obliteratorIndicatorInstance.transform.position = base.characterDirection.targetTransform.position + new Vector3(0f, 0f, distance / 2.0f);
+                //this.obliteratorIndicatorInstance.transform.rotation = Quaternion.identity;
             }
         }
 

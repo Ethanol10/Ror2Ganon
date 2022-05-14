@@ -252,6 +252,7 @@ namespace GanondorfMod.SkillStates
             if (base.cameraTargetParams) {
                 base.cameraTargetParams.fovOverride = -1f;
             }
+            base.characterMotor.disableAirControlUntilCollision = false;
 
             ganonController.SetMaxVal(grabController.Count);
 
