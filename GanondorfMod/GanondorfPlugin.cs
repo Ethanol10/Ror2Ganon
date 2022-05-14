@@ -115,7 +115,7 @@ namespace GanondorfMod
             On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
             On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
             On.RoR2.CharacterModel.UpdateOverlays += CharacterModel_UpdateOverlays;
-
+            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
 
             if (Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI")) 
             {
@@ -131,6 +131,24 @@ namespace GanondorfMod
                 if (item.bodyPrefab.name == "GanondorfBody")
                 {
                     CustomEmotesAPI.ImportArmature(item.bodyPrefab, Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("humanoidGanondorf"));
+                }
+            }
+        }
+
+        private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo info) 
+        {
+            orig(self, info);
+            if (info.attacker) 
+            {
+                if (self) 
+                {
+                    if (self.body) 
+                    {
+                        if (self.body.HasBuff(Modules.Buffs.damageAbsorberBuff)) 
+                        {
+                            self.body.AddBuff(Modules.Buffs.damageAbsorberBuff);
+                        }
+                    }
                 }
             }
         }
@@ -204,6 +222,10 @@ namespace GanondorfMod
                     TriforceBuffComponent triforceBuffComponent = self.GetComponent<TriforceBuffComponent>();
                     self.armor += triforceBuffComponent.GetBuffCount()*(Modules.StaticValues.triforceMaxArmour/ Modules.StaticValues.maxPowerStack);
                     self.damage += triforceBuffComponent.GetBuffCount() * (Modules.StaticValues.triforceMaxDamage / Modules.StaticValues.maxPowerStack);
+                }
+                if (self.HasBuff(Modules.Buffs.damageAbsorberBuff)) 
+                {
+                    self.armor += self.GetBuffCount(Modules.Buffs.damageAbsorberBuff) * Modules.StaticValues.obliterateBuffArmourMultiplier;
                 }
             }
         }

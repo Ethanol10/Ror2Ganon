@@ -17,10 +17,9 @@ namespace GanondorfMod.Modules
         internal static void RegisterBuffs()
         {
             Sprite shieldSprite = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/Common/bdHiddenInvincibility.asset").WaitForCompletion().iconSprite;
-            //armorBuff = AddNewBuff("Super Armour Buff", RoR2.LegacyResourcesAPI.Load<Sprite>("Textures/BuffIcons/texBuffGenericShield"), Color.white, false, false);
             armorBuff = AddNewBuff("Super Armor Buff", shieldSprite, Color.white, false, false);
             triforceBuff = AddNewBuff("Triforce Buff", Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("TriforcePower"), Color.yellow, true, false);
-            damageAbsorberBuff = AddNewBuff("Damage Absorber Buff", shieldSprite, Color.yellow, false, false);
+            damageAbsorberBuff = AddNewBuff("Damage Absorber Buff", shieldSprite, Color.yellow, true, false);
         }
 
         // simple helper method

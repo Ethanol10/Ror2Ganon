@@ -576,14 +576,38 @@ namespace GanondorfMod.Modules.Survivors
                 stockToConsume = 1
             });
 
+            SkillDef obliterateScepter = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("InfernoGuillotineIcon"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ObliterateBeginCharging)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+
 
             if (GanondorfPlugin.scepterInstalled)
             {
-                RegisterAncientScepterStandalone(warlockPunchScepter, InfernoGuillotineScepter, null);
+                RegisterAncientScepterStandalone(warlockPunchScepter, InfernoGuillotineScepter, obliterateScepter);
             }
             else if (GanondorfPlugin.fallbackScepter)
             {
-                RegisterTILERScepter(warlockPunchScepter, InfernoGuillotineScepter, null);
+                RegisterTILERScepter(warlockPunchScepter, InfernoGuillotineScepter, obliterateScepter);
             }         
         }
 
@@ -591,12 +615,14 @@ namespace GanondorfMod.Modules.Survivors
         {
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill1, instance.fullBodyName, SkillSlot.Special, 0);
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill2, instance.fullBodyName, SkillSlot.Special, 1);
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill3, instance.fullBodyName, SkillSlot.Special, 2);
         }
 
         private static void RegisterTILERScepter(SkillDef skill1, SkillDef skill2, SkillDef skill3)
         {
             ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill1, instance.fullBodyName, SkillSlot.Special, warlockPunch);
             ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill2, instance.fullBodyName, SkillSlot.Special, infernoGuillotine);
+            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill3, instance.fullBodyName, SkillSlot.Special, obliterate);
         }
 
         #endregion

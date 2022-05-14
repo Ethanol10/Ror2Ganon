@@ -65,6 +65,10 @@ namespace GanondorfMod.SkillStates
             CreateIndicator();
             ganoncon = base.GetComponent<GanondorfController>();
             ganoncon.SwapToSword();
+            if (NetworkServer.active) 
+            {
+                characterBody.SetBuffCount(Modules.Buffs.damageAbsorberBuff.buffIndex, 1);
+            }
         }
 
         public override void OnExit()
