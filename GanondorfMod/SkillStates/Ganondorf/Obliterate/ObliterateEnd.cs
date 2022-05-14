@@ -16,6 +16,7 @@ namespace GanondorfMod.SkillStates
         public float damage;
         public float distance;
         private float animTimer;
+        public bool isScepter;
         public bool isUpgraded;
         public bool halfBoosted;
         public bool fullBoosted;
@@ -62,6 +63,7 @@ namespace GanondorfMod.SkillStates
 
             ganoncon = base.GetComponent<GanondorfController>();
 
+            float dmgmodifier = isScepter ? Modules.StaticValues.warlockPunchDamageReducerScepter : Modules.StaticValues.warlockPunchDamageReducer;
             int buffCount = base.characterBody.GetBuffCount(Modules.Buffs.triforceBuff);
             float damageMultiplier = 1.0f;
             if (buffCount < Modules.StaticValues.maxPowerStack / 2)
@@ -70,12 +72,12 @@ namespace GanondorfMod.SkillStates
             }
             else if (buffCount >= Modules.StaticValues.maxPowerStack / 2 && buffCount < Modules.StaticValues.maxPowerStack)
             {
-                damageMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer / 3;
+                damageMultiplier = Modules.StaticValues.maxPowerStack / dmgmodifier / 3.0f;
                 halfBoosted = true;
             }
             else if (buffCount >= Modules.StaticValues.maxPowerStack)
             {
-                damageMultiplier = Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer;
+                damageMultiplier = Modules.StaticValues.maxPowerStack / dmgmodifier;
                 fullBoosted = true;
             }
 
@@ -105,6 +107,11 @@ namespace GanondorfMod.SkillStates
             blastAttack.baseForce = 10000f;
             blastAttack.falloffModel = BlastAttack.FalloffModel.None;
             blastAttack.crit = base.RollCrit();
+
+            if (NetworkServer.active)
+            {
+                characterBody.RemoveBuff(Modules.Buffs.damageAbsorberBuff.buffIndex);
+            }
         }
 
         public override void OnExit()

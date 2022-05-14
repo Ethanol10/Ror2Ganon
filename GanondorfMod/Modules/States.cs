@@ -35,6 +35,10 @@ namespace GanondorfMod.Modules
             entityStates.Add(typeof(InfernoGuillotine));
 
             entityStates.Add(typeof(InfernoGuillotineScepter));
+
+            entityStates.Add(typeof(ObliterateBeginCharging));
+            entityStates.Add(typeof(ObliterateEnd));
+            entityStates.Add(typeof(ScepterObliterateBeginCharging));
         }
     }
 }

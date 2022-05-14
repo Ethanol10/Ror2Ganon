@@ -13,7 +13,7 @@ using UnityEngine.Networking;
 
 namespace GanondorfMod.SkillStates
 {
-    internal class ObliterateBeginCharging : BaseSkillState
+    internal class ScepterObliterateBeginCharging : BaseSkillState
     {
         //We want to freeze ganon in place
         //Allow him to look around while charging, use the same charging effect as Serrated Whirlwind
@@ -140,7 +140,7 @@ namespace GanondorfMod.SkillStates
                         damage = damage,
                         noOfExplosions = explosionNum,
                         distance = distance,
-                        isScepter = false
+                        isScepter = true
                     });
                 }
             }
