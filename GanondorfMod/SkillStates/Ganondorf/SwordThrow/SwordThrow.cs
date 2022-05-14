@@ -42,6 +42,10 @@ namespace GanondorfMod.SkillStates.Ganondorf
             ganoncon = GetComponent<GanondorfController>();
             swordSpawned = false;
             lastAnimStopwatch = 0f;
+            if (isGrounded) 
+            {
+                base.SmallHop(base.characterMotor, 15f);
+            }
         }
 
         public override void OnExit()
@@ -53,7 +57,6 @@ namespace GanondorfMod.SkillStates.Ganondorf
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
             if (base.isAuthority) 
             {
                 lastAnimStopwatch += Time.fixedDeltaTime;

@@ -82,6 +82,15 @@ namespace GanondorfMod.SkillStates
             Destroy(this.obliteratorIndicatorInstance);
         }
 
+        public override void Update()
+        {
+            base.Update();
+            if (base.inputBank.skill4.down) 
+            {
+                UpdateIndicator();
+            }
+        }
+
         public override void FixedUpdate()
         {
             base.FixedUpdate();
@@ -89,7 +98,6 @@ namespace GanondorfMod.SkillStates
             {
                 if (base.inputBank.skill4.down)
                 {
-                    UpdateIndicator();
                     base.characterDirection.moveVector = base.GetAimRay().direction.normalized;
                     if (damage <= maxDamage)
                     {
@@ -142,9 +150,10 @@ namespace GanondorfMod.SkillStates
             if (Modules.Assets.obliteratorIndicator)
             {
                 this.obliteratorIndicatorInstance = UnityEngine.Object.Instantiate<GameObject>(Modules.Assets.obliteratorIndicator, this.downRay.origin, Quaternion.identity);
-                this.obliteratorIndicatorInstance.transform.localScale = new Vector3(Modules.StaticValues.obliterateRadiusPerExplosion, 10f, distance);
-                this.obliteratorIndicatorInstance.transform.position = base.transform.position + new Vector3(0f, 0f, distance / 2.0f);
                 this.obliteratorIndicatorInstance.transform.parent = base.characterDirection.targetTransform;
+                this.obliteratorIndicatorInstance.transform.localScale = new Vector3(Modules.StaticValues.obliterateRadiusPerExplosion, 10f, distance);
+                this.obliteratorIndicatorInstance.transform.localPosition = new Vector3(0f, 0f, distance / 2.0f);
+                this.obliteratorIndicatorInstance.transform.localRotation = Quaternion.identity;
             }
         }
 
@@ -154,8 +163,7 @@ namespace GanondorfMod.SkillStates
             if (this.obliteratorIndicatorInstance) 
             {
                 this.obliteratorIndicatorInstance.transform.localScale = new Vector3(Modules.StaticValues.obliterateRadiusPerExplosion, 10f, distance);
-                this.obliteratorIndicatorInstance.transform.position = base.characterDirection.targetTransform.position + new Vector3(0f, 0f, distance / 2.0f);
-                //this.obliteratorIndicatorInstance.transform.rotation = Quaternion.identity;
+                this.obliteratorIndicatorInstance.transform.localPosition = new Vector3(0f, 0f, distance / 2.0f);
             }
         }
 
