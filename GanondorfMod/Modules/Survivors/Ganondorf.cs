@@ -857,12 +857,12 @@ namespace GanondorfMod.Modules.Survivors
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
-                    renderer = defaultRenderers[0].renderer
+                    renderer = oldManSkinRendererInfos[0].renderer
                 },
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("SmashSword"),
-                    renderer = defaultRenderers[instance.mainRendererIndex].renderer
+                    renderer = oldManSkinRendererInfos[instance.mainRendererIndex].renderer
                 }
             };
 
