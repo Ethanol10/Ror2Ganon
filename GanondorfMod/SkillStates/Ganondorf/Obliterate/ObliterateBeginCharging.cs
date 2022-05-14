@@ -3,6 +3,7 @@ using GanondorfMod.Modules.Networking;
 using GanondorfMod.Modules.Survivors;
 using R2API.Networking;
 using R2API.Networking.Interfaces;
+using RoR2;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -53,7 +54,7 @@ namespace GanondorfMod.SkillStates
             maxDamage = Modules.StaticValues.obliterateDamageCoefficient * this.damageStat * Modules.StaticValues.obliterateFinalDamageMultiplier ;
             rampingDamageIncrement = (maxDamage - damage) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
 
-            explosionNum = 1;
+            explosionNum = 1f;
             maxExplosion = Modules.StaticValues.obliterateMaxExplosionCount;
             rampingeExplosionNumIncrement = (maxExplosion - explosionNum) / (Modules.StaticValues.obliterateTimeToMaxCharge / base.attackSpeedStat);
 
@@ -89,7 +90,7 @@ namespace GanondorfMod.SkillStates
                     {
                         explosionNum += rampingeExplosionNumIncrement * Time.fixedDeltaTime;
                     }
-                    if (explosionNum <= maxExplosion)
+                    if (distance <= maxDistance)
                     {
                         distance += rampingDistanceIncrement * Time.fixedDeltaTime;
                     }

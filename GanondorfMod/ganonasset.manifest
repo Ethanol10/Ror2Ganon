@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3156856139
+CRC: 1105235571
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aba1b5df3ec3813e97aeac9bb30b7a89
+    Hash: bf4d66628753cda909b4e0354f4b5f4c
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -117,6 +117,7 @@ Assets:
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
 - Assets/GanonAsset/Animator/SwordAnimations/JumpWithSword.anim
 - Assets/GanonAsset/icons/darkDiveIconUtility.png
+- Assets/GanonAsset/particle/ImpactHenrySlash.prefab
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
 - Assets/GanonAsset/Mesh/SmashSword.mesh

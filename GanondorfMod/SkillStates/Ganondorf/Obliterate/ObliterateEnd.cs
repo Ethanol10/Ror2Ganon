@@ -132,7 +132,7 @@ namespace GanondorfMod.SkillStates
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if(base.fixedAge > triggerBlast)
+            if(base.fixedAge > triggerBlast && !blastCompleted)
             {
                 startTriggeringBlast = true;
             }
@@ -140,7 +140,7 @@ namespace GanondorfMod.SkillStates
             if (startTriggeringBlast) 
             {
                 blastStopwatch += Time.fixedDeltaTime;
-                if (blastStopwatch >= 0.05f) 
+                if (blastStopwatch >= 0.05f)
                 {
                     blastStopwatch = 0f;
                     //Trigger Blast at distanceSpawned along ray without X/Z rot.
@@ -154,16 +154,24 @@ namespace GanondorfMod.SkillStates
                     Physics.Raycast(upRay, out upHit, 20f, 1 << 11);
 
                     //Compare distances from origin
-                    if (downHit.distance <= upHit.distance) 
-                    {
-                        blastAttack.position = upHit.point;
-                    }
-                    else
-                    {
-                        blastAttack.position = downHit.point;
-                    }
+                    blastAttack.position = (downHit.distance <= upHit.distance) ? upHit.point : downHit.point;
 
+                    EffectManager.SpawnEffect(Modules.Assets.beetleGuardGroundSlamObliterate, new EffectData
+                    {
+                        origin = (downHit.distance <= upHit.distance) ? upHit.point : downHit.point,
+                        scale = 3f,
+                    }, true);
+                    EffectManager.SpawnEffect(Modules.Assets.parentSlamEffectObliterate, new EffectData
+                    {
+                        origin = (downHit.distance <= upHit.distance) ? upHit.point : downHit.point,
+                        scale = 3f,
+                    }, true);
                     int hitCount = blastAttack.Fire().hitCount;
+                    if (explosionsPerformed <= 0) 
+                    {
+                        blastAttack.position = base.transform.position;
+                        blastAttack.Fire();
+                    }
                     if (hitCount > 0) 
                     {
                         enemyHit = true;
@@ -175,6 +183,7 @@ namespace GanondorfMod.SkillStates
                     if (explosionsPerformed >= (int)noOfExplosions) 
                     {
                         blastCompleted = true;
+                        startTriggeringBlast = false;
                     }
                 }
             }

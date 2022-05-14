@@ -21,6 +21,8 @@ namespace GanondorfMod.Modules
         internal static GameObject swordHitImpactEffect;
         internal static GameObject meleeHitImpactLightning;
         internal static GameObject meleeHitImpact;
+        internal static GameObject parentSlamEffectObliterate;
+        internal static GameObject beetleGuardGroundSlamObliterate;
 
         //Sword throw
         internal static GameObject swordObject;
@@ -110,6 +112,8 @@ namespace GanondorfMod.Modules
             fullyChargedMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("FullyChargedMat");
             chargingMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ChargingMat");
             swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
+            parentSlamEffectObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Parent/ParentSlamEffect.prefab").WaitForCompletion();
+            beetleGuardGroundSlamObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleGuardGroundSlam.prefab").WaitForCompletion();
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)
