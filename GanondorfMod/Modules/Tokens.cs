@@ -140,7 +140,7 @@ namespace GanondorfMod.Modules
                 $" The Scaling of Inferno Guillotine is now stronger, maxing out at " +
                 $"<style=cIsDamage>{100f * (Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter)}% damage</style>.");
 
-            LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_NAME", "Destruction");
+            LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_NAME", "True Obliteration");
             LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_DESCRIPTION", "Hold to charge, let go to unleash a series of explosions in front of you.");
             #endregion
 

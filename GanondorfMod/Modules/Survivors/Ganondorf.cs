@@ -578,11 +578,11 @@ namespace GanondorfMod.Modules.Survivors
 
             SkillDef obliterateScepter = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
-                skillNameToken = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_NAME",
-                skillDescriptionToken = prefix + "_GANONDORF_BODY_OBLITERATE_SWORD_DESCRIPTION",
+                skillName = prefix + "_GANONDORF_BODY_SCEPTER_OBLITERATE_SWORD_NAME",
+                skillNameToken = prefix + "_GANONDORF_BODY_SCEPTER_OBLITERATE_SWORD_NAME",
+                skillDescriptionToken = prefix + "_GANONDORF_BODY_SCEPTER_OBLITERATE_SWORD_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("InfernoGuillotineIcon"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ObliterateBeginCharging)),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.ScepterObliterateBeginCharging)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
                 baseRechargeInterval = 10f,
