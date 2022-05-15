@@ -78,7 +78,8 @@ namespace GanondorfMod.Modules
             LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_DESCRIPTION", $"Hold down to charge your sword for up to {Modules.StaticValues.swordTimeToMaxCharge}s, and" +
                 $"release to throw your sword forwards, dealing " +
                 $"<style=cIsDamage>{100f * Modules.StaticValues.swordMaximumDamageMultiplier}%</style> at no charge per tick. " +
-                $"At full charge, damage is increased by <style=cIsDamage>{Modules.StaticValues.swordMaximumDamageMultiplier}x</style>.");
+                $"At full charge, damage is increased by <style=cIsDamage>{Modules.StaticValues.swordMaximumDamageMultiplier}x</style>. " +
+                $"Ganondorf can use his melee attacks while his sword is thrown.");
             #endregion
 
             #region Utility
@@ -126,7 +127,7 @@ namespace GanondorfMod.Modules
                 $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
 
             LanguageAPI.Add(prefix + "OBLITERATE_SWORD_NAME", "Obliterate");
-            LanguageAPI.Add(prefix + "OBLITERATE_SWORD_DESCRIPTION", $"Hold your sword high, charging for up to <style=cIsDamage>{Modules.StaticValues.obliterateTimeToMaxCharge}s</style> to" +
+            LanguageAPI.Add(prefix + "OBLITERATE_SWORD_DESCRIPTION", $"Hold your sword high, charging for up to <style=cIsDamage>{Modules.StaticValues.obliterateTimeToMaxCharge}s</style> to " +
                 $"increase damage and range. Release to throw your sword down, sending explosions down in the direction you are facing. " +
                 $"At base, explosions deal <style=cIsDamage>{Modules.StaticValues.obliterateDamageCoefficient * 100f}%</style> damage, " +
                 $"and can scale up to a maximum of <style=cIsDamage>{Modules.StaticValues.obliterateFinalDamageMultiplier}x</style> per explosion.");

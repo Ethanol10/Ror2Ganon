@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 432902794
+CRC: 2010917825
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0b708e807c3644d03d6f52bf25fdf0b4
+    Hash: 7249d978cc2501d5e8de2ec8f2d2438f
   TypeTreeHash:
     serializedVersion: 2
     Hash: ebfdae5e11b002c738a9626633c6ac18
@@ -108,6 +108,7 @@ Assets:
 - Assets/GanonAsset/Prefab/humanoidGanondorf.prefab
 - Assets/GanonAsset/Animator/Animations/InfernoKickAirtime.anim
 - Assets/GanonAsset/Animator/SwordAnimations/LeftSlash.anim
+- Assets/GanonAsset/icons/serratedWhirlwindIcon.png
 - Assets/GanonAsset/Material/ganonTex07.mat
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
@@ -146,6 +147,7 @@ Assets:
 - Assets/GanonAsset/Material/ChargingMat.mat
 - Assets/GanonAsset/Texture/emissionMap.png
 - Assets/GanonAsset/Mesh/Torus.mesh
+- Assets/GanonAsset/icons/obliterateBoostedIcon.png
 - Assets/GanonAsset/Animator/Animations/GrabEnd.anim
 - Assets/GanonAsset/icons/skinMastery.png
 - Assets/GanonAsset/particle/ImpactLightning.prefab
@@ -159,6 +161,7 @@ Assets:
 - Assets/GanonAsset/icons/texGanondorfIcon.png
 - Assets/GanonAsset/Animator/Animations/PunchAlternate.anim
 - Assets/GanonAsset/Animator/Animations/WarlockPunch.anim
+- Assets/GanonAsset/icons/ObliterateIcon.png
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
 - Assets/GanonAsset/Material/FullyChargedMat.mat
 - Assets/GanonAsset/Animator/HumanoidGanon.asset
@@ -222,4 +225,5 @@ Assets:
 - Assets/GanonAsset/Texture/tex1ganonbrawl.png
 - Assets/GanonAsset/particle/PunchHitParticle.prefab
 - Assets/GanonAsset/Texture/ganonTex01.png
+- Assets/GanonAsset/icons/CleaveIcon.png
 Dependencies: []
