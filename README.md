@@ -67,9 +67,42 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
   <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
 </a>
 
+## Other Mods by Popcorn Factory
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/DittoMod/">
+        <img src="https://user-images.githubusercontent.com/93917577/168004690-23b6d040-5f89-4b62-916b-c40d774bff02.png"><br>
+        <p>DittoMod (TeaL)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/TeaL/DekuMod/">
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960043614036168784/TeaL-DekuMod-3.1.1.png.128x128_q95.png"><br>
+        <p>DekuMod (TeaL)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/ShigarakiMod/">
+        <img src="https://user-images.githubusercontent.com/93917577/168004591-39480a52-c7fe-4962-997f-cd9460bb4d4a.png"><br>
+        <p>ShigarakiMod (TeaL)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/BokChoyWithSoy/Phoenix_Wright_Mod/">
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960054458790850570/BokChoyWithSoy-Phoenix_Wright_Mod-1.6.2.png.128x128_q95.png"><br>
+        <p>Phoenix Wright Mod (BokChoyWithSoy)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/Wisp_WarframeSurvivorMod/">
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960043613692239942/PopcornFactory-Wisp_WarframeSurvivorMod-1.0.2.png.128x128_q95.png"><br>
+        <p>Wisp Mod (Popcorn Factory Team)</p>
+    </a>
+</div>
+
 # Old Changelog
 <details>
 <summary>Click to expand previous patch notes:</summary>
+
 - 2.1.5 -> Fixed the buff icon when attaining super armour from being white.
 - 2.1.4 -> Updates to the following:
     - Added back in Item Displays, hopefully they don't give you two of the same item.
