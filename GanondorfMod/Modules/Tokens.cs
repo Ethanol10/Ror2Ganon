@@ -16,7 +16,7 @@ namespace GanondorfMod.Modules
             desc = desc + "< ! > Use Flame Choke to grab multiple enemies in a row, disabling them in the process." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Wizard's Foot is a great mobility tool, and a way to send enemies flying." + Environment.NewLine + Environment.NewLine;
             desc = desc + "< ! > Warlock Punch to release a devastating explosive punch." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor, attack and the power of your Special." + Environment.NewLine + Environment.NewLine;
+            desc = desc + "< ! > Build up your Triforce of Power by attacking or killing foes, in turn increasing your armor, attack and the power of your Utility and Special." + Environment.NewLine + Environment.NewLine;
             //desc = desc + "";
 
             string outro = "..and so he left, spreading malice in his wake.";
