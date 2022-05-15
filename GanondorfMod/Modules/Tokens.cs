@@ -62,7 +62,7 @@ namespace GanondorfMod.Modules
                 + $"When airborne and while looking downwards, thrust your feet downwards bouncing a short distance upwards for <style=cIsDamage>{100f * StaticValues.downAirDamageCoefficient}% damage</style>.");
 
             LanguageAPI.Add(prefix + "PRIMARY_SWORD_NAME", "Cleave");
-            LanguageAPI.Add(prefix + "PRIMARY_SWORD_DESCRIPTION", "Cleave your enemies");
+            LanguageAPI.Add(prefix + "PRIMARY_SWORD_DESCRIPTION", $"Cleave through hordes for <style=cIsDamage>{Modules.StaticValues.swordSwingDamageCoefficient * 100f}%</style> damage.");
 
             #endregion
 
@@ -75,7 +75,10 @@ namespace GanondorfMod.Modules
                 + $"<style=cIsDamage>{100f * StaticValues.flameChokeAltDamageCoefficient}% damage</style>.");
 
             LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_NAME", "Serrated Whirlwind");
-            LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_DESCRIPTION", "Hold to charge your sword, gaining damage and range for");
+            LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_DESCRIPTION", $"Hold down to charge your sword for up to {Modules.StaticValues.swordTimeToMaxCharge}s, and" +
+                $"release to throw your sword forwards, dealing " +
+                $"<style=cIsDamage>{100f * Modules.StaticValues.swordMaximumDamageMultiplier}%</style> at no charge per tick. " +
+                $"At full charge, damage is increased by <style=cIsDamage>{Modules.StaticValues.swordMaximumDamageMultiplier}x</style>.");
             #endregion
 
             #region Utility
@@ -123,7 +126,10 @@ namespace GanondorfMod.Modules
                 $"<style=cIsDamage>{100f * Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducer}%</style> damage.");
 
             LanguageAPI.Add(prefix + "OBLITERATE_SWORD_NAME", "Obliterate");
-            LanguageAPI.Add(prefix + "OBLITERATE_SWORD_DESCRIPTION", "Hold to charge, let go to unleash a series of explosions in front of you.");
+            LanguageAPI.Add(prefix + "OBLITERATE_SWORD_DESCRIPTION", $"Hold your sword high, charging for up to <style=cIsDamage>{Modules.StaticValues.obliterateTimeToMaxCharge}s</style> to" +
+                $"increase damage and range. Release to throw your sword down, sending explosions down in the direction you are facing. " +
+                $"At base, explosions deal <style=cIsDamage>{Modules.StaticValues.obliterateDamageCoefficient * 100f}%</style> damage, " +
+                $"and can scale up to a maximum of <style=cIsDamage>{Modules.StaticValues.obliterateFinalDamageMultiplier}x</style> per explosion.");
             #endregion
 
             #region Scepter Upgrade
@@ -141,7 +147,12 @@ namespace GanondorfMod.Modules
                 $"<style=cIsDamage>{100f * (Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter)}% damage</style>.");
 
             LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_NAME", "True Obliteration");
-            LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_DESCRIPTION", "Hold to charge, let go to unleash a series of explosions in front of you.");
+            LanguageAPI.Add(prefix + "SCEPTER_OBLITERATE_SWORD_DESCRIPTION", $"Hold your sword high, charging for up to <style=cIsDamage>{Modules.StaticValues.obliterateTimeToMaxCharge}s</style> to" +
+                $"increase damage and range. Release to throw your sword down, sending explosions down in the direction you are facing. " +
+                $"At base, explosions deal <style=cIsDamage>{Modules.StaticValues.obliterateDamageCoefficient * 100f}%</style> damage, " +
+                $"and can scale up to a maximum of <style=cIsDamage>{Modules.StaticValues.obliterateFinalDamageMultiplier}x</style> per explosion." +
+                $" The Scaling of Obliterate is now stronger, maxing out at " +
+                $"<style=cIsDamage>{100f * (Modules.StaticValues.maxPowerStack / Modules.StaticValues.warlockPunchDamageReducerScepter)}% damage</style>.");
             #endregion
 
             #region Achievements

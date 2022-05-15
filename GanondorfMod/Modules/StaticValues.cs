@@ -59,7 +59,7 @@ namespace GanondorfMod.Modules
         internal const float infernoGuillotineAirborneCoefficient = 1.0f;
         internal const float infernoGuillotinePullForce = 12f;
 
-        //Obliterate 
+        //Obliterate
         internal const float obliterateDamageCoefficient = 7.0f;
         internal const float obliterateDORIYACoefficient = 14.0f;
         internal const float obliterateFinalDamageMultiplier = 4.0f;

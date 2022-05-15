@@ -947,7 +947,7 @@ namespace GanondorfMod.Modules.Survivors
                 ootSkinMat
             });
 
-            SkinDef ootSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BRAWL_SKIN_NAME",
+            SkinDef ootSkin = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_BLAST_SKIN_NAME",
                 Assets.mainAssetBundle.LoadAsset<Sprite>("brawlSkinIcon"),
                 ootSkinRendererInfos,
                 mainRenderer,
