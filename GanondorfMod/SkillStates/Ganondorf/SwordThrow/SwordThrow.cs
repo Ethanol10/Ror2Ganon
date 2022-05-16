@@ -42,7 +42,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
             ganoncon = GetComponent<GanondorfController>();
             swordSpawned = false;
             lastAnimStopwatch = 0f;
-            if (isGrounded) 
+            if (!isGrounded) 
             {
                 base.SmallHop(base.characterMotor, 15f);
             }

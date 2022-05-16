@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2010917825
+CRC: 1406949950
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7249d978cc2501d5e8de2ec8f2d2438f
+    Hash: c3670b45011aca6154d259277369ddea
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ebfdae5e11b002c738a9626633c6ac18
+    Hash: fb98380650685d80d5a2c2187dc1369c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,8 +26,6 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 54
-  Script: {instanceID: 0}
-- Class: 64
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -87,7 +85,6 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/Taunt1.anim
 - Assets/GanonAsset/Animator/SwordAnimations/DoubleJumpWithSword.anim
 - Assets/GanonAsset/icons/skin5.png
-- Assets/GanonAsset/Mesh/BrawlSword.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialStart.anim
 - Assets/GanonAsset/Animator/Animations/InfernoKick.anim
 - Assets/GanonAsset/Animator/SwordAnimations/StartingSwordCharge.anim
@@ -97,8 +94,11 @@ Assets:
 - Assets/GanonAsset/icons/skin3.png
 - Assets/GanonAsset/Animator/Animations/Running.anim
 - Assets/GanonAsset/Mesh/meshSwing.asset
+- Assets/GanonAsset/Texture/def_sword_001_col.png
+- Assets/GanonAsset/Mesh/BrawlSword.mesh
 - Assets/GanonAsset/particle/GanondorfFlameEffect.prefab
 - Assets/GanonAsset/Animator/SwordAnimations/WalkingWithSword.anim
+- Assets/GanonAsset/Texture/swordEmission.png
 - Assets/GanonAsset/Animator/Animations/Dash.anim
 - Assets/GanonAsset/Animator/SwordAnimations/SwordUnsheathe.anim
 - Assets/GanonAsset/Animator/Animations/UpBFinishGrab.anim
@@ -118,10 +118,10 @@ Assets:
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
 - Assets/GanonAsset/Animator/SwordAnimations/JumpWithSword.anim
 - Assets/GanonAsset/icons/darkDiveIconUtility.png
+- Assets/GanonAsset/Material/BrawlSwordMat.mat
 - Assets/GanonAsset/particle/ImpactHenrySlash.prefab
 - Assets/GanonAsset/Animator/Animations/punchedited.anim
 - Assets/GanonAsset/Animator/Animations/SpecialKickStart.anim
-- Assets/GanonAsset/Mesh/SmashSword.mesh
 - Assets/GanonAsset/Animator/Animations/Throw.anim
 - Assets/GanonAsset/icons/skin6.png
 - Assets/GanonAsset/Animator/SwordAnimations/ChargeSwordEnd.anim
@@ -138,10 +138,10 @@ Assets:
 - Assets/GanonAsset/Animator/upperbodymask.mask
 - Assets/GanonAsset/particle/outerParticles.prefab
 - Assets/GanonAsset/Material/ganonTex04.mat
+- Assets/GanonAsset/Material/SmashSwordMat.mat
 - Assets/GanonAsset/icons/TriforceIcon.png
 - Assets/GanonAsset/Animator/SwordAnimations/SwordSheathe.anim
 - Assets/GanonAsset/particle/firestuff.png
-- Assets/GanonAsset/Texture/tex1ganonbrawlemission.png
 - Assets/GanonAsset/Animator/SwordAnimations/PointSwordUp.anim
 - Assets/GanonAsset/Material/ganonTex03.mat
 - Assets/GanonAsset/Material/ChargingMat.mat
@@ -165,6 +165,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/SpecialKickInbetween.anim
 - Assets/GanonAsset/Material/FullyChargedMat.mat
 - Assets/GanonAsset/Animator/HumanoidGanon.asset
+- Assets/GanonAsset/Material/MasterySwordMat.mat
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
 - Assets/GanonAsset/icons/warlockPunchBoosted.png
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
@@ -187,8 +188,8 @@ Assets:
 - Assets/GanonAsset/Animator/SwordAnimations/FallWithSword.anim
 - Assets/GanonAsset/Mesh/ganonMesh.mesh
 - Assets/GanonAsset/Mesh/ganonBrawlMesh.mesh
-- Assets/GanonAsset/Mesh/OldSword.mesh
 - Assets/GanonAsset/Animator/Animations/GrabAerialLanding.anim
+- Assets/GanonAsset/Texture/brawlswordglowemission.jpg
 - Assets/GanonAsset/particle/first.prefab
 - Assets/GanonAsset/Animator/Animations/DownAir.anim
 - Assets/GanonAsset/Animator/SwordAnimations/MidSwordCharge.anim
@@ -204,6 +205,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/warlockNofoot.anim
 - Assets/GanonAsset/particle/speedLines.prefab
 - Assets/GanonAsset/Animator/Animations/InfernoKickStart.anim
+- Assets/GanonAsset/Texture/def_sword_001_nor.png
 - Assets/GanonAsset/Animator/Animations/WalkingBrake.anim
 - Assets/GanonAsset/Material/ootGanonTex.mat
 - Assets/GanonAsset/Animator/Animations/Falling.anim
@@ -215,6 +217,7 @@ Assets:
 - Assets/GanonAsset/icons/skin7.png
 - Assets/GanonAsset/Animator/Animations/GroundedGrabFinish.anim
 - Assets/GanonAsset/Animator/Animations/Grabbing.anim
+- Assets/GanonAsset/Mesh/SmashSword.mesh
 - Assets/GanonAsset/Animator/Animations/InfernoKickLanding.anim
 - Assets/GanonAsset/particle/Light.prefab
 - Assets/GanonAsset/Texture/ganonNorm.png
@@ -226,4 +229,5 @@ Assets:
 - Assets/GanonAsset/particle/PunchHitParticle.prefab
 - Assets/GanonAsset/Texture/ganonTex01.png
 - Assets/GanonAsset/icons/CleaveIcon.png
+- Assets/GanonAsset/Texture/WpnGanonSwordGlow.png
 Dependencies: []
