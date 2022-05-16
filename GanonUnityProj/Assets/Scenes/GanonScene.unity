@@ -289,7 +289,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4300000, guid: ce7ba0e1e03bac34b83940aa27adb05d, type: 2}
+      objectReference: {fileID: 4300000, guid: e6baf743d99dae042b08f54c91a63b97, type: 2}
     - target: {fileID: 4697711352415594491, guid: 64a6e9a19a253274d924766f2f0f2a3d,
         type: 3}
       propertyPath: m_ConnectedAnchor.y

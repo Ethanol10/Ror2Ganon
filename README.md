@@ -4,8 +4,6 @@ Ganondorf, The King of Evil has arrived to wreak havoc! Build up your power by h
 
 Network Compatible (unless otherwise found not to be, please tell me if there are some problems when using this mod online.)
 
-Standalone Ancient Scepter Compatible.
-
 ## It is HIGHLY recommended to use Scrollable UI to easily select the skin you want
 
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
@@ -13,6 +11,10 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/974992205326450698/unknown.png">
   
+## Mod Interoperability List:
+- Standalone Ancient Scepter
+- ThinkInvisible's Classic Items Ancient Scepter
+
 ## What's new:
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
     - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
@@ -21,7 +23,7 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
         - New Special: Obliterator
     - Updated Punch to include a new move! Try look down while punching!
     - Bug Fixes: 
-        - Fixed Scepter support! Supports both ThinkInivisible
+        - Fixed Scepter support! Supports both ThinkInivisible and Standalone!
         - Fixed the achievements from bugging out. Sorry this took so long!
         - Warlock Punch's animation should not have his legs clip into the floor any longer, and should move with the rest of the body.
         - Fixed (I think) Aerial Flame Chokes from locking Ganon in place when he lands.
@@ -215,6 +217,7 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 - Grab moves have some issues when trying to grab a Wandering Vagrant, Greater Wisp, Solus Control Unit (this isn't an exhaustive list), it pushes back against Ganondorf, possibly sending him through the floor and out the level for a bit.
 - Inferno Guillotine *very rarely* doesn't register that it hit the floor and as a result, leaves you stuck in the air for a bit. I've only ever encountered this once, so if you do encounter it again, please tell me exactly how you replicated it.
+- Animation transitions from sword to melee and back may be buggy, lemme know if you notice any transitions that stick out like a sore thumb.
 - Grab has a weird bug where the enemies don't detatch on end, causing it to stick to ganon preventing you from moving. If this happens, jump off a cliff and it should reset.
  
 ## Credits
@@ -225,4 +228,3 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 - Lemonlust -> helping out debugging some of the problems during initial release
 - My mates, TeaL and Jelly -> for allowing me to basically drag them through my experiements with this mod
 - The various people that helped me when I asked stupid questions on the RoR2 Modding discord -> thank you so much for helping me!
-

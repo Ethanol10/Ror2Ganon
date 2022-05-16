@@ -64,11 +64,19 @@ namespace GanondorfMod.SkillStates.Ganondorf
                 {
                     base.PlayCrossfade("Sheathe, Override", "Throw", "Slash.playbackRate", throwTime, 0.1f);
                     swordSpawned = true;
+                    GameObject swordProjectile;
                     //Throw Sword
-                    GameObject swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
+                    if (characterBody.skinIndex == 8)
+                    {
+                        swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.brawlSwordObject, ganoncon.handRight);
+                    }
+                    else 
+                    {
+                        swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.swordObject, ganoncon.handRight);
+                    }
                     ThrownSwordContainer swordAttributes = swordProjectile.AddComponent<ThrownSwordContainer>();
                     swordAttributes.distanceToThrow = distance;
-                    swordAttributes.startingPosition = base.transform.position;
+                    swordAttributes.startingPosition = base.transform.position; 
                     swordAttributes.isReal = true;
                     swordAttributes.charBody = base.characterBody;
                     swordAttributes.damageToDeal = damage;

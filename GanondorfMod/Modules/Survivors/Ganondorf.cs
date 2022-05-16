@@ -37,7 +37,6 @@ namespace GanondorfMod.Modules.Survivors
             jumpCount = 2,
             maxHealth = 250.0f,
             subtitleNameToken = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SUBTITLE",
-            podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/NullifierSpawnEffect"),
             jumpPower = 20.0f,
         };
 
