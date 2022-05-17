@@ -21,8 +21,18 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 ## Mod Interoperability List:
 - Standalone Ancient Scepter
 - ThinkInvisible's Classic Items Ancient Scepter
+- EmoteAPI
 
 ## What's new:
+
+- 3.0.1 -> Fixes to the following:
+    - Obliterator was removing one stock of Damage Absorbtion Armour instead of ALL stacks. Changes made to remove all stacks.
+    - Some bad formatting on descriptions fixed. (Yes I know everything STILL looks like a goddamn essay.)
+    - Balance Changes:
+        - Utility's use 30 stacks to boost their attack by 3.0x, instead of 40
+        - 80 -> 45 damage gained from max amount of stacks
+
+# Major release details:
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
     - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
         - New Primary: Cleave
@@ -105,6 +115,25 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
+    - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
+        - New Primary: Cleave
+        - New Secondary: Serrated Whirlwind
+        - New Special: Obliterator
+    - Updated Punch to include a new move! Try look down while punching!
+    - Bug Fixes: 
+        - Fixed Scepter support! Supports both ThinkInivisible and Standalone!
+        - Fixed the achievements from bugging out. Sorry this took so long!
+        - Warlock Punch's animation should not have his legs clip into the floor any longer, and should move with the rest of the body.
+        - Fixed (I think) Aerial Flame Chokes from locking Ganon in place when he lands.
+    - Added another skin!
+    - Added EmoteAPI support!
+    - Added ＤＹＮＡＭＩＣＢＯＮＥＳ to his cape. (No I didn't fix his "taking-a-shit" walk, do I look like a GOOD animator to you?)
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/974988697093169162/unknown.png">
+    - Stat Changes:
+        - Utility's use 40 stacks to boost their attack by 3.0x, instead of 20.
+        - 60 -> 80 damage gained from max amount of stacks.
+        - 24 -> 17 base damage.
 - 2.1.5 -> Fixed the buff icon when attaining super armour from being white.
 - 2.1.4 -> Updates to the following:
     - Added back in Item Displays, hopefully they don't give you two of the same item.

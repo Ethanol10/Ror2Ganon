@@ -110,7 +110,7 @@ namespace GanondorfMod.SkillStates
 
             if (NetworkServer.active)
             {
-                characterBody.RemoveBuff(Modules.Buffs.damageAbsorberBuff.buffIndex);
+                characterBody.SetBuffCount(Modules.Buffs.damageAbsorberBuff.buffIndex, 0);
             }
         }
 
