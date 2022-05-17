@@ -8,6 +8,13 @@ Network Compatible (unless otherwise found not to be, please tell me if there ar
 
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
 
+## Support me on Ko-fi! 
+There's no need for payment for mods, but a coffee would be nice once in awhile!
+
+<a href="https://ko-fi.com/ethanol10" target="_blank">
+  <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
+</a>
+
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/974992205326450698/unknown.png">
   
@@ -61,13 +68,6 @@ Dash forward grabbing enemies in a row and choke slamming them dealing 700% dama
 Charge up a powerful punch unleashing 1000% damage onto close range foes. Consume 50 stacks to power the move up by 333% damage. Consume 100 stacks to power the move up by 1000% damage.
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
-
-## Support me on Ko-fi! 
-There's no need for payment for mods, but a coffee would be nice once in awhile!
-
-<a href="https://ko-fi.com/ethanol10" target="_blank">
-  <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
-</a>
 
 ## Other Mods by Popcorn Factory
 <div>
