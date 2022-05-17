@@ -75,7 +75,7 @@ namespace GanondorfMod.Modules
                 + $"<style=cIsDamage>{100f * StaticValues.flameChokeAltDamageCoefficient}% damage</style>.");
 
             LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_NAME", "Serrated Whirlwind");
-            LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_DESCRIPTION", $"Hold down to charge your sword for up to {Modules.StaticValues.swordTimeToMaxCharge}s, and" +
+            LanguageAPI.Add(prefix + "SECONDARY_SWORD_CHARGE_DESCRIPTION", $"Hold down to charge your sword for up to {Modules.StaticValues.swordTimeToMaxCharge}s, and " +
                 $"release to throw your sword forwards, dealing " +
                 $"<style=cIsDamage>{100f * Modules.StaticValues.swordMaximumDamageMultiplier}%</style> at no charge per tick. " +
                 $"At full charge, damage is increased by <style=cIsDamage>{Modules.StaticValues.swordMaximumDamageMultiplier}x</style>. " +

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1406949950
+CRC: 3351568994
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c3670b45011aca6154d259277369ddea
+    Hash: e0e0400dfa28ff5d2ea41a083ec7fb5b
   TypeTreeHash:
     serializedVersion: 2
     Hash: fb98380650685d80d5a2c2187dc1369c
@@ -167,6 +167,7 @@ Assets:
 - Assets/GanonAsset/Animator/HumanoidGanon.asset
 - Assets/GanonAsset/Material/MasterySwordMat.mat
 - Assets/GanonAsset/Animator/Animations/GrabStart.anim
+- Assets/GanonAsset/Prefab/BrawlSwordContainer.prefab
 - Assets/GanonAsset/icons/warlockPunchBoosted.png
 - Assets/GanonAsset/Animator/Animations/Wait2.anim
 - Assets/GanonAsset/Animator/SwordAnimations/EndForwardSmash.anim

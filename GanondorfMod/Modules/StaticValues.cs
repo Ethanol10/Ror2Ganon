@@ -76,11 +76,11 @@ namespace GanondorfMod.Modules
         internal const int maxPowerStack = 100;
         internal const int stackAmountToDecay = 2;
         internal const float triforceMaxArmour = 40f;
-        internal const float triforceMaxDamage = 80f;
+        internal const float triforceMaxDamage = 45f;
         internal const float maxTimeToDecay = 3f;
         internal const float timeBetweenDecay = 2f;
         //Amount to Decrement as a Utility move
-        internal const int utilityStackConsumption = 40;
+        internal const int utilityStackConsumption = 30;
         internal const float utilityBoostCoefficient = 3.0f; 
         //Amounts to add to buff when killed
         internal const int bossKillStackAmount = 10;

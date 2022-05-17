@@ -26,6 +26,7 @@ namespace GanondorfMod.Modules
 
         //Sword throw
         internal static GameObject swordObject;
+        internal static GameObject brawlSwordObject;
         internal static Material fullyChargedMat;
         internal static Material chargingMat;
 
@@ -103,6 +104,10 @@ namespace GanondorfMod.Modules
                     cycleOffset = 0f
                 };
             }
+
+            brawlSwordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("BrawlSwordContainer");
+            Material brawlSwordMat = Modules.Assets.CreateMaterial("BrawlSwordMat", 2f, Color.white, 1.0f);
+            brawlSwordObject.transform.GetChild(0).GetComponent<MeshRenderer>().material = brawlSwordMat;
 
             obliteratorIndicator = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/FirewallAreaIndicator.prefab").WaitForCompletion();
             meleeHitImpact = LoadEffect("ImpactRaw", true);
