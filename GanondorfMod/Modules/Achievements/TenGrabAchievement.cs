@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Achievements
 {
+    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_TENGRAB_ACHIEVEMENT",
+              GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_TENGRAB_REWARD_ID", null, null)]
     internal class TenGrabAchievement : ModdedUnlockable
     {
         public override string AchievementIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_TENGRAB_ACHIEVEMENT_ID";
@@ -41,7 +43,10 @@ namespace GanondorfMod.Modules.Achievements
                 }
 
                 if (ganonCon.maxGrabbedVal >= 15) {
-                    base.Grant();
+                    if (base.meetsBodyRequirement)
+                    {
+                        base.Grant();
+                    }
                 }
             }
         }

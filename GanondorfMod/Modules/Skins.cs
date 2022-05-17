@@ -51,6 +51,7 @@ namespace GanondorfMod.Modules
 
         private static void DoNothing(On.RoR2.SkinDef.orig_Awake orig, RoR2.SkinDef self)
         {
+
         }
 
         internal struct SkinDefInfo

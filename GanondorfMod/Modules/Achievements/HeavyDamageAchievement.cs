@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace GanondorfMod.Modules.Achievements
 {
+    [RegisterAchievement(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_HEAVYDAMAGE_ACHIEVEMENT",
+           GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_HEAVYDAMAGE_REWARD_ID", null, null)]
     internal class HeavyDamageAchievement : ModdedUnlockable
     {
         public override string AchievementIdentifier { get; } = GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_HEAVYDAMAGE_ACHIEVEMENT_ID";
@@ -41,7 +43,10 @@ namespace GanondorfMod.Modules.Achievements
                 }
 
                 if (ganonCon.maxDamage >= 7500) {
-                    base.Grant();
+                    if (base.meetsBodyRequirement)
+                    {
+                        base.Grant();
+                    }
                 }
             }
         }

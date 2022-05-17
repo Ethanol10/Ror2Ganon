@@ -63,11 +63,12 @@ namespace GanondorfMod.SkillStates
             ganonController.HandLFire.Play();
             ganonController.PunchCharge.Play();
             ganonController.HandLSpeedLines.Play();
+            ganonController.SwapToFist();
         }
 
         protected override void PlayAttackAnimation()
         {
-            base.PlayAnimation("Gesture, Override", "warlockNofoot", "warlockPunch.playbackRate", this.duration);
+            base.PlayCrossfade("Sheathe, Override", "warlockpunch", "warlockPunch.playbackRate", this.duration, 0.2f);
         }
 
         protected override void PlaySwingEffect()
@@ -112,7 +113,14 @@ namespace GanondorfMod.SkillStates
             //base.characterBody.SetBuffCount(Modules.Buffs.absorbtionBuff.buffIndex, 0);
             //base.characterBody.OnClientBuffsChanged();
             //}
+            Wave wave = new Wave
+            {
+                amplitude = 2f,
+                frequency = 180f,
+                cycleOffset = 0f
+            };
 
+            RoR2.ShakeEmitter.CreateSimpleShakeEmitter(GetAimRay().origin, wave, 0.5f, 20f, true);
         }
 
         //check based on what attack has been selected at the beginning!

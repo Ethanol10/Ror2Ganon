@@ -90,6 +90,7 @@ namespace GanondorfMod.SkillStates
             //Enable Particle Effects
             ganonController.FootRInfernoFire.Play();
             ganonController.PullShockwave.Play();
+            ganonController.SwapToFist();
 
             Util.PlaySound(this.voiceLine, base.gameObject);
 

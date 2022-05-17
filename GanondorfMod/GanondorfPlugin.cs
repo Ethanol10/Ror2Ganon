@@ -2,13 +2,15 @@
 using BepInEx.Bootstrap;
 using GanondorfMod.Modules;
 using GanondorfMod.Modules.Survivors;
-using GanondorfMod.SkillStates;
 using R2API.Utils;
 using RoR2;
 using System.Collections.Generic;
 using System.Security;
 using System.Security.Permissions;
 using UnityEngine;
+using EmotesAPI;
+using R2API.Networking;
+using GanondorfMod.Modules.Networking;
 
 #pragma warning restore CS0618 // Type or member is obsolete
 [module: UnverifiableCode]
@@ -18,7 +20,9 @@ using UnityEngine;
 namespace GanondorfMod
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     [R2APISubmoduleDependency(new string[]
@@ -32,13 +36,14 @@ namespace GanondorfMod
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "2.1.3";
+        public const string MODVERSION = "3.0.0";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
         public static GanondorfController ganondorfController;
 
         //Scepter Vars
+        public static bool fallbackScepter = false;
         public static bool scepterInstalled = false;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
@@ -59,10 +64,14 @@ namespace GanondorfMod
             //Check for ancient scepter plugin
             if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
             {
-                scepterInstalled = true;
+                GanondorfPlugin.scepterInstalled = true;
+            }
+            else if (Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems")) 
+            {
+                GanondorfPlugin.fallbackScepter = true;
             }
 
-            // load assets and read config
+             // load assets and read config
             Modules.Assets.Initialize();
             Modules.Config.ReadConfig();
             Modules.States.RegisterStates(); // register states for networking
@@ -80,6 +89,7 @@ namespace GanondorfMod
             RoR2Application.onLoad += LateSetup;
 
             Hook();
+            SetupNetworkMessages();
         }
 
         private void LateSetup()
@@ -88,15 +98,59 @@ namespace GanondorfMod
             Modules.Survivors.Ganondorf.instance.SetItemDisplays();
         }
 
+        private void SetupNetworkMessages()
+        {
+            NetworkingAPI.RegisterMessageType<FullyChargedSwordNetworkRequest>();
+            NetworkingAPI.RegisterMessageType<ChargingSwordNetworkRequest>();
+        }
+
         private void Hook()
         {
             On.RoR2.CharacterModel.Awake += CharacterModel_Awake;
+            On.RoR2.CharacterModel.Start += CharacterModel_Start;
 
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnDeathStart += CharacterBody_OnDeathStart;
             On.RoR2.CharacterBody.FixedUpdate += CharacterBody_FixedUpdate;
             On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
             On.RoR2.GlobalEventManager.OnHitEnemy += GlobalEventManager_OnHitEnemy;
+            On.RoR2.CharacterModel.UpdateOverlays += CharacterModel_UpdateOverlays;
+            On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
+
+            if (Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI")) 
+            {
+                On.RoR2.SurvivorCatalog.Init += SurvivorCatalog_Init;
+            }
+        }
+
+        private void SurvivorCatalog_Init(On.RoR2.SurvivorCatalog.orig_Init orig) 
+        {
+            orig();
+            foreach (var item in SurvivorCatalog.allSurvivorDefs)
+            {
+                if (item.bodyPrefab.name == "GanondorfBody")
+                {
+                    CustomEmotesAPI.ImportArmature(item.bodyPrefab, Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("humanoidGanondorf"));
+                }
+            }
+        }
+
+        private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo info) 
+        {
+            orig(self, info);
+            if (info.attacker) 
+            {
+                if (self) 
+                {
+                    if (self.body) 
+                    {
+                        if (self.body.HasBuff(Modules.Buffs.damageAbsorberBuff)) 
+                        {
+                            self.body.AddBuff(Modules.Buffs.damageAbsorberBuff);
+                        }
+                    }
+                }
+            }
         }
 
         private void GlobalEventManager_OnHitEnemy(On.RoR2.GlobalEventManager.orig_OnHitEnemy orig, GlobalEventManager self, DamageInfo damageInfo, GameObject victim) {
@@ -169,6 +223,10 @@ namespace GanondorfMod
                     self.armor += triforceBuffComponent.GetBuffCount()*(Modules.StaticValues.triforceMaxArmour/ Modules.StaticValues.maxPowerStack);
                     self.damage += triforceBuffComponent.GetBuffCount() * (Modules.StaticValues.triforceMaxDamage / Modules.StaticValues.maxPowerStack);
                 }
+                if (self.HasBuff(Modules.Buffs.damageAbsorberBuff)) 
+                {
+                    self.armor += self.GetBuffCount(Modules.Buffs.damageAbsorberBuff) * Modules.StaticValues.obliterateBuffArmourMultiplier;
+                }
             }
         }
 
@@ -200,6 +258,68 @@ namespace GanondorfMod
                 Util.PlaySound("Spawning", self.gameObject);
             }
         }
-        
+
+        private void CharacterModel_Start(On.RoR2.CharacterModel.orig_Start orig, CharacterModel self)
+        {
+            orig(self);
+            if (self.gameObject.name.Contains("GanondorfDisplay"))
+            {
+                GanondorfDisplaySwordController displayHandler = self.gameObject.GetComponent<GanondorfDisplaySwordController>();
+                if (!displayHandler) 
+                {
+                    ChildLocator childLoc = self.gameObject.GetComponent<ChildLocator>();
+
+                    if (childLoc) 
+                    {
+                        Transform swordMesh = childLoc.FindChild("SwordMeshContainer");
+                        Transform HandLTrans = childLoc.FindChild("SwordHandLLoc");
+                        Transform bustTrans = childLoc.FindChild("SwordBustLoc");
+
+                        displayHandler = self.gameObject.AddComponent<GanondorfDisplaySwordController>();
+                        displayHandler.handLoc = HandLTrans;
+                        displayHandler.meshLoc = swordMesh;
+                        displayHandler.bustLoc = bustTrans;
+                        displayHandler.targetTrans = bustTrans;
+                    }
+                }
+            }
+        }
+
+        private void CharacterModel_UpdateOverlays(On.RoR2.CharacterModel.orig_UpdateOverlays orig, CharacterModel self)
+        {
+            orig(self);
+
+            if (self)
+            {
+                if (self.body)
+                {
+                    GanondorfController ganoncon = self.body.GetComponent<GanondorfController>();
+                    if (ganoncon) 
+                    {
+                        this.LiterallyGarbageOverlayFunction(Modules.Assets.chargingMat,
+                                                            ganoncon.chargingSword,
+                                                            self);
+                        this.LiterallyGarbageOverlayFunction(Modules.Assets.fullyChargedMat,
+                                                            ganoncon.swordFullyCharged,
+                                                            self);
+                    }
+                }
+            }
+        }
+
+        private void LiterallyGarbageOverlayFunction(Material overlayMaterial, bool condition, CharacterModel model)
+        {
+            if (model.activeOverlayCount >= CharacterModel.maxOverlays)
+            {
+                return;
+            }
+            if (condition)
+            {
+                Material[] array = model.currentOverlays;
+                int num = model.activeOverlayCount;
+                model.activeOverlayCount = num + 1;
+                array[num] = overlayMaterial;
+            }
+        }
     }
 }

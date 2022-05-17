@@ -13,6 +13,7 @@ namespace GanondorfMod.SkillStates
         protected bool punchActive;
         protected bool dashActive;
         protected bool kickActive;
+        protected bool downAirActive;
         protected bool isAttacking;
         // LIGHT ATTACK IN THE AIR WHEN DOUBLE KICKING.
         // Second part of kicking will use the default melee hit
@@ -61,13 +62,15 @@ namespace GanondorfMod.SkillStates
             this.animator = base.GetModelAnimator();
             base.StartAimMode(0.5f + this.duration, false);
             this.animator.SetBool("attacking", true);
-            this.animator.SetFloat("punch.playbackRate", 1.0f);
+            this.animator.SetFloat("punch.playbackRate", attackSpeedStat);
             punchActive = false;
             kickActive = false;
             dashActive = false;
             isAttacking = true;
+            downAirActive = false;
             lightKickFired = false;
             ganonController = base.GetComponent<GanondorfController>();
+            ganonController.SwapToFist();
 
             wasSprinting = base.characterBody.isSprinting;
             base.characterBody.isSprinting = false;
@@ -98,13 +101,21 @@ namespace GanondorfMod.SkillStates
                 //Play Particle effect
                 ganonController.ShoulderRLightning.Play();
             }
+            else if (!isGrounded && CheckLookingDown()) 
+            {
+                setupDownAirAttack();
+                downAirActive = true;
+
+                ganonController.HandRLightning.Play();
+            }
             else if (!isGrounded)
             {
                 //prepare aerial attack here
                 setupLightKickHitbox();
                 kickActive = true;
             }
-            else {
+            else
+            {
                 //Prepare punch.
                 setupPunchHitbox();
                 punchActive = true;
@@ -125,6 +136,10 @@ namespace GanondorfMod.SkillStates
             {
                 base.PlayAnimation("FullBody, Override", "DashAttack", "punch.playbackRate", this.duration);
             }
+            else if (downAirActive)
+            {
+                base.PlayAnimation("FullBody, Override", "DownAir", "punch.playbackRate", this.duration);
+            }
             else if (!base.isGrounded)
             {
                 base.PlayAnimation("FullBody, Override", "AerialAttack", "punch.playbackRate", this.duration);
@@ -138,6 +153,15 @@ namespace GanondorfMod.SkillStates
         protected override void PlaySwingEffect()
         {
             base.PlaySwingEffect();
+        }
+
+        private bool CheckLookingDown() 
+        {
+            if (Vector3.Dot(base.GetAimRay().direction, Vector3.down) > 0.866f) 
+            {
+                return true;
+            }
+            return false;
         }
 
         protected override void OnHitEnemyAuthority()
@@ -237,7 +261,7 @@ namespace GanondorfMod.SkillStates
                 this.FireLightKickAttack();
             }
 
-            //Check if Dash or punch should trigger
+            //Check if Dash or punch should trigger... or dair or heavy kick...
             if (this.stopwatch >= (this.attackStartTime / this.attackSpeedStat) && this.stopwatch <= (this.attackEndTime / this.attackSpeedStat))
             {
                 if (kickActive) {
@@ -367,7 +391,7 @@ namespace GanondorfMod.SkillStates
             this.attack.teamIndex = base.GetTeam();
             this.attack.damage = dmgCoeff * this.damageStat;
             this.attack.procCoefficient = procCoeff;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
+            this.attack.hitEffectPrefab = Modules.Assets.meleeHitImpactLightning;
             this.attack.forceVector = this.bonusForce;
             this.attack.pushAwayForce = pushFrce;
             this.attack.hitBoxGroup = hitBoxGroup;
@@ -447,7 +471,7 @@ namespace GanondorfMod.SkillStates
             this.hitSoundString = "lightHitSFX";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
-            //this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;
+            this.hitEffectPrefab = Modules.Assets.meleeHitImpact;
             this.impactSound = Modules.Assets.punchSFX.index;
 
             this.attack = new OverlapAttack();
@@ -505,7 +529,56 @@ namespace GanondorfMod.SkillStates
             this.attack.teamIndex = base.GetTeam();
             this.attack.damage = this.damageCoefficient * this.damageStat;
             this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
+            this.attack.hitEffectPrefab = Modules.Assets.meleeHitImpactLightning;
+            this.attack.forceVector = this.bonusForce;
+            this.attack.pushAwayForce = this.pushForce;
+            this.attack.hitBoxGroup = hitBoxGroup;
+            this.attack.isCrit = base.RollCrit();
+            this.attack.impactSound = this.impactSound;
+
+            this.duration = this.baseDuration / this.attackSpeedStat;
+            this.earlyExitTime = this.baseEarlyExitTime / this.attackSpeedStat;
+        }
+
+        public void setupDownAirAttack()
+        {
+            this.hitboxName = "downair";
+            this.damageType = DamageType.Stun1s;
+            this.damageCoefficient = Modules.StaticValues.downAirDamageCoefficient;
+            this.procCoefficient = 1f;
+            this.pushForce = 1500f;
+            this.bonusForce = Vector3.down;
+            this.baseDuration = 1.2f;
+            this.attackStartTime = 0.3f;
+            this.attackEndTime = 0.5f;
+            this.baseEarlyExitTime = 1.0f;
+            this.hitStopDuration = 0.2f;
+            this.attackRecoil = 0.5f;
+            this.hitHopVelocity = 20f;
+
+            this.swingSoundString = "swingSFX";
+            this.hitSoundString = "tauntPunchThunder2";
+            //Replace with particle effects later.
+            //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
+            //this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;
+            this.impactSound = Modules.Assets.punchSFX.index;
+
+            HitBoxGroup hitBoxGroup = null;
+            Transform modelTransform = base.GetModelTransform();
+
+            if (modelTransform)
+            {
+                hitBoxGroup = System.Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(),
+                    (HitBoxGroup element) => element.groupName == this.hitboxName);
+            }
+            this.attack = new OverlapAttack();
+            this.attack.damageType = this.damageType;
+            this.attack.attacker = base.gameObject;
+            this.attack.inflictor = base.gameObject;
+            this.attack.teamIndex = base.GetTeam();
+            this.attack.damage = this.damageCoefficient * this.damageStat;
+            this.attack.procCoefficient = this.procCoefficient;
+            this.attack.hitEffectPrefab = Modules.Assets.meleeHitImpactLightning;
             this.attack.forceVector = this.bonusForce;
             this.attack.pushAwayForce = this.pushForce;
             this.attack.hitBoxGroup = hitBoxGroup;

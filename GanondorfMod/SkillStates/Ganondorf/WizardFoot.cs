@@ -88,6 +88,7 @@ namespace GanondorfMod.SkillStates
 
             //Enable particle effects
             //ganonController.FootRFire.Play();
+            ganonController.SwapToFist();
             ganonController.KneeRSpeedLines.Play();
 
             //Change the move based on which button was pressed.

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="grabSounds" ID="{1511E1D0-666E-4569-98E9-16330728AFFF}">
+					<ChildrenList>
+						<Action Name="" ID="{7034C66F-030D-4A76-AFD4-D8037018703B}" ShortID="856177124">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GrabSounds" ID="{E00AB65F-E1F1-445F-ACF5-1A392773085E}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="hardHitsSFX" ID="{0305A762-4016-41CB-9E99-6FA0E6E47017}">
+					<ChildrenList>
+						<Action Name="" ID="{D481ED35-2100-4E47-A04A-9DC2794B39EE}" ShortID="701305551">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="hardHitsSFX" ID="{A452CE2E-DC55-44CB-B3D6-8CE0B9F531C9}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="heavyHitsVoice" ID="{2CC9299E-4CE7-477C-BFCA-AA74F9BCE635}">
+					<ChildrenList>
+						<Action Name="" ID="{226C5925-BA95-40DD-AA17-72FB047AEC54}" ShortID="568511160">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="heavyHitsVoice" ID="{04E09BC9-2CD4-4B88-B740-2D52E44DE6E3}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="jumpSFX" ID="{B4D6696C-EC52-489F-9C1D-1503DB34B89F}">
+					<ChildrenList>
+						<Action Name="" ID="{A0430CDB-CBB0-4625-8F59-29B1D3757EFE}" ShortID="435768184">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="jumpSFX" ID="{B9928A90-2E2A-4F41-88F7-77597CDB7F1F}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="lightHitSFX" ID="{455BCAEF-471D-4684-8CC8-855807567DFE}">
+					<ChildrenList>
+						<Action Name="" ID="{69FA209B-6CB3-4744-B1B6-5171FF2C15B4}" ShortID="968971767">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lightHitSFX" ID="{719D146D-6117-4D50-BDE4-0ED3D181AADB}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="lightHitsVoice" ID="{124B31DB-5942-4A9B-972E-C4F2A41E1291}">
+					<ChildrenList>
+						<Action Name="" ID="{DD2805D5-0FB0-4084-AA5D-7D5F80C224E6}" ShortID="1036461245">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lightHitsVoice" ID="{67657CA1-DF32-4BAD-9E1C-3D54FDDD27D0}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="warlockPunchSFX" ID="{BDA181E8-C176-4544-AB58-882A96255C37}">
+					<ChildrenList>
+						<Action Name="" ID="{43C3D41A-5084-481B-9BB8-64E7EE7179D1}" ShortID="247747549">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="warlockPunchSFX" ID="{2B6A9844-1733-466F-B001-E8BA5AF3208D}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="warlockPunchVoice" ID="{E21B551F-6F5F-4D7A-9193-A896739D90A0}">
+					<ChildrenList>
+						<Action Name="" ID="{681DD20F-71E5-4D6A-9AAD-9D7EFED96075}" ShortID="936971619">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="warlockPunchVoice" ID="{40B837C4-6654-47A8-9825-1E0EFCD7E1C7}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="wizardsFoot" ID="{C540A953-3BB7-41C5-AA19-326FC6512D5A}">
+					<ChildrenList>
+						<Action Name="" ID="{6BF397C8-D563-479B-9808-75A75C545143}" ShortID="514691204">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wizard'sFoot" ID="{3B63F76F-0600-4861-8905-4AE2F860E28D}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="wizardsFootVoice" ID="{B3BB6AE1-8AEE-4525-80FB-F523FA0399A8}">
+					<ChildrenList>
+						<Action Name="" ID="{5554B60D-CC17-46BE-8471-DC34C826E607}" ShortID="788842204">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wizard'sFootVoice" ID="{4C31C875-801E-46B2-95DB-149568081B21}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Spawning" ID="{E9E86A44-789B-405E-894B-C4D2989D9F78}">
+					<ChildrenList>
+						<Action Name="" ID="{9951AC74-D044-490B-B633-49A45ADC96D5}" ShortID="419672410">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spawning" ID="{7702DDBB-05CC-487D-8919-71064B3F505A}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="memeExplosion" ID="{682A2848-3562-4C22-AFDB-7B3B5927D5E1}">
+					<ChildrenList>
+						<Action Name="" ID="{928FC866-75D3-40E0-B001-F13158D24291}" ShortID="963587760">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="memeExplosion" ID="{DEE4D56F-C446-473B-8554-28EE50F82A30}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ganonScreamingWarlockPunch" ID="{1EC1C38F-B5E8-4B63-9F8D-4D3F40A2D4C6}">
+					<ChildrenList>
+						<Action Name="" ID="{F106AFFC-6EBE-4120-822F-AA8A26A5345B}" ShortID="698376139">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ganonScreamingWarlockPunch" ID="{60687292-E3CE-40A8-A744-045F5E011461}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ganonDying" ID="{C7B9A04C-24A1-4049-8C22-22AD73821F1B}">
+					<ChildrenList>
+						<Action Name="" ID="{19E6FB03-A560-4769-ACEA-501B389532B2}" ShortID="974148983">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ganonDying" ID="{1041FFFA-082B-4C48-A0B4-2396B2075238}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="flameChokeSFXEnd" ID="{C5965791-8056-434D-AEB5-318F88177335}">
+					<ChildrenList>
+						<Action Name="" ID="{C740F812-26D8-4934-9FEF-C095CE826E30}" ShortID="585957395">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="flameChokeSFXend" ID="{8F6A5AB6-1D95-4807-AADE-1E93F1DA5FA5}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="grabStartSFX" ID="{B1E09612-9D85-4DFA-B471-B97B352F0D40}">
+					<ChildrenList>
+						<Action Name="" ID="{9B833DF0-1F3F-4041-94B6-DE7BBB0444B8}" ShortID="972989505">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="grabStartSFX" ID="{7F82FBA4-3325-4F7C-AD52-B749F1C0FDA2}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="darkDive1" ID="{5574BB0B-9C03-4319-9417-46650756C51F}">
+					<ChildrenList>
+						<Action Name="" ID="{01AB08FC-8405-430B-8831-1D81F71D7602}" ShortID="755940666">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="darkDive1" ID="{305CB517-08E0-44E5-A9E1-43781B348056}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="darkDive2" ID="{D096A7EA-EBA1-4BD9-9D14-2E3B9679B60D}">
+					<ChildrenList>
+						<Action Name="" ID="{D04B966B-A784-4AC3-8C4F-C79521EEDD89}" ShortID="649774353">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="darkDive2" ID="{F7D67428-3F67-4136-B113-2C96F94BE414}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="swingSFX" ID="{C80A7395-6B35-44D6-A51F-EBE260A2DFFA}">
+					<ChildrenList>
+						<Action Name="" ID="{399DB317-F9B7-4A84-AF44-A321161879D9}" ShortID="999007173">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="tauntSpin" ID="{6189AC64-AFE1-433C-A880-26757541E6AC}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="spawnVoice" ID="{5F15B5BA-1C8F-4C5E-BFDA-AE7F760B8B41}">
+					<ChildrenList>
+						<Action Name="" ID="{4E4905A2-402B-4A90-8C3D-7CC4DC510590}" ShortID="259107679">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="spawnRandomVoice" ID="{8EAFA7B5-CE68-4563-8739-9BE016C6C4D4}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="superHitsVoice" ID="{5A9FA727-4107-4298-81C0-C1CF48DB9537}">
+					<ChildrenList>
+						<Action Name="" ID="{C2656CC5-A11D-4AD3-9112-6C17B95E196C}" ShortID="76959668">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="superHardHits" ID="{7A86AD8A-1F91-4521-911A-8ACD41B3ECBF}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="infernoKickStart" ID="{E2E1F073-72E7-4CF9-B583-2ED7EE65AE6B}">
+					<ChildrenList>
+						<Action Name="" ID="{2CDB2217-CA99-42F2-9272-27F92DD04C1E}" ShortID="844186937">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="infernoKickStart" ID="{BF5C2AA9-5B1A-497F-9729-A821AD6F282B}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="thunderPunch" ID="{43C45A18-8A32-43A4-8864-16E386593C51}">
+					<ChildrenList>
+						<Action Name="" ID="{570992E3-CABC-4C27-88C8-30ACE869AFCF}" ShortID="705624349">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ThunderPunch" ID="{25405B7F-27D4-4C56-9593-F562ABA2C161}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="swingEffect" ID="{A7639430-AC4B-4834-B853-5196233974BC}">
+					<ChildrenList>
+						<Action Name="" ID="{69D2C8AF-A640-46EC-8D0C-6E5139A74B49}" ShortID="670714954">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="swingEffect" ID="{4B60552D-8D7A-4B26-B334-F70E9742C97D}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="swordHitSound" ID="{B8E1586F-D805-4953-8EDB-21C42DDA53F8}">
+					<ChildrenList>
+						<Action Name="" ID="{2FDC2677-A311-4D92-B51C-39E9DCE29E3A}" ShortID="720149718">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="swordHitSound" ID="{3EE3A008-9AF5-4C50-84B3-B74E36B84935}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="heavySwordHit" ID="{A8B520C9-58CA-4371-8ED6-07F18BE1B21F}">
+					<ChildrenList>
+						<Action Name="" ID="{8B7F1309-A299-4A1E-BFD8-7C70DF7A9A72}" ShortID="18307958">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="swordHardHitSFX" ID="{9F93D1AB-B7BE-4283-AAC0-CEBE7D9BAB67}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="randomSwingSound" ID="{C2507480-2931-4AE3-89A6-AE3B043E4A36}">
+					<ChildrenList>
+						<Action Name="" ID="{532CD733-5D3D-4912-A3E5-0C4683053947}" ShortID="443005585">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="randomSwingSound" ID="{19166745-F424-4C0F-ADD5-71869A70394B}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="loopingSwingSound" ID="{D669889D-3FF1-45B2-BBD7-F13D986860D7}">
+					<ChildrenList>
+						<Action Name="" ID="{63D30275-9A91-405D-80B5-B0ED594F4CFF}" ShortID="860065617">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="loopingSwingSound" ID="{2E4332A5-E7DA-40A3-BC05-960051B843EC}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="startChargingSword" ID="{55CCFB69-6D03-4EA1-924F-07B53BE0F01D}">
+					<ChildrenList>
+						<Action Name="" ID="{745B26CC-286A-4F83-8862-2DD46E2D8A6B}" ShortID="584550072">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="StartCharging" ID="{DE176EDD-A01C-4D13-AE12-B0906EBCA623}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="fullyChargedSword" ID="{B4C3526A-CD8C-4987-ADFB-BCE654573520}">
+					<ChildrenList>
+						<Action Name="" ID="{357E83FA-8D5B-4D87-BBD7-6297ED814EC5}" ShortID="231667577">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FullyCharged" ID="{9E469FD3-124F-47BA-B98B-21F115E6A0A5}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Attack8Doriya" ID="{8228A774-A4AB-426B-9AAA-89FD0829543A}">
+					<ChildrenList>
+						<Action Name="" ID="{D03EED67-E720-47CF-9795-DCD7F2EDFED8}" ShortID="157409572">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="attack8doriya" ID="{CD0AFE54-A0CB-461C-8E8B-AF6AD2A0D212}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Attack8DoriyaNormal" ID="{B539364D-8714-4A18-9906-E25331A2A458}">
+					<ChildrenList>
+						<Action Name="" ID="{1AC8BD91-B3E0-48C9-9F85-8B94FCEEE2D3}" ShortID="327976776">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="attack8doriyanormal" ID="{5D257F4B-07EC-4898-9E06-21961E736A15}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -19,12 +19,22 @@ namespace GanondorfMod.Modules
         // particle effects
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
+        internal static GameObject meleeHitImpactLightning;
+        internal static GameObject meleeHitImpact;
+        internal static GameObject parentSlamEffectObliterate;
+        internal static GameObject beetleGuardGroundSlamObliterate;
+
+        //Sword throw
+        internal static GameObject swordObject;
+        internal static Material fullyChargedMat;
+        internal static Material chargingMat;
 
         internal static GameObject warlockPunchEffect;
+        internal static GameObject obliteratorIndicator;
 
         // networked hit sounds
         internal static NetworkSoundEventDef punchSFX;
-
+        
         // lists of assets to add to contentpack
         internal static List<NetworkSoundEventDef> networkSoundEventDefs = new List<NetworkSoundEventDef>();
         internal static List<EffectDef> effectDefs = new List<EffectDef>();
@@ -94,8 +104,16 @@ namespace GanondorfMod.Modules
                 };
             }
 
-            //swordSwingEffect = LoadEffect("HenrySwordSwingEffect", true);
-            //swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
+            obliteratorIndicator = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/FirewallAreaIndicator.prefab").WaitForCompletion();
+            meleeHitImpact = LoadEffect("ImpactRaw", true);
+            meleeHitImpactLightning = LoadEffect("ImpactLightning", true);
+            swordSwingEffect = LoadEffect("GanonSwordSwingEffect", true);
+            swordObject = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordContainer");
+            fullyChargedMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("FullyChargedMat");
+            chargingMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ChargingMat");
+            swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
+            parentSlamEffectObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Parent/ParentSlamEffect.prefab").WaitForCompletion();
+            beetleGuardGroundSlamObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleGuardGroundSlam.prefab").WaitForCompletion();
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

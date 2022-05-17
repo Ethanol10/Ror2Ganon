@@ -9,18 +9,43 @@ Standalone Ancient Scepter Compatible.
 ## It is HIGHLY recommended to use Scrollable UI to easily select the skin you want
 
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
-Literally just cobbled this thing in 3 hours for the SOTV update, spam me if something goes wrong lol.
+
+## Support me on Ko-fi! 
+There's no need for payment for mods, but a coffee would be nice once in awhile!
+
+<a href="https://ko-fi.com/ethanol10" target="_blank">
+  <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
+</a>
 
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
-<br><b>Now with (a little) fancier effects...</b>
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/920678269035106344/unknown.png">
+<img src="https://cdn.discordapp.com/attachments/399901440023330816/974992205326450698/unknown.png">
   
+## What's new:
+- 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
+    - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
+        - New Primary: Cleave
+        - New Secondary: Serrated Whirlwind
+        - New Special: Obliterator
+    - Updated Punch to include a new move! Try look down while punching!
+    - Bug Fixes: 
+        - Fixed Scepter support! Supports both ThinkInivisible
+        - Fixed the achievements from bugging out. Sorry this took so long!
+        - Warlock Punch's animation should not have his legs clip into the floor any longer, and should move with the rest of the body.
+        - Fixed (I think) Aerial Flame Chokes from locking Ganon in place when he lands.
+    - Added another skin!
+    - Added EmoteAPI support!
+    - Added ＤＹＮＡＭＩＣＢＯＮＥＳ to his cape. (No I didn't fix his "taking-a-shit" walk, do I look like a GOOD animator to you?)
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/974988697093169162/unknown.png">
+    - Stat Changes:
+        - Utility's use 40 stacks to boost their attack by 3.0x, instead of 20.
+        - 60 -> 80 damage gained from max amount of stacks.
+        - 24 -> 17 base damage.
 
 ## Skills
 
 ### Passive: Triforce of Power
 #### <img src="https://cdn.discordapp.com/attachments/399901440023330816/918085033204514816/fullTriforceIcon.png">
-Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 40 extra armor and 60 extra base damage. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1000% at the maximum amount of stacks.
+Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 40 extra armor and 80 extra base damage. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1000% at the maximum amount of stacks.
 
 ### Primary: Punch
 <img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335216062464/punchIcon.png"><br>
@@ -42,15 +67,46 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
-## Support me on Ko-fi! 
-There's no need to pay for mods, but a coffee would be nice once in awhile!
+## Other Mods by Popcorn Factory
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/DittoMod/">
+        <img src="https://user-images.githubusercontent.com/93917577/168004690-23b6d040-5f89-4b62-916b-c40d774bff02.png"><br>
+        <p>DittoMod (TeaL)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/TeaL/DekuMod/">
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960043614036168784/TeaL-DekuMod-3.1.1.png.128x128_q95.png"><br>
+        <p>DekuMod (TeaL)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/ShigarakiMod/">
+        <img src="https://user-images.githubusercontent.com/93917577/168004591-39480a52-c7fe-4962-997f-cd9460bb4d4a.png"><br>
+        <p>ShigarakiMod (TeaL)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/BokChoyWithSoy/Phoenix_Wright_Mod/">
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960054458790850570/BokChoyWithSoy-Phoenix_Wright_Mod-1.6.2.png.128x128_q95.png"><br>
+        <p>Phoenix Wright Mod (BokChoyWithSoy)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/Wisp_WarframeSurvivorMod/">
+        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960043613692239942/PopcornFactory-Wisp_WarframeSurvivorMod-1.0.2.png.128x128_q95.png"><br>
+        <p>Wisp Mod (Popcorn Factory Team)</p>
+    </a>
+</div>
 
-<a href="https://ko-fi.com/ethanol10" target="_blank">
-  <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
-</a>
+# Old Changelog
+<details>
+<summary>Click to expand previous patch notes:</summary>
 
-## Changelog
-- 2.1.3 -> Update the following: 
+- 2.1.5 -> Fixed the buff icon when attaining super armour from being white.
+- 2.1.4 -> Updates to the following:
+    - Added back in Item Displays, hopefully they don't give you two of the same item.
+- 2.1.3 -> Updates to the following: 
     - Tried to smooth out animations in running/walking/falling/dashing etc.
     - Centered core position, fixing things like Oddly shaped opal being placed at the foot.
 - 2.1.2 -> Fixed Malice Bringer Achievement requiring 51 of every type of specified enemy instead of 50.
@@ -142,17 +198,23 @@ There's no need to pay for mods, but a coffee would be nice once in awhile!
     - Changed the Warlock Punch to only have a random chance to deal a high amount of damage 0.5% of the time.
 - 1.0.0 - Initial Release
  
+</details>
+
 ## Future Plans
-- Work on new skills? This is a big Ｈｍｍ because I don't have the animation expertise to match what's already been implemented.
+- Now that some sword moves are in, I have some other sword moves I *may* want to put in later. 
+    - *Did you know?*: There were two more sword moves that were planned but ultimately did not get made. They were also the biggest waste of time since they took so damn long to make just to never use them. 
+        - Truth to be told, the new moves don't even use that unique of an animation. 
+        
+>! Why the fuck did I waste so much time on this.
+
+- Think of more *energy ball* based moves, like from OoT.... if i'm even bothered to dig through my messy codebase.
 - Fix some bugs (in Known issues)
-- Update Ancient Scepter skill for Specials (it's a little underwhelming)
-- Add some on-hit VFX, it completely slipped my mind.
 
 ## Known Issues
 ~~literally none, I am a programming god /sarcasm~~
 
 - Grab moves have some issues when trying to grab a Wandering Vagrant, Greater Wisp, Solus Control Unit (this isn't an exhaustive list), it pushes back against Ganondorf, possibly sending him through the floor and out the level for a bit.
-- Special move #2 *very rarely* doesn't register that it hit the floor and as a result, leaves you stuck in the air for a bit. I've only ever encountered this once, so if you do encounter it again, please tell me exactly how you replicated it.
+- Inferno Guillotine *very rarely* doesn't register that it hit the floor and as a result, leaves you stuck in the air for a bit. I've only ever encountered this once, so if you do encounter it again, please tell me exactly how you replicated it.
 - Grab has a weird bug where the enemies don't detatch on end, causing it to stick to ganon preventing you from moving. If this happens, jump off a cliff and it should reset.
  
 ## Credits

@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>C:\Users\ethan\Documents\WwiseProjects\ganonror2\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\ethan\Documents\WwiseProjects\ganonror2\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\ethan\Documents\WwiseProjects\ganonror2\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\ethan\Documents\WwiseProjects\ganonror2\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="270411657" Language="SFX" Hash="2586517059">
+			<ObjectPath>\SoundBanks\Default Work Unit\ganonSoundbank</ObjectPath>
+			<ShortName>ganonSoundbank</ShortName>
+			<Path>ganonSoundbank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3169574177" Name="Attack8Doriya" ObjectPath="\Events\Default Work Unit\Attack8Doriya">
+					<IncludedMemoryFiles>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2241524948" Name="Attack8DoriyaNormal" ObjectPath="\Events\Default Work Unit\Attack8DoriyaNormal">
+					<IncludedMemoryFiles>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3798764932" Name="darkDive1" ObjectPath="\Events\Default Work Unit\darkDive1">
+					<IncludedMemoryFiles>
+						<File Id="778499621" Language="SFX">
+							<ShortName>vc_ganon_special_H01.wav</ShortName>
+							<Path>SFX\vc_ganon_special_H01_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3798764935" Name="darkDive2" ObjectPath="\Events\Default Work Unit\darkDive2">
+					<IncludedMemoryFiles>
+						<File Id="2765992" Language="SFX">
+							<ShortName>vc_ganon_special_H02.wav</ShortName>
+							<Path>SFX\vc_ganon_special_H02_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2837319454" Name="flameChokeSFXEnd" ObjectPath="\Events\Default Work Unit\flameChokeSFXEnd">
+					<IncludedMemoryFiles>
+						<File Id="598505434" Language="SFX">
+							<ShortName>se_ganon_special_S01.wav</ShortName>
+							<Path>SFX\se_ganon_special_S01_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2184839552" Name="fullyChargedSword" ObjectPath="\Events\Default Work Unit\fullyChargedSword">
+					<IncludedMemoryFiles>
+						<File Id="935046226" Language="SFX">
+							<ShortName>se_common_spirits_critical_l_tail.wav</ShortName>
+							<Path>SFX\se_common_spirits_critical_l_tail_5DDF2CC4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="35644029" Name="ganonDying" ObjectPath="\Events\Default Work Unit\ganonDying">
+					<IncludedMemoryFiles>
+						<File Id="758614773" Language="SFX">
+							<ShortName>vc_ganon_damage_twinkle.wav</ShortName>
+							<Path>SFX\vc_ganon_damage_twinkle_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1636956486" Name="ganonScreamingWarlockPunch" ObjectPath="\Events\Default Work Unit\ganonScreamingWarlockPunch">
+					<IncludedMemoryFiles>
+						<File Id="256440505" Language="SFX">
+							<ShortName>5.wav</ShortName>
+							<Path>SFX\5_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3654510015" Name="grabSounds" ObjectPath="\Events\Default Work Unit\grabSounds">
+					<IncludedMemoryFiles>
+						<File Id="678504018" Language="SFX">
+							<ShortName>se_ganon_special_S03.wav</ShortName>
+							<Path>SFX\se_ganon_special_S03_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="968540380" Language="SFX">
+							<ShortName>se_ganon_special_H03.wav</ShortName>
+							<Path>SFX\se_ganon_special_H03_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1752481894" Name="grabStartSFX" ObjectPath="\Events\Default Work Unit\grabStartSFX">
+					<IncludedMemoryFiles>
+						<File Id="299597539" Language="SFX">
+							<ShortName>se_ganon_special_H02.wav</ShortName>
+							<Path>SFX\se_ganon_special_H02_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="820779463" Language="SFX">
+							<ShortName>se_ganon_special_S02.wav</ShortName>
+							<Path>SFX\se_ganon_special_S02_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2320755133" Name="hardHitsSFX" ObjectPath="\Events\Default Work Unit\hardHitsSFX">
+					<IncludedMemoryFiles>
+						<File Id="66423674" Language="SFX">
+							<ShortName>se_common_heavy_hit_l.wav</ShortName>
+							<Path>SFX\se_common_heavy_hit_l_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="121653756" Language="SFX">
+							<ShortName>se_ganon_special_H01.wav</ShortName>
+							<Path>SFX\se_ganon_special_H01_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="128741490" Language="SFX">
+							<ShortName>se_common_heavy_hit_m.wav</ShortName>
+							<Path>SFX\se_common_heavy_hit_m_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="363834807" Language="SFX">
+							<ShortName>se_common_kick_hit_l.wav</ShortName>
+							<Path>SFX\se_common_kick_hit_l_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="991576287" Language="SFX">
+							<ShortName>se_common_kick_hit_m.wav</ShortName>
+							<Path>SFX\se_common_kick_hit_m_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="1012284010" Language="SFX">
+							<ShortName>attack2sfx.wav</ShortName>
+							<Path>SFX\attack2sfx_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1260616606" Name="heavyHitsVoice" ObjectPath="\Events\Default Work Unit\heavyHitsVoice">
+					<IncludedMemoryFiles>
+						<File Id="400381884" Language="SFX">
+							<ShortName>attack6.wav</ShortName>
+							<Path>SFX\attack6_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="541742107" Language="SFX">
+							<ShortName>attack1.wav</ShortName>
+							<Path>SFX\attack1_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="773765328" Language="SFX">
+							<ShortName>attack7.wav</ShortName>
+							<Path>SFX\attack7_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="848635819" Language="SFX">
+							<ShortName>attack5.wav</ShortName>
+							<Path>SFX\attack5_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1588138976" Name="heavySwordHit" ObjectPath="\Events\Default Work Unit\heavySwordHit">
+					<IncludedMemoryFiles>
+						<File Id="992791196" Language="SFX">
+							<ShortName>se_common_sword_hit_l.wav</ShortName>
+							<Path>SFX\se_common_sword_hit_l_5DDF2CC4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3692475780" Name="infernoKickStart" ObjectPath="\Events\Default Work Unit\infernoKickStart">
+					<IncludedMemoryFiles>
+						<File Id="598621185" Language="SFX">
+							<ShortName>vc_ganon_attackhard_Chunk0.wav</ShortName>
+							<Path>SFX\vc_ganon_attackhard_Chunk0_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="206026834" Name="jumpSFX" ObjectPath="\Events\Default Work Unit\jumpSFX">
+					<IncludedMemoryFiles>
+						<File Id="637531951" Language="SFX">
+							<ShortName>jump2.wav</ShortName>
+							<Path>SFX\jump2_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="1011183107" Language="SFX">
+							<ShortName>jump1.wav</ShortName>
+							<Path>SFX\jump1_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1082971067" Name="lightHitSFX" ObjectPath="\Events\Default Work Unit\lightHitSFX">
+					<IncludedMemoryFiles>
+						<File Id="86531036" Language="SFX">
+							<ShortName>se_common_kick_hit_s.wav</ShortName>
+							<Path>SFX\se_common_kick_hit_s_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="201885146" Language="SFX">
+							<ShortName>se_common_heavy_hit_s.wav</ShortName>
+							<Path>SFX\se_common_heavy_hit_s_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="283584535" Language="SFX">
+							<ShortName>tauntPunchThunder2.wav</ShortName>
+							<Path>SFX\tauntPunchThunder2_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="339396881" Language="SFX">
+							<ShortName>attack1sfx.wav</ShortName>
+							<Path>SFX\attack1sfx_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="637531951" Language="SFX">
+							<ShortName>jump2.wav</ShortName>
+							<Path>SFX\jump2_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="676595524" Language="SFX">
+							<ShortName>tauntPunch.wav</ShortName>
+							<Path>SFX\tauntPunch_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="940551938" Language="SFX">
+							<ShortName>tauntPunchThunder.wav</ShortName>
+							<Path>SFX\tauntPunchThunder_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="1011183107" Language="SFX">
+							<ShortName>jump1.wav</ShortName>
+							<Path>SFX\jump1_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1506146985" Name="lightHitsVoice" ObjectPath="\Events\Default Work Unit\lightHitsVoice">
+					<IncludedMemoryFiles>
+						<File Id="278160410" Language="SFX">
+							<ShortName>vc_ganon_special_S01.wav</ShortName>
+							<Path>SFX\vc_ganon_special_S01_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="589921182" Language="SFX">
+							<ShortName>vc_ganon_appeal_S01.wav</ShortName>
+							<Path>SFX\vc_ganon_appeal_S01_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="686060726" Language="SFX">
+							<ShortName>attack4.wav</ShortName>
+							<Path>SFX\attack4_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="845274911" Language="SFX">
+							<ShortName>attack2.wav</ShortName>
+							<Path>SFX\attack2_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="894538127" Language="SFX">
+							<ShortName>attack3.wav</ShortName>
+							<Path>SFX\attack3_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3308368998" Name="loopingSwingSound" ObjectPath="\Events\Default Work Unit\loopingSwingSound">
+					<IncludedMemoryFiles>
+						<File Id="180086029" Language="SFX">
+							<ShortName>se_common_swing_04.wav</ShortName>
+							<Path>SFX\se_common_swing_04_65F8F79E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="803904150" Name="memeExplosion" ObjectPath="\Events\Default Work Unit\memeExplosion">
+					<IncludedMemoryFiles>
+						<File Id="725642921" Language="SFX">
+							<ShortName>memeExplosion.wav</ShortName>
+							<Path>SFX\memeExplosion_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3998838023" Name="randomSwingSound" ObjectPath="\Events\Default Work Unit\randomSwingSound">
+					<IncludedMemoryFiles>
+						<File Id="62653741" Language="SFX">
+							<ShortName>se_common_swing_03.wav</ShortName>
+							<Path>SFX\se_common_swing_03_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="358226801" Language="SFX">
+							<ShortName>se_common_swing_06.wav</ShortName>
+							<Path>SFX\se_common_swing_06_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="599507457" Language="SFX">
+							<ShortName>se_common_swing_01.wav</ShortName>
+							<Path>SFX\se_common_swing_01_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="967842496" Language="SFX">
+							<ShortName>se_common_swing_05.wav</ShortName>
+							<Path>SFX\se_common_swing_05_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="979131513" Language="SFX">
+							<ShortName>se_common_swing_02.wav</ShortName>
+							<Path>SFX\se_common_swing_02_5DDF2CC4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1800641154" Name="Spawning" ObjectPath="\Events\Default Work Unit\Spawning">
+					<IncludedMemoryFiles>
+						<File Id="908098882" Language="SFX">
+							<ShortName>Spawning.wav</ShortName>
+							<Path>SFX\Spawning_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1127055252" Name="spawnVoice" ObjectPath="\Events\Default Work Unit\spawnVoice">
+					<IncludedMemoryFiles>
+						<File Id="174265678" Language="SFX">
+							<ShortName>vc_ganon_appeal_H01.wav</ShortName>
+							<Path>SFX\vc_ganon_appeal_H01_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="418447717" Language="SFX">
+							<ShortName>vc_ganon_win03.wav</ShortName>
+							<Path>SFX\vc_ganon_win03_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="589921182" Language="SFX">
+							<ShortName>vc_ganon_appeal_S01.wav</ShortName>
+							<Path>SFX\vc_ganon_appeal_S01_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4208541365" Name="startChargingSword" ObjectPath="\Events\Default Work Unit\startChargingSword">
+					<IncludedMemoryFiles>
+						<File Id="41752237" Language="SFX">
+							<ShortName>se_common_smash_start_02.wav</ShortName>
+							<Path>SFX\se_common_smash_start_02_5DDF2CC4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2337929022" Name="superHitsVoice" ObjectPath="\Events\Default Work Unit\superHitsVoice">
+					<IncludedMemoryFiles>
+						<File Id="400381884" Language="SFX">
+							<ShortName>attack6.wav</ShortName>
+							<Path>SFX\attack6_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="657109559" Language="SFX">
+							<ShortName>vc_ganon_attackhard_Chunk1.wav</ShortName>
+							<Path>SFX\vc_ganon_attackhard_Chunk1_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="773765328" Language="SFX">
+							<ShortName>attack7.wav</ShortName>
+							<Path>SFX\attack7_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1907770022" Name="swingEffect" ObjectPath="\Events\Default Work Unit\swingEffect">
+					<IncludedMemoryFiles>
+						<File Id="53420476" Language="SFX">
+							<ShortName>se_ganon_swing_ll.wav</ShortName>
+							<Path>SFX\se_ganon_swing_ll_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="192655854" Language="SFX">
+							<ShortName>se_ganon_swing_l.wav</ShortName>
+							<Path>SFX\se_ganon_swing_l_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="709693100" Language="SFX">
+							<ShortName>se_ganon_swing_m.wav</ShortName>
+							<Path>SFX\se_ganon_swing_m_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="952104188" Language="SFX">
+							<ShortName>se_ganon_swing_s.wav</ShortName>
+							<Path>SFX\se_ganon_swing_s_5DDF2CC4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2566988422" Name="swingSFX" ObjectPath="\Events\Default Work Unit\swingSFX">
+					<IncludedMemoryFiles>
+						<File Id="576921918" Language="SFX">
+							<ShortName>tauntSpin.wav</ShortName>
+							<Path>SFX\tauntSpin_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3013065368" Name="swordHitSound" ObjectPath="\Events\Default Work Unit\swordHitSound">
+					<IncludedMemoryFiles>
+						<File Id="317951425" Language="SFX">
+							<ShortName>se_common_sword_hit_m.wav</ShortName>
+							<Path>SFX\se_common_sword_hit_m_5DDF2CC4.wem</Path>
+						</File>
+						<File Id="386065270" Language="SFX">
+							<ShortName>se_common_sword_hit_s.wav</ShortName>
+							<Path>SFX\se_common_sword_hit_s_5DDF2CC4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1726558475" Name="thunderPunch" ObjectPath="\Events\Default Work Unit\thunderPunch">
+					<IncludedMemoryFiles>
+						<File Id="283584535" Language="SFX">
+							<ShortName>tauntPunchThunder2.wav</ShortName>
+							<Path>SFX\tauntPunchThunder2_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="940551938" Language="SFX">
+							<ShortName>tauntPunchThunder.wav</ShortName>
+							<Path>SFX\tauntPunchThunder_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2501655105" Name="warlockPunchSFX" ObjectPath="\Events\Default Work Unit\warlockPunchSFX">
+					<IncludedMemoryFiles>
+						<File Id="228947753" Language="SFX">
+							<ShortName>se_ganon_special_N01.wav</ShortName>
+							<Path>SFX\se_ganon_special_N01_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="917982720" Language="SFX">
+							<ShortName>se_ganon_special_N02.wav</ShortName>
+							<Path>SFX\se_ganon_special_N02_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="1012284010" Language="SFX">
+							<ShortName>attack2sfx.wav</ShortName>
+							<Path>SFX\attack2sfx_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2785723162" Name="warlockPunchVoice" ObjectPath="\Events\Default Work Unit\warlockPunchVoice">
+					<IncludedMemoryFiles>
+						<File Id="221753928" Language="SFX">
+							<ShortName>warlockAttack1.wav</ShortName>
+							<Path>SFX\warlockAttack1_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="632191689" Language="SFX">
+							<ShortName>warlockAttack2.wav</ShortName>
+							<Path>SFX\warlockAttack2_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="572351903" Name="wizardsFoot" ObjectPath="\Events\Default Work Unit\wizardsFoot">
+					<IncludedMemoryFiles>
+						<File Id="231505070" Language="SFX">
+							<ShortName>se_ganon_special_L01.wav</ShortName>
+							<Path>SFX\se_ganon_special_L01_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4164963883" Name="wizardsFootVoice" ObjectPath="\Events\Default Work Unit\wizardsFootVoice">
+					<IncludedMemoryFiles>
+						<File Id="400381884" Language="SFX">
+							<ShortName>attack6.wav</ShortName>
+							<Path>SFX\attack6_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="541742107" Language="SFX">
+							<ShortName>attack1.wav</ShortName>
+							<Path>SFX\attack1_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="642989671" Language="SFX">
+							<ShortName>wizardFoot1.wav</ShortName>
+							<Path>SFX\wizardFoot1_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="773765328" Language="SFX">
+							<ShortName>attack7.wav</ShortName>
+							<Path>SFX\attack7_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="795453842" Language="SFX">
+							<ShortName>attack8doriya.wav</ShortName>
+							<Path>SFX\attack8doriya_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="848635819" Language="SFX">
+							<ShortName>attack5.wav</ShortName>
+							<Path>SFX\attack5_A7D4FBA4.wem</Path>
+						</File>
+						<File Id="883056146" Language="SFX">
+							<ShortName>wizardFoot2.wav</ShortName>
+							<Path>SFX\wizardFoot2_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX" ObjectPath="\Game Parameters\Default Work Unit\Volume_SFX"/>
+				<GameParameter Id="3695994288" Name="Volume_Master" ObjectPath="\Game Parameters\Default Work Unit\Volume_Master"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3701367528">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

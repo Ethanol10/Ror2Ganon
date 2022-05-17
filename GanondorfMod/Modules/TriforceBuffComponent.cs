@@ -14,6 +14,7 @@ namespace GanondorfMod.Modules
         private float timer;
         private float lastTimeDecayed;
         private bool startDecaying;
+        public bool pauseDecay;
 
         public void Awake() {
             startDecaying = false;
@@ -23,22 +24,28 @@ namespace GanondorfMod.Modules
             scepterActive = false;
             isMaxStack = false;
             ganondorfController = GetComponent<GanondorfController>();
+            pauseDecay = false;
         }
 
         public void FixedUpdate() {
             //Update whether if we are at max power stacks.
             CheckIfMaxPowerStacks();
             //Increment Timer and tell the amount to decay over time if necessary.
-            DecayTimer();
-
-            //Decay stacks if Decaying is required.
-            if (startDecaying) {
-                lastTimeDecayed += Time.fixedDeltaTime;
-                if (lastTimeDecayed >= Modules.StaticValues.timeBetweenDecay) {
-                    lastTimeDecayed = 0f;
-                    buffCountToApply -= Modules.StaticValues.stackAmountToDecay;
-                    if (buffCountToApply < 0) {
-                        buffCountToApply = 0;
+            if (!pauseDecay) 
+            {
+                DecayTimer();
+                //Decay stacks if Decaying is required.
+                if (startDecaying)
+                {
+                    lastTimeDecayed += Time.fixedDeltaTime;
+                    if (lastTimeDecayed >= Modules.StaticValues.timeBetweenDecay)
+                    {
+                        lastTimeDecayed = 0f;
+                        buffCountToApply -= Modules.StaticValues.stackAmountToDecay;
+                        if (buffCountToApply < 0)
+                        {
+                            buffCountToApply = 0;
+                        }
                     }
                 }
             }

@@ -2,7 +2,7 @@
 using GanondorfMod.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
-using AncientScepter;
+using GanondorfMod.SkillStates.Ganondorf;
 
 namespace GanondorfMod.Modules
 {
@@ -12,13 +12,19 @@ namespace GanondorfMod.Modules
 
         internal static void RegisterStates()
         {
+            entityStates.Add(typeof(SpawnState));
+
             entityStates.Add(typeof(BaseMeleeAttack));
 
             entityStates.Add(typeof(FlameChoke));
 
             entityStates.Add(typeof(Punch));
+            entityStates.Add(typeof(SwordSlashCombo));
 
             entityStates.Add(typeof(WizardFoot));
+            entityStates.Add(typeof(RecklessCharge));
+            entityStates.Add(typeof(SwordThrow));
+            entityStates.Add(typeof(SwordCharge));
 
             entityStates.Add(typeof(DarkDive));
 
@@ -29,6 +35,10 @@ namespace GanondorfMod.Modules
             entityStates.Add(typeof(InfernoGuillotine));
 
             entityStates.Add(typeof(InfernoGuillotineScepter));
+
+            entityStates.Add(typeof(ObliterateBeginCharging));
+            entityStates.Add(typeof(ObliterateEnd));
+            entityStates.Add(typeof(ScepterObliterateBeginCharging));
         }
     }
 }
