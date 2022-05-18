@@ -134,14 +134,11 @@ namespace GanondorfMod.SkillStates.Ganondorf
         public void OnDestroy() 
         {
             AkSoundEngine.StopPlayingID(spinningSound);
-            if (isReal) 
+            if (charBody)
             {
-                if (charBody) 
-                {
-                    GanondorfController ganoncon = charBody.gameObject.GetComponent<GanondorfController>();
-                    ganoncon.ReenableSword();
-                    ganoncon.SwapToSword();
-                }
+                GanondorfController ganoncon = charBody.gameObject.GetComponent<GanondorfController>();
+                ganoncon.ReenableSword();
+                ganoncon.SwapToSword();
             }
         }
 
