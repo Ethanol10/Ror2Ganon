@@ -6,6 +6,8 @@ Network Compatible (unless otherwise found not to be, please tell me if there ar
 
 ## It is HIGHLY recommended to use Scrollable UI to easily select the skin you want
 
+## If you have downloaded a version before 3.0.2, please delete your config!
+
 Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Modding discord, or to me directly: @Ethanol 10#6656
 
 ## Support me on Ko-fi! 
@@ -25,6 +27,12 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 ## What's new:
 
+- 3.0.2 -> Fixes to the following:
+    - Reduced voice line frequency on all moves EXCEPT super heavy attacks.
+    - Recoloured smash skins are now a config file, I don't know how these work online, but make sure everyone has the config enabled for the skin you want.
+    - Balance Changes:
+        - Obliterator timer to max charge 10s -> 5s
+        - Serrated Whirlwind timer to max charge 10s -> 4s
 - 3.0.1 -> Fixes to the following:
     - Obliterator was removing one stock of Damage Absorbtion Armour instead of ALL stacks. Changes made to remove all stacks.
     - Some bad formatting on descriptions fixed. (Yes I know everything STILL looks like a goddamn essay.)
