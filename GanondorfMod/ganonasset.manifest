@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3351568994
+CRC: 359176472
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3fcb055457a926b60f4474e9da94cba1
+    Hash: b3b6a823895c28e13d70e947a8258149
   TypeTreeHash:
     serializedVersion: 2
     Hash: fb98380650685d80d5a2c2187dc1369c
@@ -113,6 +113,7 @@ Assets:
 - Assets/GanonAsset/Animator/Animations/AerialKick.anim
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
 - Assets/GanonAsset/Texture/ganonTex04.png
+- Assets/GanonAsset/particle/SwordBeamEffect.prefab
 - Assets/GanonAsset/icons/InfernoGuillotineIcon.png
 - Assets/GanonAsset/Material/ganonTex05.mat
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png
@@ -202,6 +203,7 @@ Assets:
 - Assets/GanonAsset/Animator/SwordAnimations/dashAndSpin.anim
 - Assets/GanonAsset/Animator/ganonAvatar.asset
 - Assets/GanonAsset/Animator/Animations/Taunt2.anim
+- Assets/GanonAsset/Mesh/U.mesh
 - Assets/GanonAsset/particle/PullShockwaveParticle.prefab
 - Assets/GanonAsset/Animator/Animations/warlockNofoot.anim
 - Assets/GanonAsset/particle/speedLines.prefab
