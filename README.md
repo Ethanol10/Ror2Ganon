@@ -30,6 +30,7 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 - 3.0.2 -> Fixes to the following:
     - Reduced voice line frequency on all moves EXCEPT super heavy attacks.
     - Recoloured smash skins are now a config file, I don't know how these work online, but make sure everyone has the config enabled for the skin you want.
+    - Other players should see players that throw their sword once should be able to retrieve their sword again.
     - Balance Changes:
         - Obliterator timer to max charge 10s -> 5s
         - Serrated Whirlwind timer to max charge 10s -> 4s
