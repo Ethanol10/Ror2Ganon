@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="270411657" Language="SFX" Hash="260694642">
+		<SoundBank Id="270411657" Language="SFX" Hash="1600974207">
 			<ObjectPath>\SoundBanks\Default Work Unit\ganonSoundbank</ObjectPath>
 			<ShortName>ganonSoundbank</ShortName>
 			<Path>ganonSoundbank.bnk</Path>
@@ -202,10 +202,6 @@
 							<ShortName>attack1sfx.wav</ShortName>
 							<Path>SFX\attack1sfx_A7D4FBA4.wem</Path>
 						</File>
-						<File Id="637531951" Language="SFX">
-							<ShortName>jump2.wav</ShortName>
-							<Path>SFX\jump2_A7D4FBA4.wem</Path>
-						</File>
 						<File Id="676595524" Language="SFX">
 							<ShortName>tauntPunch.wav</ShortName>
 							<Path>SFX\tauntPunch_A7D4FBA4.wem</Path>
@@ -213,10 +209,6 @@
 						<File Id="940551938" Language="SFX">
 							<ShortName>tauntPunchThunder.wav</ShortName>
 							<Path>SFX\tauntPunchThunder_A7D4FBA4.wem</Path>
-						</File>
-						<File Id="1011183107" Language="SFX">
-							<ShortName>jump1.wav</ShortName>
-							<Path>SFX\jump1_A7D4FBA4.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

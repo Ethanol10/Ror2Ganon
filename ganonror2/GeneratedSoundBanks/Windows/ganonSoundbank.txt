@@ -70,7 +70,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	598621185	infernoKickStart	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\vc_ganon_attackhard_Chunk0_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\infernoKickStart		8264
 	599507457	se_common_swing_01	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\se_common_swing_01_5DDF2CC4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\randomSwingSound\se_common_swing_01		2710
 	632191689	warlockAttack2	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\warlockAttack2_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\warlockPunchVoice\warlockAttack2		16441
-	637531951	jump2	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\jump2_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitSFX\jumpSFX\jump2		5848
+	637531951	jump2	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\jump2_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\jumpSFX\jump2		5848
 	642989671	wizardFoot1	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\wizardFoot1_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\wizard'sFootVoice\wizardFoot1		6015
 	657109559	infernoKickEnd	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\vc_ganon_attackhard_Chunk1_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\superHardHits\infernoKickEnd		5840
 	676595524	tauntPunch	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\tauntPunch_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitSFX\tauntPunch		2277
@@ -97,6 +97,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	979131513	se_common_swing_02	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\se_common_swing_02_5DDF2CC4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\randomSwingSound\se_common_swing_02		1805
 	991576287	se_common_kick_hit_m	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\se_common_kick_hit_m_5DDF2CC4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\hardHitsSFX\se_common_kick_hit_m		8528
 	992791196	swordHardHitSFX	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\se_common_sword_hit_l_5DDF2CC4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\swordHardHitSFX		15710
-	1011183107	jump1	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\jump1_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\lightHitSFX\jumpSFX\jump1		3206
+	1011183107	jump1	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\jump1_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\jumpSFX\jump1		3206
 	1012284010	attack2sfx	C:\coding\Ror2Ganon\ganonror2\.cache\Windows\SFX\attack2sfx_A7D4FBA4.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\BasicVoiceSounds\hardHitsSFX\attack2sfx		17590
 

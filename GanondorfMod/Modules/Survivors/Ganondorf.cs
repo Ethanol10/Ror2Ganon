@@ -665,24 +665,26 @@ namespace GanondorfMod.Modules.Survivors
             skins.Add(defaultSkin);
             #endregion
 
-            #region Skin01
-            Material skin01Mat = Modules.Assets.CreateMaterial("ganonTex01", 0f, Color.white, 1.0f);
-            Material swordMat = Modules.Assets.CreateMaterial("SmashSwordMat", 0f, Color.white, 2.0f);
-            CharacterModel.RendererInfo[] skin01RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            if (Config.saturatedClassicEnabled.Value) 
             {
+                #region Skin01
+                Material skin01Mat = Modules.Assets.CreateMaterial("ganonTex01", 0f, Color.white, 1.0f);
+                Material swordMat = Modules.Assets.CreateMaterial("SmashSwordMat", 0f, Color.white, 2.0f);
+                CharacterModel.RendererInfo[] skin01RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+                {
                 skin01Mat,
                 swordMat,
-            });
+                });
 
-            SkinDef skin01 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN1_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("skin1"),
-                skin01RendererInfos,
-                mainRenderer,
-                model,
-                collectScrapUnlockableDef);
+                SkinDef skin01 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN1_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("skin1"),
+                    skin01RendererInfos,
+                    mainRenderer,
+                    model,
+                    collectScrapUnlockableDef);
 
-            skin01.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                skin01.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
@@ -693,28 +695,31 @@ namespace GanondorfMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("SmashSword"),
                     renderer = skin01RendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            skins.Add(skin01);
-            #endregion
+                skins.Add(skin01);
+                #endregion
+            }
 
-            #region Skin02
-            Material skin02Mat = Modules.Assets.CreateMaterial("ganonTex02", 0f, Color.white, 1.0f);
-            CharacterModel.RendererInfo[] skin02RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            if (Config.purpleEnabled.Value) 
             {
+                #region Skin02
+                Material skin02Mat = Modules.Assets.CreateMaterial("ganonTex02", 0f, Color.white, 1.0f);
+                CharacterModel.RendererInfo[] skin02RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+                {
                 skin02Mat,
                 swordMat
-            });
+                });
 
-            SkinDef skin02 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN2_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("skin2"),
-                skin02RendererInfos,
-                mainRenderer,
-                model,
-                collectScrapUnlockableDef);
+                SkinDef skin02 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN2_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("skin2"),
+                    skin02RendererInfos,
+                    mainRenderer,
+                    model,
+                    collectScrapUnlockableDef);
 
-            skin02.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                skin02.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
@@ -725,28 +730,31 @@ namespace GanondorfMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("SmashSword"),
                     renderer = skin02RendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            skins.Add(skin02);
-            #endregion
+                skins.Add(skin02);
+                #endregion
+            }
 
-            #region Skin03
-            Material skin03Mat = Modules.Assets.CreateMaterial("ganonTex03", 0f, Color.white, 1.0f);
-            CharacterModel.RendererInfo[] skin03RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            if (Config.greenEnabled.Value) 
             {
+                #region Skin03
+                Material skin03Mat = Modules.Assets.CreateMaterial("ganonTex03", 0f, Color.white, 1.0f);
+                CharacterModel.RendererInfo[] skin03RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+                {
                 skin03Mat,
                 swordMat,
-            });
+                });
 
-            SkinDef skin03 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN3_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("skin3"),
-                skin03RendererInfos,
-                mainRenderer,
-                model,
-                collectScrapUnlockableDef);
+                SkinDef skin03 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN3_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("skin3"),
+                    skin03RendererInfos,
+                    mainRenderer,
+                    model,
+                    collectScrapUnlockableDef);
 
-            skin03.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                skin03.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
@@ -757,28 +765,31 @@ namespace GanondorfMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("SmashSword"),
                     renderer = skin03RendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            skins.Add(skin03);
-            #endregion
+                skins.Add(skin03);
+                #endregion
+            }
 
-            #region Skin05
-            Material skin05Mat = Modules.Assets.CreateMaterial("ganonTex05", 0f, Color.white, 1.0f);
-            CharacterModel.RendererInfo[] skin05RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            if (Config.hulkingMaliceEnabled.Value) 
             {
+                #region Skin05
+                Material skin05Mat = Modules.Assets.CreateMaterial("ganonTex05", 0f, Color.white, 1.0f);
+                CharacterModel.RendererInfo[] skin05RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+                {
                 skin05Mat,
                 swordMat
-            });
+                });
 
-            SkinDef skin05 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN5_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("skin5"),
-                skin05RendererInfos,
-                mainRenderer,
-                model,
-                collectScrapUnlockableDef);
+                SkinDef skin05 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN5_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("skin5"),
+                    skin05RendererInfos,
+                    mainRenderer,
+                    model,
+                    collectScrapUnlockableDef);
 
-            skin05.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                skin05.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
@@ -789,28 +800,31 @@ namespace GanondorfMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("SmashSword"),
                     renderer = skin05RendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            skins.Add(skin05);
-            #endregion
+                skins.Add(skin05);
+                #endregion
+            }
 
-            #region Skin07
-            Material skin07Mat = Modules.Assets.CreateMaterial("ganonTex07", 0f, Color.white, 1.0f);
-            CharacterModel.RendererInfo[] skin07RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+            if (Config.brownEnabled.Value)
             {
+                #region Skin07
+                Material skin07Mat = Modules.Assets.CreateMaterial("ganonTex07", 0f, Color.white, 1.0f);
+                CharacterModel.RendererInfo[] skin07RendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
+                {
                 skin07Mat,
                 swordMat
-            });
+                });
 
-            SkinDef skin07 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN7_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("skin7"),
-                skin07RendererInfos,
-                mainRenderer,
-                model,
-                collectScrapUnlockableDef);
+                SkinDef skin07 = Modules.Skins.CreateSkinDef(GanondorfPlugin.developerPrefix + "_GANONDORF_BODY_SKIN7_NAME",
+                    Assets.mainAssetBundle.LoadAsset<Sprite>("skin7"),
+                    skin07RendererInfos,
+                    mainRenderer,
+                    model,
+                    collectScrapUnlockableDef);
 
-            skin07.meshReplacements = new SkinDef.MeshReplacement[]
-            {
+                skin07.meshReplacements = new SkinDef.MeshReplacement[]
+                {
                 new SkinDef.MeshReplacement
                 {
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("ganonMesh"),
@@ -821,10 +835,11 @@ namespace GanondorfMod.Modules.Survivors
                     mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("SmashSword"),
                     renderer = skin07RendererInfos[instance.mainRendererIndex].renderer
                 }
-            };
+                };
 
-            skins.Add(skin07);
-            #endregion
+                skins.Add(skin07);
+                #endregion
+            }
 
             #region oldManSkin6
             Material oldManSkinMat = Modules.Assets.CreateMaterial("ganonTex06", 0f, Color.white, 1.0f);
@@ -956,8 +971,6 @@ namespace GanondorfMod.Modules.Survivors
             #endregion
 
             skinController.skins = skins.ToArray();
-
-            
         }
 
         internal override void SetItemDisplays()
