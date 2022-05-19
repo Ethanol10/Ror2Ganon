@@ -33,12 +33,6 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
     - Balance Changes:
         - Obliterator timer to max charge 10s -> 5s
         - Serrated Whirlwind timer to max charge 10s -> 4s
-- 3.0.1 -> Fixes to the following:
-    - Obliterator was removing one stock of Damage Absorbtion Armour instead of ALL stacks. Changes made to remove all stacks.
-    - Some bad formatting on descriptions fixed. (Yes I know everything STILL looks like a goddamn essay.)
-    - Balance Changes:
-        - Utility's use 30 stacks to boost their attack by 3.0x, instead of 40
-        - 80 -> 45 damage gained from max amount of stacks
 
 # Major release details:
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
@@ -123,6 +117,12 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.0.1 -> Fixes to the following:
+    - Obliterator was removing one stock of Damage Absorbtion Armour instead of ALL stacks. Changes made to remove all stacks.
+    - Some bad formatting on descriptions fixed. (Yes I know everything STILL looks like a goddamn essay.)
+    - Balance Changes:
+        - Utility's use 30 stacks to boost their attack by 3.0x, instead of 40
+        - 80 -> 45 damage gained from max amount of stacks
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
     - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
         - New Primary: Cleave
