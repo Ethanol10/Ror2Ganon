@@ -36,6 +36,7 @@
 						<Action Name="" ID="{226C5925-BA95-40DD-AA17-72FB047AEC54}" ShortID="568511160">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Probability" Type="Real64" Value="72"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -50,6 +51,7 @@
 						<Action Name="" ID="{A0430CDB-CBB0-4625-8F59-29B1D3757EFE}" ShortID="435768184">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Probability" Type="Real64" Value="61"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -78,6 +80,7 @@
 						<Action Name="" ID="{DD2805D5-0FB0-4084-AA5D-7D5F80C224E6}" ShortID="1036461245">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Probability" Type="Real64" Value="33"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -134,6 +137,7 @@
 						<Action Name="" ID="{5554B60D-CC17-46BE-8471-DC34C826E607}" ShortID="788842204">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Probability" Type="Real64" Value="37"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -232,6 +236,7 @@
 						<Action Name="" ID="{01AB08FC-8405-430B-8831-1D81F71D7602}" ShortID="755940666">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Probability" Type="Real64" Value="53"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -246,6 +251,7 @@
 						<Action Name="" ID="{D04B966B-A784-4AC3-8C4F-C79521EEDD89}" ShortID="649774353">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Probability" Type="Real64" Value="49"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">

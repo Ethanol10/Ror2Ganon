@@ -34,7 +34,7 @@ namespace GanondorfMod.Modules
         internal const float swordBaseDamageCoefficient = 0.5f;
         internal const float swordMaximumDamageMultiplier = 5f;
         internal const float swordThrowProcCoefficient = 0.2f;
-        internal const float swordTimeToMaxCharge = 10f;
+        internal const float swordTimeToMaxCharge = 4f;
         internal const float swordThrowBaseDistance = 15f;
         internal const float swordThrowRotationSpeed = 1440f;
         internal const float swordThrowTickFrequency = 0.1f;
@@ -60,10 +60,10 @@ namespace GanondorfMod.Modules
         internal const float infernoGuillotinePullForce = 12f;
 
         //Obliterate
-        internal const float obliterateDamageCoefficient = 7.0f;
+        internal const float obliterateDamageCoefficient = 6.0f;
         internal const float obliterateDORIYACoefficient = 14.0f;
-        internal const float obliterateFinalDamageMultiplier = 4.0f;
-        internal const float obliterateTimeToMaxCharge = 10f;
+        internal const float obliterateFinalDamageMultiplier = 5.0f;
+        internal const float obliterateTimeToMaxCharge = 5f;
         internal const float obliterateMaxDistanceCovered = 75f;
         internal const float obliterateMaxExplosionCount = 10f;
         internal const float obliterateMinDistance = 10f;
