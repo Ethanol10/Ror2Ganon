@@ -28,6 +28,8 @@ namespace GanondorfMod.SkillStates.Ganondorf
         internal float maxDistance;
         internal float distanceIncrementor;
 
+        internal int defaultSkinIndex;
+
         internal float lastAnimStopwatch;
 
         internal GanondorfController ganoncon;
@@ -46,6 +48,14 @@ namespace GanondorfMod.SkillStates.Ganondorf
             {
                 base.SmallHop(base.characterMotor, 15f);
             }
+
+            //LITERAL HELL AAAAAAAAAAAAAAAAAAA
+            defaultSkinIndex = 3;
+            if (Modules.Config.purpleEnabled.Value) defaultSkinIndex++;
+            if (Modules.Config.greenEnabled.Value) defaultSkinIndex++;
+            if (Modules.Config.hulkingMaliceEnabled.Value) defaultSkinIndex++;
+            if (Modules.Config.brownEnabled.Value) defaultSkinIndex++;
+            if (Modules.Config.saturatedClassicEnabled.Value) defaultSkinIndex++;
         }
 
         public override void OnExit()
@@ -66,7 +76,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
                     swordSpawned = true;
                     GameObject swordProjectile;
                     //Throw Sword
-                    if (characterBody.skinIndex == 8)
+                    if (characterBody.skinIndex == defaultSkinIndex)
                     {
                         swordProjectile = UnityEngine.Object.Instantiate(Modules.Assets.brawlSwordObject, ganoncon.handRight);
                     }

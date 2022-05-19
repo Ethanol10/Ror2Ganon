@@ -397,6 +397,7 @@ namespace GanondorfMod.SkillStates
             this.attack.hitBoxGroup = hitBoxGroup;
             this.attack.isCrit = base.RollCrit();
             this.attack.impactSound = this.impactSound;
+            this.swingSoundString = "swingEffect";
 
             this.attackStartTime = atkStartTime;
             this.attackEndTime = atkEndTime;
@@ -467,7 +468,7 @@ namespace GanondorfMod.SkillStates
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 10f / this.attackSpeedStat;
 
-            this.swingSoundString = "jumpSFX";
+            this.swingSoundString = "swingEffect";
             this.hitSoundString = "lightHitSFX";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
@@ -507,7 +508,7 @@ namespace GanondorfMod.SkillStates
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 6f;
 
-            this.swingSoundString = "swingSFX";
+            this.swingSoundString = "swingEffect";
             this.hitSoundString = "tauntPunchThunder2";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
@@ -556,7 +557,7 @@ namespace GanondorfMod.SkillStates
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 20f;
 
-            this.swingSoundString = "swingSFX";
+            this.swingSoundString = "swingEffect";
             this.hitSoundString = "tauntPunchThunder2";
             //Replace with particle effects later.
             //this.swingEffectPrefab = Modules.Assets.swordSwingEffect;
