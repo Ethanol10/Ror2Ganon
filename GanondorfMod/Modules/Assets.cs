@@ -119,6 +119,17 @@ namespace GanondorfMod.Modules
             swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
             parentSlamEffectObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Parent/ParentSlamEffect.prefab").WaitForCompletion();
             beetleGuardGroundSlamObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleGuardGroundSlam.prefab").WaitForCompletion();
+
+            if (Modules.Config.disableSwordThrowParticleEffects.Value)
+            {
+                brawlSwordObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                brawlSwordObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                brawlSwordObject.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+
+                swordObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                swordObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+                swordObject.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+            }
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

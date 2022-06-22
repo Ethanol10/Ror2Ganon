@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 359176472
+CRC: 2304878112
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b3b6a823895c28e13d70e947a8258149
+    Hash: 762544814feaed108e689a3655f51035
   TypeTreeHash:
     serializedVersion: 2
-    Hash: fb98380650685d80d5a2c2187dc1369c
+    Hash: 740584176fc78b859e604f8258f4482c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,6 +26,8 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 54
+  Script: {instanceID: 0}
+- Class: 65
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -114,6 +116,7 @@ Assets:
 - Assets/GanonAsset/icons/flameChokeIconSecondary.png
 - Assets/GanonAsset/Texture/ganonTex04.png
 - Assets/GanonAsset/particle/SwordBeamEffect.prefab
+- Assets/GanonAsset/Prefab/SwordBeam.prefab
 - Assets/GanonAsset/icons/InfernoGuillotineIcon.png
 - Assets/GanonAsset/Material/ganonTex05.mat
 - Assets/GanonAsset/icons/TriforceWisdomPlus.png

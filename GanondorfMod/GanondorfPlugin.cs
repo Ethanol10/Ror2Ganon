@@ -36,7 +36,7 @@ namespace GanondorfMod
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "3.0.2";
+        public const string MODVERSION = "3.1.0";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
@@ -70,10 +70,10 @@ namespace GanondorfMod
             {
                 GanondorfPlugin.fallbackScepter = true;
             }
-
-             // load assets and read config
-            Modules.Assets.Initialize();
             Modules.Config.ReadConfig();
+            // load assets and read config
+            Modules.Assets.Initialize();
+
             Modules.States.RegisterStates(); // register states for networking
             Modules.Buffs.RegisterBuffs(); // add and register custom buffs/debuffs
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
@@ -102,6 +102,7 @@ namespace GanondorfMod
         {
             NetworkingAPI.RegisterMessageType<FullyChargedSwordNetworkRequest>();
             NetworkingAPI.RegisterMessageType<ChargingSwordNetworkRequest>();
+            NetworkingAPI.RegisterMessageType<SwordBeamRegenerateStocksNetworkRequest>();
         }
 
         private void Hook()

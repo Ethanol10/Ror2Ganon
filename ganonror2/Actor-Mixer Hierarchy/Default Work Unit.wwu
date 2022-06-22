@@ -3177,6 +3177,19 @@
 														<MediaID ID="41752237"/>
 													</MediaIDList>
 												</AudioFileSource>
+												<AudioFileSource Name="se_link_final02" ID="{7B565EDA-08AE-42E0-BC64-FE05EBCD16F4}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="-0.001"/>
+														<Property Name="LoopEnd" Type="Real64" Value="-0.001"/>
+														<Property Name="TrimBegin" Type="Real64" Value="-0.001"/>
+														<Property Name="TrimEnd" Type="Real64" Value="-0.001"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>se_link_final02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="354636792"/>
+													</MediaIDList>
+												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="se_common_smash_start_02" ID="{D8025382-D173-42FC-BD6D-3B3FC2B6819F}" Platform="Linked"/>
@@ -3382,6 +3395,59 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+										<Sound Name="se_link_final02" ID="{1656F051-536D-4DBD-8D6A-2619A178E556}" ShortID="87985848">
+											<PropertyList>
+												<Property Name="OverrideConversion" Type="bool" Value="True"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{208B0B14-0434-48F1-A59D-5F9E1FEF79C1}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1.5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="wizard's foot attenuation" ID="{88E52DF0-DC57-44D0-AEF9-57B3D87C8A41}" WorkUnitID="{8B89C5F4-1B53-4987-A94F-76F380AF9A79}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6B4AE759-32EF-4506-972E-88500E1BBCFC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{9D5E1B56-597A-4F75-9489-5288CDC86F65}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="se_link_final02" ID="{DB6931F5-E204-4CDD-81F0-9AA942445E69}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="-0.001"/>
+														<Property Name="LoopEnd" Type="Real64" Value="-0.001"/>
+														<Property Name="TrimBegin" Type="Real64" Value="-0.001"/>
+														<Property Name="TrimEnd" Type="Real64" Value="-0.001"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>se_link_final02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="354636792"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="se_link_final02" ID="{DB6931F5-E204-4CDD-81F0-9AA942445E69}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

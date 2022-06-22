@@ -12,9 +12,17 @@ namespace GanondorfMod.Modules
         internal const float dashDamageCoefficient = 4.0f;
         internal const float downAirDamageCoefficient = 2.5f;
 
+        //Sword swing/beam
         internal const float swordSwingDamageCoefficient = 2.2f;
         internal const float swordSwingprocCoefficient = 1.0f;
+        internal const float swordBeamProcCoefficient = 1.0f;
+        internal const float swordBeamDamageCoefficientBase = 2.0f;
+        internal const float swordBeamForce = 100f;
+        internal const float swordBeamLifetime = 1.5f;
+        internal const float swordBeamProjectileSpeed = 20f;
+        internal const int minimumAmountForSwordBeamTriforce = 40;
 
+        //FlameChoke
         internal const float flameChokeDamageCoefficient = 7.0f;
         internal const float flameChokeAltDamageCoefficient = 5.5f;
         internal const float flameChokeDamageReducer = 0.2f;

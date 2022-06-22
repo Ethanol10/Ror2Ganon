@@ -1,4 +1,7 @@
-﻿using R2API;
+﻿using GanondorfMod.Modules.Networking;
+using R2API;
+using R2API.Networking;
+using R2API.Networking.Interfaces;
 using RoR2;
 using RoR2.Projectile;
 using UnityEngine;
@@ -9,13 +12,14 @@ namespace GanondorfMod.Modules
     internal static class Projectiles
     {
         internal static GameObject bombPrefab;
+        internal static GameObject swordbeamProjectile;
 
         internal static void RegisterProjectiles()
         {
             // only separating into separate methods for my sanity
-            //CreateBomb();
+            CreateSwordBeam();
 
-            //AddProjectile(bombPrefab);
+            AddProjectile(swordbeamProjectile);
         }
 
         internal static void AddProjectile(GameObject projectileToAdd)
@@ -23,25 +27,55 @@ namespace GanondorfMod.Modules
             Modules.Prefabs.projectilePrefabs.Add(projectileToAdd);
         }
 
-        //private static void CreateBomb()
-        //{
-        //    bombPrefab = CloneProjectilePrefab("CommandoGrenadeProjectile", "HenryBombProjectile");
+        private static void CreateSwordBeam()
+        {
+            swordbeamProjectile = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("SwordBeam");
+            // Ensure that the child is set in the right position in Unity!!!!
+            Modules.Prefabs.SetupHitbox(swordbeamProjectile, swordbeamProjectile.transform.GetChild(0), "swordbeam");
+            swordbeamProjectile.AddComponent<NetworkIdentity>();
+            ProjectileController swordProjectileController = swordbeamProjectile.AddComponent<ProjectileController>();
 
-        //    ProjectileImpactExplosion bombImpactExplosion = bombPrefab.GetComponent<ProjectileImpactExplosion>();
-        //    InitializeImpactExplosion(bombImpactExplosion);
+            ProjectileDamage swordbeamProjectileDamage = swordbeamProjectile.AddComponent<ProjectileDamage>();
+            InitializeSwordBeamDamage(swordbeamProjectileDamage);
 
-        //    bombImpactExplosion.blastRadius = 16f;
-        //    bombImpactExplosion.destroyOnEnemy = true;
-        //    bombImpactExplosion.lifetime = 12f;
-        //    //bombImpactExplosion.impactEffect = Modules.Assets.bombExplosionEffect;
-        //    //bombImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("HenryBombExplosion");
-        //    bombImpactExplosion.timerAfterImpact = true;
-        //    bombImpactExplosion.lifetimeAfterImpact = 0.1f;
+            ProjectileSimple swordbeamTrajectory = swordbeamProjectile.AddComponent<ProjectileSimple>();
+            InitializeSwordBeamTrajectory(swordbeamTrajectory);
 
-        //    ProjectileController bombController = bombPrefab.GetComponent<ProjectileController>();
-        //    if (Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("HenryBombGhost") != null) bombController.ghostPrefab = CreateGhostPrefab("HenryBombGhost");
-        //    bombController.startSound = "";
-        //}
+            ProjectileOverlapAttack swordbeamOverlapAttack = swordbeamProjectile.AddComponent<ProjectileOverlapAttack>();
+            InitializeSwordBeamOverlapAttack(swordbeamOverlapAttack);
+            swordbeamProjectile.AddComponent<SwordbeamOnHit>();
+
+            //ProjectileImpactExplosion waterbladeProjectileImpactExplosion = waterbladeProjectile.AddComponent<ProjectileImpactExplosion>();
+            //Modules.Projectiles.InitializeImpactExplosion(waterbladeProjectileImpactExplosion);
+
+            //Waterblade Damage
+            swordProjectileController.procCoefficient = 1.0f;
+            swordProjectileController.canImpactOnTrigger = true;
+
+            PrefabAPI.RegisterNetworkPrefab(swordbeamProjectile);
+        }
+
+        internal static void InitializeSwordBeamOverlapAttack(ProjectileOverlapAttack overlap)
+        {
+            overlap.overlapProcCoefficient = 1.0f;
+            overlap.damageCoefficient = 1.0f;
+            //overlap.impactEffect = Modules.Assets.waterbladeimpactEffect;
+        }
+
+        internal static void InitializeSwordBeamTrajectory(ProjectileSimple simple)
+        {
+            simple.lifetime = Modules.StaticValues.swordBeamLifetime;
+            simple.desiredForwardSpeed = Modules.StaticValues.swordBeamProjectileSpeed;
+
+        }
+
+        internal static void InitializeSwordBeamDamage(ProjectileDamage damageComponent)
+        {
+            damageComponent.damage = Modules.StaticValues.swordBeamDamageCoefficientBase;
+            damageComponent.crit = false;
+            damageComponent.force = Modules.StaticValues.swordBeamForce;
+            damageComponent.damageType = DamageType.Generic;
+        }
 
         private static void InitializeImpactExplosion(ProjectileImpactExplosion projectileImpactExplosion)
         {
@@ -83,6 +117,17 @@ namespace GanondorfMod.Modules
         {
             GameObject newPrefab = PrefabAPI.InstantiateClone(RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Projectiles/" + prefabName), newPrefabName);
             return newPrefab;
+        }
+
+        internal class SwordbeamOnHit : MonoBehaviour, IProjectileImpactBehavior
+        {
+            public NetworkInstanceId netID;
+
+            public void OnProjectileImpact(ProjectileImpactInfo impactInfo)
+            {
+                //Implement incrementing of ganon stacks on hit.
+                new SwordBeamRegenerateStocksNetworkRequest(netID).Send(NetworkDestination.Clients);
+            }
         }
     }
 }

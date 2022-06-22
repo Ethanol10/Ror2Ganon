@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="270411657" Language="SFX" Hash="1600974207">
+		<SoundBank Id="270411657" Language="SFX" Hash="2436970106">
 			<ObjectPath>\SoundBanks\Default Work Unit\ganonSoundbank</ObjectPath>
 			<ShortName>ganonSoundbank</ShortName>
 			<Path>ganonSoundbank.bnk</Path>
@@ -353,6 +353,14 @@
 						<File Id="576921918" Language="SFX">
 							<ShortName>tauntSpin.wav</ShortName>
 							<Path>SFX\tauntSpin_A7D4FBA4.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1663150478" Name="SwordBeamSound" ObjectPath="\Events\Default Work Unit\SwordBeamSound">
+					<IncludedMemoryFiles>
+						<File Id="354636792" Language="SFX">
+							<ShortName>se_link_final02.wav</ShortName>
+							<Path>SFX\se_link_final02_5DDF2CC4.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

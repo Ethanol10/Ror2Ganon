@@ -1,12 +1,16 @@
 ﻿using GanondorfMod.Modules;
 using GanondorfMod.SkillStates.BaseStates;
 using RoR2;
+using RoR2.Projectile;
 using UnityEngine;
+using static GanondorfMod.Modules.Projectiles;
 
 namespace GanondorfMod.SkillStates
 {
     public class SwordSlashCombo : BaseSwordMelee
     {
+
+        TriforceBuffComponent buffComponent;
         public override void OnEnter()
         {
             this.hitboxName = "sword";
@@ -31,6 +35,7 @@ namespace GanondorfMod.SkillStates
             this.hitEffectPrefab = Modules.Assets.swordHitImpactEffect;
 
             //this.impactSound = Modules.Assets.swordHitSoundEvent.index;
+            buffComponent = GetComponent<TriforceBuffComponent>();
 
             base.OnEnter();
         }
@@ -49,7 +54,32 @@ namespace GanondorfMod.SkillStates
         {
             base.OnHitEnemyAuthority();
             //Increment Buff count
-            GetComponent<TriforceBuffComponent>().AddToBuffCount(1);
+            buffComponent.AddToBuffCount(1);
+        }
+
+        //Override the original function.
+        protected override void FireAttack()
+        {
+            if (!hasFired && buffComponent.GetBuffCount() >= Modules.StaticValues.minimumAmountForSwordBeamTriforce) 
+            {
+                AkSoundEngine.PostEvent(1663150478, base.gameObject);
+                Ray aimRay = GetAimRay();
+                Modules.Projectiles.swordbeamProjectile.GetComponent<SwordbeamOnHit>().netID = base.characterBody.masterObjectId;
+                ProjectileManager.instance.FireProjectile(Modules.Projectiles.swordbeamProjectile,
+                    aimRay.origin,
+                    Util.QuaternionSafeLookRotation(aimRay.direction),
+                    base.gameObject,
+                    Modules.StaticValues.swordBeamDamageCoefficientBase * this.damageStat,
+                    0f,
+                    base.RollCrit(),
+                    DamageColorIndex.Default,
+                    null,
+                    Modules.StaticValues.swordBeamForce);
+            }
+
+            //This sets the has fired back to true.
+            base.FireAttack();
+            
         }
 
         protected override void SetNextState()

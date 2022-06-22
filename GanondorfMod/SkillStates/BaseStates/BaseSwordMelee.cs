@@ -37,7 +37,7 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         private float earlyExitTime;
         public float duration;
-        private bool hasFired;
+        protected bool hasFired;
         private float hitPauseTimer;
         private OverlapAttack attack;
         protected bool inHitPause;
@@ -130,7 +130,7 @@ namespace GanondorfMod.SkillStates.BaseStates
             }
         }
 
-        private void FireAttack()
+        protected virtual void FireAttack()
         {
             if (!this.hasFired)
             {

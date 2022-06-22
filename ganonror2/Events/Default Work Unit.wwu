@@ -457,6 +457,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="SwordBeamSound" ID="{6200D5BB-6483-4A82-82AA-4E2AC407DFCE}">
+					<ChildrenList>
+						<Action Name="" ID="{ABE81013-0C11-4297-AD9E-7EE7EA5F6C70}" ShortID="823659752">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="FadeInCurve" Type="int16" Value="6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="se_link_final02" ID="{1656F051-536D-4DBD-8D6A-2619A178E556}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

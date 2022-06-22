@@ -62,7 +62,9 @@ namespace GanondorfMod.Modules
                 + $"When airborne and while looking downwards, thrust your feet downwards bouncing a short distance upwards for <style=cIsDamage>{100f * StaticValues.downAirDamageCoefficient}% damage</style>.");
 
             LanguageAPI.Add(prefix + "PRIMARY_SWORD_NAME", "Cleave");
-            LanguageAPI.Add(prefix + "PRIMARY_SWORD_DESCRIPTION", $"Cleave through hordes for <style=cIsDamage>{Modules.StaticValues.swordSwingDamageCoefficient * 100f}%</style> damage.");
+            LanguageAPI.Add(prefix + "PRIMARY_SWORD_DESCRIPTION", $"Cleave through hordes for <style=cIsDamage>{Modules.StaticValues.swordSwingDamageCoefficient * 100f}%</style> damage." 
+                + Environment.NewLine 
+                + $"At <style=cIsDamage>{Modules.StaticValues.minimumAmountForSwordBeamTriforce} triforce stacks</style>, manifest and fire a light beam and that passes through enemies for <style=cIsDamage>{Modules.StaticValues.swordBeamDamageCoefficientBase * 100f}%</style> damage.");
 
             #endregion
 
