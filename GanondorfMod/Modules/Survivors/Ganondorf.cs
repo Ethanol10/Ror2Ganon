@@ -52,7 +52,8 @@ namespace GanondorfMod.Modules.Survivors
                 },
                 new CustomRendererInfo{ 
                     childName = "SwordMesh",
-                    material = swordMat
+                    material = swordMat,
+                    ignoreOverlays = true
                 }
         };
 

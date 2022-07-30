@@ -27,11 +27,13 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 ## What's new:
 
+- 3.1.1 -> Removed the Shield Overlay on the sword
+
+# Major release details:
+
 - 3.1.0 -> Added the following: 
     - Added a sword beam to Ganondorf's sword when he hits 30 Triforce stacks or greater!
     - Added config to remove the trails off Serrated Whirlwind if you require.
-
-# Major release details:
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
     - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
         - New Primary: Cleave
@@ -114,6 +116,9 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.1.0 -> Added the following: 
+    - Added a sword beam to Ganondorf's sword when he hits 30 Triforce stacks or greater!
+    - Added config to remove the trails off Serrated Whirlwind if you require.
 - 3.0.2 -> Fixes to the following:
     - Reduced voice line frequency on all moves EXCEPT super heavy attacks.
     - Recoloured smash skins are now a config file, I don't know how these work online, but make sure everyone has the config enabled for the skin you want.
