@@ -27,7 +27,7 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 ## What's new:
 
-- 3.1.1 -> Removed the Shield Overlay on the sword
+- 3.1.2 -> Didn't load the NetworkingAPI on load. This is fixed now.
 
 # Major release details:
 
@@ -116,6 +116,7 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.1.1 -> Removed the Shield Overlay on the sword
 - 3.1.0 -> Added the following: 
     - Added a sword beam to Ganondorf's sword when he hits 30 Triforce stacks or greater!
     - Added config to remove the trails off Serrated Whirlwind if you require.

@@ -45,7 +45,7 @@
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\ThinkInvis-ClassicItems\ClassicItems.dll</HintPath>
     </Reference>
     <Reference Include="CustomEmotesAPI">
-      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\MetrosexualFruitcake-CustomEmotesAPI\CustomEmotesAPI.dll</HintPath>
+      <HintPath>..\..\rimuru-tempest-ror2\libs\CustomEmotesAPI.dll</HintPath>
     </Reference>
     <Reference Include="KinematicCharacterController">
       <HintPath>..\libs\KinematicCharacterController.dll</HintPath>
