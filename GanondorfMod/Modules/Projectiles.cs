@@ -121,12 +121,21 @@ namespace GanondorfMod.Modules
 
         internal class SwordbeamOnHit : MonoBehaviour, IProjectileImpactBehavior
         {
-            public NetworkInstanceId netID;
-
             public void OnProjectileImpact(ProjectileImpactInfo impactInfo)
             {
-                //Implement incrementing of ganon stacks on hit.
-                new SwordBeamRegenerateStocksNetworkRequest(netID).Send(NetworkDestination.Clients);
+                ProjectileController projectileCon = this.gameObject.GetComponent<ProjectileController>();
+
+                if (projectileCon) 
+                {
+                    GameObject owner = projectileCon.owner;
+                    if (owner)
+                    {
+                        //Stupid fringe case.
+                        CharacterBody body = owner.GetComponent<CharacterBody>();
+                        //Implement incrementing of ganon stacks on hit.
+                        new SwordBeamRegenerateStocksNetworkRequest(body.master.netId).Send(NetworkDestination.Clients);
+                    }
+                }
             }
         }
     }

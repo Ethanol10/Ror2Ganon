@@ -1,0 +1,15 @@
+{
+  "name": "Ganondorf_Mod",
+  "version_number": "3.1.3",
+  "website_url": "https://github.com/Ethanol10/Ror2Ganon",
+  "description": "Ganondorf, The King of Evil, 3.0 -> New Skills Update!, 3.1.3 -> R2API conversion",
+  "dependencies": [
+    "bbepis-BepInExPack-5.4.1905",
+    "RiskofThunder-HookGenPatcher-1.2.3",
+    "RiskofThunder-R2API_Core-5.0.0",
+    "RiskofThunder-R2API_Prefab-1.0.0",
+    "RiskofThunder-R2API_Language-1.0.0",
+    "RiskofThunder-R2API_Sound-1.0.0",
+    "RiskofThunder-R2API_Networking-1.0.0"
+  ]
+}

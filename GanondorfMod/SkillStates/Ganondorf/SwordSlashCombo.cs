@@ -64,7 +64,6 @@ namespace GanondorfMod.SkillStates
             {
                 AkSoundEngine.PostEvent(1663150478, base.gameObject);
                 Ray aimRay = GetAimRay();
-                Modules.Projectiles.swordbeamProjectile.GetComponent<SwordbeamOnHit>().netID = base.characterBody.masterObjectId;
                 ProjectileManager.instance.FireProjectile(Modules.Projectiles.swordbeamProjectile,
                     aimRay.origin,
                     Util.QuaternionSafeLookRotation(aimRay.direction),

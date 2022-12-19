@@ -20,24 +20,28 @@ using GanondorfMod.Modules.Networking;
 namespace GanondorfMod
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.bepis.r2api.prefab", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.bepis.r2api.language", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.bepis.r2api.sound", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.bepis.r2api.networking", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    [R2APISubmoduleDependency(new string[]
-    {
-        "PrefabAPI",
-        "LanguageAPI",
-        "SoundAPI",
-        "NetworkingAPI"
-    })]
+    //[R2APISubmoduleDependency(new string[]
+    //{
+    //    "PrefabAPI",
+    //    "LanguageAPI",
+    //    "SoundAPI",
+    //    "NetworkingAPI"
+    //})]
 
     public class GanondorfPlugin : BaseUnityPlugin
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "3.1.2";
+        public const string MODVERSION = "3.1.3";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;

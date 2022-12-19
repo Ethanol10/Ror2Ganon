@@ -39,10 +39,10 @@
   
   <ItemGroup>
     <Reference Include="AncientScepter">
-      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\amogus_lovers-StandaloneAncientScepter\AncientScepter.dll</HintPath>
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\amogus_lovers-StandaloneAncientScepter\AncientScepter.dll</HintPath>
     </Reference>
     <Reference Include="ClassicItems">
-      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\ThinkInvis-ClassicItems\ClassicItems.dll</HintPath>
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\ThinkInvis-ClassicItems\ClassicItems.dll</HintPath>
     </Reference>
     <Reference Include="CustomEmotesAPI">
       <HintPath>..\..\rimuru-tempest-ror2\libs\CustomEmotesAPI.dll</HintPath>
@@ -51,13 +51,25 @@
       <HintPath>..\libs\KinematicCharacterController.dll</HintPath>
     </Reference>
     <Reference Include="MMHOOK_RoR2">
-      <HintPath>..\libs\MMHOOK_RoR2.dll</HintPath>
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\MMHOOK\MMHOOK_RoR2.dll</HintPath>
     </Reference>
-    <Reference Include="R2API">
-      <HintPath>..\libs\R2API.dll</HintPath>
+    <Reference Include="R2API.Core">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Core\R2API.Core\R2API.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Language">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Language\R2API.Language\R2API.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Networking">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Networking\R2API.Networking\R2API.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Prefab">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Prefab\R2API.Prefab\R2API.Prefab.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API.Sound">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Sound\R2API.Sound\R2API.Sound.dll</HintPath>
     </Reference>
     <Reference Include="TILER2">
-      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\ThinkInvis-TILER2\TILER2.dll</HintPath>
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\ThinkInvis-TILER2\TILER2.dll</HintPath>
     </Reference>
   </ItemGroup>
 
