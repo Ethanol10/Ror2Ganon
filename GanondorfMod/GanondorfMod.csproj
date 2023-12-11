@@ -68,6 +68,9 @@
     <Reference Include="R2API.Sound">
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Sound\R2API.Sound\R2API.Sound.dll</HintPath>
     </Reference>
+    <Reference Include="RiskOfOptions">
+      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\Rune580-Risk_Of_Options\RiskOfOptions.dll</HintPath>
+    </Reference>
     <Reference Include="TILER2">
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\ThinkInvis-TILER2\TILER2.dll</HintPath>
     </Reference>

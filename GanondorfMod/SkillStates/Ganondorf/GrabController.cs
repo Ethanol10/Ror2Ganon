@@ -68,7 +68,12 @@ namespace GanondorfMod.SkillStates
             }
         }
 
-        private void FixedUpdate()
+        private void Update()
+        {
+            SetToPivotPosition();
+        }
+
+        private void SetToPivotPosition() 
         {
             if (this.motor)
             {
@@ -82,7 +87,8 @@ namespace GanondorfMod.SkillStates
             {
                 this.rigidMotor.moveVector = Vector3.zero;
                 this.rigidMotor.rootMotion = Vector3.zero;
-                if (this.rigidbody) {
+                if (this.rigidbody)
+                {
                     this.rigidbody.position = this.pivotTransform.position;
                     this.rigidbody.velocity = Vector3.zero;
                 }

@@ -24,13 +24,13 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 - Standalone Ancient Scepter
 - ThinkInvisible's Classic Items Ancient Scepter
 - EmoteAPI
+- RiskOfOptions
 
 ## What's new:
 
-- 3.1.3 -> Removing requirement on tristanmcpherson-R2API for RiskofThunder-R2API submodules.
-    - Changed lifetime of beams to 0.5s from 1.5s
-    - Removed error on Swordbeam impact as it was doing some stupid shit.
-    
+- 3.1.4 -> Added some config to modify cooldowns on secondary and utility skills. Requires restart to work.
+    - Also added RiskOfOptions support.
+        
 # Major release details:
 
 - 3.1.0 -> Added the following: 
@@ -118,6 +118,9 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.1.3 -> Removing requirement on tristanmcpherson-R2API for RiskofThunder-R2API submodules.
+    - Changed lifetime of beams to 0.5s from 1.5s
+    - Removed error on Swordbeam impact as it was doing some stupid shit.
 - 3.1.2 -> Didn't load the NetworkingAPI on load. This is fixed now.
 - 3.1.1 -> Removed the Shield Overlay on the sword
 - 3.1.0 -> Added the following: 

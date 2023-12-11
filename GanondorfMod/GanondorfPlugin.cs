@@ -27,6 +27,8 @@ namespace GanondorfMod
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
+
+    [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     //[R2APISubmoduleDependency(new string[]
@@ -41,7 +43,7 @@ namespace GanondorfMod
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "3.1.3";
+        public const string MODVERSION = "3.1.4";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
@@ -66,6 +68,7 @@ namespace GanondorfMod
             //make triforcebuff and ganondorfcharacterbody null for now.
             triforceBuff = null;
 
+
             //Check for ancient scepter plugin
             if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
             {
@@ -78,7 +81,11 @@ namespace GanondorfMod
             Modules.Config.ReadConfig();
             // load assets and read config
             Modules.Assets.Initialize();
-
+            if (Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions"))
+            {
+                Modules.Config.SetupRiskOfOptions();
+            }
+            
             Modules.States.RegisterStates(); // register states for networking
             Modules.Buffs.RegisterBuffs(); // add and register custom buffs/debuffs
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
