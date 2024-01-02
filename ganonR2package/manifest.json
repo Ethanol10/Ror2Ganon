@@ -1,8 +1,8 @@
 {
   "name": "Ganondorf_Mod",
-  "version_number": "3.1.4",
+  "version_number": "3.1.5",
   "website_url": "https://github.com/Ethanol10/Ror2Ganon",
-  "description": "Ganondorf, The King of Evil, 3.0 -> New Skills Update!, 3.1.4 -> Adding cooldowns to config.",
+  "description": "Ganondorf, The King of Evil, 3.0 -> New Skills Update!, 3.1.5 -> Increased health per level.",
   "dependencies": [
     "bbepis-BepInExPack-5.4.1905",
     "RiskofThunder-HookGenPatcher-1.2.3",

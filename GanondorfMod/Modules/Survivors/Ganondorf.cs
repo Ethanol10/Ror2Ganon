@@ -32,7 +32,7 @@ namespace GanondorfMod.Modules.Survivors
             crosshair = Modules.Assets.LoadCrosshair("Standard"),
             damage = 17f,
             damageGrowth = 2.5f,
-            healthGrowth = 15f,
+            healthGrowth = 60f,
             healthRegen = 1.5f,
             jumpCount = 2,
             maxHealth = 250.0f,
