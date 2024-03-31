@@ -17,8 +17,8 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
   <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
 </a>
 
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/918474832725823568/unknown.png">
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/974992205326450698/unknown.png">
+<img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonScreenshot1.png">
+<img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonScreenshot2.png">
   
 ## Mod Interoperability List:
 - Standalone Ancient Scepter
@@ -58,25 +58,25 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 ## Skills
 
 ### Passive: Triforce of Power
-#### <img src="https://cdn.discordapp.com/attachments/399901440023330816/918085033204514816/fullTriforceIcon.png">
+#### <img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonSkills1.png">
 Every successful hit and kill will build up stacks that increase Ganondorf's armor, up to a maximum of 40 extra armor and 80 extra base damage. Stacks decay after 2 seconds of no build-up. All stacks will be consumed to power up a successful hit of Warlock punch, increasing the damage up to 1000% at the maximum amount of stacks.
 
 ### Primary: Punch
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335216062464/punchIcon.png"><br>
+<img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonSkills2.png"><br>
 On the ground, punch forward for 200% damage.
 <br>Stunning. When sprinting, dash forward, plowing through enemies for 400% damage. 
 <br>When airborne, kick twice for 90% damage and 250% damage.
 
 ### Secondary: Wizard's Foot
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/920686118024929350/wizardFootIcon.png"><br>
+<img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonSkills3.png"><br>
 Heavy. Launch yourself forward pushing light enemies away for 300% damage.
 
 ### Utility: Flame Choke
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/918083336092667904/flameChokeIcon.png"><br>
+<img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonSkills4.png"><br>
 Dash forward grabbing enemies in a row and choke slamming them dealing 700% damage.
 
 ### Special: Warlock Punch
-<img src="https://cdn.discordapp.com/attachments/399901440023330816/918083335824211998/warlockPunchIcon.png"><br>
+<img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonSkills5.png"><br>
 Charge up a powerful punch unleashing 1000% damage onto close range foes. Consume 50 stacks to power the move up by 333% damage. Consume 100 stacks to power the move up by 1000% damage.
 
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
