@@ -14,7 +14,7 @@ Created by Ethanol 10. For any issues or bug reports, contact me on the RoR2 Mod
 There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 <a href="https://ko-fi.com/ethanol10" target="_blank">
-  <img width="400" src="https://cdn.discordapp.com/attachments/928130606662049892/952521134526590996/unknown.png"/>
+  <img width="400" src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/kofiImg.png"/>
 </a>
 
 <img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonScreenshot1.png">
@@ -28,7 +28,7 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 ## What's new:
 
-- 3.1.5 -> Increased health gain per level from 15 -> 60.
+- 3.1.6 -> README changes to properly show images instead of using Discord CDN which wiped out all my previous images lol.
         
 # Major release details:
 
@@ -49,7 +49,7 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
     - Added another skin!
     - Added EmoteAPI support!
     - Added ＤＹＮＡＭＩＣＢＯＮＥＳ to his cape. (No I didn't fix his "taking-a-shit" walk, do I look like a GOOD animator to you?)
-        <img src="https://cdn.discordapp.com/attachments/399901440023330816/974988697093169162/unknown.png">
+        <img src="https://raw.githubusercontent.com/Ethanol10/Ror2Ganon/master/ganonR2package/ganonLmao.png">
     - Stat Changes:
         - Utility's use 40 stacks to boost their attack by 3.0x, instead of 20.
         - 60 -> 80 damage gained from max amount of stacks.
@@ -82,16 +82,24 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 ## And More... (well not that much more, but more...) (Unlock them to find out!)
 
 ## Other Mods by Popcorn Factory
+<details>
+<summary>Check out other mods from the Popcorn Factory team!</summary>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/Arsonist_Mod/">
+        <img src="https://gcdn.thunderstore.io/live/repository/icons/PopcornFactory-Arsonist_Mod-2.1.4.png.128x128_q95.jpg">
+        <p>Arsonist Mod (Popcorn Factory Team)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/DarthVaderMod/">
+      <img width="130" src="https://user-images.githubusercontent.com/93917577/180753359-4906ca0b-6ce5-4ff7-9962-bdec3329682c.png"/>
+      <p>Darth Vader Mod</p>
+    </a>
+</div>
 <div>
     <a href="https://thunderstore.io/package/PopcornFactory/DittoMod/">
         <img src="https://user-images.githubusercontent.com/93917577/168004690-23b6d040-5f89-4b62-916b-c40d774bff02.png"><br>
         <p>DittoMod (TeaL)</p>
-    </a>
-</div>
-<div>
-    <a href="https://thunderstore.io/package/TeaL/DekuMod/">
-        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960043614036168784/TeaL-DekuMod-3.1.1.png.128x128_q95.png"><br>
-        <p>DekuMod (TeaL)</p>
     </a>
 </div>
 <div>
@@ -101,22 +109,43 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
     </a>
 </div>
 <div>
+    <a href="https://thunderstore.io/package/TeaL/DekuMod/">
+        <img src="https://gcdn.thunderstore.io/live/repository/icons/TeaL-DekuMod-4.1.2.png.128x128_q95.png"><br>
+        <p>DekuMod (TeaL)</p>
+    </a>
+</div>
+<div>
     <a href="https://thunderstore.io/package/BokChoyWithSoy/Phoenix_Wright_Mod/">
-        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960054458790850570/BokChoyWithSoy-Phoenix_Wright_Mod-1.6.2.png.128x128_q95.png"><br>
+        <img src="https://gcdn.thunderstore.io/live/repository/icons/BokChoyWithSoy-Phoenix_Wright_Mod-1.8.0.png.128x128_q95.png"><br>
         <p>Phoenix Wright Mod (BokChoyWithSoy)</p>
     </a>
 </div>
 <div>
     <a href="https://thunderstore.io/package/PopcornFactory/Wisp_WarframeSurvivorMod/">
-        <img src="https://cdn.discordapp.com/attachments/399901440023330816/960043613692239942/PopcornFactory-Wisp_WarframeSurvivorMod-1.0.2.png.128x128_q95.png"><br>
+        <img src="https://gcdn.thunderstore.io/live/repository/icons/PopcornFactory-Wisp_WarframeSurvivorMod-3.0.6.png.128x128_q95.png"><br>
         <p>Wisp Mod (Popcorn Factory Team)</p>
     </a>
 </div>
+<div>
+    <a href="https://thunderstore.io/package/PopcornFactory/Rimuru_Tempest_Mod/">
+        <img src="https://gcdn.thunderstore.io/live/repository/icons/PopcornFactory-Rimuru_Tempest_Mod-1.0.4.png.128x128_q95.png"><br>
+        <p>Rimuru Tempest Mod (Popcorn Factory Team)</p>
+    </a>
+</div>
+<div>
+    <a href="https://thunderstore.io/package/BokChoyWithSoy/Bok_Choy_Items/">
+        <img src="https://gcdn.thunderstore.io/live/repository/icons/BokChoyWithSoy-Bok_Choy_Items-1.0.3.png.128x128_q95.png"><br>
+        <p>Bok Choy Items (BokChoyWithSoy)</p>
+    </a>
+</div>
+
+</details>
 
 # Old Changelog
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.1.5 -> Increased health gain per level from 15 -> 60.
 - 3.1.4 -> Added some config to modify cooldowns on secondary and utility skills. Requires restart to work.
     - Also added RiskOfOptions support.
 - 3.1.3 -> Removing requirement on tristanmcpherson-R2API for RiskofThunder-R2API submodules.
