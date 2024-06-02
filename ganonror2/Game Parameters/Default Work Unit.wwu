@@ -5,6 +5,16 @@
 			<ChildrenList>
 				<GameParameter Name="Volume_Master" ID="{997616DE-B8E3-43FB-B2CE-201BC0E9125B}"/>
 				<GameParameter Name="Volume_SFX" ID="{34F96E7B-8F69-49F8-B39D-A5572FC723A0}"/>
+				<GameParameter Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

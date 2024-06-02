@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="270411657" Language="SFX" Hash="2436970106">
+		<SoundBank Id="270411657" Language="SFX" Hash="982714628">
 			<ObjectPath>\SoundBanks\Default Work Unit\ganonSoundbank</ObjectPath>
 			<ShortName>ganonSoundbank</ShortName>
 			<Path>ganonSoundbank.bnk</Path>
@@ -308,6 +308,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2152942206" Name="stopLoopingSwingSound" ObjectPath="\Events\Default Work Unit\stopLoopingSwingSound"/>
 				<Event Id="2337929022" Name="superHitsVoice" ObjectPath="\Events\Default Work Unit\superHitsVoice">
 					<IncludedMemoryFiles>
 						<File Id="400381884" Language="SFX">
@@ -458,11 +459,13 @@
 				</Event>
 			</IncludedEvents>
 			<GameParameters>
+				<GameParameter Id="2368158596" Name="Volume_GanonSFX" ObjectPath="\Game Parameters\Default Work Unit\Volume_GanonSFX"/>
+				<GameParameter Id="3055636435" Name="Volume_GanonVoice" ObjectPath="\Game Parameters\Default Work Unit\Volume_GanonVoice"/>
 				<GameParameter Id="3673881719" Name="Volume_SFX" ObjectPath="\Game Parameters\Default Work Unit\Volume_SFX"/>
 				<GameParameter Id="3695994288" Name="Volume_Master" ObjectPath="\Game Parameters\Default Work Unit\Volume_Master"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3701367528">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1350177121">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>

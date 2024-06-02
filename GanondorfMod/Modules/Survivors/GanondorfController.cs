@@ -110,6 +110,15 @@ namespace GanondorfMod.Modules.Survivors
             specialScepterWasSwapped = false;
         }
 
+        public void Start()
+        {
+            if (AkSoundEngine.IsInitialized()) 
+            {
+                AkSoundEngine.SetRTPCValue("Volume_GanonVoice", Modules.Config.voiceVolume.Value);
+                AkSoundEngine.SetRTPCValue("Volume_GanonSFX", Modules.Config.sfxVolume.Value);
+            }
+        }
+
         public void Update()
         {
             if (targetLoc && meshLoc) 

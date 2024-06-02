@@ -1,5 +1,7 @@
 ﻿using GanondorfMod.Modules;
+using GanondorfMod.Modules.Networking;
 using GanondorfMod.Modules.Survivors;
+using R2API.Networking.Interfaces;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -133,7 +135,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
 
         public void OnDestroy() 
         {
-            AkSoundEngine.StopPlayingID(spinningSound);
+            new StopSoundEventNetworkRequest(spinningSound).Send(R2API.Networking.NetworkDestination.Clients);
             if (charBody)
             {
                 GanondorfController ganoncon = charBody.gameObject.GetComponent<GanondorfController>();

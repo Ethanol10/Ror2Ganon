@@ -472,6 +472,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="stopLoopingSwingSound" ID="{CD7DE72F-124D-474A-BB8B-8FF8381E656E}">
+					<ChildrenList>
+						<Action Name="" ID="{87DA5FE1-9919-4800-9891-156A3555D2E8}" ShortID="573950316">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="loopingSwingSound" ID="{2E4332A5-E7DA-40A3-BC05-960051B843EC}" WorkUnitID="{D6A40A65-2849-4776-9C24-6891447748A3}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -31,19 +31,12 @@ namespace GanondorfMod
     [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    //[R2APISubmoduleDependency(new string[]
-    //{
-    //    "PrefabAPI",
-    //    "LanguageAPI",
-    //    "SoundAPI",
-    //    "NetworkingAPI"
-    //})]
 
     public class GanondorfPlugin : BaseUnityPlugin
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "3.1.4";
+        public const string MODVERSION = "3.1.7";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
@@ -79,6 +72,7 @@ namespace GanondorfMod
                 GanondorfPlugin.fallbackScepter = true;
             }
             Modules.Config.ReadConfig();
+            Modules.Config.OnChangeHooks();
             // load assets and read config
             Modules.Assets.Initialize();
             if (Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions"))
@@ -115,6 +109,8 @@ namespace GanondorfMod
             NetworkingAPI.RegisterMessageType<FullyChargedSwordNetworkRequest>();
             NetworkingAPI.RegisterMessageType<ChargingSwordNetworkRequest>();
             NetworkingAPI.RegisterMessageType<SwordBeamRegenerateStocksNetworkRequest>();
+            NetworkingAPI.RegisterMessageType<PlaySoundNetworkRequest>();
+            NetworkingAPI.RegisterMessageType<StopSoundEventNetworkRequest>();
         }
 
         private void Hook()
@@ -254,6 +250,12 @@ namespace GanondorfMod
             orig(self);
             if (self.gameObject.name.Contains("GanondorfDisplay")) 
             {
+                if (AkSoundEngine.IsInitialized())
+                {
+                    AkSoundEngine.SetRTPCValue("Volume_GanonVoice", Modules.Config.voiceVolume.Value);
+                    AkSoundEngine.SetRTPCValue("Volume_GanonSFX", Modules.Config.sfxVolume.Value);
+                }
+
                 //Load the portal effect, push the portal back a little bit on the x-axis and have ganon walk through it.
                 GameObject portalEffect = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/Effects/NullifierSpawnEffect");
                 Vector3 pos = self.gameObject.transform.position;

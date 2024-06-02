@@ -22,6 +22,9 @@ namespace GanondorfMod.Modules
         public static ConfigEntry<float> secondaryFlameChokeCooldown;
         public static ConfigEntry<float> utilWizardsFootCooldown;
 
+        public static ConfigEntry<float> voiceVolume;
+        public static ConfigEntry<float> sfxVolume;
+
         public static void ReadConfig()
         {
             saturatedClassicEnabled = GanondorfPlugin.instance.Config.Bind<bool>(new ConfigDefinition("01 - Skins", "Saturated Classic Enabled"), false, new ConfigDescription("Make Saturated Classic to appear in game as a selectable skin.", null, Array.Empty<object>()));
@@ -30,7 +33,7 @@ namespace GanondorfMod.Modules
             hulkingMaliceEnabled = GanondorfPlugin.instance.Config.Bind<bool>(new ConfigDefinition("01 - Skins", "Hulking Malice Enabled"), false, new ConfigDescription("Make Hulking Malice to appear in game as a selectable skin.", null, Array.Empty<object>()));
             brownEnabled = GanondorfPlugin.instance.Config.Bind<bool>(new ConfigDefinition("01 - Skins", "Brown Enabled"), false, new ConfigDescription("Make Brown to appear in game as a selectable skin.", null, Array.Empty<object>()));
 
-            disableSwordThrowParticleEffects = GanondorfPlugin.instance.Config.Bind<bool>(new ConfigDefinition("00 - Miscellaneous", "Remove Serrated Whirlwind Effects"), false, new ConfigDescription("Disables the effect when the sword is thrown", null, Array.Empty<object>()));
+            disableSwordThrowParticleEffects = GanondorfPlugin.instance.Config.Bind<bool>(new ConfigDefinition("00 - Miscellaneous", "Remove Serrated Whirlwind Effects"), false, new ConfigDescription("Disables the effect when the sword is thrown.", null, Array.Empty<object>()));
 
             wizardsFootCooldown = GanondorfPlugin.instance.Config.Bind<float>
                 (
@@ -57,6 +60,20 @@ namespace GanondorfMod.Modules
                     8f,
                     new ConfigDescription("Sets the Cooldown for Wizards Foot on the Utility slot. This requires a restart to take effect.", null, Array.Empty<object>())
                 );
+
+            voiceVolume = GanondorfPlugin.instance.Config.Bind<float>
+                (
+                    new ConfigDefinition("03 - Volume", "Voice Volume"),
+                    100f,
+                    new ConfigDescription("Sets the Volume for voicelines, AFFECTED BY IN-GAME MASTER AND SFX VOLUME SLIDERS!", null, Array.Empty<object>())
+                );
+
+            sfxVolume = GanondorfPlugin.instance.Config.Bind<float>
+                (
+                    new ConfigDefinition("03 - Volume", "Ganondorf SFX Volume"),
+                    100f,
+                    new ConfigDescription("Sets the Volume for Swing sounds, hits and non-voice SFX, AFFECTED BY IN-GAME MASTER AND SFX VOLUME SLIDERS!", null, Array.Empty<object>())
+                );
         }
 
         // this helper automatically makes config entries for disabling survivors
@@ -67,7 +84,8 @@ namespace GanondorfMod.Modules
 
         public static void SetupRiskOfOptions()
         {
-            Sprite icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("rooIcon");
+            Sprite icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texGanondorfIcon");
+            ModSettingsManager.SetModIcon(icon);
 
             ModSettingsManager.AddOption(new CheckBoxOption(disableSwordThrowParticleEffects));
 
@@ -105,6 +123,54 @@ namespace GanondorfMod.Modules
                 increment = 0.01f
             }
             ));
+
+            ModSettingsManager.AddOption(new StepSliderOption(voiceVolume, new StepSliderConfig
+            {
+                min = 0f,
+                max = 100f,
+                increment = 0.01f
+            }));
+            ModSettingsManager.AddOption(new StepSliderOption(sfxVolume, new StepSliderConfig
+            {
+                min = 0f,
+                max = 100f,
+                increment = 0.01f
+            }));
+        }
+
+        public static void OnChangeHooks() 
+        {
+            disableSwordThrowParticleEffects.SettingChanged += DisableSwordThrowParticleEffects_SettingChanged;
+            voiceVolume.SettingChanged += VoiceVolume_SettingChanged;
+            sfxVolume.SettingChanged += SfxVolume_SettingChanged;
+        }
+
+        private static void DisableSwordThrowParticleEffects_SettingChanged(object sender, EventArgs e)
+        {
+
+            Modules.Assets.brawlSwordObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(!disableSwordThrowParticleEffects.Value);
+            Modules.Assets.brawlSwordObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(!disableSwordThrowParticleEffects.Value);
+            Modules.Assets.brawlSwordObject.transform.GetChild(0).GetChild(2).gameObject.SetActive(!disableSwordThrowParticleEffects.Value);
+
+            Modules.Assets.swordObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(!disableSwordThrowParticleEffects.Value);
+            Modules.Assets.swordObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(!disableSwordThrowParticleEffects.Value);
+            Modules.Assets.swordObject.transform.GetChild(0).GetChild(2).gameObject.SetActive(!disableSwordThrowParticleEffects.Value);
+        }
+
+        private static void SfxVolume_SettingChanged(object sender, EventArgs e)
+        {
+            if (AkSoundEngine.IsInitialized())
+            {
+                AkSoundEngine.SetRTPCValue("Volume_GanonSFX", sfxVolume.Value);
+            }
+        }
+
+        private static void VoiceVolume_SettingChanged(object sender, EventArgs e)
+        {
+            if (AkSoundEngine.IsInitialized())
+            {
+                AkSoundEngine.SetRTPCValue("Volume_GanonVoice", voiceVolume.Value);
+            }
         }
     }
 }

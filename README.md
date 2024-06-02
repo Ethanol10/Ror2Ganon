@@ -28,7 +28,14 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
 
 ## What's new:
 
-- 3.1.6 -> README changes to properly show images instead of using Discord CDN which wiped out all my previous images lol.
+- 3.1.7 -> Following changes have been made:
+    - Increased the Volume of all sounds across the board.
+        - Now you're probably wondering, WHY would you do this when you can already hear his screams from across the map. Just read the next dot point.
+    - Added volume controls in config.
+        - If you want to edit them in realtime, use a RiskOfOptions for God's sake, it's a game changer.
+    - Reduced the attenuation (Distance at which you can hear a sound from a point) for the Serrated Whirlwind SFX.
+    - Added Networking to destroy the sound of the Serrated Whirlwind swinging sound so that it should stop playing once its back in your hand.
+    - Removed requirement to restart the game to disable serrated whirlwind effects.
         
 # Major release details:
 
@@ -145,6 +152,7 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.1.6 -> README changes to properly show images instead of using Discord CDN which wiped out all my previous images lol.
 - 3.1.5 -> Increased health gain per level from 15 -> 60.
 - 3.1.4 -> Added some config to modify cooldowns on secondary and utility skills. Requires restart to work.
     - Also added RiskOfOptions support.

@@ -51,7 +51,7 @@
       <HintPath>..\libs\KinematicCharacterController.dll</HintPath>
     </Reference>
     <Reference Include="MMHOOK_RoR2">
-      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\MMHOOK\MMHOOK_RoR2.dll</HintPath>
+      <HintPath>..\libs\MMHOOK_RoR2.dll</HintPath>
     </Reference>
     <Reference Include="R2API.Core">
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Core\R2API.Core\R2API.Core.dll</HintPath>
@@ -69,7 +69,7 @@
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\RiskofThunder-R2API_Sound\R2API.Sound\R2API.Sound.dll</HintPath>
     </Reference>
     <Reference Include="RiskOfOptions">
-      <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\testing\BepInEx\plugins\Rune580-Risk_Of_Options\RiskOfOptions.dll</HintPath>
+      <HintPath>..\libs\RiskOfOptions.dll</HintPath>
     </Reference>
     <Reference Include="TILER2">
       <HintPath>..\..\..\Users\ethan\AppData\Roaming\r2modmanPlus-local\RiskOfRain2\profiles\dependency-profile\BepInEx\plugins\ThinkInvis-TILER2\TILER2.dll</HintPath>

@@ -21,6 +21,7 @@
 						<ObjectRef Name="grabSounds" ID="{1511E1D0-666E-4569-98E9-16330728AFFF}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="loopingSwingSound" ID="{D669889D-3FF1-45B2-BBD7-F13D986860D7}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="lightHitSFX" ID="{455BCAEF-471D-4684-8CC8-855807567DFE}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="stopLoopingSwingSound" ID="{CD7DE72F-124D-474A-BB8B-8FF8381E656E}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="heavyHitsVoice" ID="{2CC9299E-4CE7-477C-BFCA-AA74F9BCE635}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="swingEffect" ID="{A7639430-AC4B-4834-B853-5196233974BC}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="jumpSFX" ID="{B4D6696C-EC52-489F-9C1D-1503DB34B89F}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
