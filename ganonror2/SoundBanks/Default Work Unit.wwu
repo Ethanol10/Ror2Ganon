@@ -1,44 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{8C7324A0-A745-4299-BE90-98EB88C80506}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{8C7324A0-A745-4299-BE90-98EB88C80506}" SchemaVersion="119">
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{8C7324A0-A745-4299-BE90-98EB88C80506}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="ganonSoundbank" ID="{CBC656E5-EEA3-4B7A-B958-53FB323223FC}">
 					<ObjectInclusionList>
-						<ObjectRef Name="ganonDying" ID="{C7B9A04C-24A1-4049-8C22-22AD73821F1B}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Spawning" ID="{E9E86A44-789B-405E-894B-C4D2989D9F78}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="wizardsFoot" ID="{C540A953-3BB7-41C5-AA19-326FC6512D5A}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="hardHitsSFX" ID="{0305A762-4016-41CB-9E99-6FA0E6E47017}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Attack8Doriya" ID="{8228A774-A4AB-426B-9AAA-89FD0829543A}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="superHitsVoice" ID="{5A9FA727-4107-4298-81C0-C1CF48DB9537}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="darkDive1" ID="{5574BB0B-9C03-4319-9417-46650756C51F}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="flameChokeSFXEnd" ID="{C5965791-8056-434D-AEB5-318F88177335}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="heavySwordHit" ID="{A8B520C9-58CA-4371-8ED6-07F18BE1B21F}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="thunderPunch" ID="{43C45A18-8A32-43A4-8864-16E386593C51}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="swingSFX" ID="{C80A7395-6B35-44D6-A51F-EBE260A2DFFA}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="wizardsFootVoice" ID="{B3BB6AE1-8AEE-4525-80FB-F523FA0399A8}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="warlockPunchSFX" ID="{BDA181E8-C176-4544-AB58-882A96255C37}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="grabSounds" ID="{1511E1D0-666E-4569-98E9-16330728AFFF}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="loopingSwingSound" ID="{D669889D-3FF1-45B2-BBD7-F13D986860D7}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="lightHitSFX" ID="{455BCAEF-471D-4684-8CC8-855807567DFE}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="stopLoopingSwingSound" ID="{CD7DE72F-124D-474A-BB8B-8FF8381E656E}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="heavyHitsVoice" ID="{2CC9299E-4CE7-477C-BFCA-AA74F9BCE635}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="swingEffect" ID="{A7639430-AC4B-4834-B853-5196233974BC}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="jumpSFX" ID="{B4D6696C-EC52-489F-9C1D-1503DB34B89F}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="swordHitSound" ID="{B8E1586F-D805-4953-8EDB-21C42DDA53F8}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="fullyChargedSword" ID="{B4C3526A-CD8C-4987-ADFB-BCE654573520}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Attack8DoriyaNormal" ID="{B539364D-8714-4A18-9906-E25331A2A458}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="SwordBeamSound" ID="{6200D5BB-6483-4A82-82AA-4E2AC407DFCE}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="lightHitsVoice" ID="{124B31DB-5942-4A9B-972E-C4F2A41E1291}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="randomSwingSound" ID="{C2507480-2931-4AE3-89A6-AE3B043E4A36}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="ganonScreamingWarlockPunch" ID="{1EC1C38F-B5E8-4B63-9F8D-4D3F40A2D4C6}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="darkDive2" ID="{D096A7EA-EBA1-4BD9-9D14-2E3B9679B60D}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="memeExplosion" ID="{682A2848-3562-4C22-AFDB-7B3B5927D5E1}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="spawnVoice" ID="{5F15B5BA-1C8F-4C5E-BFDA-AE7F760B8B41}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="infernoKickStart" ID="{E2E1F073-72E7-4CF9-B583-2ED7EE65AE6B}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="warlockPunchVoice" ID="{E21B551F-6F5F-4D7A-9193-A896739D90A0}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="grabStartSFX" ID="{B1E09612-9D85-4DFA-B471-B97B352F0D40}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="startChargingSword" ID="{55CCFB69-6D03-4EA1-924F-07B53BE0F01D}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" WorkUnitID="{2BC96BCF-5F2A-4D43-A302-80A1BC7D3BD5}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

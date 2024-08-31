@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{D6A40A65-2849-4776-9C24-6891447748A3}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{D6A40A65-2849-4776-9C24-6891447748A3}" SchemaVersion="119">
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{D6A40A65-2849-4776-9C24-6891447748A3}" PersistMode="Standalone">
 			<ChildrenList>
 				<ActorMixer Name="MasterMixer" ID="{B6D0EF06-C890-41F3-B8EF-F8B3A7922CC1}" ShortID="94228252">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<RTPCList>
-								<RTPC Name="" ID="{67052350-A073-42FA-9F1B-0C08B6AF3A3A}" ShortID="350745470">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="Volume_Master" ID="{997616DE-B8E3-43FB-B2CE-201BC0E9125B}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{79992C21-8D6C-4B48-AED8-D8A5FE489D43}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="3"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>-200</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>100</XPos>
-												<YPos>0</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6B4AE759-32EF-4506-972E-88500E1BBCFC}"/>
@@ -44,36 +14,6 @@
 					</ReferenceList>
 					<ChildrenList>
 						<ActorMixer Name="SFX Mixxer" ID="{9E998500-FFDC-491D-878C-08AB52CEBEFE}" ShortID="833365192">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<RTPCList>
-										<RTPC Name="" ID="{8D49EED0-0F08-4823-92C8-406780F2033B}" ShortID="693774353">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="Volume_SFX" ID="{34F96E7B-8F69-49F8-B39D-A5572FC723A0}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{651575FA-4714-4AAD-9991-63C7776E009F}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="3"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>-200</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>100</XPos>
-														<YPos>0</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-									</RTPCList>
-								</Property>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{6B4AE759-32EF-4506-972E-88500E1BBCFC}"/>
@@ -106,32 +46,6 @@
 													<ValueList>
 														<Value>-2</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{92A2C4AF-F4C6-44C9-A5D7-EB284C035135}" ShortID="474199961">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{161EABD4-CF2B-4BBC-92A3-B0A05C571813}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -355,6 +269,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{92A2C4AF-F4C6-44C9-A5D7-EB284C035135}" ShortID="474199961">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{161EABD4-CF2B-4BBC-92A3-B0A05C571813}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="wizard'sFoot" ID="{3B63F76F-0600-4861-8905-4AE2F860E28D}" ShortID="95922303">
 											<PropertyList>
@@ -377,32 +330,6 @@
 													<ValueList>
 														<Value>2</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{207714B2-47DF-4075-86F8-717D49FCF064}" ShortID="480020436">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{2BE4B184-BA9B-449F-BCA4-799B1F184AA9}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -447,6 +374,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{207714B2-47DF-4075-86F8-717D49FCF064}" ShortID="480020436">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{2BE4B184-BA9B-449F-BCA4-799B1F184AA9}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="lightHitsVoice" ID="{67657CA1-DF32-4BAD-9E1C-3D54FDDD27D0}" ShortID="511579216">
 											<PropertyList>
@@ -469,32 +435,6 @@
 													<ValueList>
 														<Value>-7</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{635285BB-FB70-4247-A31E-EBA92BFA6AC0}" ShortID="766753586">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{5BE83FFD-2580-4134-A683-C7EA8A228082}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -658,6 +598,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{635285BB-FB70-4247-A31E-EBA92BFA6AC0}" ShortID="766753586">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{5BE83FFD-2580-4134-A683-C7EA8A228082}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="heavyHitsVoice" ID="{04E09BC9-2CD4-4B88-B740-2D52E44DE6E3}" ShortID="894167318">
 											<PropertyList>
@@ -682,32 +661,6 @@
 													<ValueList>
 														<Value>-11</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{053D945A-E233-405D-8153-2CF20C1E00D1}" ShortID="271101314">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{D1AE4C6F-3798-409E-AA03-1F26B20B5FAF}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -873,6 +826,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{053D945A-E233-405D-8153-2CF20C1E00D1}" ShortID="271101314">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{D1AE4C6F-3798-409E-AA03-1F26B20B5FAF}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="lightHitSFX" ID="{719D146D-6117-4D50-BDE4-0ED3D181AADB}" ShortID="905250908">
 											<PropertyList>
@@ -895,32 +887,6 @@
 													<ValueList>
 														<Value>-10</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{58397338-F320-4379-83D9-D5F62577A533}" ShortID="766816058">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{8CB31FEA-CE32-41DC-B3C0-F5E944B3B79D}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1165,6 +1131,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{58397338-F320-4379-83D9-D5F62577A533}" ShortID="766816058">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{8CB31FEA-CE32-41DC-B3C0-F5E944B3B79D}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="ganonDying" ID="{1041FFFA-082B-4C48-A0B4-2396B2075238}" ShortID="474627860">
 											<PropertyList>
@@ -1174,32 +1179,6 @@
 													<ValueList>
 														<Value>5</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{D3001B92-C531-456C-869F-C79A60C42564}" ShortID="967424896">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{9F72B9AF-861F-4190-BB8B-1CF2D8554ACA}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1222,6 +1201,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{D3001B92-C531-456C-869F-C79A60C42564}" ShortID="967424896">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{9F72B9AF-861F-4190-BB8B-1CF2D8554ACA}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="vc_ganon_damage_twinkle" ID="{889074DA-2A87-4A4D-95AF-44A8BEF4A48F}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -1247,32 +1265,6 @@
 													<ValueList>
 														<Value>-6</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{9EB6D084-1FBC-4E5A-BB46-417B6E0C18A8}" ShortID="830086631">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{FDE93476-ED51-42DF-B12A-19A313237E37}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1486,6 +1478,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{9EB6D084-1FBC-4E5A-BB46-417B6E0C18A8}" ShortID="830086631">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{FDE93476-ED51-42DF-B12A-19A313237E37}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="warlockPunchVoice" ID="{40B837C4-6654-47A8-9825-1E0EFCD7E1C7}" ShortID="158846080">
 											<PropertyList>
@@ -1495,32 +1526,6 @@
 													<ValueList>
 														<Value>-4</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{0800F8E8-A229-4F32-B7E2-5B62553FC9ED}" ShortID="858082918">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{78464929-D285-4ECA-9BEE-F0E6BF50A69C}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1601,6 +1606,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{0800F8E8-A229-4F32-B7E2-5B62553FC9ED}" ShortID="858082918">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{78464929-D285-4ECA-9BEE-F0E6BF50A69C}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="ganonScreamingWarlockPunch" ID="{60687292-E3CE-40A8-A744-045F5E011461}" ShortID="717840429">
 											<PropertyList>
@@ -1618,34 +1662,6 @@
 															</Modifier>
 														</ModifierInfo>
 													</ModifierList>
-												</Property>
-												<Property Name="Volume" Type="Real64">
-													<RTPCList>
-														<RTPC Name="" ID="{9F360737-43AD-4614-9DD8-138D1D115FD3}" ShortID="654856368">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{DEDAEE92-472A-4A8F-890E-A46D04A4CA5A}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1668,6 +1684,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{9F360737-43AD-4614-9DD8-138D1D115FD3}" ShortID="654856368">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{DEDAEE92-472A-4A8F-890E-A46D04A4CA5A}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="5" ID="{A167F2CB-EFAC-4F18-A0B9-6B065ED4BC68}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -1693,32 +1748,6 @@
 													<ValueList>
 														<Value>7</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{C524457A-D625-4CC8-95CA-28742BC8058D}" ShortID="490554736">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{AF6A59DF-7D92-40D1-8BBB-1FA598185745}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1741,6 +1770,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{C524457A-D625-4CC8-95CA-28742BC8058D}" ShortID="490554736">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{AF6A59DF-7D92-40D1-8BBB-1FA598185745}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="se_ganon_special_S01" ID="{58077ADC-1030-4FDB-A603-E0990D46522D}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -1766,32 +1834,6 @@
 													<ValueList>
 														<Value>-4</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{003F1F2E-EC7F-4B94-8B94-E020E15E30CB}" ShortID="799019911">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{9691B4BE-2AD6-4D10-AC89-8CA970909D01}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1814,6 +1856,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{003F1F2E-EC7F-4B94-8B94-E020E15E30CB}" ShortID="799019911">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{9691B4BE-2AD6-4D10-AC89-8CA970909D01}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="memeExplosion" ID="{1AAE217D-A606-4895-9611-9ED45EB8377B}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -1826,32 +1907,6 @@
 													<ValueList>
 														<Value>-6</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{7E830DDF-4E03-4F5E-B25C-614028CEC716}" ShortID="559532167">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{B56D6E1B-EAE4-44B4-B6B7-6B25AC2EE8BD}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -1954,6 +2009,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{7E830DDF-4E03-4F5E-B25C-614028CEC716}" ShortID="559532167">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{B56D6E1B-EAE4-44B4-B6B7-6B25AC2EE8BD}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="Spawning" ID="{7702DDBB-05CC-487D-8919-71064B3F505A}" ShortID="146601616">
 											<PropertyList>
@@ -1976,32 +2070,6 @@
 													<ValueList>
 														<Value>-2</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{817C197E-C5D8-4650-AA07-2F89846F863A}" ShortID="239164683">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{A2B509AF-1DF8-4D35-A267-B41BCB372B8E}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2024,6 +2092,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{817C197E-C5D8-4650-AA07-2F89846F863A}" ShortID="239164683">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{A2B509AF-1DF8-4D35-A267-B41BCB372B8E}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="Spawning" ID="{514D849C-160C-4440-9D47-081C7F443CCE}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -2036,32 +2143,6 @@
 													<ValueList>
 														<Value>-1</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{1DDEC16E-1E99-44F6-86B6-9C48170FCF9A}" ShortID="1020903096">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{BE78A829-62EE-471F-B59F-4F10BF47F9FF}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2151,6 +2232,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{1DDEC16E-1E99-44F6-86B6-9C48170FCF9A}" ShortID="1020903096">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{BE78A829-62EE-471F-B59F-4F10BF47F9FF}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="darkDive2" ID="{F7D67428-3F67-4136-B113-2C96F94BE414}" ShortID="354647334">
 											<PropertyList>
@@ -2160,32 +2280,6 @@
 													<ValueList>
 														<Value>9</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{A5C1A7CB-59DE-49EE-86E6-176EE89E02F4}" ShortID="279030156">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{E6841B5C-061B-40FB-B221-57166F66F249}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2208,6 +2302,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{A5C1A7CB-59DE-49EE-86E6-176EE89E02F4}" ShortID="279030156">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{E6841B5C-061B-40FB-B221-57166F66F249}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="vc_ganon_special_H02" ID="{7C2BAE82-B3E4-47D4-9ACB-79357E8414CB}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -2233,32 +2366,6 @@
 													<ValueList>
 														<Value>9</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{CB2AF333-4E3E-40E5-A9C7-58CE4EC58B52}" ShortID="830564228">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{7AE82FD7-9522-4DC4-89EC-4D934CCE63AE}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2281,6 +2388,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{CB2AF333-4E3E-40E5-A9C7-58CE4EC58B52}" ShortID="830564228">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{7AE82FD7-9522-4DC4-89EC-4D934CCE63AE}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="vc_ganon_special_H01" ID="{BD4F6AAD-EC5C-417F-A745-7C062FCB300C}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -2293,32 +2439,6 @@
 													<ValueList>
 														<Value>-7</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{CDAEAD68-0898-409D-B8D0-5DAE0D2AF772}" ShortID="12389228">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{F2D8FC5C-66AC-4854-835B-BC21D3F3AAC9}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2408,6 +2528,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{CDAEAD68-0898-409D-B8D0-5DAE0D2AF772}" ShortID="12389228">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{F2D8FC5C-66AC-4854-835B-BC21D3F3AAC9}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="tauntSpin" ID="{6189AC64-AFE1-433C-A880-26757541E6AC}" ShortID="350894059">
 											<PropertyList>
@@ -2430,32 +2589,6 @@
 													<ValueList>
 														<Value>3</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{D1AB5D30-D287-4034-B014-C7F8C25F59F4}" ShortID="25982760">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{264F5ACB-D243-4DEF-93E4-1B797F49225F}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2478,6 +2611,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{D1AB5D30-D287-4034-B014-C7F8C25F59F4}" ShortID="25982760">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{264F5ACB-D243-4DEF-93E4-1B797F49225F}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="tauntSpin" ID="{012320D2-03C8-4753-9F6E-08A3017C04D0}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -2503,32 +2675,6 @@
 													<ValueList>
 														<Value>-5</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{FE5221A7-D46C-4943-A2B5-6A5B183E57A0}" ShortID="791763694">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{9C16DCAD-8235-4CD4-8EE9-94FEDE35114A}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2645,6 +2791,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{FE5221A7-D46C-4943-A2B5-6A5B183E57A0}" ShortID="791763694">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{9C16DCAD-8235-4CD4-8EE9-94FEDE35114A}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="infernoKickStart" ID="{BF5C2AA9-5B1A-497F-9729-A821AD6F282B}" ShortID="90712952">
 											<PropertyList>
@@ -2667,32 +2852,6 @@
 													<ValueList>
 														<Value>4</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{57CECF0D-66BB-4D24-B29C-D1D44EDB6C98}" ShortID="382194208">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{29688DCD-D0D0-43BC-B0FA-B3448C087CA1}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2715,6 +2874,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{57CECF0D-66BB-4D24-B29C-D1D44EDB6C98}" ShortID="382194208">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{29688DCD-D0D0-43BC-B0FA-B3448C087CA1}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="vc_ganon_attackhard_Chunk0" ID="{2ABDEA1F-1537-4363-B93B-E9F5514EFC94}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -2728,32 +2926,6 @@
 													<ValueList>
 														<Value>-9</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{8EAAB7BE-2828-4DE0-B83F-8F4A56A08272}" ShortID="378665658">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{8C881882-AAE5-42CF-A3EC-4CF0051A5B59}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -2894,6 +3066,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{8EAAB7BE-2828-4DE0-B83F-8F4A56A08272}" ShortID="378665658">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{8C881882-AAE5-42CF-A3EC-4CF0051A5B59}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="ThunderPunch" ID="{25405B7F-27D4-4C56-9593-F562ABA2C161}" ShortID="285868620">
 											<PropertyList>
@@ -2903,32 +3114,6 @@
 													<ValueList>
 														<Value>-7</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{953095C5-C49E-4C03-BD77-502D0ED2A496}" ShortID="58893439">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{3EFF5831-D9E6-425D-B41F-41A7905E4912}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -3037,6 +3222,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{953095C5-C49E-4C03-BD77-502D0ED2A496}" ShortID="58893439">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{3EFF5831-D9E6-425D-B41F-41A7905E4912}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="swingEffect" ID="{4B60552D-8D7A-4B26-B334-F70E9742C97D}" ShortID="583918576">
 											<PropertyList>
@@ -3046,32 +3270,6 @@
 													<ValueList>
 														<Value>5</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{8F3C3474-FDA5-44E4-A1BC-B8346F5420F0}" ShortID="873762510">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{030FF28F-14B0-48AE-9F7C-F592EE6E1828}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -3227,6 +3425,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{8F3C3474-FDA5-44E4-A1BC-B8346F5420F0}" ShortID="873762510">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{030FF28F-14B0-48AE-9F7C-F592EE6E1828}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="swordHitSound" ID="{3EE3A008-9AF5-4C50-84B3-B74E36B84935}" ShortID="225390214">
 											<PropertyList>
@@ -3275,32 +3512,6 @@
 													<ValueList>
 														<Value>3</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{961293E2-ACDD-4B4D-9AC2-670FC21B55F4}" ShortID="813749438">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{790F007B-48FC-40BE-9EEC-7EAC6610F937}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -3372,6 +3583,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{961293E2-ACDD-4B4D-9AC2-670FC21B55F4}" ShortID="813749438">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{790F007B-48FC-40BE-9EEC-7EAC6610F937}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="swordHardHitSFX" ID="{9F93D1AB-B7BE-4283-AAC0-CEBE7D9BAB67}" ShortID="396076041">
 											<PropertyList>
@@ -3394,32 +3644,6 @@
 													<ValueList>
 														<Value>-4</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{F7C92B06-CEF1-478C-963C-A90D6B26383F}" ShortID="930833261">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{942D9C9D-F52F-41FC-9DDA-E5E7CBEE2A0D}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -3448,6 +3672,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{F7C92B06-CEF1-478C-963C-A90D6B26383F}" ShortID="930833261">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{942D9C9D-F52F-41FC-9DDA-E5E7CBEE2A0D}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="se_common_sword_hit_l" ID="{D4DD21F6-9F35-4042-A165-D770A9B4841F}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -3473,32 +3736,6 @@
 													<ValueList>
 														<Value>2</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{26C5F171-E2E1-4160-8C55-87236D6890F9}" ShortID="717654079">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{FD3820AF-505B-46C5-89FD-9FF11D720452}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -3654,6 +3891,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{26C5F171-E2E1-4160-8C55-87236D6890F9}" ShortID="717654079">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{FD3820AF-505B-46C5-89FD-9FF11D720452}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="loopingSwingSound" ID="{2E4332A5-E7DA-40A3-BC05-960051B843EC}" ShortID="529842384">
 											<PropertyList>
@@ -3683,32 +3959,6 @@
 															</Modifier>
 														</ModifierInfo>
 													</ModifierList>
-													<RTPCList>
-														<RTPC Name="" ID="{DF39DAC0-82DC-42B0-927C-48165A3DDB57}" ShortID="712049732">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{1CE0FAE2-A736-4605-B9AB-9EC7B1E8E7AA}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -3737,6 +3987,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{DF39DAC0-82DC-42B0-927C-48165A3DDB57}" ShortID="712049732">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{1CE0FAE2-A736-4605-B9AB-9EC7B1E8E7AA}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="se_common_swing_04" ID="{2EF85295-87BC-4D27-AC5D-B83358EE43F9}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -3745,34 +4034,6 @@
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<RTPCList>
-														<RTPC Name="" ID="{D5549260-3BCE-4354-BC1D-7EA216DB10A1}" ShortID="1028716938">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{6F5DAD4D-C4E8-4B41-A550-12B526CE47ED}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -3813,6 +4074,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{D5549260-3BCE-4354-BC1D-7EA216DB10A1}" ShortID="1028716938">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{6F5DAD4D-C4E8-4B41-A550-12B526CE47ED}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="se_common_smash_start_02" ID="{D8025382-D173-42FC-BD6D-3B3FC2B6819F}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -3821,34 +4121,6 @@
 											<PropertyList>
 												<Property Name="3DSpatialization" Type="int16" Value="1"/>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
-												<Property Name="Volume" Type="Real64">
-													<RTPCList>
-														<RTPC Name="" ID="{F01FBE0E-9D55-47F9-A0CB-BF901A982A10}" ShortID="446597623">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{23D5E930-1680-4984-A3FA-1ADAFE0EEC2C}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
-												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Attenuation">
@@ -3876,6 +4148,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{F01FBE0E-9D55-47F9-A0CB-BF901A982A10}" ShortID="446597623">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{23D5E930-1680-4984-A3FA-1ADAFE0EEC2C}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="se_common_spirits_critical_l_tail" ID="{B58C7885-A369-400B-B8F2-371C45637FD6}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -3888,32 +4199,6 @@
 													<ValueList>
 														<Value>12</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{0E2C7A57-7BAD-407B-9C1A-A26C19C9643C}" ShortID="106614803">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{9CBEC942-EB0D-4C49-86CD-FB1F3A63F784}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 												<Property Name="Weight" Type="Real64">
 													<ValueList>
@@ -3941,6 +4226,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{0E2C7A57-7BAD-407B-9C1A-A26C19C9643C}" ShortID="106614803">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{9CBEC942-EB0D-4C49-86CD-FB1F3A63F784}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="attack8doriya" ID="{0F14D305-F9C4-4889-B093-62B54B637D6C}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -3953,32 +4277,6 @@
 													<ValueList>
 														<Value>3</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{2514976B-E6F7-4814-9A2C-8F1F5A7DAADC}" ShortID="726346021">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{98055C50-8BAE-4AF8-A5A6-9AC09338392D}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 												<Property Name="Weight" Type="Real64">
 													<ValueList>
@@ -4006,6 +4304,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{2514976B-E6F7-4814-9A2C-8F1F5A7DAADC}" ShortID="726346021">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{98055C50-8BAE-4AF8-A5A6-9AC09338392D}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="attack8doriya" ID="{4A26F45C-09D4-4E01-B63A-83D33C7AD1A3}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -4018,32 +4355,6 @@
 													<ValueList>
 														<Value>-5</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{C7F768E4-9959-40E7-86EC-08DE9C6325BE}" ShortID="318619289">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{1614B692-A52A-4C87-8546-875E1C6395A0}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -4117,6 +4428,45 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{C7F768E4-9959-40E7-86EC-08DE9C6325BE}" ShortID="318619289">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{1614B692-A52A-4C87-8546-875E1C6395A0}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 										</RandomSequenceContainer>
 										<Sound Name="se_link_final02" ID="{1656F051-536D-4DBD-8D6A-2619A178E556}" ShortID="87985848">
 											<PropertyList>
@@ -4139,32 +4489,6 @@
 													<ValueList>
 														<Value>3</Value>
 													</ValueList>
-													<RTPCList>
-														<RTPC Name="" ID="{2368A467-B08E-49A9-9F14-07555421173A}" ShortID="464023434">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{FC5FB191-5CF3-49AC-95A4-DBC21C791D2D}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-200</YPos>
-																		<Flags>5</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
 												</Property>
 											</PropertyList>
 											<ReferenceList>
@@ -4193,6 +4517,45 @@
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{2368A467-B08E-49A9-9F14-07555421173A}" ShortID="464023434">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{FC5FB191-5CF3-49AC-95A4-DBC21C791D2D}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
 												<ActiveSource Name="se_link_final02" ID="{DB6931F5-E204-4CDD-81F0-9AA942445E69}" Platform="Linked"/>
 											</ActiveSourceList>
@@ -4206,32 +4569,6 @@
 											<ValueList>
 												<Value>7</Value>
 											</ValueList>
-											<RTPCList>
-												<RTPC Name="" ID="{C7766513-7122-4F57-8251-BA06AC82143B}" ShortID="1066192649">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{293437E3-E4B7-4711-B1D0-05F47A07F7DF}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
@@ -4254,6 +4591,45 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{C7766513-7122-4F57-8251-BA06AC82143B}" ShortID="1066192649">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{293437E3-E4B7-4711-B1D0-05F47A07F7DF}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="wizardFoot1" ID="{7DB28F7F-FA5B-449D-8597-37F87AF7504C}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -4265,32 +4641,6 @@
 											<ValueList>
 												<Value>10</Value>
 											</ValueList>
-											<RTPCList>
-												<RTPC Name="" ID="{A2694A57-CEE2-4726-ABCB-333E0E3EB054}" ShortID="532469142">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{3E3D61B7-9A83-4EEF-A6E1-D0BCF6E044E5}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
@@ -4313,6 +4663,45 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{A2694A57-CEE2-4726-ABCB-333E0E3EB054}" ShortID="532469142">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{3E3D61B7-9A83-4EEF-A6E1-D0BCF6E044E5}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="wizardFoot2" ID="{857861AF-1EDB-4D2C-B974-6F9E5063BC56}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -4320,34 +4709,6 @@
 								<Sound Name="stepLeft" ID="{FB6A78B7-91AA-4DB9-8170-F96C3CC0173A}" ShortID="281038673">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
-										<Property Name="Volume" Type="Real64">
-											<RTPCList>
-												<RTPC Name="" ID="{FA81C20A-FB99-47AA-9E54-80D5C32A2116}" ShortID="191999458">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{C9840CB7-9066-4D82-AE3D-7BB8990114B5}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -4369,6 +4730,45 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{FA81C20A-FB99-47AA-9E54-80D5C32A2116}" ShortID="191999458">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{C9840CB7-9066-4D82-AE3D-7BB8990114B5}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="stepLeft" ID="{0572C731-1403-47BE-9DBD-423BECDA426B}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -4376,34 +4776,6 @@
 								<Sound Name="stepRight" ID="{10872A88-85D7-42F3-A963-9C8DBBA6C70C}" ShortID="219487059">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
-										<Property Name="Volume" Type="Real64">
-											<RTPCList>
-												<RTPC Name="" ID="{185F95C6-4E53-48EA-9BC2-C2510D136066}" ShortID="675472873">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{FD05EED8-69B6-4C6F-A211-B01CCCDD2005}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -4432,6 +4804,45 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{185F95C6-4E53-48EA-9BC2-C2510D136066}" ShortID="675472873">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{FD05EED8-69B6-4C6F-A211-B01CCCDD2005}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="stepRight" ID="{583E5CFF-3600-43BC-85E0-0534AA24CD5F}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -4439,34 +4850,6 @@
 								<Sound Name="tauntSword" ID="{EF31505D-59C7-4C24-9891-330AC84D6EF8}" ShortID="63415777">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
-										<Property Name="Volume" Type="Real64">
-											<RTPCList>
-												<RTPC Name="" ID="{BDF87293-99B3-4357-A29A-0686DC14F904}" ShortID="886634844">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{EE300CDB-1B11-430D-B79D-C3288A53FA2B}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -4488,6 +4871,45 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{BDF87293-99B3-4357-A29A-0686DC14F904}" ShortID="886634844">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Volume_GanonSFX" ID="{6E6BE137-84F6-49E4-ADCD-8C329D24FEC5}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{EE300CDB-1B11-430D-B79D-C3288A53FA2B}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="tauntSword" ID="{8EAD0CC2-37A4-4EF3-933B-EB4B76270AFC}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -4495,34 +4917,6 @@
 								<Sound Name="extraVoiceOttoOtto" ID="{6980C817-BFE4-431A-9578-E1F9AA40DDB8}" ShortID="660004378">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="1"/>
-										<Property Name="Volume" Type="Real64">
-											<RTPCList>
-												<RTPC Name="" ID="{EC0F852C-BEAF-4237-A7CD-8912F905967D}" ShortID="670077984">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{62A72198-0475-4F95-99B7-0A703F985A37}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -4544,13 +4938,130 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{EC0F852C-BEAF-4237-A7CD-8912F905967D}" ShortID="670077984">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Volume_GanonVoice" ID="{3A84E83D-8264-487B-ACE7-A76770782EA4}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{62A72198-0475-4F95-99B7-0A703F985A37}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="extraVoiceOttoOtto" ID="{1878872A-7B6C-4206-B070-FCEC06B09374}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{8D49EED0-0F08-4823-92C8-406780F2033B}" ShortID="693774353">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Volume_SFX" ID="{34F96E7B-8F69-49F8-B39D-A5572FC723A0}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{651575FA-4714-4AAD-9991-63C7776E009F}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 						</ActorMixer>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{67052350-A073-42FA-9F1B-0C08B6AF3A3A}" ShortID="350745470">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Volume_Master" ID="{997616DE-B8E3-43FB-B2CE-201BC0E9125B}" WorkUnitID="{DCEB677A-DAC2-42D6-B359-198E8659F284}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{79992C21-8D6C-4B48-AED8-D8A5FE489D43}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>

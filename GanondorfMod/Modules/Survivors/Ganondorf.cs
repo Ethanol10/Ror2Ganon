@@ -605,11 +605,7 @@ namespace GanondorfMod.Modules.Survivors
             if (GanondorfPlugin.scepterInstalled)
             {
                 RegisterAncientScepterStandalone(warlockPunchScepter, InfernoGuillotineScepter, obliterateScepter);
-            }
-            else if (GanondorfPlugin.fallbackScepter)
-            {
-                RegisterTILERScepter(warlockPunchScepter, InfernoGuillotineScepter, obliterateScepter);
-            }         
+            }       
         }
 
         private static void RegisterAncientScepterStandalone(SkillDef skill1, SkillDef skill2, SkillDef skill3)
@@ -617,13 +613,6 @@ namespace GanondorfMod.Modules.Survivors
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill1, instance.fullBodyName, SkillSlot.Special, 0);
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill2, instance.fullBodyName, SkillSlot.Special, 1);
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(skill3, instance.fullBodyName, SkillSlot.Special, 2);
-        }
-
-        private static void RegisterTILERScepter(SkillDef skill1, SkillDef skill2, SkillDef skill3)
-        {
-            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill1, instance.fullBodyName, SkillSlot.Special, warlockPunch);
-            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill2, instance.fullBodyName, SkillSlot.Special, infernoGuillotine);
-            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(skill3, instance.fullBodyName, SkillSlot.Special, obliterate);
         }
 
         #endregion

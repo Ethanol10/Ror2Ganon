@@ -22,26 +22,20 @@ There's no need for payment for mods, but a coffee would be nice once in awhile!
   
 ## Mod Interoperability List:
 - Standalone Ancient Scepter
-- ThinkInvisible's Classic Items Ancient Scepter
 - EmoteAPI
 - RiskOfOptions
 
 ## What's new:
 
-- 3.1.7 -> Following changes have been made:
-    - Increased the Volume of all sounds across the board.
-        - Now you're probably wondering, WHY would you do this when you can already hear his screams from across the map. Just read the next dot point.
-    - Added volume controls in config.
-        - If you want to edit them in realtime, use a RiskOfOptions for God's sake, it's a game changer.
-    - Reduced the attenuation (Distance at which you can hear a sound from a point) for the Serrated Whirlwind SFX.
-    - Added Networking to destroy the sound of the Serrated Whirlwind swinging sound so that it should stop playing once its back in your hand.
-    - Removed requirement to restart the game to disable serrated whirlwind effects.
+- 3.2.0
+    - Updated to support SotS
+    - Removed support for ThinkInvisible's Ancient Scepter in Classic Items.
         
 # Major release details:
 
-- 3.1.0 -> Added the following: 
-    - Added a sword beam to Ganondorf's sword when he hits 30 Triforce stacks or greater!
-    - Added config to remove the trails off Serrated Whirlwind if you require.
+- 3.2.0
+    - Updated to support SotS
+    - Removed support for ThinkInvisible's Ancient Scepter in Classic Items.
 - 3.0.0 -> I said I wouldn't be here unless I got more animations, and MORE ANIMATIONS I MADE WOOOOOOOO.
     - Added 3 moves! ALL sword based! Now you can **DORIYAA!** (For these, I did not include achievements. I won't.)
         - New Primary: Cleave
@@ -152,6 +146,14 @@ Charge up a powerful punch unleashing 1000% damage onto close range foes. Consum
 <details>
 <summary>Click to expand previous patch notes:</summary>
 
+- 3.1.7 -> Following changes have been made:
+    - Increased the Volume of all sounds across the board.
+        - Now you're probably wondering, WHY would you do this when you can already hear his screams from across the map. Just read the next dot point.
+    - Added volume controls in config.
+        - If you want to edit them in realtime, use a RiskOfOptions for God's sake, it's a game changer.
+    - Reduced the attenuation (Distance at which you can hear a sound from a point) for the Serrated Whirlwind SFX.
+    - Added Networking to destroy the sound of the Serrated Whirlwind swinging sound so that it should stop playing once its back in your hand.
+    - Removed requirement to restart the game to disable serrated whirlwind effects.
 - 3.1.6 -> README changes to properly show images instead of using Discord CDN which wiped out all my previous images lol.
 - 3.1.5 -> Increased health gain per level from 15 -> 60.
 - 3.1.4 -> Added some config to modify cooldowns on secondary and utility skills. Requires restart to work.

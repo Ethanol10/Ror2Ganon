@@ -36,14 +36,13 @@ namespace GanondorfMod
     {
         public const string MODUID = "com.Ethanol10.Ganondorf";
         public const string MODNAME = "Ganondorf";
-        public const string MODVERSION = "3.1.7";
+        public const string MODVERSION = "3.2.0";
         
         //Triforce Buff
         public static TriforceBuffComponent triforceBuff;
         public static GanondorfController ganondorfController;
 
         //Scepter Vars
-        public static bool fallbackScepter = false;
         public static bool scepterInstalled = false;
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
@@ -66,10 +65,6 @@ namespace GanondorfMod
             if (Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
             {
                 GanondorfPlugin.scepterInstalled = true;
-            }
-            else if (Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems")) 
-            {
-                GanondorfPlugin.fallbackScepter = true;
             }
             Modules.Config.ReadConfig();
             Modules.Config.OnChangeHooks();
