@@ -74,7 +74,7 @@ namespace GanondorfMod.Modules
             damageComponent.damage = Modules.StaticValues.swordBeamDamageCoefficientBase;
             damageComponent.crit = false;
             damageComponent.force = Modules.StaticValues.swordBeamForce;
-            damageComponent.damageType = DamageType.Generic;
+            damageComponent.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
         }
 
         private static void InitializeImpactExplosion(ProjectileImpactExplosion projectileImpactExplosion)
@@ -99,7 +99,7 @@ namespace GanondorfMod.Modules
             projectileImpactExplosion.offsetForLifetimeExpiredSound = 0f;
             projectileImpactExplosion.timerAfterImpact = false;
 
-            projectileImpactExplosion.GetComponent<ProjectileDamage>().damageType = DamageType.Generic;
+            projectileImpactExplosion.GetComponent<ProjectileDamage>().damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.NoneSpecified);
         }
 
         private static GameObject CreateGhostPrefab(string ghostName)

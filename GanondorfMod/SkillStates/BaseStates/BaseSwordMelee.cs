@@ -14,7 +14,7 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         protected string hitboxName = "Sword";
 
-        protected DamageType damageType = DamageType.Generic;
+        protected DamageType damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
         protected float damageCoefficient = Modules.StaticValues.swordSwingDamageCoefficient;
         protected float procCoefficient = Modules.StaticValues.swordSwingprocCoefficient;
         protected float pushForce = 300f;

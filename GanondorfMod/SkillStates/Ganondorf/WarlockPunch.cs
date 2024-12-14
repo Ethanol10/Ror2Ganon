@@ -241,7 +241,7 @@ namespace GanondorfMod.SkillStates
                 this.pushForce = 10000f;
             }
             this.hitboxName = "warlock";
-            this.damageType = DamageType.Generic | DamageType.AOE;
+            this.damageType = new DamageTypeCombo(DamageType.Generic | DamageType.AOE, DamageTypeExtended.Generic, DamageSource.Special);
             this.procCoefficient = 1.5f;
             this.bonusForce = Vector3.zero;
             this.baseDuration = 2.7f;

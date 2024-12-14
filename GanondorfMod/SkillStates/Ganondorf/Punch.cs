@@ -363,7 +363,7 @@ namespace GanondorfMod.SkillStates
 
         public void setupDashAttack()
         {
-            DamageType dmgType = DamageType.Stun1s;
+            DamageTypeCombo dmgType = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Primary);
             float dmgCoeff = Modules.StaticValues.dashDamageCoefficient;
             float procCoeff = 1f;
             float pushFrce = 500f;
@@ -409,7 +409,7 @@ namespace GanondorfMod.SkillStates
         }
 
         public void setupLightKickHitbox() {
-            DamageType dmgType = DamageType.Generic;
+            DamageTypeCombo dmgType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
             float procCoeff = 1f;
             float pushFrce = 0f;
             Vector3 bonusFrce = Vector3.zero;
@@ -456,7 +456,7 @@ namespace GanondorfMod.SkillStates
                 group2 = System.Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(),
                     (HitBoxGroup element) => element.groupName == "melee");
             }
-            this.damageType = DamageType.Generic;
+            this.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
             this.procCoefficient = 1f;
             this.pushForce = 600f;
             this.bonusForce = Vector3.zero;
@@ -495,7 +495,7 @@ namespace GanondorfMod.SkillStates
 
         public void setupPunchHitbox() {
             this.hitboxName = "melee";
-            this.damageType = DamageType.Generic;
+            this.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
             this.damageCoefficient = Modules.StaticValues.punchDamageCoefficient;
             this.procCoefficient = 1f;
             this.pushForce = 500f;
@@ -544,7 +544,7 @@ namespace GanondorfMod.SkillStates
         public void setupDownAirAttack()
         {
             this.hitboxName = "downair";
-            this.damageType = DamageType.Stun1s;
+            this.damageType = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Primary);
             this.damageCoefficient = Modules.StaticValues.downAirDamageCoefficient;
             this.procCoefficient = 1f;
             this.pushForce = 1500f;

@@ -13,7 +13,7 @@ namespace GanondorfMod.SkillStates.BaseStates
 
         protected string hitboxName = "melee";
 
-        protected DamageType damageType = DamageType.Generic;
+        protected DamageType damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
         protected float damageCoefficient;
         protected float procCoefficient;
         protected float pushForce;

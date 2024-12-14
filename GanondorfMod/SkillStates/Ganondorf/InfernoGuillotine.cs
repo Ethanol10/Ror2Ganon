@@ -275,7 +275,7 @@ namespace GanondorfMod.SkillStates
             }
 
             BlastAttack pullAttack = new BlastAttack();
-            pullAttack.damageType = DamageType.Generic;
+            pullAttack.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Special);
             pullAttack.position = base.transform.position;
             pullAttack.attacker = base.gameObject;
             pullAttack.inflictor = base.gameObject;
@@ -374,7 +374,7 @@ namespace GanondorfMod.SkillStates
             this.impactSound = Modules.Assets.punchSFX.index;
 
             blastAttack = new BlastAttack();
-            blastAttack.damageType = DamageType.Stun1s;
+            blastAttack.damageType = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Special);
             blastAttack.attacker = base.gameObject;
             blastAttack.inflictor = base.gameObject;
             blastAttack.teamIndex = base.teamComponent.teamIndex;
@@ -399,7 +399,7 @@ namespace GanondorfMod.SkillStates
             }
 
             this.attack = new OverlapAttack();
-            this.attack.damageType = DamageType.Generic;
+            this.attack.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Special);
             this.attack.attacker = base.gameObject;
             this.attack.inflictor = base.gameObject;
             this.attack.teamIndex = base.GetTeam();

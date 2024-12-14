@@ -27,7 +27,7 @@ namespace GanondorfMod.SkillStates
         protected float stopwatch;
         private Vector3 playerRot;
 
-        protected DamageType damageType = DamageType.Generic;
+        protected DamageTypeCombo damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Secondary);
         private bool hasFired;
         private float hitPauseTimer;
         private BaseState.HitStopCachedState hitStopCachedState;
@@ -108,6 +108,7 @@ namespace GanondorfMod.SkillStates
                 }
                 damage = (Modules.StaticValues.wizardFootAltDamageCoefficient * this.damageStat * boost) + (this.damageStat * (this.moveSpeedStat / 25.0f));
                 initialSpeedCoefficient = 4.5f;
+                this.damageType  = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Utility);
             }
 
             //This governs the info on the attack

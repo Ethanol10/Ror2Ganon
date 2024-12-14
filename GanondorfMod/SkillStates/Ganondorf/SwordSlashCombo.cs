@@ -15,7 +15,7 @@ namespace GanondorfMod.SkillStates
         {
             this.hitboxName = "sword";
 
-            this.damageType = DamageType.Generic;
+            this.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Primary);
             this.damageCoefficient = Modules.StaticValues.swordSwingDamageCoefficient;
             this.procCoefficient = 1f;
             this.pushForce = 300f;

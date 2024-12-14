@@ -104,6 +104,8 @@ namespace GanondorfMod.SkillStates
             Util.PlaySound("darkDive1", base.gameObject);
             Util.PlaySound("grabStartSFX", base.gameObject);
 
+            DamageTypeCombo stunDamage = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Secondary);
+
             if (base.inputBank.skill2.down)
             {
                 isBoosted = false;
@@ -125,11 +127,12 @@ namespace GanondorfMod.SkillStates
                 damage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * boost;
                 miniDamage = Modules.StaticValues.darkDiveDamageCoefficient * this.damageStat * (Modules.StaticValues.darkDiveDamageReducer * 2);
                 initialSpeedCoefficient = 4.0f;
+                stunDamage = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Utility);
             }
 
             //Create blast attack, 
             miniBlast = new BlastAttack();
-            miniBlast.damageType = DamageType.Stun1s;
+            miniBlast.damageType = stunDamage;
             miniBlast.attacker = base.gameObject;
             miniBlast.inflictor = base.gameObject;
             miniBlast.teamIndex = base.GetTeam();
@@ -141,7 +144,7 @@ namespace GanondorfMod.SkillStates
 
             //Create blast attack, 
             attack = new BlastAttack();
-            attack.damageType = DamageType.Stun1s;
+            attack.damageType = stunDamage;
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();

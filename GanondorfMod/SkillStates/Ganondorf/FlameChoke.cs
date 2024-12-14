@@ -89,6 +89,7 @@ namespace GanondorfMod.SkillStates
 
             //Move changes based on what slot it was selected in.
             float damage = 0;
+            DamageTypeCombo stunDamage = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Secondary);
             if (base.inputBank.skill2.down)
             {
                 isBoosted = false;
@@ -105,11 +106,12 @@ namespace GanondorfMod.SkillStates
                     ganonController.BodyLightning.Play();
                 }
                 damage = Modules.StaticValues.flameChokeDamageCoefficient * this.damageStat * boost + (this.damageStat * this.attackSpeedStat * Modules.StaticValues.flameChokeDamageReducer * 1.5f);
+                stunDamage = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Utility);
             }
 
             //Create blast attack, 
             attack = new BlastAttack();
-            attack.damageType = DamageType.Stun1s;
+            attack.damageType = stunDamage;
             attack.attacker = base.gameObject;
             attack.inflictor = base.gameObject;
             attack.teamIndex = base.GetTeam();

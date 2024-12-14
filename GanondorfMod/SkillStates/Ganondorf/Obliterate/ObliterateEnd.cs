@@ -96,7 +96,7 @@ namespace GanondorfMod.SkillStates
             distanceSub = distance / noOfExplosions;
 
             blastAttack = new BlastAttack();
-            blastAttack.damageType = DamageType.Generic;
+            blastAttack.damageType = new DamageTypeCombo(DamageType.Generic, DamageTypeExtended.Generic, DamageSource.Special);
             blastAttack.attacker = base.gameObject;
             blastAttack.inflictor = base.gameObject;
             blastAttack.teamIndex = base.teamComponent.teamIndex;

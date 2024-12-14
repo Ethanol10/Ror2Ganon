@@ -72,7 +72,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
             blastAttack = new BlastAttack
             {
                 attacker = charBody.gameObject,
-                damageType = DamageType.BleedOnHit,
+                damageType = new DamageTypeCombo(DamageType.BleedOnHit, DamageTypeExtended.Generic, DamageSource.Primary),
                 canRejectForce = false,
                 teamIndex = TeamIndex.Player,
                 radius = Modules.StaticValues.swordThrowHitRadius,

@@ -130,7 +130,7 @@ namespace GanondorfMod.SkillStates.Ganondorf
                     {
                         isFired = true;
                         BlastAttack blastAttack = new BlastAttack();
-                        blastAttack.damageType = DamageType.Stun1s;
+                        blastAttack.damageType = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Utility);
                         blastAttack.attacker = base.gameObject;
                         blastAttack.inflictor = base.gameObject;
                         blastAttack.teamIndex = base.teamComponent.teamIndex;
