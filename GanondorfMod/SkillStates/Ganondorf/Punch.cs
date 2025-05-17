@@ -547,7 +547,7 @@ namespace GanondorfMod.SkillStates
             this.damageType = new DamageTypeCombo(DamageType.Stun1s, DamageTypeExtended.Generic, DamageSource.Primary);
             this.damageCoefficient = Modules.StaticValues.downAirDamageCoefficient;
             this.procCoefficient = 1f;
-            this.pushForce = 1500f;
+            this.pushForce = 15000f;
             this.bonusForce = Vector3.down;
             this.baseDuration = 1.2f;
             this.attackStartTime = 0.3f;
