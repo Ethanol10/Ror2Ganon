@@ -118,7 +118,7 @@ namespace GanondorfMod.Modules
             chargingMat = Modules.Assets.mainAssetBundle.LoadAsset<Material>("ChargingMat");
             swordHitImpactEffect = LoadEffect("ImpactHenrySlash");
             parentSlamEffectObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Parent/ParentSlamEffect.prefab").WaitForCompletion();
-            beetleGuardGroundSlamObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleGuardGroundSlam.prefab").WaitForCompletion();
+            beetleGuardGroundSlamObliterate = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/BeetleGuard/BeetleGuardGroundSlam.prefab").WaitForCompletion();
 
             if (Modules.Config.disableSwordThrowParticleEffects.Value)
             {
