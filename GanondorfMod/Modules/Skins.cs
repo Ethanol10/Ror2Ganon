@@ -36,17 +36,43 @@ namespace GanondorfMod.Modules
             skinDef.icon = skinDefInfo.Icon;
             skinDef.unlockableDef = skinDefInfo.UnlockableDef;
             skinDef.rootObject = skinDefInfo.RootObject;
-            skinDef.rendererInfos = skinDefInfo.RendererInfos;
-            skinDef.gameObjectActivations = skinDefInfo.GameObjectActivations;
-            skinDef.meshReplacements = skinDefInfo.MeshReplacements;
-            skinDef.projectileGhostReplacements = skinDefInfo.ProjectileGhostReplacements;
-            skinDef.minionSkinReplacements = skinDefInfo.MinionSkinReplacements;
             skinDef.nameToken = skinDefInfo.NameToken;
             skinDef.name = skinDefInfo.Name;
+
+            SkinDefParams skinDefParams = ScriptableObject.CreateInstance<RoR2.SkinDefParams>();
+            skinDefParams.projectileGhostReplacements = new SkinDefParams.ProjectileGhostReplacement[0];
+            skinDefParams.minionSkinReplacements = new SkinDefParams.MinionSkinReplacement[0];
+            skinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[0];
+            skinDefParams.gameObjectActivations = new SkinDefParams.GameObjectActivation[0];
+            rendererInfos.CopyTo(skinDefInfo.RendererInfos, 0);
+            skinDefParams.rendererInfos = skinDefInfo.RendererInfos;
+
+            skinDef.skinDefParams = skinDefParams;
 
             On.RoR2.SkinDef.Awake -= DoNothing;
 
             return skinDef;
+        }
+
+        internal static SkinDefParams.MeshReplacement[] getMeshReplacements(CharacterModel.RendererInfo[] defaultRendererInfos, params string[] meshes)
+        {
+
+            List<SkinDefParams.MeshReplacement> meshReplacements = new List<SkinDefParams.MeshReplacement>();
+
+            for (int i = 0; i < defaultRendererInfos.Length; i++)
+            {
+                if (string.IsNullOrEmpty(meshes[i]))
+                    continue;
+
+                meshReplacements.Add(
+                new SkinDefParams.MeshReplacement
+                {
+                    renderer = defaultRendererInfos[i].renderer,
+                    mesh = Assets.mainAssetBundle.LoadAsset<Mesh>(meshes[i])
+                });
+            }
+
+            return meshReplacements.ToArray();
         }
 
         private static void DoNothing(On.RoR2.SkinDef.orig_Awake orig, RoR2.SkinDef self)
