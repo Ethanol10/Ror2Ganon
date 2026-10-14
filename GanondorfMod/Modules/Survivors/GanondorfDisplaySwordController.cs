@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
-using On.RoR2;
 using RoR2;
-using static RoR2.Loadout;
+using RoR2.SurvivorMannequins;
 
 namespace GanondorfMod.Modules.Survivors
 {
@@ -21,37 +17,43 @@ namespace GanondorfMod.Modules.Survivors
         private float stopwatch;
         private const float grabbedinterval = 0.4f;
 
-        private bool[] swordField;
+        private SurvivorMannequinSlotController mannequinSlot;
+        private NetworkUser loadoutOwner;
+        private bool loadoutDirty;
+        private bool hasSwordState;
 
         public void Awake()
         {
             anim = GetComponent<Animator>();
-            Hooks();
-            isInHand = false;
-            stopwatch = 0f;
-            startTimer = false;
-            swordField = new bool[4];
         }
 
-        public void Start() 
+        public void OnEnable()
         {
-            uint skillSelected = RoR2.Loadout.RequestInstance().bodyLoadoutManager.GetSkillVariant(RoR2.BodyCatalog.FindBodyIndex("GanondorfBody"), 0);
-            if (skillSelected == 0)
-            {
-                isInHand = false;
-                anim.SetBool("SwordEquipped", false);
-                startTimer = true;
-            }
-            else if(skillSelected == 1) 
-            {
-                isInHand = true;
-                anim.SetBool("SwordEquipped", true);
-                startTimer = true;
-            }
+            NetworkUser.onLoadoutChangedGlobal += OnLoadoutChanged;
+            loadoutDirty = true;
+        }
+
+        public void OnDisable()
+        {
+            NetworkUser.onLoadoutChangedGlobal -= OnLoadoutChanged;
+        }
+
+        public void OnTransformParentChanged()
+        {
+            // Lobby ordering can move this display to another mannequin slot.
+            mannequinSlot = null;
+            loadoutDirty = true;
+        }
+
+        public void Start()
+        {
+            RefreshLoadout();
         }
 
         public void Update()
         {
+            RefreshLoadout();
+
             if (startTimer)
             {
                 stopwatch += Time.deltaTime;
@@ -87,65 +89,59 @@ namespace GanondorfMod.Modules.Survivors
             }
         }
 
-        public void OnDestroy() 
+        private void OnLoadoutChanged(NetworkUser changedUser)
         {
-            On.RoR2.Loadout.BodyLoadoutManager.GetSkillVariant -= Loadout_BodyLoadoutManager_GetSkillVariant;
-        }
-
-        private void Hooks() 
-        {
-            On.RoR2.Loadout.BodyLoadoutManager.GetSkillVariant += Loadout_BodyLoadoutManager_GetSkillVariant;
-        }
-
-        private uint Loadout_BodyLoadoutManager_GetSkillVariant(On.RoR2.Loadout.BodyLoadoutManager.orig_GetSkillVariant orig, BodyLoadoutManager self, BodyIndex bodyIndex, int skillSlot)
-        {
-            uint skillVariant = orig(self, bodyIndex, skillSlot);
-
-            if (RoR2.BodyCatalog.FindBodyIndex("GanondorfBody") == bodyIndex) 
+            if (mannequinSlot && changedUser == mannequinSlot.networkUser)
             {
-                if (skillSlot == 0)
-                {
-                    swordField[skillSlot] = skillVariant == 1 ? true : false;
-                }
-                if (skillSlot == 1)
-                {
-                    swordField[skillSlot] = skillVariant == 3 ? true : false;
-                }
-                if (skillSlot == 2)
-                {
-                    swordField[skillSlot] = skillVariant == 3 ? true : false;
-                }
-                if (skillSlot == 3)
-                {
-                    swordField[skillSlot] = skillVariant == 2 ? true : false;
-                }
+                loadoutDirty = true;
+            }
+        }
 
-                for (int i = 0; i < swordField.Length; i++)
-                {
-                    if (swordField[i])
-                    {
-                        SetToHand();
-                        return skillVariant;
-                    }
-                }
-
-                SetToBody();
+        private void RefreshLoadout()
+        {
+            if (!mannequinSlot)
+            {
+                mannequinSlot = GetComponentInParent<SurvivorMannequinSlotController>();
             }
 
-            return skillVariant;
+            // Each lobby display is parented to its player's mannequin slot. Slots can be reassigned without changing the selected survivor.
+            NetworkUser owner = mannequinSlot ? mannequinSlot.networkUser : null;
+            if (!loadoutDirty && owner == loadoutOwner) return;
+
+            loadoutOwner = owner;
+            bool swordEquipped = false;
+            if (owner)
+            {
+                Loadout loadout = Loadout.RequestInstance();
+                try
+                {
+                    owner.networkLoadout.CopyLoadout(loadout);
+                    BodyIndex bodyIndex = BodyCatalog.FindBodyIndex("GanondorfBody");
+                    if (bodyIndex != BodyIndex.None)
+                    {
+                        // Evaluate one player's complete selection, rather than remembering global skill reads from different players.
+                        Loadout.BodyLoadoutManager skills = loadout.bodyLoadoutManager;
+                        swordEquipped = skills.GetSkillVariant(bodyIndex, 0) == 1 || skills.GetSkillVariant(bodyIndex, 1) == 3 || skills.GetSkillVariant(bodyIndex, 2) == 3 || skills.GetSkillVariant(bodyIndex, 3) == 2;
+                    }
+                }
+                finally
+                {
+                    Loadout.ReturnInstance(loadout);
+                }
+            }
+
+            SetSwordEquipped(swordEquipped);
+            loadoutDirty = false;
         }
 
-        private void SetToHand() 
+        private void SetSwordEquipped(bool swordEquipped)
         {
-            isInHand = true;
-            anim.SetBool("SwordEquipped", true);
-            startTimer = true;
-        }
+            if (hasSwordState && isInHand == swordEquipped) return;
 
-        private void SetToBody()
-        {
-            isInHand = false;
-            anim.SetBool("SwordEquipped", false);
+            hasSwordState = true;
+            isInHand = swordEquipped;
+            if (anim) anim.SetBool("SwordEquipped", swordEquipped);
+            stopwatch = 0f;
             startTimer = true;
         }
     }
