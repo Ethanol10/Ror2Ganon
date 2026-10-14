@@ -3485,7 +3485,7 @@ localScale = new Vector3(0.1233F, 0.1233F, 0.1233F),
             #endregion
 
             itemDisplayRuleSet.keyAssetRuleGroups = itemDisplayRules.ToArray();
-            itemDisplayRuleSet.GenerateRuntimeValuesAsync();
+            GanondorfPlugin.instance.StartCoroutine(itemDisplayRuleSet.GenerateRuntimeValuesAsync());
         }
 
         private static CharacterModel.RendererInfo[] SkinRendererInfos(CharacterModel.RendererInfo[] defaultRenderers, Material[] materials)
