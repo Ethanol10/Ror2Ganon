@@ -17,19 +17,17 @@ namespace GanondorfMod.Modules
             SkinDefInfo skinDefInfo = new SkinDefInfo
             {
                 BaseSkins = Array.Empty<SkinDef>(),
-                GameObjectActivations = new SkinDef.GameObjectActivation[0],
+                GameObjectActivations = Array.Empty<SkinDefParams.GameObjectActivation>(),
                 Icon = skinIcon,
-                MeshReplacements = new SkinDef.MeshReplacement[0],
-                MinionSkinReplacements = new SkinDef.MinionSkinReplacement[0],
+                MeshReplacements = Array.Empty<SkinDefParams.MeshReplacement>(),
+                MinionSkinReplacements = Array.Empty<SkinDefParams.MinionSkinReplacement>(),
                 Name = skinName,
                 NameToken = skinName,
-                ProjectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[0],
+                ProjectileGhostReplacements = Array.Empty<SkinDefParams.ProjectileGhostReplacement>(),
                 RendererInfos = rendererInfos,
                 RootObject = root,
                 UnlockableDef = unlockableDef
             };
-
-            On.RoR2.SkinDef.Awake += DoNothing;
 
             SkinDef skinDef = ScriptableObject.CreateInstance<RoR2.SkinDef>();
             skinDef.baseSkins = skinDefInfo.BaseSkins;
@@ -39,17 +37,15 @@ namespace GanondorfMod.Modules
             skinDef.nameToken = skinDefInfo.NameToken;
             skinDef.name = skinDefInfo.Name;
 
-            SkinDefParams skinDefParams = ScriptableObject.CreateInstance<RoR2.SkinDefParams>();
-            skinDefParams.projectileGhostReplacements = new SkinDefParams.ProjectileGhostReplacement[0];
-            skinDefParams.minionSkinReplacements = new SkinDefParams.MinionSkinReplacement[0];
-            skinDefParams.meshReplacements = new SkinDefParams.MeshReplacement[0];
-            skinDefParams.gameObjectActivations = new SkinDefParams.GameObjectActivation[0];
-            rendererInfos.CopyTo(skinDefInfo.RendererInfos, 0);
+            SkinDefParams skinDefParams = ScriptableObject.CreateInstance<SkinDefParams>();
+            skinDefParams.name = skinName + "Params";
             skinDefParams.rendererInfos = skinDefInfo.RendererInfos;
-
+            skinDefParams.gameObjectActivations = skinDefInfo.GameObjectActivations;
+            skinDefParams.meshReplacements = skinDefInfo.MeshReplacements;
+            skinDefParams.projectileGhostReplacements = skinDefInfo.ProjectileGhostReplacements;
+            skinDefParams.minionSkinReplacements = skinDefInfo.MinionSkinReplacements;
+            skinDefParams.lightReplacements = Array.Empty<CharacterModel.LightInfo>();
             skinDef.skinDefParams = skinDefParams;
-
-            On.RoR2.SkinDef.Awake -= DoNothing;
 
             return skinDef;
         }
@@ -75,11 +71,6 @@ namespace GanondorfMod.Modules
             return meshReplacements.ToArray();
         }
 
-        private static void DoNothing(On.RoR2.SkinDef.orig_Awake orig, RoR2.SkinDef self)
-        {
-
-        }
-
         internal struct SkinDefInfo
         {
             internal SkinDef[] BaseSkins;
@@ -88,10 +79,10 @@ namespace GanondorfMod.Modules
             internal UnlockableDef UnlockableDef;
             internal GameObject RootObject;
             internal CharacterModel.RendererInfo[] RendererInfos;
-            internal SkinDef.MeshReplacement[] MeshReplacements;
-            internal SkinDef.GameObjectActivation[] GameObjectActivations;
-            internal SkinDef.ProjectileGhostReplacement[] ProjectileGhostReplacements;
-            internal SkinDef.MinionSkinReplacement[] MinionSkinReplacements;
+            internal SkinDefParams.MeshReplacement[] MeshReplacements;
+            internal SkinDefParams.GameObjectActivation[] GameObjectActivations;
+            internal SkinDefParams.ProjectileGhostReplacement[] ProjectileGhostReplacements;
+            internal SkinDefParams.MinionSkinReplacement[] MinionSkinReplacements;
             internal string Name;
         }
     }
