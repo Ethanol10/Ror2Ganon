@@ -173,6 +173,7 @@ namespace GanondorfMod.Modules
             SkillDef skillDef = ScriptableObject.CreateInstance<SkillDef>();
 
             skillDef.skillName = skillDefInfo.skillName;
+            ((ScriptableObject)skillDef).name = skillDefInfo.skillName;
             skillDef.skillNameToken = skillDefInfo.skillNameToken;
             skillDef.skillDescriptionToken = skillDefInfo.skillDescriptionToken;
             skillDef.icon = skillDefInfo.skillIcon;

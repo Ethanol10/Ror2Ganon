@@ -252,6 +252,7 @@ namespace GanondorfMod.Modules
             }
 
             GameObject newEffect = mainAssetBundle.LoadAsset<GameObject>(resourceName);
+            newEffect.name = GanondorfPlugin.MODUID + "." + resourceName;
 
             newEffect.AddComponent<DestroyOnTimer>().duration = 12;
             newEffect.AddComponent<NetworkIdentity>();
